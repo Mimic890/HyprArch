@@ -5,19 +5,15 @@
 После запуска ОРИГИНАЛЬНОГО образа с официального сайта: https://archlinux.org/releng/releases/
 
 ### 1.1 Сначала для дальнейшей установки нужно подключится к сети (инструкция для беспроводного подключения):
-`systemctl start iwd`
-
-`iwctl`
-
-`station list`
-
-`station wlan0 scan`
-
-`station get-networks`
-
-`station wlan0 connect 'network_name'`
-
-`quit`
+```
+systemctl start iwd
+iwctl
+station list
+station wlan0 scan
+station get-networks
+station wlan0 connect 'network_name
+quit
+```
 #### Для проверки подключения:
 `ping google.com`
 ### 1.2 Для упрощенной установки на русском языке нужно установить шрифт, поддерживающий русский:
