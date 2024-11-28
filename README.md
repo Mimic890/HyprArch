@@ -11,7 +11,7 @@ iwctl
 station list
 station wlan0 scan
 station get-networks
-station wlan0 connect 'network_name
+station wlan0 connect 'network_name'
 quit
 ```
 #### Для проверки подключения:
@@ -58,3 +58,6 @@ cd yay
 makepkg -si
 ```
 #### Установим нужные шрифты `sudo pacman -S ttf-font-awesome otf-font-awesome ttf-jetbrains-mono`
+
+
+cooming soon....
