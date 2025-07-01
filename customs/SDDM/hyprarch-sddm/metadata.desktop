@@ -1,0 +1,11 @@
+[SddmGreeterTheme]
+Name=hyprarch-sddm
+Description=hyprarch-sddm
+Author=mimic8
+Type=sddm-theme
+Version=1.0
+Screenshot=Previews/preview.png
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Theme-Id=hyprarch-sddm

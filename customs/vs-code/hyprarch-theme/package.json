@@ -1,0 +1,26 @@
+{
+  "name": "hyprarch-theme",
+  "displayName": "HyprArch Theme",
+  "description": "",
+  "version": "0.1.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Hypr-dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Hypr-dark.json"
+      },
+      {
+        "label": "HyprPink-dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/HyprPink-dark.json"        
+      }
+    ]
+  }
+}

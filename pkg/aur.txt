@@ -1,0 +1,7 @@
+wlogout
+lazydocker
+pipes.sh
+bibata-cursor-theme-bin
+ttf-orbitron
+noise-suppression-for-voice
+calf

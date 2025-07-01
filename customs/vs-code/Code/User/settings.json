@@ -1,0 +1,215 @@
+{
+	// Окна и интерфейс
+	"window.openFilesInNewWindow": "off", // Открывать файлы в текущем окне, а не в новом
+	"window.density.editorTabHeight": "compact", // Компактные вкладки редактора
+	"window.menuBarVisibility": "compact", // Компактное отображение меню
+	"workbench.activityBar.location": "top", // Панель активности сверху
+	"workbench.editor.showTabs": "multiple", // Показывать вкладки при наличии нескольких
+	"workbench.editor.tabSizing": "shrink", // Сжатие размера вкладок
+	"workbench.startupEditor": "welcomePage", // Стартовая страница — страница приветствия
+	"workbench.editor.empty.hint": "hidden", // Не показывать подсказку в пустом редакторе
+	"workbench.navigationControl.enabled": false, // Отключить навигационные элементы управления
+	"workbench.layoutControl.enabled": false, // Отключить кнопку смены макета
+	"workbench.iconTheme": "flow-dim", // Цветовая тема
+	"chat.commandCenter.enabled": false, // Отключить Command Center (чат)
+	"window.commandCenter": false, // Отключить командный центр
+
+	// Редактор
+	"editor.tabSize": 5, // Размер табуляции — 5 пробелов
+	"editor.insertSpaces": false, // Использовать табы вместо пробелов
+	"editor.detectIndentation": true, // Автоопределение отступов
+	"editor.smoothScrolling": false, // Отключить плавную прокрутку
+	"editor.folding": true, // Отключить сворачивание кода
+	"editor.wordWrap": "bounded", // Перенос строк с ограничением
+	"editor.wordWrapColumn": 240, // Колонка переноса — 240 символов
+	"editor.wrappingIndent": "same", // Отступ при переносе такой же, как у строки
+	"editor.scrollBeyondLastLine": true, // Прокрутка за последнюю строку
+	"editor.linkedEditing": true, // Синхронное редактирование связанных символов (например, тегов)
+	"editor.renderControlCharacters": false, // Не отображать управляющие символы
+	"editor.unicodeHighlight.ambiguousCharacters": false, // Не выделять неоднозначные Unicode-символы
+	"editor.unicodeHighlight.allowedCharacters": {
+		"а": true,
+		"с": true,
+		"Т": true,
+		"б": true,
+		"е": true
+	},
+	"editor.hideCursorInOverviewRuler": true, // Скрыть курсор на линейке обзора
+	"editor.quickSuggestionsDelay": 0, // Мгновенные подсказки
+	"editor.suggestSelection": "first", // Первая подсказка по умолчанию
+	"editor.multiCursorModifier": "ctrlCmd", // Управление несколькими курсорами через Ctrl/Cmd
+	"editor.inlineSuggest.enabled": true, // Встроенные предложения кода
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "explicit" // Организовать импорты только при явном вызове
+	},
+	"editor.formatOnSave": true, // Автоформат при сохранении
+	"editor.gotoLocation.multipleDefinitions": "goto", // Переход к первой из найденных реализаций
+
+	// Шрифт и курсор
+	"editor.cursorBlinking": "expand", // Анимация курсора: расширение
+	"editor.cursorStyle": "line-thin", // Тонкая линия курсора
+	"editor.cursorSmoothCaretAnimation": "explicit", // Плавная анимация курсора при перемещении
+	"editor.lineHeight": 25, // Высота строки
+	"editor.fontSize": 14, // Размер шрифта в редакторе
+	"editor.fontWeight": 300, // Толщина шрифта
+	"editor.fontLigatures": true, // Лигатуры отключены
+	"editor.fontFamily": "JetBrains Mono", // Основной шрифт
+	"editor.inlayHints.fontFamily": "JetBrains Mono", // Шрифт для inline-подсказок
+	"terminal.integrated.fontFamily": "JetBrains Mono", // Шрифт в терминале
+	"terminal.integrated.fontSize": 14, // Размер шрифта терминала
+
+	// Форматирование и Prettier
+	"editor.defaultFormatter": "esbenp.prettier-vscode", // Форматтер по умолчанию — Prettier
+	"prettier.semi": false, // Без точек с запятой
+	"prettier.useTabs": true, // Использовать табы
+	"prettier.singleQuote": true, // Одинарные кавычки
+	"prettier.jsxSingleQuote": true, // Одинарные кавычки в JSX
+	"prettier.arrowParens": "avoid", // Без скобок у однопараметрических стрелочных функций
+
+	// Языковые настройки и Emmet
+	"emmet.includeLanguages": {
+		"blade": "html",
+		"javascript": "javascriptreact"
+	}, // Emmet работает в Blade и JS как в HTML
+	"emmet.triggerExpansionOnTab": true, // Emmet активируется на Tab
+	"files.associations": {
+		"*.ru": "lua"
+	}, // Ассоциация .ru файлов с Lua
+	"files.defaultLanguage": "markdown", // Язык по умолчанию для новых файлов
+	"js/ts.implicitProjectConfig.experimentalDecorators": true, // Разрешить декораторы в JS/TS
+
+	// Explorer и файлы
+	"explorer.confirmDelete": false, // Без подтверждения удаления
+	"explorer.compactFolders": false, // Полное отображение вложенных папок
+	"explorer.confirmDragAndDrop": false, // Без подтверждения при перетаскивании
+	"files.exclude": {
+		"**/.expo": true,
+		"**/.expo-shared": true,
+		"**/.idea": true,
+		"**/node_modules": true,
+		"**/.next": true,
+		"**/.nuxt": true,
+		"**/dist": true
+	}, // Автосохранение с задержкой
+
+	// Отладка
+	"debug.toolBarLocation": "hidden", // Скрыть панель отладки
+	"debug.focusWindowOnBreak": false, // Не фокусировать окно при остановке
+	"debug.showInlineBreakpointCandidates": false, // Не показывать кандидаты для точек останова
+	"debug.showBreakpointsInOverviewRuler": false, // Не отображать точки останова на линейке
+	"debug.onTaskErrors": "debugAnyway", // Продолжать отладку при ошибках задачи
+
+	// Git
+	"git.enableSmartCommit": true, // Умный коммит при отсутствии staged изменений
+	"git.openRepositoryInParentFolders": "never", // Не искать репозитории в родительских папках
+	"git.confirmSync": false, // Не подтверждать синхронизацию
+
+	// Breadcrumbs (навигация по коду)
+	"breadcrumbs.icons": true,
+	"breadcrumbs.showKeys": false,
+	"breadcrumbs.showFiles": false,
+	"breadcrumbs.symbolPath": "off",
+	"breadcrumbs.showArrays": false,
+	"breadcrumbs.showEvents": false,
+	"breadcrumbs.showFields": false,
+	"breadcrumbs.showClasses": false,
+	"breadcrumbs.showMethods": false,
+	"breadcrumbs.showBooleans": false,
+	"breadcrumbs.showFunctions": false,
+	"breadcrumbs.showConstants": false,
+	"breadcrumbs.showEnumMembers": false,
+	"breadcrumbs.showConstructors": false,
+
+	// Языковые форматтеры
+	"[c]": { "editor.defaultFormatter": "ms-vscode.cpptools" },
+	"[css]": { "editor.defaultFormatter": "vscode.css-language-features" },
+	"[dockercompose]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[html]": { "editor.defaultFormatter": "vscode.html-language-features" },
+	"[java]": { "editor.defaultFormatter": "redhat.java" },
+
+	// Разное
+	"workbench.editor.highlightModifiedTabs": true, // Подсветка несохранённых вкладок
+	"files.trimTrailingWhitespace": true, // Удалять пробелы в конце строк при сохранении
+	"files.insertFinalNewline": true, // Всегда добавлять пустую строку в конце файла
+	"editor.minimap.enabled": false, // Отключить миникарту — экономит место
+	"editor.trimAutoWhitespace": true, // Автоматически удалять лишние пробелы
+	"editor.renderLineHighlight": "line", // Подсвечивать текущую строку целиком
+	"editor.matchBrackets": "always", // Всегда подсвечивать пары скобок
+	"editor.cursorSurroundingLines": 3, // Контекст строк вокруг курсора при навигации
+	"editor.scrollBeyondLastColumn": 2, // Немного прокрутки вправо для воздуха
+	"editor.showFoldingControls": "always", // Всегда показывать кнопки сворачивания
+	"editor.scrollbar.vertical": "auto", // Прячется, если не нужно
+	"editor.selectionHighlight": true, // Подсвечивать совпадения с выделением
+	"editor.codeLens": false,
+	"editor.bracketPairColorization.enabled": true,
+	"editor.glyphMargin": false,
+
+	"javascript.updateImportsOnFileMove.enabled": "always", // Обновление импортов при перемещении
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"typescript.preferences.quoteStyle": "single", // Одинарные кавычки в TS
+	"javascript.preferences.quoteStyle": "single",
+	"javascript.format.semicolons": "remove", // Удаление точек с запятой в JS
+	"typescript.format.semicolons": "remove",
+	"diffEditor.ignoreTrimWhitespace": false, // Учитывать пробелы при сравнении
+	"diffEditor.codeLens": true, // Показывать CodeLens в сравнении
+	"security.workspace.trust.untrustedFiles": "open", // Открывать ненадёжные файлы
+	"liveServer.settings.donotShowInfoMsg": true, // Не показывать сообщение от Live Server
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue", // Автопереопределение IntelliCode
+	"cmake.pinnedCommands": [
+		"workbench.action.tasks.configureTaskRunner",
+		"workbench.action.tasks.runTask"
+	], // Закреплённые команды CMake
+	"cmake.showConfigureWithDebuggerNotification": false, // Не показывать уведомление CMake
+	"docker.extension.dockerEngineAvailabilityPrompt": false, // Не показывать уведомления Docker
+	"redhat.telemetry.enabled": true,
+	"pgsql.serverGroups": [
+		{
+			"name": "Servers",
+			"id": "8DF9A94D-D0E5-4963-A2DD-5C4B0E73BDC2",
+			"isDefault": true
+		}
+	],
+	"pgsql.connections": [
+		{
+			"id": "7465EB1C-CA1B-45AC-B5AC-5C59519092AB",
+			"groupId": "8DF9A94D-D0E5-4963-A2DD-5C4B0E73BDC2",
+			"authenticationType": "SqlLogin",
+			"connectTimeout": 15,
+			"applicationName": "vscode-pgsql",
+			"clientEncoding": "utf8",
+			"sslmode": "prefer",
+			"server": "localhost",
+			"user": "postgres",
+			"password": "",
+			"database": "postgres",
+			"profileName": "localhost",
+			"expiresOn": 0
+		}
+	],
+	"workbench.colorTheme": "GitHub Dark",
+	"[go]": {
+		"editor.defaultFormatter": "golang.go"
+	},
+	"files.autoSave": "afterDelay" // Телеметрия RedHat
+
+	// Дополнительно
+	// Отключение подсказок для Go
+
+	// "[go]": {
+	// 	"editor.quickSuggestions": {
+	// 		"other": false,
+	// 		"comments": false,
+	// 		"strings": false
+	// 	},
+	// 	"editor.suggestOnTriggerCharacters": false,
+	// 	"editor.wordBasedSuggestions": false,
+	// 	"editor.parameterHints.enabled": false,
+	// 	"editor.defaultFormatter": "golang.go" // если ты уже используешь форматтер Go
+	// }
+
+	// "editor.stickyScroll.enabled": false, // Закрепление заголовков функций при прокрутке
+	// "editor.guides.bracketPairs": true // Показывать только активную пару скобок
+}

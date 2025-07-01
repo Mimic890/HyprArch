@@ -1,0 +1,139 @@
+{
+	"layer": "top",
+	"position": "top",
+	"height": 35,
+	"margin": "3 3 0 3",
+	"spacing": 1,
+	"modules-left": [
+		"custom/archlogo",
+		"hyprland/workspaces",
+		"tray",
+		"pulseaudio"
+	],
+	"modules-center": [
+		"cpu",
+		"memory",
+		"network#speed"
+	],
+	"modules-right": [
+		"network#status",
+		"custom/battery",
+		"backlight",
+		"hyprland/language",
+		"clock",
+		"custom/clipboard",
+		"custom/notifications",
+		"custom/shutdown"
+	],
+	"custom/archlogo": {
+		"format": "󰣇",
+		"on-click": "wofi --show drun",
+		"class": "archlogo",
+		"tooltip": false
+	},
+	"hyprland/workspaces": {
+		"format": "{name}",
+		"on-click": "activate",
+		"persistent-workspaces": {
+			"*": 4
+		},
+		"format-icons": {
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4"
+		}
+	},
+	"tray": {
+		"icon-size": 16,
+		"spacing": 8
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}%  {format_source}",
+		"format-bluetooth": "{icon} {volume}%  {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": " {format_source}",
+		"format-source": " {volume}%",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": " ",
+			"hands-free": " ",
+			"headset": " ",
+			"phone": " ",
+			"portable": " ",
+			"car": " ",
+			"default": [
+				" ",
+				" ",
+				" "
+			]
+		},
+		"on-click": "pavucontrol"
+	},
+	"cpu": {
+		"format": "CPU {usage}%",
+		"tooltip": true
+	},
+	"memory": {
+		"format": "RAM {}%"
+	},
+	"network#speed": {
+		"interface": "wlp3s0",
+		"format": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
+		"interval": 1,
+		"tooltip": false
+	},
+	"network#status": {
+		"format-wifi": "{signalStrength}% ",
+		"format-ethernet": "",
+		"tooltip-format": "{ifname} via {gwaddr} ",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "Disconnected ⚠",
+		"on-click": "kitty --start-as normal nmtui"
+	},
+	"custom/battery": {
+		"format": "{text}",
+		"tooltip": "{tooltip}",
+		"exec": "/home/mimic/.config/waybar/scripts/bat.sh",
+		"return-type": "json",
+		"interval": 1,
+		"class": "battery"
+	},
+	"backlight": {
+		"format": "{icon} {percent}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"clock": {
+		"format": " {:%H:%M:%S}",
+		"interval": 1,
+		"tooltip": false
+	},
+	"custom/notifications": {
+		"format": "󰂚",
+		"tooltip": false,
+		"on-click": "swaync-client -t",
+		"on-click-right": "swaync-client -c",
+		"interval": 999999
+	},
+	"custom/clipboard": {
+		"format": "",
+		"tooltip": false,
+		"on-click": "~/.config/hypr/scripts/clipboard.sh"
+	},
+	"custom/shutdown": {
+		"format": "⏻",
+		"tooltip": false,
+		"on-click": "wlogout",
+		"class": "shutdown"
+	}
+}

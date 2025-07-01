@@ -1,0 +1,7 @@
+[Default Applications]
+application/json=org.xfce.mousepad.desktop
+text/plain=org.xfce.mousepad.desktop
+
+[Added Associations]
+application/json=org.xfce.mousepad.desktop;
+text/plain=org.xfce.mousepad.desktop;
