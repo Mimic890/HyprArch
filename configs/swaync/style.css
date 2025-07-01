@@ -1,0 +1,282 @@
+/* Global styles */
+* {
+    font-family: FontAwesome, "FiraCode Nerd Font", "Material Icons";
+    font-weight: bold;
+}
+
+.control-center .notification-row {
+    background-color: unset;
+}
+
+/* Notification Row */
+.notification-row:focus,
+.notification-row:hover {
+    background: rgba(30, 30, 45, 0.7);
+}
+
+/* Notification */
+.notification {
+    background: rgba(30, 30, 45, 0.7);
+    color: #5c76cc;
+    border: 2px solid #5c76cc;
+    border-radius: 8px;
+}
+.notification .critical {
+    color: red;
+}
+
+.notification-content {
+    background: rgba(30, 30, 45, 0.7);
+}
+
+.close-button {
+    background: rgba(30, 30, 45, 0.7);
+    color: #5c76cc;
+}
+
+.close-button:hover {
+    background: #5c76cc;
+    color : rgba(30, 30, 45, 0.7);
+}
+
+/* Notification Actions */
+.notification-default-action,
+.notification-action {
+    background: rgba(30, 30, 45, 0.7);
+    border: 2px solid #5c76cc;
+    color: #5c76cc;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    background: #5c76cc;
+    color: rgba(30, 30, 45, 0.7);
+    border: 2px solid rgba(30, 30, 45, 0.7);
+}
+
+/* The "extra" optional bottom notification image */
+.body-image {
+    color: #5c76cc;
+}
+/* Notification summary/title */
+.summary {
+    color: #5c76cc;
+}
+/* Notification time-ago */
+.time {
+    color: #5c76cc;
+}
+/* Notification body */
+.body {
+    color: #5c76cc;
+}
+
+/* The inline reply section */
+.inline-reply .inline-reply-entry {
+    color: #5c76cc;
+    caret-color: #5c76cc;
+    background: rgba(30, 30, 45, 0.7);
+}
+
+.inline-reply-button {
+    color: #5c76cc;
+    background: rgba(30, 30, 45, 0.7);
+}
+.inline-reply-button:disabled {
+    color: rgb(248, 115, 237);
+}
+.inline-reply-button:hover {
+    background: #5c76cc;
+
+    color: rgba(30, 30, 45, 0.7);
+}
+
+/* Styling only for Grouped Notifications */
+.notification-group {
+    background: rgba(30, 30, 45, 0.7);
+    color: #5c76cc;
+    border: none;
+}
+.notification-group-headers,
+.notification-group-icon,
+.notification-group-header,
+.notification-group-buttons {
+    color: #5c76cc;
+}
+
+/* The Control Center which contains the old notifications + widgets */
+
+.control-center {
+    background: rgba(30, 30, 45, 0.7);
+    color: #5c76cc;
+    border: 2px solid #5c76cc;
+    border-radius: 8px;
+    padding: 5px;
+}
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+    background-color: rgba(30, 30, 45, 0.7);
+}
+
+/* The list of notifications */
+.control-center-list {
+    background: transparent;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+/* Window behind control center and on all other monitors */
+.blank-window {
+    background: transparent;
+}
+
+/*** Widgets ***/
+
+/* Title widget */
+.widget-title {
+    color: #5c76cc;
+    font-size: 16px;
+}
+
+.widget-title>button {
+    color: #5c76cc;
+    background: rgba(30, 30, 45, 0.7);
+    border: 2px solid #5c76cc;
+}
+
+.widget-title>button:hover {
+    background: #5c76cc;
+
+    color: rgba(30, 30, 45, 0.7);
+}
+
+/* DND widget */
+.widget-dnd {
+    color: #5c76cc;
+    font-size: 16px;
+}
+
+.widget-dnd>switch {
+    color: #5c76cc;
+    background: rgba(30, 30, 45, 0.7);
+    border: 2px solid #5c76cc;
+}
+
+.widget-dnd>switch:checked {
+    background: rgba(30, 30, 45, 0.7);
+}
+
+.widget-dnd>switch slider {
+    background: #5c76cc;
+}
+
+/* Inhibitors widget */
+.widget-inhibitors {
+    color: #5c76cc;
+    font-size: large;
+}
+.widget-inhibitors>button {
+    color: #5c76cc;
+    background: rgba(30, 30, 45, 0.7);
+    border: 2px solid #5c76cc;
+}
+.widget-inhibitors>button:hover {
+    background: #5c76cc;
+    color: rgba(30, 30, 45, 0.7);
+}
+
+/* Mpris widget */
+.widget-mpris {
+    margin: 0px;
+    border: 2px solid #5c76cc;
+    border-radius: 5px;
+}
+
+.widget-mpris,
+.widget-mpris-player,
+.widget-mpris-title,
+.widget-mpris-subtitle,
+.widget-mpris-player>box>button {
+    color: #5c76cc;
+}
+
+.widget-mpris-player>box>button:hover {
+    background: #5c76cc;
+    color: rgba(30, 30, 45, 0.7);
+}
+
+/* Volume and Brightness Widget*/
+/* Volume and Brightness Widget*/
+.widget-volume,
+.widget-backlight {
+    background-color: transparent;
+    padding: 5px;
+    margin: 2px;
+}
+
+.widget-menubar {
+    background-color: transparent;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 8px;
+}
+
+.dotfiles-buttons,
+.power-buttons {
+    color: #5c76cc;
+    background-color: transparent;
+    padding: 0px;
+    margin: 5px 0px;
+    border-radius: 8px;
+}
+
+.dotfiles-buttons>button,
+.power-buttons>button {
+    color: #5c76cc;
+    background: transparent;
+    margin: 2px;
+    padding: 2px;
+    border: 2px solid #5c76cc;
+    border-radius: 5px;
+}
+
+.dotfiles-buttons>button:hover,
+.power-buttons>button:hover {
+    background: #5c76cc;
+    color: rgba(30, 30, 45, 0.7);
+}
+
+/* Menubar */
+.widget-menubar>box>.menu-button-bar>button {
+    border: 2px solid #5c76cc;
+    color: #5c76cc;
+    background: transparent;
+}
+
+.widget-menubar>box>.menu-button-bar>button:hover {
+    background: #5c76cc;
+    color: rgba(30, 30, 45, 0.7);
+}
+
+/** Buttons Grid **/
+/* .widget-buttons-grid {
+    background-color: transparent;
+    border: 2px solid #5c76cc;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+    border-radius: 8px;
+    margin-top: 5px;
+    border: 0px;
+    color: #5c76cc;
+    background: transparent;
+} */
+
+/* .widget-buttons-grid>flowbox>flowboxchild>button:hover {
+    background: #5c76cc;
+    color: rgba(30, 30, 45, 0.7);
+} */
