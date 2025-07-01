@@ -62,6 +62,7 @@ pulseaudio-alsa
 qt5-graphicaleffects
 qt5-quickcontrols2
 qt5-x11extras
+qt5-tools
 qt5-svg
 qt5-wayland
 qt6-multimedia-ffmpeg
