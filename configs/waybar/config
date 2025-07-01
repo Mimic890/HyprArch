@@ -94,7 +94,7 @@
 	"custom/battery": {
 		"format": "{text}",
 		"tooltip": "{tooltip}",
-		"exec": "/home/mimic/.config/waybar/scripts/bat.sh",
+		"exec": "~/.config/waybar/scripts/bat.sh",
 		"return-type": "json",
 		"interval": 1,
 		"class": "battery"
