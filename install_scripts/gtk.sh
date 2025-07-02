@@ -30,7 +30,7 @@ cp -r "$HOME/HyprArch/customs/gtk/xsettingsd" "$HOME/.config/"
 
 # Breeze-Dark theme
 if [ -d "/usr/share/themes/Breeze-Dark" ] || [ -f "/usr/share/themes/Breeze-Dark" ]; then
-    rm -rf "/usr/share/themes/Breeze-Dark"
+    sudo rm -rf "/usr/share/themes/Breeze-Dark"
 fi
 sudo cp -r "$HOME/HyprArch/customs/gtk/Breeze-Dark" "/usr/share/themes/"
 
