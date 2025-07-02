@@ -2,6 +2,8 @@
 
 set -e
 
+sudo pacman -S --noconfirm gtk4 gtk3 nwg-look
+
 # .gtkrc-2.0
 if [ -f "$HOME/.gtkrc-2.0" ]; then
     rm -f "$HOME/.gtkrc-2.0"
@@ -25,6 +27,12 @@ if [ -d "$HOME/.config/xsettingsd" ] || [ -f "$HOME/.config/xsettingsd" ]; then
     rm -rf "$HOME/.config/xsettingsd"
 fi
 cp -r "$HOME/HyprArch/customs/gtk/xsettingsd" "$HOME/.config/"
+
+# Breeze-Dark theme
+if [ -d "/usr/share/themes/Breeze-Dark" ] || [ -f "/usr/share/themes/Breeze-Dark" ]; then
+    rm -rf "/usr/share/themes/Breeze-Dark"
+fi
+cp -r "$HOME/HyprArch/customs/gtk/Breeze-Dark" "/usr/share/themes/"
 
 echo -e "\e[32m✅ GTK theme installed successfully.\e[0m"
 exit 0

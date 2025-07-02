@@ -5,3 +5,5 @@ bibata-cursor-theme-bin
 ttf-orbitron
 noise-suppression-for-voice
 calf
+mpvpaper
+waypaper

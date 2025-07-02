@@ -99,3 +99,5 @@ xdg-desktop-portal-wlr
 xdg-desktop-portal-hyprland
 yt-dlp
 swaync
+swww
+os-prober

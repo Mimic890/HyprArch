@@ -1,4 +1,3 @@
-# GRUB boot loader configuration
 GRUB_DEFAULT=0
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR="Arch"
@@ -6,9 +5,10 @@ GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"
 GRUB_CMDLINE_LINUX="zswap.enabled=0 rootfstype=ext4"
 GRUB_PRELOAD_MODULES="part_gpt part_msdos"
 GRUB_TIMEOUT_STYLE=menu
+GRUB_EFI_STUB=true
 GRUB_TERMINAL_INPUT=console
 GRUB_GFXMODE=1920x1080,auto
 GRUB_GFXPAYLOAD_LINUX=keep
 GRUB_DISABLE_RECOVERY=true
-GRUB_BACKGROUND="/usr/share/grub/themes/hypr/background.jpg"
+GRUB_DISABLE_OS_PROBER=false
 GRUB_THEME="/usr/share/grub/themes/hypr/theme.txt"
