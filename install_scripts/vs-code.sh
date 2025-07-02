@@ -11,10 +11,10 @@ if [[ "$install_vscode" =~ ^[Yy]$ ]]; then
 
     for file in keybindings.json settings.json; do
         if [ -f "$CONFIG_DIR/$file" ]; then
-            rm "$CONFIG_DIR/$file"
+            rm "$CONFIG_DIR/$file" >>"$HOME/HyprArch/log.txt" 2>&1
         fi
         if [ -f "$SRC_DIR/$file" ]; then
-            cp "$SRC_DIR/$file" "$CONFIG_DIR/"
+            cp "$SRC_DIR/$file" "$CONFIG_DIR/" >>"$HOME/HyprArch/log.txt" 2>&1
         else
             echo -e "\e[33mФайл $SRC_DIR/$file не найден, пропуск.\e[0m"
         fi
@@ -25,7 +25,6 @@ if [[ "$install_vscode" =~ ^[Yy]$ ]]; then
 				exit 1
 		fi
 
-		# Проверка наличия файла со списком расширений
 		if [ ! -f "$EXT_FILE" ]; then
 				echo "❌ Файл $EXT_FILE не найден."
 				exit 1
@@ -33,22 +32,20 @@ if [[ "$install_vscode" =~ ^[Yy]$ ]]; then
 
 		echo "📦 Начинаю установку расширений из $EXT_FILE..."
 
-		# Функция для установки одного расширения
 		install_extension() {
 				local ext="$1"
 				if ! code --list-extensions | grep -q "^${ext}$"; then
 						echo "➤ Устанавливаю: $ext"
-						code --install-extension "$ext" || echo "⚠️ Ошибка при установке $ext"
+						code --install-extension "$ext" >>"$HOME/HyprArch/log.txt" 2>&1 || echo "⚠️ Ошибка при установке $ext"
 				else
 						echo "✔ Уже установлено: $ext"
 				fi
 		}
 
-		# Чтение списка и установка
 		while IFS= read -r extension || [[ -n "$extension" ]]; do
-				[[ -z "$extension" || "$extension" =~ ^# ]] && continue  # Пропуск пустых строк и комментариев
+				[[ -z "$extension" || "$extension" =~ ^# ]] && continue
 				install_extension "$extension"
-				done < "$EXT_FILE"
+		done < "$EXT_FILE"
 
 		echo "✅ Установка завершена."
 

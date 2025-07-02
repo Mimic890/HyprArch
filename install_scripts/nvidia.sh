@@ -8,7 +8,7 @@ fi
 echo -e "\e[34mОбнаружена NVIDIA GPU. Устанавливаем драйверы и зависимости...\e[0m"
 
 # Установка проприетарного драйвера и зависимостей
-sudo pacman -S --needed nvidia nvidia-utils nvidia-settings lib32-nvidia-utils egl-wayland
+sudo pacman -S --needed nvidia nvidia-utils nvidia-settings lib32-nvidia-utils egl-wayland >>"$HOME/HyprArch/log.txt" 2>&1
 
 # Добавление переменных окружения в конфиг Hyprland
 HYPR_CONF="$HOME/.config/hypr/hyprland.conf"
