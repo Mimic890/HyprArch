@@ -165,6 +165,11 @@ else
     echo -e "\e[33m⚠️  Не удалось определить сетевой интерфейс для waybar. Проверьте вручную.\e[0m"
 fi
 
+#---------------------------#
+#   NVIDIA driver setup     #
+#---------------------------#
+bash "$HOME/HyprArch/install_scripts/nvidia.sh"
+
 #-------------------------------#
 #   AstroNvim & HyprArch neovim #
 #-------------------------------#
