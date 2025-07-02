@@ -32,7 +32,7 @@ cp -r "$HOME/HyprArch/customs/gtk/xsettingsd" "$HOME/.config/"
 if [ -d "/usr/share/themes/Breeze-Dark" ] || [ -f "/usr/share/themes/Breeze-Dark" ]; then
     rm -rf "/usr/share/themes/Breeze-Dark"
 fi
-cp -r "$HOME/HyprArch/customs/gtk/Breeze-Dark" "/usr/share/themes/"
+sudo cp -r "$HOME/HyprArch/customs/gtk/Breeze-Dark" "/usr/share/themes/"
 
 echo -e "\e[32m✅ GTK theme installed successfully.\e[0m"
 exit 0
