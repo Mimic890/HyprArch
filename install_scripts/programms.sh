@@ -3,7 +3,7 @@
 # Установка whiptail
 if ! command -v whiptail &> /dev/null; then
   echo "Устанавливаю whiptail..."
-  sudo pacman -Sy --noconfirm whiptail
+  sudo pacman -Sy --noconfirm whiptail >>"$HOME/HyprArch/log.txt" 2>&1
 fi
 
 # Меню выбора программ
@@ -32,44 +32,44 @@ SELECTED=($CHOICES)
 # Установка yay, если не установлен
 if ! command -v yay &>/dev/null; then
   echo "yay не найден, устанавливаю..."
-  sudo pacman -Sy --needed --noconfirm git base-devel
-  git clone https://aur.archlinux.org/yay.git
-  cd yay && makepkg -si --noconfirm
-  cd .. && rm -rf yay
+  sudo pacman -Sy --needed --noconfirm git base-devel >>"$HOME/HyprArch/log.txt" 2>&1
+  git clone https://aur.archlinux.org/yay.git >>"$HOME/HyprArch/log.txt" 2>&1
+  cd yay && makepkg -si --noconfirm >>"$HOME/HyprArch/log.txt" 2>&1
+  cd .. && rm -rf yay >>"$HOME/HyprArch/log.txt" 2>&1
 fi
 
 # Установка выбранных программ
 for choice in "${SELECTED[@]}"; do
   case $choice in
     "\"Telegram\"")
-      sudo pacman -S --noconfirm telegram-desktop
+      sudo pacman -S --noconfirm telegram-desktop >>"$HOME/HyprArch/log.txt" 2>&1
     ;;
     "\"Steam\"")
-      sudo pacman -S --noconfirm steam
+      sudo pacman -S --noconfirm steam >>"$HOME/HyprArch/log.txt" 2>&1
     ;;
     "\"OBS Studio\"")
-      yay -S --noconfirm wlroots obs-studio
+      yay -S --noconfirm wlroots obs-studio >>"$HOME/HyprArch/log.txt" 2>&1
     ;;
     "\"Discord\"")
-      sudo pacman -S --noconfirm discord
+      sudo pacman -S --noconfirm discord >>"$HOME/HyprArch/log.txt" 2>&1
     ;;
     "\"Veracrypt\"")
-      sudo pacman -S --noconfirm veracrypt
+      sudo pacman -S --noconfirm veracrypt >>"$HOME/HyprArch/log.txt" 2>&1
     ;;
     "\"VS Code\"")
-      yay -S --noconfirm visual-studio-code-bin
+      yay -S --noconfirm visual-studio-code-bin >>"$HOME/HyprArch/log.txt" 2>&1
     ;;
     "\"Spotify\"")
-      yay -S --noconfirm spotify
+      yay -S --noconfirm spotify >>"$HOME/HyprArch/log.txt" 2>&1
     ;;
     "\"Obsidian\"")
-      yay -S --noconfirm obsidian
+      yay -S --noconfirm obsidian >>"$HOME/HyprArch/log.txt" 2>&1
     ;;
     "\"Yandex Music\"")
-      yay -S --noconfirm yandex-music
+      yay -S --noconfirm yandex-music >>"$HOME/HyprArch/log.txt" 2>&1
     ;;
     "\"Nekoray\"")
-      yay -S --noconfirm nekoray-bin
+      yay -S --noconfirm nekoray-bin >>"$HOME/HyprArch/log.txt" 2>&1
     ;;
   esac
 done
