@@ -33,6 +33,7 @@ htop
 hyprland
 hyprlock
 hyprpaper
+hyprpicker
 kitty
 lazygit
 mousepad

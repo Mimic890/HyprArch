@@ -151,6 +151,20 @@ else
     echo -e "\e[31m🚨 configs folder not found\e[0m"
 fi
 
+#---------------------------#
+#  Update waybar interface  #
+#---------------------------#
+# Определяем активный сетевой интерфейс (без loopback)
+WAYBAR_IFACE=$(ip route | awk '/default/ {print $5; exit}')
+if [ -n "$WAYBAR_IFACE" ]; then
+    for cfg in "$HOME/.config/waybar"/config*; do
+        [ -f "$cfg" ] && sed -i "s/wpl3s0/$WAYBAR_IFACE/g" "$cfg"
+    done
+    echo -e "\e[32m✅ Waybar config updated: wpl3s0 → $WAYBAR_IFACE\e[0m"
+else
+    echo -e "\e[33m⚠️  Не удалось определить сетевой интерфейс для waybar. Проверьте вручную.\e[0m"
+fi
+
 #-------------------------------#
 #   AstroNvim & HyprArch neovim #
 #-------------------------------#
@@ -166,7 +180,7 @@ fi
 #----------------------#
 read -p $'\e[36m Install music utils? (y/n): \e[0m' install_utils
 if [[ "$install_utils" =~ ^[Yy]$ ]]; then
-    sudo pacman -S lsp-plugins easyeffects 
+    sudo pacman -S lsp-plugins easyeffects
 fi
 
 #-------------#
