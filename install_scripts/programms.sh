@@ -14,6 +14,8 @@ CHOICES=$(whiptail --title "Дополнительные программы" --c
 "OBS Studio" "" OFF \
 "Discord" "" OFF \
 "Veracrypt" "" OFF \
+"Foliate" "books and pdf reader" OFF \
+"Motrix" "download manager" OFF \
 "VS Code" "(AUR)" OFF \
 "Spotify" "(AUR)" OFF \
 "Obsidian" "(AUR)" OFF \
@@ -55,6 +57,12 @@ for choice in "${SELECTED[@]}"; do
     ;;
     "\"Veracrypt\"")
       sudo pacman -S --noconfirm veracrypt >>"$HOME/HyprArch/log.txt" 2>&1
+    ;;
+    "\"Foliate\"")
+      sudo pacman -S --noconfirm foliate >>"$HOME/HyprArch/log.txt" 2>&1
+    ;;
+    "\"Motrix\"")
+      yay -S --noconfirm motrix-bin >>"$HOME/HyprArch/log.txt" 2>&1
     ;;
     "\"VS Code\"")
       yay -S --noconfirm visual-studio-code-bin >>"$HOME/HyprArch/log.txt" 2>&1

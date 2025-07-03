@@ -5,8 +5,6 @@
 clear
 # Make all install scripts executable
 chmod +x "$HOME/HyprArch/install_scripts/"*
-# Logging to file and terminal simultaneously
-# exec > >(tee -a log.txt) 2>&1   # <-- убираем эту строку
 # Exit on error
 set -e
 
@@ -143,10 +141,7 @@ sudo systemctl enable sddm >>log.txt 2>&1 || {
 #---------------------------#
 #  Create base directories  #
 #---------------------------#
-mkdir -p ~/Pictures
-mkdir -p ~/Videos
-mkdir -p ~/Documents
-mkdir -p ~/Downloads
+LANG=en_US.UTF-8 xdg-user-dirs-update --force
 
 #---------------------------#
 #   SHELL SELECTION         #

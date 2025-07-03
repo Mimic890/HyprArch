@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
 <action>
-	<icon>utilities-terminal</icon>
+	<icon>utilities-x-terminal</icon>
 	<name>Open Terminal Here</name>
 	<submenu></submenu>
 	<unique-id>1750841872964722-1</unique-id>
@@ -11,5 +11,15 @@
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>
+</action>
+<action>
+	<icon>vscode</icon>
+	<name>Open with VS Code</name>
+	<submenu></submenu>
+	<unique-id>1751556228497934-1</unique-id>
+	<command>code %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
 </action>
 </actions>
