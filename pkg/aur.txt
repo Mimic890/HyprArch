@@ -7,3 +7,4 @@ noise-suppression-for-voice
 calf
 mpvpaper
 waypaper
+zen-browser-bin

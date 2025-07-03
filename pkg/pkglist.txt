@@ -17,7 +17,6 @@ fastfetch
 feh
 ffmpeg
 file-roller
-firefox
 firejail
 gdu
 git
@@ -97,6 +96,7 @@ xdg-desktop-portal
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xdg-desktop-portal-hyprland
+xdg-desktop-portal-kde
 yt-dlp
 swaync
 swww
