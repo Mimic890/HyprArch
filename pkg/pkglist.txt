@@ -101,3 +101,5 @@ yt-dlp
 swaync
 swww
 os-prober
+jq
+wget
