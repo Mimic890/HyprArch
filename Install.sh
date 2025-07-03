@@ -206,7 +206,7 @@ fi
 #   Wallpapers installation #
 #---------------------------#
 echo -e "\e[34m🖼  Installing wallpapers...\e[0m"
-if bash "$HOME/HyprArch/install_scripts/wallpapers.sh" >>log.txt 2>&1; then
+if bash "$HOME/HyprArch/install_scripts/wallpapers.sh"; then
     echo -e "\e[32m✅ Wallpapers installed successfully.\e[0m"
 else
     echo -e "\e[31m❌ Wallpapers installation failed. Check log.txt for details.\e[0m"
@@ -217,14 +217,21 @@ fi
 #---------------------------#
 # Определяем активный сетевой интерфейс (без loopback)
 WAYBAR_IFACE=$(ip route | awk '/default/ {print $5; exit}')
+
 if [ -n "$WAYBAR_IFACE" ]; then
     for cfg in "$HOME/.config/waybar"/config*; do
-        [ -f "$cfg" ] && sed -i "s/wpl3s0/$WAYBAR_IFACE/g" "$cfg"
+        [ -f "$cfg" ] || continue
+        if grep -q '"interface":' "$cfg"; then
+            cp "$cfg" "$cfg.bak"
+            sed -i "s/\"interface\": \".*\"/\"interface\": \"$WAYBAR_IFACE\"/" "$cfg"
+            echo -e "\e[34m🔄 Обновлён интерфейс в $cfg\e[0m"
+        fi
     done
     echo -e "\e[32m✅ Waybar config updated: wpl3s0 → $WAYBAR_IFACE\e[0m"
 else
-    echo -e "\e[33m⚠️  Не удалось определить сетевой интерфейс для waybar. Проверьте вручную.\e[0m"
+    echo -e "\e[33m⚠️  Не удалось определить сетевой интерфейс для Waybar. Проверьте вручную.\e[0m"
 fi
+
 
 #---------------------------#
 #   NVIDIA driver setup     #

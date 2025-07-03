@@ -1,27 +1,21 @@
 #!/bin/bash
 
-set -e
-
 # Цветной вывод
-info() { echo -e "\e[1;36m[*]\e[0m $1"; }
-ok()   { echo -e "\e[1;32m[✓]\e[0m $1"; }
-warn() { echo -e "\e[1;33m[!]\e[0m $1"; }
+info()  { echo -e "[*] \e[36m$1\e[0m"; }
+warn()  { echo -e "[!] \e[33m$1\e[0m"; }
+error() { echo -e "[✗] \e[31m$1\e[0m"; }
 
-# Проверка зависимостей
-if ! command -v jq &>/dev/null || ! command -v wget &>/dev/null; then
-    warn "Устанавливаются необходимые пакеты (jq, wget)..."
-    sudo pacman -S jq wget --noconfirm
-fi
+# Пути
+WALLPAPER_DIR="$HOME/.config/hyprarch/wallpapers"
+LOG_FILE="$HOME/HyprArch/log.txt"
 
-# Пути и ссылки
-BASE_DIR="$HOME/.config/hyprarch/wallpapers"
-STATIC_DIR="$BASE_DIR/Static"
-LIVE_DIR="$BASE_DIR/Live"
-
+# Ссылки на папки
 STATIC_URL="https://disk.yandex.ru/d/RnFqUzpMfx_EFQ"
 LIVE_URL="https://disk.yandex.ru/d/N9qkFdXRHQQy0Q"
 
-mkdir -p "$STATIC_DIR" "$LIVE_DIR"
+# Подготовка
+mkdir -p "$WALLPAPER_DIR" "$HOME/HyprArch"
+echo "[$(date)] Начата установка обоев" > "$LOG_FILE"
 
 # Функция загрузки
 download_folder() {
@@ -42,26 +36,23 @@ download_folder() {
         fi
 
         DEST="$dest_dir/$NAME"
-        info "Загрузка $NAME → $DEST"
+        info "📥 $NAME"
 
-        wget --progress=bar:force:noscroll --show-progress "$FILE_URL" -O "$DEST" 2>&1 | \
-            grep --line-buffered -E "(\%)|([KMG]?B)" || true
+        wget --inet4-only --show-progress "$FILE_URL" -O "$DEST" >> "$LOG_FILE" 2>&1
     done
 }
 
-# Загрузка статичных обоев
+# Загрузка статичных
 info "Загрузка статичных обоев..."
-download_folder "$STATIC_URL" "$STATIC_DIR"
-ok "Статичные обои загружены в $STATIC_DIR"
+download_folder "$STATIC_URL" "$WALLPAPER_DIR"
 
-# Живые обои — опционально
-read -p $'\e[1;34mХотите установить живые обои? (y/N): \e[0m' choice
+# Спрашиваем про живые
+read -p "[?] Установить живые обои? [y/N]: " choice
 if [[ "$choice" =~ ^[Yy]$ ]]; then
     info "Загрузка живых обоев..."
-    download_folder "$LIVE_URL" "$LIVE_DIR"
-    ok "Живые обои загружены в $LIVE_DIR"
+    download_folder "$LIVE_URL" "$WALLPAPER_DIR"
 else
-    warn "Живые обои не загружены."
+    info "Пропущена установка живых обоев."
 fi
 
-ok "Установка завершена."
+info "✅ Установка завершена. Полный лог: $LOG_FILE"
