@@ -203,6 +203,16 @@ else
 fi
 
 #---------------------------#
+#   Wallpapers installation #
+#---------------------------#
+echo -e "\e[34m🖼  Installing wallpapers...\e[0m"
+if bash "$HOME/HyprArch/install_scripts/wallpapers.sh" >>log.txt 2>&1; then
+    echo -e "\e[32m✅ Wallpapers installed successfully.\e[0m"
+else
+    echo -e "\e[31m❌ Wallpapers installation failed. Check log.txt for details.\e[0m"
+fi
+
+#---------------------------#
 #  Update waybar interface  #
 #---------------------------#
 # Определяем активный сетевой интерфейс (без loopback)
