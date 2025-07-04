@@ -32,39 +32,14 @@ sudo pacman -Syu --needed base-devel --noconfirm --quiet >>log.txt 2>&1 || {
 
 # --- Новый блок: Проверка и установка пакетов из pkglist.txt ---
 echo -e "\e[34m📋 Checking installed packages...\e[0m"
-pkglist=($(cat ~/HyprArch/pkg/pkglist.txt))
+mapfile -t pkglist < ~/HyprArch/pkg/pkglist.txt
 installed_pkgs=()
 missing_pkgs=()
-
-check_pkg_installed() {
-    if pacman -Qq "$1" &>>log.txt; then
-        echo "installed:$1"
-    else
-        echo "missing:$1"
-    fi
-}
-
-results=()
 for pkg in "${pkglist[@]}"; do
-    check_pkg_installed "$pkg" &
-done
-
-wait
-
-while read -r line; do
-    results+=("$line")
-done < <(
-    for pkg in "${pkglist[@]}"; do
-        check_pkg_installed "$pkg" &
-    done
-    wait
-)
-
-for res in "${results[@]}"; do
-    if [[ $res == installed:* ]]; then
-        installed_pkgs+=("${res#installed:}")
-    elif [[ $res == missing:* ]]; then
-        missing_pkgs+=("${res#missing:}")
+    if pacman -Qq "$pkg" &>>log.txt; then
+        installed_pkgs+=("$pkg")
+    else
+        missing_pkgs+=("$pkg")
     fi
 done
 
@@ -302,6 +277,31 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+if pacman -Q visual-studio-code-bin &>/dev/null; then
+	if bash "$HOME/HyprArch/install_scripts/vs-code.sh"; then
+		echo -e "\e[32m✅ HyprVSCode custom installed successfully!\e[0m"
+	else
+		echo -e "\e[31m❌ Error installing HyprVSCode custom!\e[0m"
+	fi
+else
+	echo -e "\e[33m⚠️  VS-Code is not installed, skipping custom install\e[0m"
+fi
+
+# Going to HyprArch directory
+if cd "$HOME/HyprArch"; then
+    echo -e "\e[32m📂 Changed directory to HyprArch\e[0m"
+    echo -e "\e[32m✅ GRUB configured successfully.\e[0m"
+    exit 0
+else
+    echo -e "\e[31m❌ Failed to change directory to $HOME/HyprArch\e[0m"
+    echo -e "\e[31m❌ GRUB configuration failed. Aborting.\e[0m"
+    exit 1
+fi
+
+echo -e "\e[32m🎉 Installation completed successfully! 🚀\e[0m"
+exit 0
+exit 0
+exit 0
 if pacman -Q visual-studio-code-bin &>/dev/null; then
 	if bash "$HOME/HyprArch/install_scripts/vs-code.sh"; then
 		echo -e "\e[32m✅ HyprVSCode custom installed successfully!\e[0m"
