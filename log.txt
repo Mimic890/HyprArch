@@ -1,423 +1,501 @@
-[Чт 03 июл 2025 09:03:05 MSK] Начата установка обоев
---2025-07-03 09:03:07--  https://downloader.disk.yandex.ru/disk/60dbbd3a7e0c54090b7a5987f2bea755a5ae44e807b92cbce2f25b93380cde68/6866555a/ofIn-PQShN2rewKTSmFe5dcUx6S2yInU-A9jGBCLDJW3elUSvWNcoEittUBMZrN88kRAUFwDWQcjsShTQV3g-g%3D%3D?uid=0&filename=hyprfone1.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1667318&hid=aad442392496beacb15471770968cf0f&media_type=image&tknv=v3&etag=c8350ef0e63265b8e80b884696f6cd53
-Загружен сертификат CA «/etc/ssl/certs/ca-certificates.crt»
-Распознаётся downloader.disk.yandex.ru (downloader.disk.yandex.ru)… 77.88.21.127
-Подключение к downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 302 Found
-Адрес: https://s659vla.storage.yandex.net/rdisk/60dbbd3a7e0c54090b7a5987f2bea755a5ae44e807b92cbce2f25b93380cde68/6866555a/ofIn-PQShN2rewKTSmFe5dcUx6S2yInU-A9jGBCLDJW3elUSvWNcoEittUBMZrN88kRAUFwDWQcjsShTQV3g-g==?uid=0&filename=hyprfone1.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1667318&hid=aad442392496beacb15471770968cf0f&media_type=image&tknv=v3&etag=c8350ef0e63265b8e80b884696f6cd53&ts=639037bdc8a80&s=b2763bf58e7578672ddab30cf55ec62d537b165c39919afc49d9d38c58cff516&pb=U2FsdGVkX19tvlTxfYiVWXWE3TwYWHwLX0bCWxb56QwXIiQ9VyU3omgcN_gnlJTG9LuRvW5-l9sSJvgFje9B_cltY7HGgVz1AW0j5Rqm5Wk [переход]
---2025-07-03 09:03:07--  https://s659vla.storage.yandex.net/rdisk/60dbbd3a7e0c54090b7a5987f2bea755a5ae44e807b92cbce2f25b93380cde68/6866555a/ofIn-PQShN2rewKTSmFe5dcUx6S2yInU-A9jGBCLDJW3elUSvWNcoEittUBMZrN88kRAUFwDWQcjsShTQV3g-g==?uid=0&filename=hyprfone1.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1667318&hid=aad442392496beacb15471770968cf0f&media_type=image&tknv=v3&etag=c8350ef0e63265b8e80b884696f6cd53&ts=639037bdc8a80&s=b2763bf58e7578672ddab30cf55ec62d537b165c39919afc49d9d38c58cff516&pb=U2FsdGVkX19tvlTxfYiVWXWE3TwYWHwLX0bCWxb56QwXIiQ9VyU3omgcN_gnlJTG9LuRvW5-l9sSJvgFje9B_cltY7HGgVz1AW0j5Rqm5Wk
-Распознаётся s659vla.storage.yandex.net (s659vla.storage.yandex.net)… 5.45.240.21
-Подключение к s659vla.storage.yandex.net (s659vla.storage.yandex.net)|5.45.240.21|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 200 OK
-Длина: 1667318 (1,6M) [image/jpeg]
-Сохранение в: «/home/mimic/.config/hyprarch/wallpapers/hyprfone1.jpg»
+[Fri Jul  4 07:22:21 AM UTC 2025] Начата установка обоев
+--2025-07-04 07:22:23--  https://downloader.disk.yandex.ru/disk/813eb89c464c143b1f0c9e0044397b98fa0abf01d0bb4c5717e8816ed76a5cd2/6867b96e/ofIn-PQShN2rewKTSmFe5dcUx6S2yInU-A9jGBCLDJW3elUSvWNcoEittUBMZrN88kRAUFwDWQcjsShTQV3g-g%3D%3D?uid=0&filename=hyprfone1.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1667318&hid=aad442392496beacb15471770968cf0f&media_type=image&tknv=v3&etag=c8350ef0e63265b8e80b884696f6cd53
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving downloader.disk.yandex.ru (downloader.disk.yandex.ru)... 77.88.21.127
+Connecting to downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://s659vla.storage.yandex.net/rdisk/813eb89c464c143b1f0c9e0044397b98fa0abf01d0bb4c5717e8816ed76a5cd2/6867b96e/ofIn-PQShN2rewKTSmFe5dcUx6S2yInU-A9jGBCLDJW3elUSvWNcoEittUBMZrN88kRAUFwDWQcjsShTQV3g-g==?uid=0&filename=hyprfone1.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1667318&hid=aad442392496beacb15471770968cf0f&media_type=image&tknv=v3&etag=c8350ef0e63265b8e80b884696f6cd53&ts=63918b52eb780&s=62c7bba0075b59d36c04c0070b79cb33414bb5741ef63395b16bcbbf8496d64b&pb=U2FsdGVkX1-Fq08EHFWnV8oImU67erAzyqWhGD1fejvt3M71QZfznpmIQa6Oudu3EKAMfbbh7ICB5tveutzj5D8LBdWufxfBpksZAt1zTwU [following]
+--2025-07-04 07:22:25--  https://s659vla.storage.yandex.net/rdisk/813eb89c464c143b1f0c9e0044397b98fa0abf01d0bb4c5717e8816ed76a5cd2/6867b96e/ofIn-PQShN2rewKTSmFe5dcUx6S2yInU-A9jGBCLDJW3elUSvWNcoEittUBMZrN88kRAUFwDWQcjsShTQV3g-g==?uid=0&filename=hyprfone1.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1667318&hid=aad442392496beacb15471770968cf0f&media_type=image&tknv=v3&etag=c8350ef0e63265b8e80b884696f6cd53&ts=63918b52eb780&s=62c7bba0075b59d36c04c0070b79cb33414bb5741ef63395b16bcbbf8496d64b&pb=U2FsdGVkX1-Fq08EHFWnV8oImU67erAzyqWhGD1fejvt3M71QZfznpmIQa6Oudu3EKAMfbbh7ICB5tveutzj5D8LBdWufxfBpksZAt1zTwU
+Resolving s659vla.storage.yandex.net (s659vla.storage.yandex.net)... 5.45.240.21
+Connecting to s659vla.storage.yandex.net (s659vla.storage.yandex.net)|5.45.240.21|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1667318 (1.6M) [image/jpeg]
+Saving to: ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone1.jpg’
 
-     0K .......... .......... .......... .......... ..........  3%  411K 4s
-    50K .......... .......... .......... .......... ..........  6%  870K 3s
-   100K .......... .......... .......... .......... ..........  9% 1,31M 2s
-   150K .......... .......... .......... .......... .......... 12% 1,46M 2s
-   200K .......... .......... .......... .......... .......... 15% 2,10M 2s
-   250K .......... .......... .......... .......... .......... 18% 3,85M 1s
-   300K .......... .......... .......... .......... .......... 21% 3,71M 1s
-   350K .......... .......... .......... .......... .......... 24% 3,05M 1s
-   400K .......... .......... .......... .......... .......... 27% 5,01M 1s
-   450K .......... .......... .......... .......... .......... 30% 3,98M 1s
-   500K .......... .......... .......... .......... .......... 33% 4,21M 1s
-   550K .......... .......... .......... .......... .......... 36% 3,51M 1s
-   600K .......... .......... .......... .......... .......... 39% 5,99M 1s
-   650K .......... .......... .......... .......... .......... 42% 4,14M 1s
-   700K .......... .......... .......... .......... .......... 46% 37,8M 0s
-   750K .......... .......... .......... .......... .......... 49% 16,7M 0s
-   800K .......... .......... .......... .......... .......... 52% 8,07M 0s
-   850K .......... .......... .......... .......... .......... 55% 7,19M 0s
-   900K .......... .......... .......... .......... .......... 58% 10,1M 0s
-   950K .......... .......... .......... .......... .......... 61% 10,3M 0s
-  1000K .......... .......... .......... .......... .......... 64% 4,75M 0s
-  1050K .......... .......... .......... .......... .......... 67% 28,6M 0s
-  1100K .......... .......... .......... .......... .......... 70% 15,2M 0s
-  1150K .......... .......... .......... .......... .......... 73% 5,93M 0s
-  1200K .......... .......... .......... .......... .......... 76% 9,44M 0s
-  1250K .......... .......... .......... .......... .......... 79% 5,83M 0s
-  1300K .......... .......... .......... .......... .......... 82% 35,9M 0s
-  1350K .......... .......... .......... .......... .......... 85% 7,45M 0s
-  1400K .......... .......... .......... .......... .......... 89% 3,58M 0s
-  1450K .......... .......... .......... .......... .......... 92% 5,35M 0s
-  1500K .......... .......... .......... .......... .......... 95%  662K 0s
-  1550K .......... .......... .......... .......... .......... 98% 10,8M 0s
-  1600K .......... .......... ........                        100% 34,5M=0,6s
+     0K .......... .......... .......... .......... ..........  3%  518K 3s
+    50K .......... .......... .......... .......... ..........  6%  622K 3s
+   100K .......... .......... .......... .......... ..........  9% 1.34M 2s
+   150K .......... .......... .......... .......... .......... 12% 1.81M 2s
+   200K .......... .......... .......... .......... .......... 15% 2.08M 1s
+   250K .......... .......... .......... .......... .......... 18% 2.68M 1s
+   300K .......... .......... .......... .......... .......... 21% 4.44M 1s
+   350K .......... .......... .......... .......... .......... 24% 2.82M 1s
+   400K .......... .......... .......... .......... .......... 27% 4.27M 1s
+   450K .......... .......... .......... .......... .......... 30% 5.97M 1s
+   500K .......... .......... .......... .......... .......... 33% 8.15M 1s
+   550K .......... .......... .......... .......... .......... 36% 4.83M 1s
+   600K .......... .......... .......... .......... .......... 39% 5.86M 1s
+   650K .......... .......... .......... .......... .......... 42% 6.35M 0s
+   700K .......... .......... .......... .......... .......... 46% 7.32M 0s
+   750K .......... .......... .......... .......... .......... 49% 6.16M 0s
+   800K .......... .......... .......... .......... .......... 52% 4.82M 0s
+   850K .......... .......... .......... .......... .......... 55% 12.6M 0s
+   900K .......... .......... .......... .......... .......... 58% 21.7M 0s
+   950K .......... .......... .......... .......... .......... 61% 7.05M 0s
+  1000K .......... .......... .......... .......... .......... 64% 16.5M 0s
+  1050K .......... .......... .......... .......... .......... 67% 7.41M 0s
+  1100K .......... .......... .......... .......... .......... 70%  696K 0s
+  1150K .......... .......... .......... .......... .......... 73% 15.3M 0s
+  1200K .......... .......... .......... .......... .......... 76% 38.4M 0s
+  1250K .......... .......... .......... .......... .......... 79% 43.7M 0s
+  1300K .......... .......... .......... .......... .......... 82% 45.3M 0s
+  1350K .......... .......... .......... .......... .......... 85% 41.0M 0s
+  1400K .......... .......... .......... .......... .......... 89% 47.6M 0s
+  1450K .......... .......... .......... .......... .......... 92% 5.06M 0s
+  1500K .......... .......... .......... .......... .......... 95% 9.68M 0s
+  1550K .......... .......... .......... .......... .......... 98% 43.5M 0s
+  1600K .......... .......... ........                        100% 45.6M=0.5s
 
-2025-07-03 09:03:09 (2,85 MB/s) - «/home/mimic/.config/hyprarch/wallpapers/hyprfone1.jpg» сохранён [1667318/1667318]
+2025-07-04 07:22:27 (3.14 MB/s) - ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone1.jpg’ saved [1667318/1667318]
 
---2025-07-03 09:03:09--  https://downloader.disk.yandex.ru/disk/67f7fd0ee439b95246b4971b4d3fd5ae88ee1671e62cc2fd55c5bf144d795d02/6866555a/_LGqK44Js2q0KbPXPAAHBjdrtgp_1DttXlPAHJaj3xwfkwiDUFtDpNWgLZ-Snr9ismt747jb_atRZbal24x2qg%3D%3D?uid=0&filename=hyprfone10.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=205113&hid=f3a243edf31810fbc5992e4ff11ba6e6&media_type=image&tknv=v3&etag=0f1375a573ebbb5b55bca78c5f80cba3
-Загружен сертификат CA «/etc/ssl/certs/ca-certificates.crt»
-Распознаётся downloader.disk.yandex.ru (downloader.disk.yandex.ru)… 77.88.21.127
-Подключение к downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 302 Found
-Адрес: https://s543sas.storage.yandex.net/rdisk/67f7fd0ee439b95246b4971b4d3fd5ae88ee1671e62cc2fd55c5bf144d795d02/6866555a/_LGqK44Js2q0KbPXPAAHBjdrtgp_1DttXlPAHJaj3xwfkwiDUFtDpNWgLZ-Snr9ismt747jb_atRZbal24x2qg==?uid=0&filename=hyprfone10.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=205113&hid=f3a243edf31810fbc5992e4ff11ba6e6&media_type=image&tknv=v3&etag=0f1375a573ebbb5b55bca78c5f80cba3&ts=639037bdc8a80&s=a71ea5f3f08a222d758c07023625473091f528bbeca0f412c2cf7a99c6b325fd&pb=U2FsdGVkX18aQ9uaQYMqcyVh-h32oAz5EYj6IzQ2LEhmtr2G5FDi-jLotmPWMVew_gSveiD36fv8XOUTcDmibZCEmdrS_TRUp-nvMzDX_Bs [переход]
---2025-07-03 09:03:10--  https://s543sas.storage.yandex.net/rdisk/67f7fd0ee439b95246b4971b4d3fd5ae88ee1671e62cc2fd55c5bf144d795d02/6866555a/_LGqK44Js2q0KbPXPAAHBjdrtgp_1DttXlPAHJaj3xwfkwiDUFtDpNWgLZ-Snr9ismt747jb_atRZbal24x2qg==?uid=0&filename=hyprfone10.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=205113&hid=f3a243edf31810fbc5992e4ff11ba6e6&media_type=image&tknv=v3&etag=0f1375a573ebbb5b55bca78c5f80cba3&ts=639037bdc8a80&s=a71ea5f3f08a222d758c07023625473091f528bbeca0f412c2cf7a99c6b325fd&pb=U2FsdGVkX18aQ9uaQYMqcyVh-h32oAz5EYj6IzQ2LEhmtr2G5FDi-jLotmPWMVew_gSveiD36fv8XOUTcDmibZCEmdrS_TRUp-nvMzDX_Bs
-Распознаётся s543sas.storage.yandex.net (s543sas.storage.yandex.net)… 37.9.68.4
-Подключение к s543sas.storage.yandex.net (s543sas.storage.yandex.net)|37.9.68.4|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 200 OK
-Длина: 205113 (200K) [image/jpeg]
-Сохранение в: «/home/mimic/.config/hyprarch/wallpapers/hyprfone10.jpg»
+--2025-07-04 07:22:27--  https://downloader.disk.yandex.ru/disk/ed0bc22fc0d6a5748a7c152cdfde721636318029e5637912bf01ba19b8a4c424/6867b96e/_LGqK44Js2q0KbPXPAAHBjdrtgp_1DttXlPAHJaj3xwfkwiDUFtDpNWgLZ-Snr9ismt747jb_atRZbal24x2qg%3D%3D?uid=0&filename=hyprfone10.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=205113&hid=f3a243edf31810fbc5992e4ff11ba6e6&media_type=image&tknv=v3&etag=0f1375a573ebbb5b55bca78c5f80cba3
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving downloader.disk.yandex.ru (downloader.disk.yandex.ru)... 77.88.21.127
+Connecting to downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://s543sas.storage.yandex.net/rdisk/ed0bc22fc0d6a5748a7c152cdfde721636318029e5637912bf01ba19b8a4c424/6867b96e/_LGqK44Js2q0KbPXPAAHBjdrtgp_1DttXlPAHJaj3xwfkwiDUFtDpNWgLZ-Snr9ismt747jb_atRZbal24x2qg==?uid=0&filename=hyprfone10.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=205113&hid=f3a243edf31810fbc5992e4ff11ba6e6&media_type=image&tknv=v3&etag=0f1375a573ebbb5b55bca78c5f80cba3&ts=63918b52eb780&s=0df220a874cc1e0cbaf91913cee0cbc381dc2cd67de79ce036bae7f63bfb867c&pb=U2FsdGVkX19FR-tbee5EOPHiFqjrxSQlDAEpIi_vJE-01ZrYJ4YXolifVO-Jl32idJUP1kqVf7XxaogMmRHZM6CNdQoscvuKrsiOuaaXTdU [following]
+--2025-07-04 07:22:28--  https://s543sas.storage.yandex.net/rdisk/ed0bc22fc0d6a5748a7c152cdfde721636318029e5637912bf01ba19b8a4c424/6867b96e/_LGqK44Js2q0KbPXPAAHBjdrtgp_1DttXlPAHJaj3xwfkwiDUFtDpNWgLZ-Snr9ismt747jb_atRZbal24x2qg==?uid=0&filename=hyprfone10.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=205113&hid=f3a243edf31810fbc5992e4ff11ba6e6&media_type=image&tknv=v3&etag=0f1375a573ebbb5b55bca78c5f80cba3&ts=63918b52eb780&s=0df220a874cc1e0cbaf91913cee0cbc381dc2cd67de79ce036bae7f63bfb867c&pb=U2FsdGVkX19FR-tbee5EOPHiFqjrxSQlDAEpIi_vJE-01ZrYJ4YXolifVO-Jl32idJUP1kqVf7XxaogMmRHZM6CNdQoscvuKrsiOuaaXTdU
+Resolving s543sas.storage.yandex.net (s543sas.storage.yandex.net)... 37.9.68.4
+Connecting to s543sas.storage.yandex.net (s543sas.storage.yandex.net)|37.9.68.4|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 205113 (200K) [image/jpeg]
+Saving to: ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone10.jpg’
 
-     0K .......... .......... .......... .......... .......... 24%  398K 0s
-    50K .......... .......... .......... .......... .......... 49%  653K 0s
-   100K .......... .......... .......... .......... .......... 74% 1,44M 0s
-   150K .......... .......... .......... .......... .......... 99% 1,58M 0s
-   200K                                                       100%  583G=0,3s
+     0K .......... .......... .......... .......... .......... 24%  460K 0s
+    50K .......... .......... .......... .......... .......... 49%  485K 0s
+   100K .......... .......... .......... .......... .......... 74% 1.23M 0s
+   150K .......... .......... .......... .......... .......... 99% 1.46M 0s
+   200K                                                       100%  583G=0.3s
 
-2025-07-03 09:03:11 (750 KB/s) - «/home/mimic/.config/hyprarch/wallpapers/hyprfone10.jpg» сохранён [205113/205113]
+2025-07-04 07:22:30 (703 KB/s) - ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone10.jpg’ saved [205113/205113]
 
---2025-07-03 09:03:11--  https://downloader.disk.yandex.ru/disk/4b151804855e4d8e0dee1eb7a7b8385b73e1c22754d3d302e3df26a1f21a3199/6866555a/_LGqK44Js2q0KbPXPAAHBm0K5tMJl4Nicm_lrlzpwVQjrDzQ0dYD6UDBtfrMsqyreWdL1wta_-I7ZfnNLuJ9zA%3D%3D?uid=0&filename=hyprfone11.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=187998&hid=de3fff1e89cbec01e01461b2fcebe41c&media_type=image&tknv=v3&etag=c12428a0c185eb5ea9076801ad888d6a
-Загружен сертификат CA «/etc/ssl/certs/ca-certificates.crt»
-Распознаётся downloader.disk.yandex.ru (downloader.disk.yandex.ru)… 77.88.21.127
-Подключение к downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 302 Found
-Адрес: https://s93klg.storage.yandex.net/rdisk/4b151804855e4d8e0dee1eb7a7b8385b73e1c22754d3d302e3df26a1f21a3199/6866555a/_LGqK44Js2q0KbPXPAAHBm0K5tMJl4Nicm_lrlzpwVQjrDzQ0dYD6UDBtfrMsqyreWdL1wta_-I7ZfnNLuJ9zA==?uid=0&filename=hyprfone11.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=187998&hid=de3fff1e89cbec01e01461b2fcebe41c&media_type=image&tknv=v3&etag=c12428a0c185eb5ea9076801ad888d6a&ts=639037bdc8a80&s=fd62b8c3c32be279a05cbd3b5445a2885e104c5e9f5c255cf4bcaff786ae3aae&pb=U2FsdGVkX18zDAISTzYeICAyF5f-kC3Ary7gySx5EjC1WCsWqtKJ7tGHC0a4jiNQpiQX1OnvrD1hUxeAsYw1QPd4BbogiyIR0bFavPg5Dx0 [переход]
---2025-07-03 09:03:12--  https://s93klg.storage.yandex.net/rdisk/4b151804855e4d8e0dee1eb7a7b8385b73e1c22754d3d302e3df26a1f21a3199/6866555a/_LGqK44Js2q0KbPXPAAHBm0K5tMJl4Nicm_lrlzpwVQjrDzQ0dYD6UDBtfrMsqyreWdL1wta_-I7ZfnNLuJ9zA==?uid=0&filename=hyprfone11.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=187998&hid=de3fff1e89cbec01e01461b2fcebe41c&media_type=image&tknv=v3&etag=c12428a0c185eb5ea9076801ad888d6a&ts=639037bdc8a80&s=fd62b8c3c32be279a05cbd3b5445a2885e104c5e9f5c255cf4bcaff786ae3aae&pb=U2FsdGVkX18zDAISTzYeICAyF5f-kC3Ary7gySx5EjC1WCsWqtKJ7tGHC0a4jiNQpiQX1OnvrD1hUxeAsYw1QPd4BbogiyIR0bFavPg5Dx0
-Распознаётся s93klg.storage.yandex.net (s93klg.storage.yandex.net)… 5.255.221.93
-Подключение к s93klg.storage.yandex.net (s93klg.storage.yandex.net)|5.255.221.93|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 200 OK
-Длина: 187998 (184K) [image/jpeg]
-Сохранение в: «/home/mimic/.config/hyprarch/wallpapers/hyprfone11.jpg»
+--2025-07-04 07:22:30--  https://downloader.disk.yandex.ru/disk/1210bcaaca54c50fc8687498b2c7239cafa71ea10d9c6cc4dc421bbe9653ac75/6867b96e/_LGqK44Js2q0KbPXPAAHBm0K5tMJl4Nicm_lrlzpwVQjrDzQ0dYD6UDBtfrMsqyreWdL1wta_-I7ZfnNLuJ9zA%3D%3D?uid=0&filename=hyprfone11.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=187998&hid=de3fff1e89cbec01e01461b2fcebe41c&media_type=image&tknv=v3&etag=c12428a0c185eb5ea9076801ad888d6a
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving downloader.disk.yandex.ru (downloader.disk.yandex.ru)... 77.88.21.127
+Connecting to downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://s1083sas.storage.yandex.net/rdisk/1210bcaaca54c50fc8687498b2c7239cafa71ea10d9c6cc4dc421bbe9653ac75/6867b96e/_LGqK44Js2q0KbPXPAAHBm0K5tMJl4Nicm_lrlzpwVQjrDzQ0dYD6UDBtfrMsqyreWdL1wta_-I7ZfnNLuJ9zA==?uid=0&filename=hyprfone11.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=187998&hid=de3fff1e89cbec01e01461b2fcebe41c&media_type=image&tknv=v3&etag=c12428a0c185eb5ea9076801ad888d6a&ts=63918b52eb780&s=399a2b00683fd9916f2f31009521f8bd5fdbbe2fd2189eb70b843d68824b7166&pb=U2FsdGVkX1_KM69lo0rZrLZOL9U1euYPjgZ8kZ2AV2ui77viOenS7Cxy7OYIgcixX9RU0oeGywhxyTjab8wi5qkp0p3cYv8qWSiVS20ReqI [following]
+--2025-07-04 07:22:31--  https://s1083sas.storage.yandex.net/rdisk/1210bcaaca54c50fc8687498b2c7239cafa71ea10d9c6cc4dc421bbe9653ac75/6867b96e/_LGqK44Js2q0KbPXPAAHBm0K5tMJl4Nicm_lrlzpwVQjrDzQ0dYD6UDBtfrMsqyreWdL1wta_-I7ZfnNLuJ9zA==?uid=0&filename=hyprfone11.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=187998&hid=de3fff1e89cbec01e01461b2fcebe41c&media_type=image&tknv=v3&etag=c12428a0c185eb5ea9076801ad888d6a&ts=63918b52eb780&s=399a2b00683fd9916f2f31009521f8bd5fdbbe2fd2189eb70b843d68824b7166&pb=U2FsdGVkX1_KM69lo0rZrLZOL9U1euYPjgZ8kZ2AV2ui77viOenS7Cxy7OYIgcixX9RU0oeGywhxyTjab8wi5qkp0p3cYv8qWSiVS20ReqI
+Resolving s1083sas.storage.yandex.net (s1083sas.storage.yandex.net)... 141.8.182.173
+Connecting to s1083sas.storage.yandex.net (s1083sas.storage.yandex.net)|141.8.182.173|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 187998 (184K) [image/jpeg]
+Saving to: ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone11.jpg’
 
-     0K .......... .......... .......... .......... .......... 27%  413K 0s
-    50K .......... .......... .......... .......... .......... 54%  824K 0s
-   100K .......... .......... .......... .......... .......... 81% 1,36M 0s
-   150K .......... .......... .......... ...                  100% 1,61M=0,2s
+     0K .......... .......... .......... .......... .......... 27%  436K 0s
+    50K .......... .......... .......... .......... .......... 54%  589K 0s
+   100K .......... .......... .......... .......... .......... 81% 1.44M 0s
+   150K .......... .......... .......... ...                  100% 1.36M=0.3s
 
-2025-07-03 09:03:13 (771 KB/s) - «/home/mimic/.config/hyprarch/wallpapers/hyprfone11.jpg» сохранён [187998/187998]
+2025-07-04 07:22:33 (713 KB/s) - ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone11.jpg’ saved [187998/187998]
 
---2025-07-03 09:03:13--  https://downloader.disk.yandex.ru/disk/ca6b9987aa0debbb6e9e478336a059bba0da14f7dd1d344a6d35a6c84a17c490/6866555a/b5q3dk92h9kMrH6ePKf7IcOJrnNifgw-2XXGK473T_mkj8NwJLG9Nt4lsgqJ_L95_fNpJhSCkOGHNYMg5wriXg%3D%3D?uid=0&filename=hyprfone2.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=785024&hid=c0d3a4ef73f868c974fcb76566802e8e&media_type=image&tknv=v3&etag=984898ab6d502df77df657185eadeec9
-Загружен сертификат CA «/etc/ssl/certs/ca-certificates.crt»
-Распознаётся downloader.disk.yandex.ru (downloader.disk.yandex.ru)… 77.88.21.127
-Подключение к downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 302 Found
-Адрес: https://s643vla.storage.yandex.net/rdisk/ca6b9987aa0debbb6e9e478336a059bba0da14f7dd1d344a6d35a6c84a17c490/6866555a/b5q3dk92h9kMrH6ePKf7IcOJrnNifgw-2XXGK473T_mkj8NwJLG9Nt4lsgqJ_L95_fNpJhSCkOGHNYMg5wriXg==?uid=0&filename=hyprfone2.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=785024&hid=c0d3a4ef73f868c974fcb76566802e8e&media_type=image&tknv=v3&etag=984898ab6d502df77df657185eadeec9&ts=639037bdc8a80&s=77c5aa2456c7c6564a005dfaf93b5224cdb248205d3df2e1b1601f763afd9a1b&pb=U2FsdGVkX1--HJhVLhG90TCTwzYjCZqMsKeOnu-CniH3YvI1DUxX9JrUGBuS7DQJFQrl0KTyOwftX6MMBD-mrEjPDS9YB1q0reiL4NHV1g8 [переход]
---2025-07-03 09:03:14--  https://s643vla.storage.yandex.net/rdisk/ca6b9987aa0debbb6e9e478336a059bba0da14f7dd1d344a6d35a6c84a17c490/6866555a/b5q3dk92h9kMrH6ePKf7IcOJrnNifgw-2XXGK473T_mkj8NwJLG9Nt4lsgqJ_L95_fNpJhSCkOGHNYMg5wriXg==?uid=0&filename=hyprfone2.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=785024&hid=c0d3a4ef73f868c974fcb76566802e8e&media_type=image&tknv=v3&etag=984898ab6d502df77df657185eadeec9&ts=639037bdc8a80&s=77c5aa2456c7c6564a005dfaf93b5224cdb248205d3df2e1b1601f763afd9a1b&pb=U2FsdGVkX1--HJhVLhG90TCTwzYjCZqMsKeOnu-CniH3YvI1DUxX9JrUGBuS7DQJFQrl0KTyOwftX6MMBD-mrEjPDS9YB1q0reiL4NHV1g8
-Распознаётся s643vla.storage.yandex.net (s643vla.storage.yandex.net)… 5.45.240.5
-Подключение к s643vla.storage.yandex.net (s643vla.storage.yandex.net)|5.45.240.5|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 200 OK
-Длина: 785024 (767K) [image/jpeg]
-Сохранение в: «/home/mimic/.config/hyprarch/wallpapers/hyprfone2.jpg»
+--2025-07-04 07:22:33--  https://downloader.disk.yandex.ru/disk/58d9e2dfe1bcd1f2903ead837d86f2f0503b33fd0f4c368223c3f293e6cbac20/6867b96e/b5q3dk92h9kMrH6ePKf7IcOJrnNifgw-2XXGK473T_mkj8NwJLG9Nt4lsgqJ_L95_fNpJhSCkOGHNYMg5wriXg%3D%3D?uid=0&filename=hyprfone2.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=785024&hid=c0d3a4ef73f868c974fcb76566802e8e&media_type=image&tknv=v3&etag=984898ab6d502df77df657185eadeec9
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving downloader.disk.yandex.ru (downloader.disk.yandex.ru)... 77.88.21.127
+Connecting to downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://s643vla.storage.yandex.net/rdisk/58d9e2dfe1bcd1f2903ead837d86f2f0503b33fd0f4c368223c3f293e6cbac20/6867b96e/b5q3dk92h9kMrH6ePKf7IcOJrnNifgw-2XXGK473T_mkj8NwJLG9Nt4lsgqJ_L95_fNpJhSCkOGHNYMg5wriXg==?uid=0&filename=hyprfone2.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=785024&hid=c0d3a4ef73f868c974fcb76566802e8e&media_type=image&tknv=v3&etag=984898ab6d502df77df657185eadeec9&ts=63918b52eb780&s=114ea6174eeb9f03772c5e56ce34cfc5465423c0e402485d0120fa9f116b4315&pb=U2FsdGVkX18VtBu-MJqTyFCQ-G0R_iyWxmoplkJu4BnkoVCE4xELxlQFUvQhSMSvfTfF-asYJJ6qRT_1Gh3do_gpv_jwemR2ZdEuV730urs [following]
+--2025-07-04 07:22:34--  https://s643vla.storage.yandex.net/rdisk/58d9e2dfe1bcd1f2903ead837d86f2f0503b33fd0f4c368223c3f293e6cbac20/6867b96e/b5q3dk92h9kMrH6ePKf7IcOJrnNifgw-2XXGK473T_mkj8NwJLG9Nt4lsgqJ_L95_fNpJhSCkOGHNYMg5wriXg==?uid=0&filename=hyprfone2.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=785024&hid=c0d3a4ef73f868c974fcb76566802e8e&media_type=image&tknv=v3&etag=984898ab6d502df77df657185eadeec9&ts=63918b52eb780&s=114ea6174eeb9f03772c5e56ce34cfc5465423c0e402485d0120fa9f116b4315&pb=U2FsdGVkX18VtBu-MJqTyFCQ-G0R_iyWxmoplkJu4BnkoVCE4xELxlQFUvQhSMSvfTfF-asYJJ6qRT_1Gh3do_gpv_jwemR2ZdEuV730urs
+Resolving s643vla.storage.yandex.net (s643vla.storage.yandex.net)... 5.45.240.5
+Connecting to s643vla.storage.yandex.net (s643vla.storage.yandex.net)|5.45.240.5|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 785024 (767K) [image/jpeg]
+Saving to: ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone2.jpg’
 
-     0K .......... .......... .......... .......... ..........  6%  416K 2s
-    50K .......... .......... .......... .......... .......... 13%  878K 1s
-   100K .......... .......... .......... .......... .......... 19% 1,48M 1s
-   150K .......... .......... .......... .......... .......... 26% 1,41M 1s
-   200K .......... .......... .......... .......... .......... 32% 2,54M 1s
-   250K .......... .......... .......... .......... .......... 39% 3,78M 0s
-   300K .......... .......... .......... .......... .......... 45% 3,38M 0s
-   350K .......... .......... .......... .......... .......... 52% 3,11M 0s
-   400K .......... .......... .......... .......... .......... 58% 3,83M 0s
-   450K .......... .......... .......... .......... .......... 65% 3,74M 0s
-   500K .......... .......... .......... .......... .......... 71% 6,89M 0s
-   550K .......... .......... .......... .......... .......... 78% 6,79M 0s
-   600K .......... .......... .......... .......... .......... 84% 4,94M 0s
-   650K .......... .......... .......... .......... .......... 91% 11,1M 0s
-   700K .......... .......... .......... .......... .......... 97% 2,97M 0s
-   750K .......... ......                                     100% 92,6M=0,4s
+     0K .......... .......... .......... .......... ..........  6%  489K 1s
+    50K .......... .......... .......... .......... .......... 13%  541K 1s
+   100K .......... .......... .......... .......... .......... 19% 1.23M 1s
+   150K .......... .......... .......... .......... .......... 26% 1.69M 1s
+   200K .......... .......... .......... .......... .......... 32% 1.95M 1s
+   250K .......... .......... .......... .......... .......... 39% 2.85M 0s
+   300K .......... .......... .......... .......... .......... 45% 3.27M 0s
+   350K .......... .......... .......... .......... .......... 52% 3.81M 0s
+   400K .......... .......... .......... .......... .......... 58% 2.94M 0s
+   450K .......... .......... .......... .......... .......... 65% 6.45M 0s
+   500K .......... .......... .......... .......... .......... 71% 2.97M 0s
+   550K .......... .......... .......... .......... .......... 78% 13.0M 0s
+   600K .......... .......... .......... .......... .......... 84% 7.19M 0s
+   650K .......... .......... .......... .......... .......... 91% 8.62M 0s
+   700K .......... .......... .......... .......... .......... 97% 8.24M 0s
+   750K .......... ......                                     100% 5.36M=0.4s
 
-2025-07-03 09:03:15 (1,98 MB/s) - «/home/mimic/.config/hyprarch/wallpapers/hyprfone2.jpg» сохранён [785024/785024]
+2025-07-04 07:22:35 (1.88 MB/s) - ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone2.jpg’ saved [785024/785024]
 
---2025-07-03 09:03:15--  https://downloader.disk.yandex.ru/disk/266660017184789dae8a22122d8622a625c5fcec87ecf7bba86b616f2798495b/6866555a/fKqInKw3d7bLFOeFnMGnhGt1I945NIRcQ40DlHUsq7pYSRxViZ9LfRktu4iQYK2bizBG6ObOsxKleVBSNPvN7OQ8Jk3ZhBPIEgFmh2qhSXer8npumZHI4midPdWhecNq?uid=0&filename=hyprfone3.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=2710671&hid=2a334407aa71605ffca761c6f03b81b8&media_type=image&tknv=v3&etag=0570ae4b4d738985fb139747d0ba537e
-Загружен сертификат CA «/etc/ssl/certs/ca-certificates.crt»
-Распознаётся downloader.disk.yandex.ru (downloader.disk.yandex.ru)… 77.88.21.127
-Подключение к downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 302 Found
-Адрес: https://s482vla.storage.yandex.net/rdisk/266660017184789dae8a22122d8622a625c5fcec87ecf7bba86b616f2798495b/6866555a/fKqInKw3d7bLFOeFnMGnhGt1I945NIRcQ40DlHUsq7pYSRxViZ9LfRktu4iQYK2bizBG6ObOsxKleVBSNPvN7OQ8Jk3ZhBPIEgFmh2qhSXer8npumZHI4midPdWhecNq?uid=0&filename=hyprfone3.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=2710671&hid=2a334407aa71605ffca761c6f03b81b8&media_type=image&tknv=v3&etag=0570ae4b4d738985fb139747d0ba537e&ts=639037bdc8a80&s=114486bea076a2bc39147ed89acc3e3996b72164fda52dbd388ca641afef5ebd&pb=U2FsdGVkX1-o2SbrHur3nR1xoAEHM-TLOoPxBp_FK7iE7rZcmaTphHUt2RMd45TI06TVlSuG3AQdwn1-OpUPBOuhe6MIlOWzRlj_Om0oxiptEZ6omDT18WrWhhIvHl74 [переход]
---2025-07-03 09:03:16--  https://s482vla.storage.yandex.net/rdisk/266660017184789dae8a22122d8622a625c5fcec87ecf7bba86b616f2798495b/6866555a/fKqInKw3d7bLFOeFnMGnhGt1I945NIRcQ40DlHUsq7pYSRxViZ9LfRktu4iQYK2bizBG6ObOsxKleVBSNPvN7OQ8Jk3ZhBPIEgFmh2qhSXer8npumZHI4midPdWhecNq?uid=0&filename=hyprfone3.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=2710671&hid=2a334407aa71605ffca761c6f03b81b8&media_type=image&tknv=v3&etag=0570ae4b4d738985fb139747d0ba537e&ts=639037bdc8a80&s=114486bea076a2bc39147ed89acc3e3996b72164fda52dbd388ca641afef5ebd&pb=U2FsdGVkX1-o2SbrHur3nR1xoAEHM-TLOoPxBp_FK7iE7rZcmaTphHUt2RMd45TI06TVlSuG3AQdwn1-OpUPBOuhe6MIlOWzRlj_Om0oxiptEZ6omDT18WrWhhIvHl74
-Распознаётся s482vla.storage.yandex.net (s482vla.storage.yandex.net)… 77.88.17.1
-Подключение к s482vla.storage.yandex.net (s482vla.storage.yandex.net)|77.88.17.1|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 200 OK
-Длина: 2710671 (2,6M) [image/jpeg]
-Сохранение в: «/home/mimic/.config/hyprarch/wallpapers/hyprfone3.jpg»
+--2025-07-04 07:22:35--  https://downloader.disk.yandex.ru/disk/32f2c5a4292e7b31e191b9029df30191a4d06e25f8668e2441ba4b00545d2f00/6867b96e/fKqInKw3d7bLFOeFnMGnhGt1I945NIRcQ40DlHUsq7pYSRxViZ9LfRktu4iQYK2bizBG6ObOsxKleVBSNPvN7OQ8Jk3ZhBPIEgFmh2qhSXer8npumZHI4midPdWhecNq?uid=0&filename=hyprfone3.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=2710671&hid=2a334407aa71605ffca761c6f03b81b8&media_type=image&tknv=v3&etag=0570ae4b4d738985fb139747d0ba537e
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving downloader.disk.yandex.ru (downloader.disk.yandex.ru)... 77.88.21.127
+Connecting to downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://s482vla.storage.yandex.net/rdisk/32f2c5a4292e7b31e191b9029df30191a4d06e25f8668e2441ba4b00545d2f00/6867b96e/fKqInKw3d7bLFOeFnMGnhGt1I945NIRcQ40DlHUsq7pYSRxViZ9LfRktu4iQYK2bizBG6ObOsxKleVBSNPvN7OQ8Jk3ZhBPIEgFmh2qhSXer8npumZHI4midPdWhecNq?uid=0&filename=hyprfone3.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=2710671&hid=2a334407aa71605ffca761c6f03b81b8&media_type=image&tknv=v3&etag=0570ae4b4d738985fb139747d0ba537e&ts=63918b52eb780&s=e6e525bab6a0199c81cffb066ed0d16f12882dd9d451a6ac064ce0658323d271&pb=U2FsdGVkX18_SulfJZIZ5CTYqtvVeDN5sdXzpzJSPDl7HlfN-D94LHMRjdbDnZmmu7F_9efhuRb-hmG-CAoxEjoPVgZtO5nT0qP_u8-tcY-habv7LIdsvfMwKSkyUHc4 [following]
+--2025-07-04 07:22:36--  https://s482vla.storage.yandex.net/rdisk/32f2c5a4292e7b31e191b9029df30191a4d06e25f8668e2441ba4b00545d2f00/6867b96e/fKqInKw3d7bLFOeFnMGnhGt1I945NIRcQ40DlHUsq7pYSRxViZ9LfRktu4iQYK2bizBG6ObOsxKleVBSNPvN7OQ8Jk3ZhBPIEgFmh2qhSXer8npumZHI4midPdWhecNq?uid=0&filename=hyprfone3.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=2710671&hid=2a334407aa71605ffca761c6f03b81b8&media_type=image&tknv=v3&etag=0570ae4b4d738985fb139747d0ba537e&ts=63918b52eb780&s=e6e525bab6a0199c81cffb066ed0d16f12882dd9d451a6ac064ce0658323d271&pb=U2FsdGVkX18_SulfJZIZ5CTYqtvVeDN5sdXzpzJSPDl7HlfN-D94LHMRjdbDnZmmu7F_9efhuRb-hmG-CAoxEjoPVgZtO5nT0qP_u8-tcY-habv7LIdsvfMwKSkyUHc4
+Resolving s482vla.storage.yandex.net (s482vla.storage.yandex.net)... 77.88.17.1
+Connecting to s482vla.storage.yandex.net (s482vla.storage.yandex.net)|77.88.17.1|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2710671 (2.6M) [image/jpeg]
+Saving to: ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone3.jpg’
 
-     0K .......... .......... .......... .......... ..........  1%  468K 6s
-    50K .......... .......... .......... .......... ..........  3%  520K 5s
-   100K .......... .......... .......... .......... ..........  5% 1,55M 4s
-   150K .......... .......... .......... .......... ..........  7%  958K 4s
-   200K .......... .......... .......... .......... ..........  9% 2,36M 3s
-   250K .......... .......... .......... .......... .......... 11% 2,69M 3s
-   300K .......... .......... .......... .......... .......... 13% 2,71M 2s
-   350K .......... .......... .......... .......... .......... 15% 2,65M 2s
-   400K .......... .......... .......... .......... .......... 16% 2,80M 2s
-   450K .......... .......... .......... .......... .......... 18% 6,63M 2s
-   500K .......... .......... .......... .......... .......... 20% 3,77M 2s
-   550K .......... .......... .......... .......... .......... 22% 6,02M 1s
-   600K .......... .......... .......... .......... .......... 24% 7,86M 1s
-   650K .......... .......... .......... .......... .......... 26% 6,50M 1s
-   700K .......... .......... .......... .......... .......... 28% 8,79M 1s
-   750K .......... .......... .......... .......... .......... 30% 3,60M 1s
-   800K .......... .......... .......... .......... .......... 32% 33,0M 1s
-   850K .......... .......... .......... .......... .......... 33% 7,40M 1s
-   900K .......... .......... .......... .......... .......... 35% 9,54M 1s
-   950K .......... .......... .......... .......... .......... 37% 8,91M 1s
-  1000K .......... .......... .......... .......... .......... 39% 9,92M 1s
-  1050K .......... .......... .......... .......... .......... 41% 3,11M 1s
-  1100K .......... .......... .......... .......... .......... 43% 12,2M 1s
-  1150K .......... .......... .......... .......... .......... 45% 5,54M 1s
-  1200K .......... .......... .......... .......... .......... 47% 31,0M 1s
-  1250K .......... .......... .......... .......... .......... 49% 13,7M 1s
-  1300K .......... .......... .......... .......... .......... 50% 11,1M 0s
-  1350K .......... .......... .......... .......... .......... 52%  325K 1s
-  1400K .......... .......... .......... .......... .......... 54% 30,4M 1s
-  1450K .......... .......... .......... .......... .......... 56% 35,2M 1s
-  1500K .......... .......... .......... .......... .......... 58% 32,8M 0s
-  1550K .......... .......... .......... .......... .......... 60% 34,4M 0s
-  1600K .......... .......... .......... .......... .......... 62% 36,0M 0s
-  1650K .......... .......... .......... .......... .......... 64% 34,2M 0s
-  1700K .......... .......... .......... .......... .......... 66% 35,8M 0s
-  1750K .......... .......... .......... .......... .......... 67% 31,1M 0s
-  1800K .......... .......... .......... .......... .......... 69% 37,7M 0s
-  1850K .......... .......... .......... .......... .......... 71% 29,3M 0s
-  1900K .......... .......... .......... .......... .......... 73% 37,7M 0s
-  1950K .......... .......... .......... .......... .......... 75% 34,7M 0s
-  2000K .......... .......... .......... .......... .......... 77% 37,7M 0s
-  2050K .......... .......... .......... .......... .......... 79% 1,90M 0s
-  2100K .......... .......... .......... .......... .......... 81% 35,2M 0s
-  2150K .......... .......... .......... .......... .......... 83% 32,9M 0s
-  2200K .......... .......... .......... .......... .......... 84% 36,5M 0s
-  2250K .......... .......... .......... .......... .......... 86% 35,2M 0s
-  2300K .......... .......... .......... .......... .......... 88% 34,6M 0s
-  2350K .......... .......... .......... .......... .......... 90% 33,5M 0s
-  2400K .......... .......... .......... .......... .......... 92% 38,2M 0s
-  2450K .......... .......... .......... .......... .......... 94% 35,4M 0s
-  2500K .......... .......... .......... .......... .......... 96% 3,22M 0s
-  2550K .......... .......... .......... .......... .......... 98% 35,4M 0s
-  2600K .......... .......... .......... .......... .......   100% 35,0M=0,7s
+     0K .......... .......... .......... .......... ..........  1%  476K 5s
+    50K .......... .......... .......... .......... ..........  3%  762K 4s
+   100K .......... .......... .......... .......... ..........  5% 1.49M 3s
+   150K .......... .......... .......... .......... ..........  7% 1.59M 3s
+   200K .......... .......... .......... .......... ..........  9% 2.70M 2s
+   250K .......... .......... .......... .......... .......... 11% 2.61M 2s
+   300K .......... .......... .......... .......... .......... 13% 3.54M 2s
+   350K .......... .......... .......... .......... .......... 15% 4.04M 2s
+   400K .......... .......... .......... .......... .......... 16% 4.65M 2s
+   450K .......... .......... .......... .......... .......... 18% 4.90M 1s
+   500K .......... .......... .......... .......... .......... 20% 5.23M 1s
+   550K .......... .......... .......... .......... .......... 22% 7.38M 1s
+   600K .......... .......... .......... .......... .......... 24% 6.84M 1s
+   650K .......... .......... .......... .......... .......... 26% 5.16M 1s
+   700K .......... .......... .......... .......... .......... 28% 7.12M 1s
+   750K .......... .......... .......... .......... .......... 30% 5.06M 1s
+   800K .......... .......... .......... .......... .......... 32% 15.7M 1s
+   850K .......... .......... .......... .......... .......... 33% 7.38M 1s
+   900K .......... .......... .......... .......... .......... 35% 6.26M 1s
+   950K .......... .......... .......... .......... .......... 37% 6.35M 1s
+  1000K .......... .......... .......... .......... .......... 39% 21.3M 1s
+  1050K .......... .......... .......... .......... .......... 41% 15.8M 1s
+  1100K .......... .......... .......... .......... .......... 43% 7.22M 1s
+  1150K .......... .......... .......... .......... .......... 45%  278K 1s
+  1200K .......... .......... .......... .......... .......... 47% 33.5M 1s
+  1250K .......... .......... .......... .......... .......... 49% 28.8M 1s
+  1300K .......... .......... .......... .......... .......... 50% 44.4M 1s
+  1350K .......... .......... .......... .......... .......... 52% 40.3M 1s
+  1400K .......... .......... .......... .......... .......... 54% 41.8M 0s
+  1450K .......... .......... .......... .......... .......... 56% 33.4M 0s
+  1500K .......... .......... .......... .......... .......... 58% 40.7M 0s
+  1550K .......... .......... .......... .......... .......... 60% 35.9M 0s
+  1600K .......... .......... .......... .......... .......... 62% 23.4M 0s
+  1650K .......... .......... .......... .......... .......... 64% 29.9M 0s
+  1700K .......... .......... .......... .......... .......... 66% 45.5M 0s
+  1750K .......... .......... .......... .......... .......... 67% 40.7M 0s
+  1800K .......... .......... .......... .......... .......... 69% 37.1M 0s
+  1850K .......... .......... .......... .......... .......... 71% 40.9M 0s
+  1900K .......... .......... .......... .......... .......... 73% 39.6M 0s
+  1950K .......... .......... .......... .......... .......... 75% 38.2M 0s
+  2000K .......... .......... .......... .......... .......... 77% 45.8M 0s
+  2050K .......... .......... .......... .......... .......... 79% 42.1M 0s
+  2100K .......... .......... .......... .......... .......... 81% 45.1M 0s
+  2150K .......... .......... .......... .......... .......... 83% 49.3M 0s
+  2200K .......... .......... .......... .......... .......... 84% 63.5M 0s
+  2250K .......... .......... .......... .......... .......... 86% 64.9M 0s
+  2300K .......... .......... .......... .......... .......... 88% 66.9M 0s
+  2350K .......... .......... .......... .......... .......... 90% 66.9M 0s
+  2400K .......... .......... .......... .......... .......... 92%  863K 0s
+  2450K .......... .......... .......... .......... .......... 94% 20.9M 0s
+  2500K .......... .......... .......... .......... .......... 96% 43.0M 0s
+  2550K .......... .......... .......... .......... .......... 98% 43.3M 0s
+  2600K .......... .......... .......... .......... .......   100% 46.3M=0.7s
 
-2025-07-03 09:03:17 (3,54 MB/s) - «/home/mimic/.config/hyprarch/wallpapers/hyprfone3.jpg» сохранён [2710671/2710671]
+2025-07-04 07:22:40 (3.82 MB/s) - ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone3.jpg’ saved [2710671/2710671]
 
---2025-07-03 09:03:17--  https://downloader.disk.yandex.ru/disk/3e2a75df620d7d25ff44216db9562755a88902615f7d30cdbbfec031528ee43b/6866555a/dOuFtjj1VK4kvp3Rme7mebVSBTN2lBLPN0S9iTkMpG4Yj-6WCvUzw9zUN-yY7LoKz4cQCyBDGXmaeXuTmetoww%3D%3D?uid=0&filename=hyprfone4.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1334776&hid=d9883b97c6410ae6c0780278003d7e46&media_type=image&tknv=v3&etag=2154bd4e9e80580c5a5e5443b7764b11
-Загружен сертификат CA «/etc/ssl/certs/ca-certificates.crt»
-Распознаётся downloader.disk.yandex.ru (downloader.disk.yandex.ru)… 77.88.21.127
-Подключение к downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 302 Found
-Адрес: https://s1156sas.storage.yandex.net/rdisk/3e2a75df620d7d25ff44216db9562755a88902615f7d30cdbbfec031528ee43b/6866555a/dOuFtjj1VK4kvp3Rme7mebVSBTN2lBLPN0S9iTkMpG4Yj-6WCvUzw9zUN-yY7LoKz4cQCyBDGXmaeXuTmetoww==?uid=0&filename=hyprfone4.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1334776&hid=d9883b97c6410ae6c0780278003d7e46&media_type=image&tknv=v3&etag=2154bd4e9e80580c5a5e5443b7764b11&ts=639037bdc8a80&s=6c25abe9164b0d95e0c33c8cdcf8fca940390723b55f817edbb697bfdaf50d8c&pb=U2FsdGVkX1_TMS2m4MqtzMAoKF7WsoMMlJKbxMyuWKDXUtiLlK9d-JMRZce1i7mlSZ0e91F1dB1ycoCRzonC7CF_f6InFJKAvtJa8tYL-LA [переход]
---2025-07-03 09:03:18--  https://s1156sas.storage.yandex.net/rdisk/3e2a75df620d7d25ff44216db9562755a88902615f7d30cdbbfec031528ee43b/6866555a/dOuFtjj1VK4kvp3Rme7mebVSBTN2lBLPN0S9iTkMpG4Yj-6WCvUzw9zUN-yY7LoKz4cQCyBDGXmaeXuTmetoww==?uid=0&filename=hyprfone4.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1334776&hid=d9883b97c6410ae6c0780278003d7e46&media_type=image&tknv=v3&etag=2154bd4e9e80580c5a5e5443b7764b11&ts=639037bdc8a80&s=6c25abe9164b0d95e0c33c8cdcf8fca940390723b55f817edbb697bfdaf50d8c&pb=U2FsdGVkX1_TMS2m4MqtzMAoKF7WsoMMlJKbxMyuWKDXUtiLlK9d-JMRZce1i7mlSZ0e91F1dB1ycoCRzonC7CF_f6InFJKAvtJa8tYL-LA
-Распознаётся s1156sas.storage.yandex.net (s1156sas.storage.yandex.net)… 213.180.206.156
-Подключение к s1156sas.storage.yandex.net (s1156sas.storage.yandex.net)|213.180.206.156|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 200 OK
-Длина: 1334776 (1,3M) [image/jpeg]
-Сохранение в: «/home/mimic/.config/hyprarch/wallpapers/hyprfone4.jpg»
+--2025-07-04 07:22:40--  https://downloader.disk.yandex.ru/disk/3590d8a724ab3c096387e548eb38185c37acf61e31dec65f9e82ed0dd80e29d1/6867b96e/dOuFtjj1VK4kvp3Rme7mebVSBTN2lBLPN0S9iTkMpG4Yj-6WCvUzw9zUN-yY7LoKz4cQCyBDGXmaeXuTmetoww%3D%3D?uid=0&filename=hyprfone4.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1334776&hid=d9883b97c6410ae6c0780278003d7e46&media_type=image&tknv=v3&etag=2154bd4e9e80580c5a5e5443b7764b11
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving downloader.disk.yandex.ru (downloader.disk.yandex.ru)... 77.88.21.127
+Connecting to downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://s1156sas.storage.yandex.net/rdisk/3590d8a724ab3c096387e548eb38185c37acf61e31dec65f9e82ed0dd80e29d1/6867b96e/dOuFtjj1VK4kvp3Rme7mebVSBTN2lBLPN0S9iTkMpG4Yj-6WCvUzw9zUN-yY7LoKz4cQCyBDGXmaeXuTmetoww==?uid=0&filename=hyprfone4.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1334776&hid=d9883b97c6410ae6c0780278003d7e46&media_type=image&tknv=v3&etag=2154bd4e9e80580c5a5e5443b7764b11&ts=63918b52eb780&s=23b4a67c99754e4732bd7d90759109410a627a07f83d858ed0e9c8e823d6747a&pb=U2FsdGVkX1_Tgxpj0W236zo0tqHdRMSjPs0h3CcbSL3jiUTk0H_arJjjb_Bic5Df-PVQzFeA5sPAo4rjFXZptCTMM-YjjCQtq-J59HRdsm4 [following]
+--2025-07-04 07:22:41--  https://s1156sas.storage.yandex.net/rdisk/3590d8a724ab3c096387e548eb38185c37acf61e31dec65f9e82ed0dd80e29d1/6867b96e/dOuFtjj1VK4kvp3Rme7mebVSBTN2lBLPN0S9iTkMpG4Yj-6WCvUzw9zUN-yY7LoKz4cQCyBDGXmaeXuTmetoww==?uid=0&filename=hyprfone4.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1334776&hid=d9883b97c6410ae6c0780278003d7e46&media_type=image&tknv=v3&etag=2154bd4e9e80580c5a5e5443b7764b11&ts=63918b52eb780&s=23b4a67c99754e4732bd7d90759109410a627a07f83d858ed0e9c8e823d6747a&pb=U2FsdGVkX1_Tgxpj0W236zo0tqHdRMSjPs0h3CcbSL3jiUTk0H_arJjjb_Bic5Df-PVQzFeA5sPAo4rjFXZptCTMM-YjjCQtq-J59HRdsm4
+Resolving s1156sas.storage.yandex.net (s1156sas.storage.yandex.net)... 213.180.206.156
+Connecting to s1156sas.storage.yandex.net (s1156sas.storage.yandex.net)|213.180.206.156|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1334776 (1.3M) [image/jpeg]
+Saving to: ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone4.jpg’
 
-     0K .......... .......... .......... .......... ..........  3%  387K 3s
-    50K .......... .......... .......... .......... ..........  7%  845K 2s
-   100K .......... .......... .......... .......... .......... 11% 1,39M 2s
-   150K .......... .......... .......... .......... .......... 15% 1,55M 1s
-   200K .......... .......... .......... .......... .......... 19% 2,46M 1s
-   250K .......... .......... .......... .......... .......... 23% 2,98M 1s
-   300K .......... .......... .......... .......... .......... 26% 3,66M 1s
-   350K .......... .......... .......... .......... .......... 30% 3,23M 1s
-   400K .......... .......... .......... .......... .......... 34% 3,69M 1s
-   450K .......... .......... .......... .......... .......... 38% 5,22M 1s
-   500K .......... .......... .......... .......... .......... 42% 4,61M 0s
-   550K .......... .......... .......... .......... .......... 46% 6,75M 0s
-   600K .......... .......... .......... .......... .......... 49% 7,13M 0s
-   650K .......... .......... .......... .......... .......... 53% 6,14M 0s
-   700K .......... .......... .......... .......... .......... 57% 5,60M 0s
-   750K .......... .......... .......... .......... .......... 61% 6,81M 0s
-   800K .......... .......... .......... .......... .......... 65% 12,6M 0s
-   850K .......... .......... .......... .......... .......... 69% 8,86M 0s
-   900K .......... .......... .......... .......... .......... 72% 10,8M 0s
-   950K .......... .......... .......... .......... .......... 76% 6,89M 0s
-  1000K .......... .......... .......... .......... .......... 80% 12,0M 0s
-  1050K .......... .......... .......... .......... .......... 84% 3,31M 0s
-  1100K .......... .......... .......... .......... .......... 88% 21,1M 0s
-  1150K .......... .......... .......... .......... .......... 92% 21,3M 0s
-  1200K .......... .......... .......... .......... .......... 95% 14,5M 0s
-  1250K .......... .......... .......... .......... .......... 99% 9,20M 0s
-  1300K ...                                                   100% 6,50T=0,4s
+     0K .......... .......... .......... .......... ..........  3%  413K 3s
+    50K .......... .......... .......... .......... ..........  7%  429K 3s
+   100K .......... .......... .......... .......... .......... 11% 1.09M 2s
+   150K .......... .......... .......... .......... .......... 15% 1.09M 2s
+   200K .......... .......... .......... .......... .......... 19% 2.05M 1s
+   250K .......... .......... .......... .......... .......... 23% 2.32M 1s
+   300K .......... .......... .......... .......... .......... 26% 2.00M 1s
+   350K .......... .......... .......... .......... .......... 30% 2.93M 1s
+   400K .......... .......... .......... .......... .......... 34% 3.32M 1s
+   450K .......... .......... .......... .......... .......... 38% 3.05M 1s
+   500K .......... .......... .......... .......... .......... 42% 6.30M 1s
+   550K .......... .......... .......... .......... .......... 46% 5.60M 1s
+   600K .......... .......... .......... .......... .......... 49% 4.23M 0s
+   650K .......... .......... .......... .......... .......... 53% 3.49M 0s
+   700K .......... .......... .......... .......... .......... 57% 4.45M 0s
+   750K .......... .......... .......... .......... .......... 61% 8.96M 0s
+   800K .......... .......... .......... .......... .......... 65% 4.97M 0s
+   850K .......... .......... .......... .......... .......... 69% 18.0M 0s
+   900K .......... .......... .......... .......... .......... 72% 10.7M 0s
+   950K .......... .......... .......... .......... .......... 76% 6.94M 0s
+  1000K .......... .......... .......... .......... .......... 80% 5.55M 0s
+  1050K .......... .......... .......... .......... .......... 84% 18.5M 0s
+  1100K .......... .......... .......... .......... .......... 88% 13.4M 0s
+  1150K .......... .......... .......... .......... .......... 92% 4.35M 0s
+  1200K .......... .......... .......... .......... .......... 95% 24.9M 0s
+  1250K .......... .......... .......... .......... .......... 99% 16.6M 0s
+  1300K ...                                                   100% 6.50T=0.6s
 
-2025-07-03 09:03:19 (2,87 MB/s) - «/home/mimic/.config/hyprarch/wallpapers/hyprfone4.jpg» сохранён [1334776/1334776]
+2025-07-04 07:22:43 (2.28 MB/s) - ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone4.jpg’ saved [1334776/1334776]
 
---2025-07-03 09:03:19--  https://downloader.disk.yandex.ru/disk/0e3b0bdafd1f35852913315726b2e2bfa62f505e619ede40886c78d94e5d9b04/6866555a/b5q3dk92h9kMrH6ePKf7IX66fZ57nuw94q4ZuslWhV3hgnncMoe1zZ2UJvjUYQ2Qg2LK5Jhc82csrXoswISCzw%3D%3D?uid=0&filename=hyprfone5.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1100733&hid=2829a59c3815ab4e44be2a692d442f7b&media_type=image&tknv=v3&etag=778054d00c85a62d5a604540d7cb970c
-Загружен сертификат CA «/etc/ssl/certs/ca-certificates.crt»
-Распознаётся downloader.disk.yandex.ru (downloader.disk.yandex.ru)… 77.88.21.127
-Подключение к downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 302 Found
-Адрес: https://s349vla.storage.yandex.net/rdisk/0e3b0bdafd1f35852913315726b2e2bfa62f505e619ede40886c78d94e5d9b04/6866555a/b5q3dk92h9kMrH6ePKf7IX66fZ57nuw94q4ZuslWhV3hgnncMoe1zZ2UJvjUYQ2Qg2LK5Jhc82csrXoswISCzw==?uid=0&filename=hyprfone5.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1100733&hid=2829a59c3815ab4e44be2a692d442f7b&media_type=image&tknv=v3&etag=778054d00c85a62d5a604540d7cb970c&ts=639037bdc8a80&s=ef405cf85507528d87b3f1e860cf016c356e649b73cc8c280590bac1811de888&pb=U2FsdGVkX1_UzsyKp2JItlpziyRQVJsf8eNR72ACW3zBZ-NNTjLe3MsTdA-7umY81V8T1ri_yZ1WjG9HlKwbo60M2zyt3QZ_d9VZrM6pEx4 [переход]
---2025-07-03 09:03:20--  https://s349vla.storage.yandex.net/rdisk/0e3b0bdafd1f35852913315726b2e2bfa62f505e619ede40886c78d94e5d9b04/6866555a/b5q3dk92h9kMrH6ePKf7IX66fZ57nuw94q4ZuslWhV3hgnncMoe1zZ2UJvjUYQ2Qg2LK5Jhc82csrXoswISCzw==?uid=0&filename=hyprfone5.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1100733&hid=2829a59c3815ab4e44be2a692d442f7b&media_type=image&tknv=v3&etag=778054d00c85a62d5a604540d7cb970c&ts=639037bdc8a80&s=ef405cf85507528d87b3f1e860cf016c356e649b73cc8c280590bac1811de888&pb=U2FsdGVkX1_UzsyKp2JItlpziyRQVJsf8eNR72ACW3zBZ-NNTjLe3MsTdA-7umY81V8T1ri_yZ1WjG9HlKwbo60M2zyt3QZ_d9VZrM6pEx4
-Распознаётся s349vla.storage.yandex.net (s349vla.storage.yandex.net)… 141.8.128.73
-Подключение к s349vla.storage.yandex.net (s349vla.storage.yandex.net)|141.8.128.73|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 200 OK
-Длина: 1100733 (1,0M) [image/jpeg]
-Сохранение в: «/home/mimic/.config/hyprarch/wallpapers/hyprfone5.jpg»
+--2025-07-04 07:22:43--  https://downloader.disk.yandex.ru/disk/bb2eed5cf530073b1d65d9bef09dbd474d27b8e9c9e881496be741d0c22d0561/6867b96e/b5q3dk92h9kMrH6ePKf7IX66fZ57nuw94q4ZuslWhV3hgnncMoe1zZ2UJvjUYQ2Qg2LK5Jhc82csrXoswISCzw%3D%3D?uid=0&filename=hyprfone5.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1100733&hid=2829a59c3815ab4e44be2a692d442f7b&media_type=image&tknv=v3&etag=778054d00c85a62d5a604540d7cb970c
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving downloader.disk.yandex.ru (downloader.disk.yandex.ru)... 77.88.21.127
+Connecting to downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://s349vla.storage.yandex.net/rdisk/bb2eed5cf530073b1d65d9bef09dbd474d27b8e9c9e881496be741d0c22d0561/6867b96e/b5q3dk92h9kMrH6ePKf7IX66fZ57nuw94q4ZuslWhV3hgnncMoe1zZ2UJvjUYQ2Qg2LK5Jhc82csrXoswISCzw==?uid=0&filename=hyprfone5.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1100733&hid=2829a59c3815ab4e44be2a692d442f7b&media_type=image&tknv=v3&etag=778054d00c85a62d5a604540d7cb970c&ts=63918b52eb780&s=76824404636bff630aee93f9ed891363dd841ff2ebf8c38f0190abfaa4658975&pb=U2FsdGVkX1_6V86t6L8pr9q1aOprhRVtJ0aD2_z4TeKpJFePbdymBJOYCp_c4yaFw5MgHDfSs7MGa_uVMNYmQLaKnEo2c6cIYqPMY-efFP0 [following]
+--2025-07-04 07:22:44--  https://s349vla.storage.yandex.net/rdisk/bb2eed5cf530073b1d65d9bef09dbd474d27b8e9c9e881496be741d0c22d0561/6867b96e/b5q3dk92h9kMrH6ePKf7IX66fZ57nuw94q4ZuslWhV3hgnncMoe1zZ2UJvjUYQ2Qg2LK5Jhc82csrXoswISCzw==?uid=0&filename=hyprfone5.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1100733&hid=2829a59c3815ab4e44be2a692d442f7b&media_type=image&tknv=v3&etag=778054d00c85a62d5a604540d7cb970c&ts=63918b52eb780&s=76824404636bff630aee93f9ed891363dd841ff2ebf8c38f0190abfaa4658975&pb=U2FsdGVkX1_6V86t6L8pr9q1aOprhRVtJ0aD2_z4TeKpJFePbdymBJOYCp_c4yaFw5MgHDfSs7MGa_uVMNYmQLaKnEo2c6cIYqPMY-efFP0
+Resolving s349vla.storage.yandex.net (s349vla.storage.yandex.net)... 141.8.128.73
+Connecting to s349vla.storage.yandex.net (s349vla.storage.yandex.net)|141.8.128.73|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1100733 (1.0M) [image/jpeg]
+Saving to: ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone5.jpg’
 
-     0K .......... .......... .......... .......... ..........  4%  411K 2s
-    50K .......... .......... .......... .......... ..........  9%  930K 2s
-   100K .......... .......... .......... .......... .......... 13% 1,41M 1s
-   150K .......... .......... .......... .......... .......... 18% 1,33M 1s
-   200K .......... .......... .......... .......... .......... 23% 2,54M 1s
-   250K .......... .......... .......... .......... .......... 27% 2,95M 1s
-   300K .......... .......... .......... .......... .......... 32% 3,94M 1s
-   350K .......... .......... .......... .......... .......... 37% 2,92M 1s
-   400K .......... .......... .......... .......... .......... 41% 4,84M 0s
-   450K .......... .......... .......... .......... .......... 46% 4,01M 0s
-   500K .......... .......... .......... .......... .......... 51% 6,78M 0s
-   550K .......... .......... .......... .......... .......... 55% 5,64M 0s
-   600K .......... .......... .......... .......... .......... 60% 6,73M 0s
-   650K .......... .......... .......... .......... .......... 65% 4,58M 0s
-   700K .......... .......... .......... .......... .......... 69% 9,46M 0s
-   750K .......... .......... .......... .......... .......... 74% 7,19M 0s
-   800K .......... .......... .......... .......... .......... 79% 7,76M 0s
-   850K .......... .......... .......... .......... .......... 83% 17,0M 0s
-   900K .......... .......... .......... .......... .......... 88% 9,07M 0s
-   950K .......... .......... .......... .......... .......... 93% 4,82M 0s
-  1000K .......... .......... .......... .......... .......... 97% 11,7M 0s
-  1050K .......... .......... ....                            100% 32,2M=0,4s
+     0K .......... .......... .......... .......... ..........  4%  442K 2s
+    50K .......... .......... .......... .......... ..........  9%  473K 2s
+   100K .......... .......... .......... .......... .......... 13% 1.12M 2s
+   150K .......... .......... .......... .......... .......... 18% 1.10M 1s
+   200K .......... .......... .......... .......... .......... 23% 2.03M 1s
+   250K .......... .......... .......... .......... .......... 27% 2.37M 1s
+   300K .......... .......... .......... .......... .......... 32% 1.80M 1s
+   350K .......... .......... .......... .......... .......... 37% 4.17M 1s
+   400K .......... .......... .......... .......... .......... 41% 4.10M 1s
+   450K .......... .......... .......... .......... .......... 46% 4.28M 0s
+   500K .......... .......... .......... .......... .......... 51% 1.99M 0s
+   550K .......... .......... .......... .......... .......... 55% 14.3M 0s
+   600K .......... .......... .......... .......... .......... 60% 6.95M 0s
+   650K .......... .......... .......... .......... .......... 65% 3.85M 0s
+   700K .......... .......... .......... .......... .......... 69% 19.5M 0s
+   750K .......... .......... .......... .......... .......... 74% 4.62M 0s
+   800K .......... .......... .......... .......... .......... 79% 13.6M 0s
+   850K .......... .......... .......... .......... .......... 83% 9.30M 0s
+   900K .......... .......... .......... .......... .......... 88% 5.50M 0s
+   950K .......... .......... .......... .......... .......... 93% 7.40M 0s
+  1000K .......... .......... .......... .......... .......... 97% 27.4M 0s
+  1050K .......... .......... ....                            100% 2.74M=0.5s
 
-2025-07-03 09:03:21 (2,57 MB/s) - «/home/mimic/.config/hyprarch/wallpapers/hyprfone5.jpg» сохранён [1100733/1100733]
+2025-07-04 07:22:45 (2.06 MB/s) - ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone5.jpg’ saved [1100733/1100733]
 
---2025-07-03 09:03:21--  https://downloader.disk.yandex.ru/disk/f24f520331035d71ca95d03a4812cb03ceadd66e49fbcac42b376da6ce57e68b/6866555a/_LGqK44Js2q0KbPXPAAHBh1X--Pl-WjAvYZpAP3ha4IPTlUb2yOfbD4KQnpni6QWPjN2bkgCOfJXMN_56gS-vQ%3D%3D?uid=0&filename=hyprfone6.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=742883&hid=e17629a6bbf6e1e815d5fdcc3457a763&media_type=image&tknv=v3&etag=9e8b684d20b6f30058f92f09998e792a
-Загружен сертификат CA «/etc/ssl/certs/ca-certificates.crt»
-Распознаётся downloader.disk.yandex.ru (downloader.disk.yandex.ru)… 77.88.21.127
-Подключение к downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 302 Found
-Адрес: https://s1145sas.storage.yandex.net/rdisk/f24f520331035d71ca95d03a4812cb03ceadd66e49fbcac42b376da6ce57e68b/6866555a/_LGqK44Js2q0KbPXPAAHBh1X--Pl-WjAvYZpAP3ha4IPTlUb2yOfbD4KQnpni6QWPjN2bkgCOfJXMN_56gS-vQ==?uid=0&filename=hyprfone6.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=742883&hid=e17629a6bbf6e1e815d5fdcc3457a763&media_type=image&tknv=v3&etag=9e8b684d20b6f30058f92f09998e792a&ts=639037bdc8a80&s=3ab965ea7d7dbfd032bc126a809a7df2cbe4eeb83f888248170e33b46cc5a348&pb=U2FsdGVkX1_Ud9NexaSsaJdV1CF98rIuquriPqAokV_jeD3kLzwlu7JxKOQtWVcFd5JoHi6v4-Yjc0ZRepfTDTzJfaZ7Kr72W7cj7dKPfb0 [переход]
---2025-07-03 09:03:22--  https://s1145sas.storage.yandex.net/rdisk/f24f520331035d71ca95d03a4812cb03ceadd66e49fbcac42b376da6ce57e68b/6866555a/_LGqK44Js2q0KbPXPAAHBh1X--Pl-WjAvYZpAP3ha4IPTlUb2yOfbD4KQnpni6QWPjN2bkgCOfJXMN_56gS-vQ==?uid=0&filename=hyprfone6.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=742883&hid=e17629a6bbf6e1e815d5fdcc3457a763&media_type=image&tknv=v3&etag=9e8b684d20b6f30058f92f09998e792a&ts=639037bdc8a80&s=3ab965ea7d7dbfd032bc126a809a7df2cbe4eeb83f888248170e33b46cc5a348&pb=U2FsdGVkX1_Ud9NexaSsaJdV1CF98rIuquriPqAokV_jeD3kLzwlu7JxKOQtWVcFd5JoHi6v4-Yjc0ZRepfTDTzJfaZ7Kr72W7cj7dKPfb0
-Распознаётся s1145sas.storage.yandex.net (s1145sas.storage.yandex.net)… 213.180.206.106
-Подключение к s1145sas.storage.yandex.net (s1145sas.storage.yandex.net)|213.180.206.106|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 200 OK
-Длина: 742883 (725K) [image/jpeg]
-Сохранение в: «/home/mimic/.config/hyprarch/wallpapers/hyprfone6.jpg»
+--2025-07-04 07:22:46--  https://downloader.disk.yandex.ru/disk/f0f038b87a425303da30c0146c9dd71eed67660aa2e77259c878e2d34d74a472/6867b96e/_LGqK44Js2q0KbPXPAAHBh1X--Pl-WjAvYZpAP3ha4IPTlUb2yOfbD4KQnpni6QWPjN2bkgCOfJXMN_56gS-vQ%3D%3D?uid=0&filename=hyprfone6.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=742883&hid=e17629a6bbf6e1e815d5fdcc3457a763&media_type=image&tknv=v3&etag=9e8b684d20b6f30058f92f09998e792a
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving downloader.disk.yandex.ru (downloader.disk.yandex.ru)... 77.88.21.127
+Connecting to downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://s1145sas.storage.yandex.net/rdisk/f0f038b87a425303da30c0146c9dd71eed67660aa2e77259c878e2d34d74a472/6867b96e/_LGqK44Js2q0KbPXPAAHBh1X--Pl-WjAvYZpAP3ha4IPTlUb2yOfbD4KQnpni6QWPjN2bkgCOfJXMN_56gS-vQ==?uid=0&filename=hyprfone6.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=742883&hid=e17629a6bbf6e1e815d5fdcc3457a763&media_type=image&tknv=v3&etag=9e8b684d20b6f30058f92f09998e792a&ts=63918b52eb780&s=def2102fa9c5ca8a6fc400f68401a78aa2e5008431946dca80cc055ce836ad31&pb=U2FsdGVkX19RxZwIwuh9OmUjL5glm-4wO2n3nvX6nyOejGDrqN_-ZvwSp43cOP_h4MFBNeED75MGGXQguDeWa1CkzuV8SrFmNfW0nkY9KEo [following]
+--2025-07-04 07:22:47--  https://s1145sas.storage.yandex.net/rdisk/f0f038b87a425303da30c0146c9dd71eed67660aa2e77259c878e2d34d74a472/6867b96e/_LGqK44Js2q0KbPXPAAHBh1X--Pl-WjAvYZpAP3ha4IPTlUb2yOfbD4KQnpni6QWPjN2bkgCOfJXMN_56gS-vQ==?uid=0&filename=hyprfone6.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=742883&hid=e17629a6bbf6e1e815d5fdcc3457a763&media_type=image&tknv=v3&etag=9e8b684d20b6f30058f92f09998e792a&ts=63918b52eb780&s=def2102fa9c5ca8a6fc400f68401a78aa2e5008431946dca80cc055ce836ad31&pb=U2FsdGVkX19RxZwIwuh9OmUjL5glm-4wO2n3nvX6nyOejGDrqN_-ZvwSp43cOP_h4MFBNeED75MGGXQguDeWa1CkzuV8SrFmNfW0nkY9KEo
+Resolving s1145sas.storage.yandex.net (s1145sas.storage.yandex.net)... 213.180.206.106
+Connecting to s1145sas.storage.yandex.net (s1145sas.storage.yandex.net)|213.180.206.106|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 742883 (725K) [image/jpeg]
+Saving to: ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone6.jpg’
 
-     0K .......... .......... .......... .......... ..........  6%  411K 2s
-    50K .......... .......... .......... .......... .......... 13%  853K 1s
-   100K .......... .......... .......... .......... .......... 20% 1,38M 1s
-   150K .......... .......... .......... .......... .......... 27% 1,75M 1s
-   200K .......... .......... .......... .......... .......... 34% 2,65M 0s
-   250K .......... .......... .......... .......... .......... 41% 2,47M 0s
-   300K .......... .......... .......... .......... .......... 48% 4,46M 0s
-   350K .......... .......... .......... .......... .......... 55% 2,13M 0s
-   400K .......... .......... .......... .......... .......... 62% 5,46M 0s
-   450K .......... .......... .......... .......... .......... 68% 4,25M 0s
-   500K .......... .......... .......... .......... .......... 75% 5,81M 0s
-   550K .......... .......... .......... .......... .......... 82% 10,8M 0s
-   600K .......... .......... .......... .......... .......... 89% 3,36M 0s
-   650K .......... .......... .......... .......... .......... 96% 24,4M 0s
-   700K .......... .......... .....                           100% 5,36M=0,4s
+     0K .......... .......... .......... .......... ..........  6%  446K 2s
+    50K .......... .......... .......... .......... .......... 13%  786K 1s
+   100K .......... .......... .......... .......... .......... 20% 1.49M 1s
+   150K .......... .......... .......... .......... .......... 27% 1.87M 1s
+   200K .......... .......... .......... .......... .......... 34% 2.28M 0s
+   250K .......... .......... .......... .......... .......... 41% 4.01M 0s
+   300K .......... .......... .......... .......... .......... 48% 3.21M 0s
+   350K .......... .......... .......... .......... .......... 55% 5.07M 0s
+   400K .......... .......... .......... .......... .......... 62% 1.71M 0s
+   450K .......... .......... .......... .......... .......... 68% 5.72M 0s
+   500K .......... .......... .......... .......... .......... 75% 6.41M 0s
+   550K .......... .......... .......... .......... .......... 82% 23.0M 0s
+   600K .......... .......... .......... .......... .......... 89% 6.71M 0s
+   650K .......... .......... .......... .......... .......... 96% 4.74M 0s
+   700K .......... .......... .....                           100% 38.4M=0.4s
 
-2025-07-03 09:03:23 (1,91 MB/s) - «/home/mimic/.config/hyprarch/wallpapers/hyprfone6.jpg» сохранён [742883/742883]
+2025-07-04 07:22:48 (1.98 MB/s) - ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone6.jpg’ saved [742883/742883]
 
---2025-07-03 09:03:23--  https://downloader.disk.yandex.ru/disk/2387afa9bcda2a1afa1716bc170eaac79af67553bca728733ce50eb90178c328/6866555a/zgfAe4VB1ub9iPmRayx2Z71WVICnEV1lPe02eUbnUjxYy6qUclaAHOwjuAlgom9nRBHoY6fSyg43-ZWt1XMJ-Q%3D%3D?uid=0&filename=hyprfone7.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1591302&hid=ac63f97fb842a9a08e86f887b09f2b82&media_type=image&tknv=v3&etag=881e8895028ac25296d314e56145b24f
-Загружен сертификат CA «/etc/ssl/certs/ca-certificates.crt»
-Распознаётся downloader.disk.yandex.ru (downloader.disk.yandex.ru)… 77.88.21.127
-Подключение к downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 302 Found
-Адрес: https://s914sas.storage.yandex.net/rdisk/2387afa9bcda2a1afa1716bc170eaac79af67553bca728733ce50eb90178c328/6866555a/zgfAe4VB1ub9iPmRayx2Z71WVICnEV1lPe02eUbnUjxYy6qUclaAHOwjuAlgom9nRBHoY6fSyg43-ZWt1XMJ-Q==?uid=0&filename=hyprfone7.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1591302&hid=ac63f97fb842a9a08e86f887b09f2b82&media_type=image&tknv=v3&etag=881e8895028ac25296d314e56145b24f&ts=639037bdc8a80&s=56c708e9624288de5bda502fd4199db5e85eccdbf1f345747ac9854a300edaae&pb=U2FsdGVkX19AGQr72hjNlt2ogPVS5FwGvuz44b6OsJmEYFdYQJhKyS_CWNJKTpa4X9mGFTGdMRfiFT4_yR4GA_yDJThVocePIvZe1M4MxGk [переход]
---2025-07-03 09:03:25--  https://s914sas.storage.yandex.net/rdisk/2387afa9bcda2a1afa1716bc170eaac79af67553bca728733ce50eb90178c328/6866555a/zgfAe4VB1ub9iPmRayx2Z71WVICnEV1lPe02eUbnUjxYy6qUclaAHOwjuAlgom9nRBHoY6fSyg43-ZWt1XMJ-Q==?uid=0&filename=hyprfone7.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1591302&hid=ac63f97fb842a9a08e86f887b09f2b82&media_type=image&tknv=v3&etag=881e8895028ac25296d314e56145b24f&ts=639037bdc8a80&s=56c708e9624288de5bda502fd4199db5e85eccdbf1f345747ac9854a300edaae&pb=U2FsdGVkX19AGQr72hjNlt2ogPVS5FwGvuz44b6OsJmEYFdYQJhKyS_CWNJKTpa4X9mGFTGdMRfiFT4_yR4GA_yDJThVocePIvZe1M4MxGk
-Распознаётся s914sas.storage.yandex.net (s914sas.storage.yandex.net)… 141.8.180.164
-Подключение к s914sas.storage.yandex.net (s914sas.storage.yandex.net)|141.8.180.164|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 200 OK
-Длина: 1591302 (1,5M) [image/jpeg]
-Сохранение в: «/home/mimic/.config/hyprarch/wallpapers/hyprfone7.jpg»
+--2025-07-04 07:22:48--  https://downloader.disk.yandex.ru/disk/0320cff6512b8023d1b2bb6741f916452191ccd534aadee8632fb42c7858874a/6867b96e/zgfAe4VB1ub9iPmRayx2Z71WVICnEV1lPe02eUbnUjxYy6qUclaAHOwjuAlgom9nRBHoY6fSyg43-ZWt1XMJ-Q%3D%3D?uid=0&filename=hyprfone7.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1591302&hid=ac63f97fb842a9a08e86f887b09f2b82&media_type=image&tknv=v3&etag=881e8895028ac25296d314e56145b24f
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving downloader.disk.yandex.ru (downloader.disk.yandex.ru)... 77.88.21.127
+Connecting to downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://s914sas.storage.yandex.net/rdisk/0320cff6512b8023d1b2bb6741f916452191ccd534aadee8632fb42c7858874a/6867b96e/zgfAe4VB1ub9iPmRayx2Z71WVICnEV1lPe02eUbnUjxYy6qUclaAHOwjuAlgom9nRBHoY6fSyg43-ZWt1XMJ-Q==?uid=0&filename=hyprfone7.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1591302&hid=ac63f97fb842a9a08e86f887b09f2b82&media_type=image&tknv=v3&etag=881e8895028ac25296d314e56145b24f&ts=63918b52eb780&s=1f6452f333305e334b8b5f49d829f7c157ae506ae3a81772d1b1d93fbe77dd24&pb=U2FsdGVkX1-dkLTQW9R2Zw8SLaFhU0iMXDbulgANvpL98GufWoMZ2LPBFt5lOwrlb1ZLC3W43dqIrvMRpJDF60SKxaO-L1fcMk86SCLUjS8 [following]
+--2025-07-04 07:22:49--  https://s914sas.storage.yandex.net/rdisk/0320cff6512b8023d1b2bb6741f916452191ccd534aadee8632fb42c7858874a/6867b96e/zgfAe4VB1ub9iPmRayx2Z71WVICnEV1lPe02eUbnUjxYy6qUclaAHOwjuAlgom9nRBHoY6fSyg43-ZWt1XMJ-Q==?uid=0&filename=hyprfone7.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=1591302&hid=ac63f97fb842a9a08e86f887b09f2b82&media_type=image&tknv=v3&etag=881e8895028ac25296d314e56145b24f&ts=63918b52eb780&s=1f6452f333305e334b8b5f49d829f7c157ae506ae3a81772d1b1d93fbe77dd24&pb=U2FsdGVkX1-dkLTQW9R2Zw8SLaFhU0iMXDbulgANvpL98GufWoMZ2LPBFt5lOwrlb1ZLC3W43dqIrvMRpJDF60SKxaO-L1fcMk86SCLUjS8
+Resolving s914sas.storage.yandex.net (s914sas.storage.yandex.net)... 141.8.180.164
+Connecting to s914sas.storage.yandex.net (s914sas.storage.yandex.net)|141.8.180.164|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1591302 (1.5M) [image/jpeg]
+Saving to: ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone7.jpg’
 
-     0K .......... .......... .......... .......... ..........  3%  418K 4s
-    50K .......... .......... .......... .......... ..........  6%  891K 3s
-   100K .......... .......... .......... .......... ..........  9% 1,36M 2s
-   150K .......... .......... .......... .......... .......... 12% 1,75M 2s
-   200K .......... .......... .......... .......... .......... 16% 2,82M 1s
-   250K .......... .......... .......... .......... .......... 19% 2,93M 1s
-   300K .......... .......... .......... .......... .......... 22% 3,56M 1s
-   350K .......... .......... .......... .......... .......... 25% 3,35M 1s
-   400K .......... .......... .......... .......... .......... 28% 4,53M 1s
-   450K .......... .......... .......... .......... .......... 32% 5,12M 1s
-   500K .......... .......... .......... .......... .......... 35% 3,07M 1s
-   550K .......... .......... .......... .......... .......... 38% 6,44M 1s
-   600K .......... .......... .......... .......... .......... 41% 6,19M 0s
-   650K .......... .......... .......... .......... .......... 45% 10,2M 0s
-   700K .......... .......... .......... .......... .......... 48% 5,30M 0s
-   750K .......... .......... .......... .......... .......... 51% 24,1M 0s
-   800K .......... .......... .......... .......... .......... 54% 10,4M 0s
-   850K .......... .......... .......... .......... .......... 57% 8,00M 0s
-   900K .......... .......... .......... .......... .......... 61% 6,44M 0s
-   950K .......... .......... .......... .......... .......... 64% 19,0M 0s
-  1000K .......... .......... .......... .......... .......... 67% 7,89M 0s
-  1050K .......... .......... .......... .......... .......... 70% 6,29M 0s
-  1100K .......... .......... .......... .......... .......... 74% 14,7M 0s
-  1150K .......... .......... .......... .......... .......... 77% 5,76M 0s
-  1200K .......... .......... .......... .......... .......... 80% 28,5M 0s
-  1250K .......... .......... .......... .......... .......... 83% 7,04M 0s
-  1300K .......... .......... .......... .......... .......... 86% 27,3M 0s
-  1350K .......... .......... .......... .......... .......... 90% 7,15M 0s
-  1400K .......... .......... .......... .......... .......... 93%  649K 0s
-  1450K .......... .......... .......... .......... .......... 96% 33,7M 0s
-  1500K .......... .......... .......... .......... .......... 99% 4,93M 0s
-  1550K ....                                                  100% 23,0M=0,5s
+     0K .......... .......... .......... .......... ..........  3%  502K 3s
+    50K .......... .......... .......... .......... ..........  6%  658K 3s
+   100K .......... .......... .......... .......... ..........  9% 1.53M 2s
+   150K .......... .......... .......... .......... .......... 12% 1.75M 2s
+   200K .......... .......... .......... .......... .......... 16% 1.89M 1s
+   250K .......... .......... .......... .......... .......... 19% 2.98M 1s
+   300K .......... .......... .......... .......... .......... 22% 3.47M 1s
+   350K .......... .......... .......... .......... .......... 25% 5.52M 1s
+   400K .......... .......... .......... .......... .......... 28% 5.00M 1s
+   450K .......... .......... .......... .......... .......... 32% 4.10M 1s
+   500K .......... .......... .......... .......... .......... 35% 3.49M 1s
+   550K .......... .......... .......... .......... .......... 38% 3.53M 1s
+   600K .......... .......... .......... .......... .......... 41% 11.8M 0s
+   650K .......... .......... .......... .......... .......... 45% 1.39M 0s
+   700K .......... .......... .......... .......... .......... 48% 5.78M 0s
+   750K .......... .......... .......... .......... .......... 51% 1.06M 0s
+   800K .......... .......... .......... .......... .......... 54% 21.5M 0s
+   850K .......... .......... .......... .......... .......... 57% 1.08M 0s
+   900K .......... .......... .......... .......... .......... 61% 6.44M 0s
+   950K .......... .......... .......... .......... .......... 64% 1.02M 0s
+  1000K .......... .......... .......... .......... .......... 67% 27.3M 0s
+  1050K .......... .......... .......... .......... .......... 70% 1.06M 0s
+  1100K .......... .......... .......... .......... .......... 74% 8.46M 0s
+  1150K .......... .......... .......... .......... .......... 77% 1.07M 0s
+  1200K .......... .......... .......... .......... .......... 80% 12.7M 0s
+  1250K .......... .......... .......... .......... .......... 83% 1024K 0s
+  1300K .......... .......... .......... .......... .......... 86% 20.7M 0s
+  1350K .......... .......... .......... .......... .......... 90% 1.08M 0s
+  1400K .......... .......... .......... .......... .......... 93% 8.43M 0s
+  1450K .......... .......... .......... .......... .......... 96% 1.12M 0s
+  1500K .......... .......... .......... .......... .......... 99% 9.18M 0s
+  1550K ....                                                  100% 31.8M=0.8s
 
-2025-07-03 09:03:26 (2,91 MB/s) - «/home/mimic/.config/hyprarch/wallpapers/hyprfone7.jpg» сохранён [1591302/1591302]
+2025-07-04 07:22:51 (1.89 MB/s) - ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone7.jpg’ saved [1591302/1591302]
 
---2025-07-03 09:03:26--  https://downloader.disk.yandex.ru/disk/aee421e73f5deb246babb9e28a6f0b5fad5b9434942a4a0fcb0b3753a8082e02/6866555a/j862mkxv9rehwgdwJ-JJCbNi4uVzEam1Z-nHf6KI3weo17a1cTqEepjlY6kL6gHOn_BR7Qwbcyt9OKOguwH6TQ%3D%3D?uid=0&filename=hyprfone8.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=741783&hid=7abcf8879c2438d9359ae364a2e15fe3&media_type=image&tknv=v3&etag=9ba10be1ab8cb3dbcdc476f715ca7c23
-Загружен сертификат CA «/etc/ssl/certs/ca-certificates.crt»
-Распознаётся downloader.disk.yandex.ru (downloader.disk.yandex.ru)… 77.88.21.127
-Подключение к downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 302 Found
-Адрес: https://s434vlx.storage.yandex.net/rdisk/aee421e73f5deb246babb9e28a6f0b5fad5b9434942a4a0fcb0b3753a8082e02/6866555a/j862mkxv9rehwgdwJ-JJCbNi4uVzEam1Z-nHf6KI3weo17a1cTqEepjlY6kL6gHOn_BR7Qwbcyt9OKOguwH6TQ==?uid=0&filename=hyprfone8.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=741783&hid=7abcf8879c2438d9359ae364a2e15fe3&media_type=image&tknv=v3&etag=9ba10be1ab8cb3dbcdc476f715ca7c23&ts=639037bdc8a80&s=36e16f035970ce4ac432e69f9dfd13abc0b9caba1a04a583f2361a5c0021f9ce&pb=U2FsdGVkX19p7QzeQRxtPSeBf_x7d4J27imPszoAUgJC8Chxn9kepPja01MuPLdnesEHNxbtWRjHUU1pKJ4Xj6-B13DX5zUTNM3xiu6uO5I [переход]
---2025-07-03 09:03:27--  https://s434vlx.storage.yandex.net/rdisk/aee421e73f5deb246babb9e28a6f0b5fad5b9434942a4a0fcb0b3753a8082e02/6866555a/j862mkxv9rehwgdwJ-JJCbNi4uVzEam1Z-nHf6KI3weo17a1cTqEepjlY6kL6gHOn_BR7Qwbcyt9OKOguwH6TQ==?uid=0&filename=hyprfone8.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=741783&hid=7abcf8879c2438d9359ae364a2e15fe3&media_type=image&tknv=v3&etag=9ba10be1ab8cb3dbcdc476f715ca7c23&ts=639037bdc8a80&s=36e16f035970ce4ac432e69f9dfd13abc0b9caba1a04a583f2361a5c0021f9ce&pb=U2FsdGVkX19p7QzeQRxtPSeBf_x7d4J27imPszoAUgJC8Chxn9kepPja01MuPLdnesEHNxbtWRjHUU1pKJ4Xj6-B13DX5zUTNM3xiu6uO5I
-Распознаётся s434vlx.storage.yandex.net (s434vlx.storage.yandex.net)… 5.45.238.234
-Подключение к s434vlx.storage.yandex.net (s434vlx.storage.yandex.net)|5.45.238.234|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 200 OK
-Длина: 741783 (724K) [image/jpeg]
-Сохранение в: «/home/mimic/.config/hyprarch/wallpapers/hyprfone8.jpg»
+--2025-07-04 07:22:51--  https://downloader.disk.yandex.ru/disk/ce51de4f0d8de95b5a5d0cf871d9d5c470344286efbcf72346bf96c187f57fa1/6867b96e/j862mkxv9rehwgdwJ-JJCbNi4uVzEam1Z-nHf6KI3weo17a1cTqEepjlY6kL6gHOn_BR7Qwbcyt9OKOguwH6TQ%3D%3D?uid=0&filename=hyprfone8.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=741783&hid=7abcf8879c2438d9359ae364a2e15fe3&media_type=image&tknv=v3&etag=9ba10be1ab8cb3dbcdc476f715ca7c23
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving downloader.disk.yandex.ru (downloader.disk.yandex.ru)... 77.88.21.127
+Connecting to downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://s434vlx.storage.yandex.net/rdisk/ce51de4f0d8de95b5a5d0cf871d9d5c470344286efbcf72346bf96c187f57fa1/6867b96e/j862mkxv9rehwgdwJ-JJCbNi4uVzEam1Z-nHf6KI3weo17a1cTqEepjlY6kL6gHOn_BR7Qwbcyt9OKOguwH6TQ==?uid=0&filename=hyprfone8.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=741783&hid=7abcf8879c2438d9359ae364a2e15fe3&media_type=image&tknv=v3&etag=9ba10be1ab8cb3dbcdc476f715ca7c23&ts=63918b52eb780&s=b0ce9619b6b10c5f3c728aec537287fb0deb7d184bd21a95b759641c92308778&pb=U2FsdGVkX19wLt1kdqgTIUbzXAP_DwAiqdUyRRyQ3v7OpL6Izj48L4euzHdxqgdgYql3fPEYAhgG9GSy6TnpguaX48cOr28ATl_6hewG7M0 [following]
+--2025-07-04 07:22:52--  https://s434vlx.storage.yandex.net/rdisk/ce51de4f0d8de95b5a5d0cf871d9d5c470344286efbcf72346bf96c187f57fa1/6867b96e/j862mkxv9rehwgdwJ-JJCbNi4uVzEam1Z-nHf6KI3weo17a1cTqEepjlY6kL6gHOn_BR7Qwbcyt9OKOguwH6TQ==?uid=0&filename=hyprfone8.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=741783&hid=7abcf8879c2438d9359ae364a2e15fe3&media_type=image&tknv=v3&etag=9ba10be1ab8cb3dbcdc476f715ca7c23&ts=63918b52eb780&s=b0ce9619b6b10c5f3c728aec537287fb0deb7d184bd21a95b759641c92308778&pb=U2FsdGVkX19wLt1kdqgTIUbzXAP_DwAiqdUyRRyQ3v7OpL6Izj48L4euzHdxqgdgYql3fPEYAhgG9GSy6TnpguaX48cOr28ATl_6hewG7M0
+Resolving s434vlx.storage.yandex.net (s434vlx.storage.yandex.net)... 5.45.238.234
+Connecting to s434vlx.storage.yandex.net (s434vlx.storage.yandex.net)|5.45.238.234|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 741783 (724K) [image/jpeg]
+Saving to: ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone8.jpg’
 
-     0K .......... .......... .......... .......... ..........  6%  439K 2s
-    50K .......... .......... .......... .......... .......... 13%  859K 1s
-   100K .......... .......... .......... .......... .......... 20% 1,32M 1s
-   150K .......... .......... .......... .......... .......... 27% 1,53M 1s
-   200K .......... .......... .......... .......... .......... 34% 2,77M 0s
-   250K .......... .......... .......... .......... .......... 41% 2,75M 0s
-   300K .......... .......... .......... .......... .......... 48% 3,41M 0s
-   350K .......... .......... .......... .......... .......... 55% 2,83M 0s
-   400K .......... .......... .......... .......... .......... 62% 4,42M 0s
-   450K .......... .......... .......... .......... .......... 69% 4,67M 0s
-   500K .......... .......... .......... .......... .......... 75% 5,27M 0s
-   550K .......... .......... .......... .......... .......... 82% 6,15M 0s
-   600K .......... .......... .......... .......... .......... 89% 4,66M 0s
-   650K .......... .......... .......... .......... .......... 96% 14,4M 0s
-   700K .......... .......... ....                            100% 6,44M=0,4s
+     0K .......... .......... .......... .......... ..........  6%  457K 1s
+    50K .......... .......... .......... .......... .......... 13%  638K 1s
+   100K .......... .......... .......... .......... .......... 20% 1.25M 1s
+   150K .......... .......... .......... .......... .......... 27% 1.52M 1s
+   200K .......... .......... .......... .......... .......... 34% 1.97M 1s
+   250K .......... .......... .......... .......... .......... 41% 2.65M 0s
+   300K .......... .......... .......... .......... .......... 48% 3.27M 0s
+   350K .......... .......... .......... .......... .......... 55% 3.04M 0s
+   400K .......... .......... .......... .......... .......... 62% 4.21M 0s
+   450K .......... .......... .......... .......... .......... 69% 4.69M 0s
+   500K .......... .......... .......... .......... .......... 75% 5.54M 0s
+   550K .......... .......... .......... .......... .......... 82% 3.49M 0s
+   600K .......... .......... .......... .......... .......... 89% 4.54M 0s
+   650K .......... .......... .......... .......... .......... 96% 7.65M 0s
+   700K .......... .......... ....                            100% 12.1M=0.4s
 
-2025-07-03 09:03:29 (1,94 MB/s) - «/home/mimic/.config/hyprarch/wallpapers/hyprfone8.jpg» сохранён [741783/741783]
+2025-07-04 07:22:55 (1.78 MB/s) - ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone8.jpg’ saved [741783/741783]
 
---2025-07-03 09:03:29--  https://downloader.disk.yandex.ru/disk/af38a229f31ee434a62861b68bd9b7019ce938d8639f59221666f60a8b66779d/6866555a/_LGqK44Js2q0KbPXPAAHBpRLyC4jfovqj8C9BK-qLjx24LuHMySKj56_mHwF8zy-bwgXArWRF2hwUwhh9sMf_A%3D%3D?uid=0&filename=hyprfone9.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=270888&hid=622bcb5f83b507b40c0028bc7598b136&media_type=image&tknv=v3&etag=dae08198f7c14bf6a3695bc7ebc5032b
-Загружен сертификат CA «/etc/ssl/certs/ca-certificates.crt»
-Распознаётся downloader.disk.yandex.ru (downloader.disk.yandex.ru)… 77.88.21.127
-Подключение к downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 302 Found
-Адрес: https://s106klg.storage.yandex.net/rdisk/af38a229f31ee434a62861b68bd9b7019ce938d8639f59221666f60a8b66779d/6866555a/_LGqK44Js2q0KbPXPAAHBpRLyC4jfovqj8C9BK-qLjx24LuHMySKj56_mHwF8zy-bwgXArWRF2hwUwhh9sMf_A==?uid=0&filename=hyprfone9.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=270888&hid=622bcb5f83b507b40c0028bc7598b136&media_type=image&tknv=v3&etag=dae08198f7c14bf6a3695bc7ebc5032b&ts=639037bdc8a80&s=34af9f02eb643d1e02b41110571f760799a6f9986e546fc7c89b48fae80d23d2&pb=U2FsdGVkX1-AgjAm3GNn25Iy1mU15iw9aVoQXhAZyq5GmOD0girYAP_Th4xVjzfNobXNYBMEcXgnb3hTE0hbr_hMkQYP9vWj4j86RCHufwA [переход]
---2025-07-03 09:03:29--  https://s106klg.storage.yandex.net/rdisk/af38a229f31ee434a62861b68bd9b7019ce938d8639f59221666f60a8b66779d/6866555a/_LGqK44Js2q0KbPXPAAHBpRLyC4jfovqj8C9BK-qLjx24LuHMySKj56_mHwF8zy-bwgXArWRF2hwUwhh9sMf_A==?uid=0&filename=hyprfone9.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=270888&hid=622bcb5f83b507b40c0028bc7598b136&media_type=image&tknv=v3&etag=dae08198f7c14bf6a3695bc7ebc5032b&ts=639037bdc8a80&s=34af9f02eb643d1e02b41110571f760799a6f9986e546fc7c89b48fae80d23d2&pb=U2FsdGVkX1-AgjAm3GNn25Iy1mU15iw9aVoQXhAZyq5GmOD0girYAP_Th4xVjzfNobXNYBMEcXgnb3hTE0hbr_hMkQYP9vWj4j86RCHufwA
-Распознаётся s106klg.storage.yandex.net (s106klg.storage.yandex.net)… 5.255.221.106
-Подключение к s106klg.storage.yandex.net (s106klg.storage.yandex.net)|5.255.221.106|:443... соединение установлено.
-HTTP-запрос отправлен. Ожидание ответа… 200 OK
-Длина: 270888 (265K) [image/jpeg]
-Сохранение в: «/home/mimic/.config/hyprarch/wallpapers/hyprfone9.jpg»
+--2025-07-04 07:22:55--  https://downloader.disk.yandex.ru/disk/8caa36bf75f9af6d0f284929e6757c64641b56a41b7f5d46236b74911cb51460/6867b96e/_LGqK44Js2q0KbPXPAAHBpRLyC4jfovqj8C9BK-qLjx24LuHMySKj56_mHwF8zy-bwgXArWRF2hwUwhh9sMf_A%3D%3D?uid=0&filename=hyprfone9.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=270888&hid=622bcb5f83b507b40c0028bc7598b136&media_type=image&tknv=v3&etag=dae08198f7c14bf6a3695bc7ebc5032b
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving downloader.disk.yandex.ru (downloader.disk.yandex.ru)... 77.88.21.127
+Connecting to downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://s106klg.storage.yandex.net/rdisk/8caa36bf75f9af6d0f284929e6757c64641b56a41b7f5d46236b74911cb51460/6867b96e/_LGqK44Js2q0KbPXPAAHBpRLyC4jfovqj8C9BK-qLjx24LuHMySKj56_mHwF8zy-bwgXArWRF2hwUwhh9sMf_A==?uid=0&filename=hyprfone9.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=270888&hid=622bcb5f83b507b40c0028bc7598b136&media_type=image&tknv=v3&etag=dae08198f7c14bf6a3695bc7ebc5032b&ts=63918b52eb780&s=d436f1ef7e144e4499740e05a6d02038198d3a0911dcac0f33dced3a687c82fe&pb=U2FsdGVkX1--086U0s31HsplPHYoMmkUPDXprMn_pYvIluaYrRwbTCoQUXzk3fgkRxPSzW5tKx5E_c0JTCgWNA_4tW4BYwyS5a9cx3cZnLk [following]
+--2025-07-04 07:22:56--  https://s106klg.storage.yandex.net/rdisk/8caa36bf75f9af6d0f284929e6757c64641b56a41b7f5d46236b74911cb51460/6867b96e/_LGqK44Js2q0KbPXPAAHBpRLyC4jfovqj8C9BK-qLjx24LuHMySKj56_mHwF8zy-bwgXArWRF2hwUwhh9sMf_A==?uid=0&filename=hyprfone9.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=270888&hid=622bcb5f83b507b40c0028bc7598b136&media_type=image&tknv=v3&etag=dae08198f7c14bf6a3695bc7ebc5032b&ts=63918b52eb780&s=d436f1ef7e144e4499740e05a6d02038198d3a0911dcac0f33dced3a687c82fe&pb=U2FsdGVkX1--086U0s31HsplPHYoMmkUPDXprMn_pYvIluaYrRwbTCoQUXzk3fgkRxPSzW5tKx5E_c0JTCgWNA_4tW4BYwyS5a9cx3cZnLk
+Resolving s106klg.storage.yandex.net (s106klg.storage.yandex.net)... 5.255.221.106
+Connecting to s106klg.storage.yandex.net (s106klg.storage.yandex.net)|5.255.221.106|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 270888 (265K) [image/jpeg]
+Saving to: ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone9.jpg’
 
-     0K .......... .......... .......... .......... .......... 18%  475K 0s
-    50K .......... .......... .......... .......... .......... 37%  494K 0s
-   100K .......... .......... .......... .......... .......... 56% 1,27M 0s
-   150K .......... .......... .......... .......... .......... 75%  956K 0s
-   200K .......... .......... .......... .......... .......... 94% 2,60M 0s
-   250K .......... ....                                       100% 2,70M=0,3s
+     0K .......... .......... .......... .......... .......... 18%  413K 1s
+    50K .......... .......... .......... .......... .......... 37%  834K 0s
+   100K .......... .......... .......... .......... .......... 56% 1.22M 0s
+   150K .......... .......... .......... .......... .......... 75% 1.53M 0s
+   200K .......... .......... .......... .......... .......... 94% 2.74M 0s
+   250K .......... ....                                       100% 3.68M=0.3s
 
-2025-07-03 09:03:31 (823 KB/s) - «/home/mimic/.config/hyprarch/wallpapers/hyprfone9.jpg» сохранён [270888/270888]
+2025-07-04 07:22:57 (963 KB/s) - ‘/home/mimic/.config/hyprarch/wallpapers/hyprfone9.jpg’ saved [270888/270888]
 
-[33mNVIDIA GPU не обнаружена. Пропускаем установку драйверов.[0m
 [34m🖌️ Configuring SDDM...[0m
 [32m✅ SDDM theme copied successfully[0m
 [32m✅ sddm.conf copied successfully[0m
 [32m✅ SDDM configured successfully.[0m
-[34m🔧 Configuring GRUB...[0m
-[32m✅ grub config copied successfully[0m
-[32m✅ GRUB theme copied successfully[0m
-Генерируется файл настройки grub …
-Найдена тема: /usr/share/grub/themes/hypr/theme.txt
-Найден образ linux: /boot/vmlinuz-linux
-Найден образ initrd: /boot/intel-ucode.img /boot/initramfs-linux.img
-Found fallback initrd image(s) in /boot:  intel-ucode.img initramfs-linux-fallback.img
-Предупреждение: Для обнаружения других загрузочных разделов будет запущен os-prober. 
-Результат работы будет использован для обнаружения загружаемых файлов и создания новых загрузочных записей.
-Добавляется элемент загрузочного меню для настроек микропрограммы UEFI …
-завершено
-[32m✅ GRUB configuration generated successfully[0m
+Generating grub configuration file ...
+Found theme: /usr/share/grub/themes/hypr/theme.txt
+Found linux image: /boot/vmlinuz-linux
+Found initrd image: /boot/initramfs-linux.img
+Found fallback initrd image(s) in /boot:  initramfs-linux-fallback.img
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Installing extensions...
+Installing extension 'naumovs.color-highlight'...
+Extension 'naumovs.color-highlight' v2.8.0 was successfully installed.
+Installing extensions...
+Installing extension 'ms-azuretools.vscode-containers'...
+Extension 'ms-azuretools.vscode-containers' v2.0.3 was successfully installed.
+Installing extensions...
+Installing extension 'ms-vscode-remote.remote-containers'...
+Extension 'ms-vscode-remote.remote-containers' v0.417.0 was successfully installed.
+Installing extensions...
+Installing extension 'ms-azuretools.vscode-docker'...
+Extension 'ms-azuretools.vscode-docker' v2.0.0 was successfully installed.
+Installing extensions...
+Installing extension 'hediet.vscode-drawio'...
+Extension 'hediet.vscode-drawio' v1.9.0 was successfully installed.
+Installing extensions...
+Installing extension 'golang.go'...
+Extension 'golang.go' v0.48.0 was successfully installed.
+Installing extensions...
+Installing extension 'visualstudioexptteam.vscodeintellicode'...
+Extension 'visualstudioexptteam.intellicode-api-usage-examples' v0.2.9 was successfully installed.
+Extension 'visualstudioexptteam.vscodeintellicode' v1.3.2 was successfully installed.
+Installing extensions...
+Installing extension 'ms-ossdata.vscode-pgsql'...
+Extension 'ms-ossdata.vscode-pgsql' v1.6.0 was successfully installed.
+Installing extensions...
+Installing extension 'ms-python.python'...
+Extension 'ms-python.python' v2025.8.0 was successfully installed.
+Extension 'ms-python.debugpy' v2025.8.0 was successfully installed.
+Extension 'ms-python.vscode-pylance' v2025.6.2 was successfully installed.
+Installing extensions...
+Installing extension 'ms-vscode-remote.remote-ssh'...
+Extension 'ms-vscode.remote-explorer' v0.5.0 was successfully installed.
+Extension 'ms-vscode-remote.remote-ssh' v0.120.0 was successfully installed.
+Extension 'ms-vscode-remote.remote-ssh-edit' v0.87.0 was successfully installed.
+Installing extensions...
+Installing extension 'redhat.vscode-yaml'...
+Extension 'redhat.vscode-yaml' v1.18.0 was successfully installed.
+Installing extensions...
+Installing extension 'ms-vscode.cpptools'...
+Extension 'ms-vscode.cpptools' v1.26.3 was successfully installed.
+Installing extensions...
+Installing extension 'twxs.cmake'...
+Extension 'twxs.cmake' v0.0.17 was successfully installed.
+Installing extensions...
+Installing extension 'ms-vscode.cmake-tools'...
+Extension 'ms-vscode.cmake-tools' v1.20.53 was successfully installed.
+Installing extensions...
+Installing extension 'formulahendry.code-runner'...
+Extension 'formulahendry.code-runner' v0.12.2 was successfully installed.
+Installing extensions...
+Installing extension 'docker.docker'...
+Extension 'docker.docker' v0.11.0 was successfully installed.
+Installing extensions...
+Installing extension 'thang-nm.flow-icons'...
+Extension 'thang-nm.flow-icons' v1.1.0 was successfully installed.
+Installing extensions...
+Installing extension 'mhutchie.git-graph'...
+Extension 'mhutchie.git-graph' v1.30.0 was successfully installed.
+Installing extensions...
+Installing extension 'donjayamanne.githistory'...
+Extension 'donjayamanne.githistory' v0.6.20 was successfully installed.
+Installing extensions...
+Installing extension 'neonxp.gotools'...
+Extension 'neonxp.gotools' v0.1.5 was successfully installed.
+Installing extensions...
+Installing extension 'ecmel.vscode-html-css'...
+Extension 'ecmel.vscode-html-css' v2.0.13 was successfully installed.
+Installing extensions...
+Installing extension 'ms-kubernetes-tools.vscode-kubernetes-tools'...
+Extension 'ms-kubernetes-tools.vscode-kubernetes-tools' v1.3.25 was successfully installed.
+Installing extensions...
+Installing extension 'ritwickdey.liveserver'...
+Extension 'ritwickdey.liveserver' v5.7.9 was successfully installed.
+Installing extensions...
+Installing extension 'fallenmax.mithril-emmet'...
+Extension 'fallenmax.mithril-emmet' v0.7.7 was successfully installed.
+Installing extensions...
+Installing extension 'simonsiefke.svg-preview'...
+Extension 'simonsiefke.svg-preview' v2.8.3 was successfully installed.
+Installing extensions...
+Installing extension 'tomoki1207.pdf'...
+Extension 'tomoki1207.pdf' v1.2.2 was successfully installed.

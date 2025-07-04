@@ -155,7 +155,7 @@ read -p $'\e[36m Enter your choice [1/2/3]: \e[0m' shell_choice
 case "$shell_choice" in
     2)
         echo -e "\e[34m Installing fish shell...\e[0m"
-        bash "$HOME/HyprArch/install_scripts/fish.sh" >>log.txt 2>&1
+        bash "$HOME/HyprArch/install_scripts/fish.sh"
         if [ $? -ne 0 ]; then
             echo -e "\e[31m❌ Fish shell installation failed. Aborting installation.\e[0m"
             exit 1
@@ -163,7 +163,7 @@ case "$shell_choice" in
         ;;
     3)
         echo -e "\e[34m Installing zsh shell...\e[0m"
-        bash "$HOME/HyprArch/install_scripts/zsh.sh" >>log.txt 2>&1
+        bash "$HOME/HyprArch/install_scripts/zsh.sh"
         if [ $? -ne 0 ]; then
             echo -e "\e[31m❌ Zsh shell installation failed. Aborting installation.\e[0m"
             exit 1
@@ -179,7 +179,7 @@ esac
 #---------------------------#
 read -p $'\e[36m Install GTK theme? (y/n): \e[0m' install_gtk
 if [[ "$install_gtk" =~ ^[Yy]$ ]]; then
-    bash "$HOME/HyprArch/install_scripts/gtk.sh" >>log.txt 2>&1
+    bash "$HOME/HyprArch/install_scripts/gtk.sh"
     if [ $? -ne 0 ]; then
         echo -e "\e[31m❌ GTK theme installation failed. Aborting installation.\e[0m"
         exit 1
@@ -192,7 +192,7 @@ fi
 echo -e "\e[34m📋 Copying configurations...\e[0m"
 if [ -d "$HOME/HyprArch/configs" ]; then
     mkdir -p "$HOME/.config"
-    cp -r "$HOME/HyprArch/configs/"* "$HOME/.config/" >>log.txt 2>&1
+    cp -r "$HOME/HyprArch/configs/"* "$HOME/.config/"
 else
     echo -e "\e[31m🚨 configs folder not found\e[0m"
 fi
@@ -231,7 +231,7 @@ fi
 #---------------------------#
 #   NVIDIA driver setup     #
 #---------------------------#
-bash "$HOME/HyprArch/install_scripts/nvidia.sh" >>log.txt 2>&1
+bash "$HOME/HyprArch/install_scripts/nvidia.sh"
 
 #-------------------------------#
 #   AstroNvim & HyprArch neovim #
@@ -239,7 +239,7 @@ bash "$HOME/HyprArch/install_scripts/nvidia.sh" >>log.txt 2>&1
 read -p $'\e[36m Install AstroNvim? (y/n): \e[0m' install_astronvim
 if [[ "$install_astronvim" =~ ^[Yy]$ ]]; then
     rm -rf ~/.config/nvim
-    git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim >>log.txt 2>&1
+    git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
     rm -rf ~/.config/nvim/.git
 fi
 
@@ -265,7 +265,7 @@ fi
 #     grub     #
 #--------------#
 echo -e "\e[34m Configuring GRUB...\e[0m"
-bash "$HOME/HyprArch/install_scripts/grub.sh" >>log.txt 2>&1
+bash "$HOME/HyprArch/install_scripts/grub.sh"
 if [ $? -ne 0 ]; then
     echo -e "\e[31m❌ GRUB configuration failed. Aborting installation.\e[0m"
     exit 1
