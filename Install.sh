@@ -245,7 +245,7 @@ fi
 #----------------------#
 #  Install music utils #
 #----------------------#
-read -p $'\e[36m Install more music utils? (y/n): \e[0m' install_utils
+read -p $'\e[36m Install more music utils? (not recommended for the average user) (y/n): \e[0m' install_utils
 if [[ "$install_utils" =~ ^[Yy]$ ]]; then
     sudo pacman -S lsp-plugins easyeffects >>log.txt 2>&1
 fi
