@@ -32,7 +32,7 @@ sudo pacman -Syu --needed base-devel --noconfirm --quiet >>log.txt 2>&1 || {
 
 # --- Новый блок: Проверка и установка пакетов из pkglist.txt ---
 echo -e "\e[34m📋 Checking installed packages...\e[0m"
-pkglist=($(cat ~/HyprArch/pkg/pkglist.txt))
+mapfile -t pkglist < ~/HyprArch/pkg/pkglist.txt
 installed_pkgs=()
 missing_pkgs=()
 for pkg in "${pkglist[@]}"; do
@@ -143,9 +143,9 @@ sudo systemctl enable sddm >>log.txt 2>&1 || {
 #---------------------------#
 LANG=en_US.UTF-8 xdg-user-dirs-update --force
 
-#---------------------------#
-#   SHELL SELECTION         #
-#---------------------------#
+#---------------------#
+#   Shell selection   #
+#---------------------#
 echo -e "\e[34m🔧 Which shell do you want to install?\e[0m"
 echo -e "\e[36m 1) Keep current shell (default)\e[0m"
 echo -e "\e[36m 2) Install fish shell\e[0m"
@@ -245,7 +245,7 @@ fi
 #----------------------#
 #  Install music utils #
 #----------------------#
-read -p $'\e[36m Install more music utils? (y/n): \e[0m' install_utils
+read -p $'\e[36m Install more music utils? (not recommended for the average user) (y/n): \e[0m' install_utils
 if [[ "$install_utils" =~ ^[Yy]$ ]]; then
     sudo pacman -S lsp-plugins easyeffects >>log.txt 2>&1
 fi
@@ -270,6 +270,9 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+#---------------------------#
+#   Install more programs   #
+#---------------------------#
 echo -e "\e[34m📋 Install more programs...\e[0m"
 bash "$HOME/HyprArch/install_scripts/programms.sh"
 if [ $? -ne 0 ]; then
@@ -277,6 +280,9 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+#------------------------------#
+#   HyprVSCode custom install  #
+#------------------------------#
 if pacman -Q visual-studio-code-bin &>/dev/null; then
 	if bash "$HOME/HyprArch/install_scripts/vs-code.sh"; then
 		echo -e "\e[32m✅ HyprVSCode custom installed successfully!\e[0m"
@@ -286,8 +292,9 @@ if pacman -Q visual-studio-code-bin &>/dev/null; then
 else
 	echo -e "\e[33m⚠️  VS-Code is not installed, skipping custom install\e[0m"
 fi
-
-# Going to HyprArch directory
+#---------------------------------#
+#   Going to HyprArch directory   #
+#---------------------------------#
 if cd "$HOME/HyprArch"; then
     echo -e "\e[32m📂 Changed directory to HyprArch\e[0m"
     echo -e "\e[32m✅ GRUB configured successfully.\e[0m"
@@ -299,6 +306,10 @@ else
 fi
 
 echo -e "\e[32m🎉 Installation completed successfully! 🚀\e[0m"
-exit 0
-exit 0
-exit 0
+echo -e "\e[36mWould you like to reboot now? (y/n): \e[0m"
+read -r reboot_choice
+if [[ "$reboot_choice" =~ ^[Yy]$ ]]; then
+    echo -e "\e[34m🔄 Rebooting...\e[0m"
+    sudo reboot
+fi
+
