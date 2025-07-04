@@ -5,7 +5,7 @@
 	"margin": "3 3 0 3",
 	"spacing": 1,
 	"modules-left": [
-		"custom/archlogo",
+		"custom/logo",
 		"hyprland/workspaces",
 		"tray",
 		"pulseaudio"
@@ -25,11 +25,13 @@
 		"custom/notifications",
 		"custom/shutdown"
 	],
-	"custom/archlogo": {
-		"format": "󰣇",
+	"custom/logo": {
+		"format": "{}",
+		"exec": "echo '<img src=\"/home/username/.config/waybar/icons/logo.png\" width=\"20\" height=\"20\">'",
 		"on-click": "wofi --show drun",
-		"class": "archlogo",
-		"tooltip": false
+		"class": "logo",
+		"tooltip": false,
+		"interval": 3600
 	},
 	"hyprland/workspaces": {
 		"format": "{name}",
