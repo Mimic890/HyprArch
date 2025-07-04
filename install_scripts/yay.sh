@@ -3,7 +3,7 @@
 if command -v yay >/dev/null 2>&1; then
     echo -e "\e[32m✅ yay is already installed, skipping installation.\e[0m"
 else
-    echo -e "\e[34m🛠️ Cloning yay...\e[0m"
+    echo -e "\e[34m🔧 Cloning yay...\e[0m"
     cd "$HOME" >>"$HOME/HyprArch/log.txt" 2>&1 || {
         echo -e "\e[31m❌ Failed to change directory to $HOME\e[0m"
         exit 1
@@ -19,7 +19,7 @@ else
         exit 1
     }
 
-    echo -e "\e[34m🔨 Building and installing yay...\e[0m"
+    echo -e "\e[34m🔧 Building and installing yay...\e[0m"
     echo "$USER ALL=(ALL) NOPASSWD: /usr/bin/pacman" | sudo tee /etc/sudoers.d/99_yay_pacman > /dev/null
     sudo chmod 440 /etc/sudoers.d/99_yay_pacman >>"$HOME/HyprArch/log.txt" 2>&1
 

@@ -2,6 +2,7 @@
 
 set -e
 
+echo -e "\e[34m🔧 Installing GTK theme...\e[0m"
 sudo pacman -S --noconfirm gtk4 gtk3 nwg-look >>"$HOME/HyprArch/log.txt" 2>&1
 
 # .gtkrc-2.0
