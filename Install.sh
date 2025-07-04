@@ -35,11 +35,36 @@ echo -e "\e[34m📋 Checking installed packages...\e[0m"
 pkglist=($(cat ~/HyprArch/pkg/pkglist.txt))
 installed_pkgs=()
 missing_pkgs=()
-for pkg in "${pkglist[@]}"; do
-    if pacman -Qq "$pkg" &>>log.txt; then
-        installed_pkgs+=("$pkg")
+
+check_pkg_installed() {
+    if pacman -Qq "$1" &>>log.txt; then
+        echo "installed:$1"
     else
-        missing_pkgs+=("$pkg")
+        echo "missing:$1"
+    fi
+}
+
+results=()
+for pkg in "${pkglist[@]}"; do
+    check_pkg_installed "$pkg" &
+done
+
+wait
+
+while read -r line; do
+    results+=("$line")
+done < <(
+    for pkg in "${pkglist[@]}"; do
+        check_pkg_installed "$pkg" &
+    done
+    wait
+)
+
+for res in "${results[@]}"; do
+    if [[ $res == installed:* ]]; then
+        installed_pkgs+=("${res#installed:}")
+    elif [[ $res == missing:* ]]; then
+        missing_pkgs+=("${res#missing:}")
     fi
 done
 
