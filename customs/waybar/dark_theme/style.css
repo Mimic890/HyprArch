@@ -1,0 +1,124 @@
+@define-color miblue #5c76cc;
+@define-color turquoise rgba(0,247,212,0.3);
+
+
+
+* {
+    font-family: "JetBrains Mono";
+    font-size: 15px;
+    color: #ffffff;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+window#waybar {
+    background: rgba(30, 30, 45, 0.7);
+    border-radius: 8px;
+    min-height: 36px;
+}
+#custom-logo {
+    font-size: 26px;
+    padding: 2px 6px 2px 8px;
+    color: @miblue;
+}
+#workspaces {
+}
+#workspaces button {
+	padding: 3px 6px 0px 6px;
+	margin: 4px 2px 4px 2px;
+    background: transparent;
+    color: @miblue;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background 0.3s ease, color 0.3s ease, trensform 0.2s ease;
+}
+#workspaces button:hover {
+    background: @turquoise;
+    color: #ffffff;
+	margin: 4px 2px 4px 2px;
+}
+#workspaces button.active {
+    background: @miblue;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+#tray {
+    padding: 2px 5px 0px 4px;
+}
+#pulseaudio {
+    padding: 3px 3px 2px 3px;
+    color: @miblue;
+    font-weight: 700;
+}
+#cpu, #memory {
+    padding: 4px 3px 0px 3px;
+    color: @miblue;
+    font-weight: 700;
+}
+#network {
+    padding: 2px 3px 0px 3px;
+    color: @miblue;
+    font-weight: 700;
+}
+#custom-battery {
+    padding: 2px 3px 1px 3px;
+    color: @miblue;
+    font-weight: 700;
+}
+#backlight {
+    padding: 4px 2px 1px 2px;
+    color: @miblue;
+    font-weight: 700;
+    font-size: 15px;
+}
+#language {
+    padding: 3px 2px 0px 2px;
+    margin-left: 3px;
+    color: @miblue;
+    font-weight: 700;
+}
+#clock {
+    padding: 3px 2px 0px 2px;
+    font-weight: bold;
+    color: @miblue;
+    font-size: 17px;
+}
+#custom-clipboard {
+    color: @miblue;
+    font-size: 18px;
+    padding: 0px 4px 0px 4px;
+    margin: 4px 0px 4px 0px;
+}
+#custom-clipboard:hover {
+    color: #ffffff;
+    background-color: #313244;
+    border-radius: 5px;
+    padding: 0px 4px 0px 4px;
+    margin: 4px 0px 4px 0px;
+}
+#custom-notifications {
+    color: @miblue;
+    font-size: 18px;
+    padding: 0px 4px 0px 4px;
+    margin: 4px 0px 4px 1px;
+}
+#custom-notifications:hover {
+    color: #ffffff;
+    background-color: #313244;
+    border-radius: 5px;
+    padding: 0px 4px 0px 4px;
+    margin: 4px 0px 4px 1px;
+}
+#custom-shutdown {
+    font-size: 21px;
+    color: #ff5555;
+    padding: 0px 4px 0px 4px;
+    margin: 5px 6px 5px 5px;
+}
+#custom-shutdown:hover {
+    background: rgba(255, 85, 85, 0.3);
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 0px 4px 0px 4px;
+    margin: 5px 6px 5px 5px;
+}

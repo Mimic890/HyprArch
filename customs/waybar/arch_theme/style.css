@@ -17,7 +17,7 @@ window#waybar {
     border-radius: 8px;
     min-height: 36px;
 }
-#custom-archlogo {
+#custom-logo {
     font-size: 26px;
     padding: 2px 6px 2px 8px;
     color: @miblue;
