@@ -13,7 +13,7 @@ if [ -f "$HOME/HyprArch/customs/grub/grub" ]; then
         exit 1
     fi
 else
-    echo -e "\e[31m🚨 File grub not found\e[0m"
+    echo -e "\e[31m❌ 🚨 File grub not found\e[0m"
     echo -e "\e[31m❌ GRUB configuration failed. Aborting.\e[0m"
     exit 1
 fi
@@ -29,7 +29,7 @@ if [ -d "$HOME/HyprArch/customs/grub/hypr" ]; then
         exit 1
     fi
 else
-    echo -e "\e[31m🚨 Folder grub/hypr not found\e[0m"
+    echo -e "\e[31m❌ 🚨 Folder grub/hypr not found\e[0m"
     echo -e "\e[31m❌ GRUB configuration failed. Aborting.\e[0m"
     exit 1
 fi
@@ -42,3 +42,5 @@ else
     echo -e "\e[31m❌ GRUB configuration failed. Aborting.\e[0m"
     exit 1
 fi
+
+exit 0

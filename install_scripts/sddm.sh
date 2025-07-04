@@ -1,6 +1,6 @@
 #!/bin/bash
 # Configuring SDDM
-echo -e "\e[34m🖌️ Configuring SDDM...\e[0m"
+echo -e "\e[34m🔧 Configuring SDDM...\e[0m"
 
 # Copy SDDM theme
 if [ -d "$HOME/HyprArch/customs/SDDM/hyprarch-sddm" ]; then
@@ -13,7 +13,7 @@ if [ -d "$HOME/HyprArch/customs/SDDM/hyprarch-sddm" ]; then
         exit 1
     fi
 else
-    echo -e "\e[31m🚨 Folder SDDM/hyprarch-sddm not found\e[0m"
+    echo -e "\e[31m❌ 🚨 Folder SDDM/hyprarch-sddm not found\e[0m"
     echo -e "\e[31m❌ SDDM configuration failed. Aborting.\e[0m"
     exit 1
 fi
@@ -31,7 +31,7 @@ if [ -f "$HOME/HyprArch/customs/SDDM/sddm.conf" ]; then
         exit 1
     fi
 else
-    echo -e "\e[31m🚨 File sddm.conf not found\e[0m"
+    echo -e "\e[31m❌ 🚨 File sddm.conf not found\e[0m"
     echo -e "\e[31m❌ SDDM configuration failed. Aborting.\e[0m"
     exit 1
 fi

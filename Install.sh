@@ -20,18 +20,18 @@ trap 'kill $SUDO_REFRESH_PID 2>/dev/null' EXIT
 #   Updating system and installing packages #
 #-------------------------------------------#
 if [ ! -f ~/HyprArch/pkg/pkglist.txt ]; then
-    echo -e "\e[31m🚨 File pkglist.txt not found\e[0m"
+    echo -e "\e[31m❌ 🚨 File pkglist.txt not found\e[0m"
     exit 1
 fi
 
-echo -e "\e[34m🔄 Updating system...\e[0m"
+echo -e "\e[34m🔧 Updating system...\e[0m"
 sudo pacman -Syu --needed base-devel --noconfirm --quiet >>log.txt 2>&1 || {
     echo -e "\e[31m❌ System update error\e[0m"
     exit 1
 }
 
 # --- Новый блок: Проверка и установка пакетов из pkglist.txt ---
-echo -e "\e[34m📦 Проверка установленных пакетов...\e[0m"
+echo -e "\e[34m📋 Checking installed packages...\e[0m"
 pkglist=($(cat ~/HyprArch/pkg/pkglist.txt))
 installed_pkgs=()
 missing_pkgs=()
@@ -44,19 +44,19 @@ for pkg in "${pkglist[@]}"; do
 done
 
 if [ ${#installed_pkgs[@]} -gt 0 ]; then
-    echo -e "\e[32m✅ Уже установлены: ${installed_pkgs[*]}\e[0m"
+    echo -e "\e[32m✅ Already installed: ${installed_pkgs[*]}\e[0m"
 fi
 
 if [ ${#missing_pkgs[@]} -eq 0 ]; then
-    echo -e "\e[32mВсе необходимые пакеты уже установлены.\e[0m"
+    echo -e "\e[32m✅ All required packages are already installed.\e[0m"
 else
-    echo -e "\e[34m📦 Установка недостающих пакетов...\e[0m"
+    echo -e "\e[34m🔧 Installing missing packages...\e[0m"
     for pkg in "${missing_pkgs[@]}"; do
-        echo -e "\e[36m→ Устанавливается: $pkg\e[0m"
+        echo -e "\e[36m→ Installing: $pkg\e[0m"
         if sudo pacman -S --noconfirm --quiet "$pkg" >>log.txt 2>&1; then
-            echo -e "\e[32m   $pkg установлен успешно.\e[0m"
+            echo -e "\e[32m✅   $pkg installed successfully.\e[0m"
         else
-            echo -e "\e[31m   Ошибка установки $pkg\e[0m"
+            echo -e "\e[31m❌   Error installing $pkg\e[0m"
             exit 1
         fi
     done
@@ -65,8 +65,8 @@ fi
 #------------------#
 #  installing yay  #
 #------------------#
-echo -e "\e[34m🔨 Installing yay (AUR)...\e[0m"
-bash "$HOME/HyprArch/install_scripts/yay.sh" >>log.txt 2>&1
+echo -e "\e[34m🔧 Installing yay (AUR)...\e[0m"
+bash "$HOME/HyprArch/install_scripts/yay.sh"
 if [ $? -ne 0 ]; then
     echo -e "\e[31m❌ yay installation failed. Aborting installation.\e[0m"
     exit 1
@@ -76,11 +76,11 @@ fi
 # Installing AUR packages #
 #-------------------------#
 if [ ! -f ~/HyprArch/pkg/aur.txt ]; then
-    echo -e "\e[31m🚨 File aur.txt not found\e[0m"
+    echo -e "\e[31m❌ 🚨 File aur.txt not found\e[0m"
     exit 1
 fi
 
-echo -e "\e[35m📥 Проверка установленных AUR пакетов...\e[0m"
+echo -e "\e[35m📋 Checking installed AUR packages...\e[0m"
 aurlist=($(cat ~/HyprArch/pkg/aur.txt))
 installed_aur=()
 missing_aur=()
@@ -93,19 +93,19 @@ for pkg in "${aurlist[@]}"; do
 done
 
 if [ ${#installed_aur[@]} -gt 0 ]; then
-    echo -e "\e[32m✅ Уже установлены (AUR): ${installed_aur[*]}\e[0m"
+    echo -e "\e[32m✅ Already installed (AUR): ${installed_aur[*]}\e[0m"
 fi
 
 if [ ${#missing_aur[@]} -eq 0 ]; then
-    echo -e "\e[32mВсе необходимые AUR пакеты уже установлены.\e[0m"
+    echo -e "\e[32m✅ All required AUR packages are already installed.\e[0m"
 else
-    echo -e "\e[35m📥 Установка недостающих AUR пакетов...\e[0m"
+    echo -e "\e[35m🔧 Installing missing AUR packages...\e[0m"
     for pkg in "${missing_aur[@]}"; do
-        echo -e "\e[36m→ Устанавливается (AUR): $pkg\e[0m"
+        echo -e "\e[36m→ Installing (AUR): $pkg\e[0m"
         if yay -S --noconfirm --quiet "$pkg" >>log.txt 2>&1; then
-            echo -e "\e[32m   $pkg (AUR) установлен успешно.\e[0m"
+            echo -e "\e[32m✅   $pkg (AUR) installed successfully.\e[0m"
         else
-            echo -e "\e[31m   Ошибка установки $pkg (AUR)\e[0m"
+            echo -e "\e[31m❌   Error installing $pkg (AUR)\e[0m"
             exit 1
         fi
     done
@@ -146,7 +146,7 @@ LANG=en_US.UTF-8 xdg-user-dirs-update --force
 #---------------------------#
 #   SHELL SELECTION         #
 #---------------------------#
-echo -e "\e[36m Which shell do you want to install?\e[0m"
+echo -e "\e[34m🔧 Which shell do you want to install?\e[0m"
 echo -e "\e[36m 1) Keep current shell (default)\e[0m"
 echo -e "\e[36m 2) Install fish shell\e[0m"
 echo -e "\e[36m 3) Install zsh shell\e[0m"
@@ -154,7 +154,7 @@ read -p $'\e[36m Enter your choice [1/2/3]: \e[0m' shell_choice
 
 case "$shell_choice" in
     2)
-        echo -e "\e[34m Installing fish shell...\e[0m"
+        echo -e "\e[34m🔧 Installing fish shell...\e[0m"
         bash "$HOME/HyprArch/install_scripts/fish.sh"
         if [ $? -ne 0 ]; then
             echo -e "\e[31m❌ Fish shell installation failed. Aborting installation.\e[0m"
@@ -162,7 +162,7 @@ case "$shell_choice" in
         fi
         ;;
     3)
-        echo -e "\e[34m Installing zsh shell...\e[0m"
+        echo -e "\e[34m🔧 Installing zsh shell...\e[0m"
         bash "$HOME/HyprArch/install_scripts/zsh.sh"
         if [ $? -ne 0 ]; then
             echo -e "\e[31m❌ Zsh shell installation failed. Aborting installation.\e[0m"
@@ -170,7 +170,7 @@ case "$shell_choice" in
         fi
         ;;
     *)
-        echo -e "\e[34m Keeping current shell. No changes will be made.\e[0m"
+        echo -e "\e[33m⚠️  Keeping current shell. No changes will be made.\e[0m"
         ;;
 esac
 
@@ -194,7 +194,7 @@ if [ -d "$HOME/HyprArch/configs" ]; then
     mkdir -p "$HOME/.config"
     cp -r "$HOME/HyprArch/configs/"* "$HOME/.config/"
 else
-    echo -e "\e[31m🚨 configs folder not found\e[0m"
+    echo -e "\e[31m❌ 🚨 configs folder not found\e[0m"
 fi
 
 #---------------------------#
@@ -219,14 +219,13 @@ if [ -n "$WAYBAR_IFACE" ]; then
         if grep -q '"interface":' "$cfg"; then
             cp "$cfg" "$cfg.bak"
             sed -i "s/\"interface\": \".*\"/\"interface\": \"$WAYBAR_IFACE\"/" "$cfg"
-            echo -e "\e[34m🔄 Обновлён интерфейс в $cfg\e[0m"
+            echo -e "\e[34m🔧 Updated interface in $cfg\e[0m"
         fi
     done
     echo -e "\e[32m✅ Waybar config updated: wpl3s0 → $WAYBAR_IFACE\e[0m"
 else
-    echo -e "\e[33m⚠️  Не удалось определить сетевой интерфейс для Waybar. Проверьте вручную.\e[0m"
+    echo -e "\e[33m⚠️  Could not determine network interface for Waybar. Please check manually.\e[0m"
 fi
-
 
 #---------------------------#
 #   NVIDIA driver setup     #
@@ -246,7 +245,7 @@ fi
 #----------------------#
 #  Install music utils #
 #----------------------#
-read -p $'\e[36m Install music utils? (y/n): \e[0m' install_utils
+read -p $'\e[36m Install more music utils? (y/n): \e[0m' install_utils
 if [[ "$install_utils" =~ ^[Yy]$ ]]; then
     sudo pacman -S lsp-plugins easyeffects >>log.txt 2>&1
 fi
@@ -254,8 +253,8 @@ fi
 #-------------#
 #    sddm     #
 #-------------#
-echo -e "\e[34m Configuring SDDM...\e[0m"
-bash "$HOME/HyprArch/install_scripts/sddm.sh" >>log.txt 2>&1
+echo -e "\e[34m🔧 Configuring SDDM...\e[0m"
+bash "$HOME/HyprArch/install_scripts/sddm.sh"
 if [ $? -ne 0 ]; then
     echo -e "\e[31m❌ SDDM configuration failed. Aborting installation.\e[0m"
     exit 1
@@ -264,28 +263,28 @@ fi
 #--------------#
 #     grub     #
 #--------------#
-echo -e "\e[34m Configuring GRUB...\e[0m"
+echo -e "\e[34m🔧 Configuring GRUB...\e[0m"
 bash "$HOME/HyprArch/install_scripts/grub.sh"
 if [ $? -ne 0 ]; then
     echo -e "\e[31m❌ GRUB configuration failed. Aborting installation.\e[0m"
     exit 1
 fi
 
-echo -e "\e[34m Install more programms...\e[0m"
+echo -e "\e[34m📋 Install more programs...\e[0m"
 bash "$HOME/HyprArch/install_scripts/programms.sh"
 if [ $? -ne 0 ]; then
-    echo -e "\e[31m❌ Install more programms failed. Aborting installation.\e[0m"
+    echo -e "\e[31m❌ Install more programs failed. Aborting installation.\e[0m"
     exit 1
 fi
 
 if pacman -Q visual-studio-code-bin &>/dev/null; then
 	if bash "$HOME/HyprArch/install_scripts/vs-code.sh"; then
-		echo -e "\e[32m✅ Кастом HyprVSCode установлен успешно!\e[0m"
+		echo -e "\e[32m✅ HyprVSCode custom installed successfully!\e[0m"
 	else
-		echo -e "\e[31m❌ Ошибка при установке кастома HyprVSCode!\e[0m"
+		echo -e "\e[31m❌ Error installing HyprVSCode custom!\e[0m"
 	fi
 else
-	echo "VS-Code is not installing, skipping install custom"
+	echo -e "\e[33m⚠️  VS-Code is not installed, skipping custom install\e[0m"
 fi
 
 # Going to HyprArch directory
@@ -300,5 +299,6 @@ else
 fi
 
 echo -e "\e[32m🎉 Installation completed successfully! 🚀\e[0m"
+exit 0
 exit 0
 exit 0
