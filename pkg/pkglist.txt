@@ -97,6 +97,7 @@ xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-kde
+xdg-user-dirs
 yt-dlp
 swaync
 swww
