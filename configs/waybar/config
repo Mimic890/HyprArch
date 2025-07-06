@@ -26,12 +26,9 @@
 		"custom/shutdown"
 	],
 	"custom/logo": {
-		"format": "{}",
-		"exec": "echo '<img src=\"/home/username/.config/waybar/icons/logo.png\" width=\"20\" height=\"20\">'",
+		"format": "",
 		"on-click": "wofi --show drun",
-		"class": "logo",
-		"tooltip": false,
-		"interval": 3600
+		"tooltip": false
 	},
 	"hyprland/workspaces": {
 		"format": "{name}",
