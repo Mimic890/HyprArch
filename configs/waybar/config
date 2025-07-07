@@ -1,7 +1,7 @@
 {
 	"layer": "top",
 	"position": "top",
-	"height": 35,
+	"height": 39,
 	"margin": "3 3 0 3",
 	"spacing": 1,
 	"modules-left": [
@@ -17,8 +17,9 @@
 	],
 	"modules-right": [
 		"network#status",
-		"custom/battery",
-		"backlight",
+		"battery",
+		"backlight#icon",
+		"backlight#percent",
 		"hyprland/language",
 		"clock",
 		"custom/clipboard",
@@ -26,7 +27,7 @@
 		"custom/shutdown"
 	],
 	"custom/logo": {
-		"format": "",
+		"format": "󰣇",
 		"on-click": "wofi --show drun",
 		"tooltip": false
 	},
@@ -48,9 +49,9 @@
 		"spacing": 8
 	},
 	"pulseaudio": {
-		"format": "{icon} {volume}%  {format_source}",
-		"format-bluetooth": "{icon} {volume}%  {format_source}",
-		"format-bluetooth-muted": " {icon} {format_source}",
+		"format": "{icon}{volume}% {format_source}",
+		"format-bluetooth": "{icon} {volume}% {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
 		"format-muted": " {format_source}",
 		"format-source": " {volume}%",
 		"format-source-muted": "",
@@ -77,43 +78,47 @@
 		"format": "RAM {}%"
 	},
 	"network#speed": {
-		"interface": "wlp3s0",
-		"format": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
+		"interface": "wlan0",
+		"format": "↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",
 		"interval": 1,
 		"tooltip": false
 	},
 	"network#status": {
-		"format-wifi": "{signalStrength}% ",
+		"format-wifi": " {signalStrength}%",
 		"format-ethernet": "",
 		"tooltip-format": "{ifname} via {gwaddr} ",
-		"format-linked": "{ifname} (No IP) ",
+		"format-linked": " {ifname} (No IP)",
 		"format-disconnected": "Disconnected ⚠",
 		"on-click": "kitty --start-as normal nmtui"
 	},
-	"custom/battery": {
-		"format": "{text}",
-		"tooltip": "{tooltip}",
-		"exec": "~/.config/waybar/scripts/bat.sh",
-		"return-type": "json",
-		"interval": 1,
-		"class": "battery"
+    	"battery": {
+      	"states": {
+        		"warning": 30,
+        		"critical": 15
+      	},
+      	"format": "{icon}  {capacity}%",
+      	"format-full": "{icon}  {capacity}%",
+      	"format-charging": "  {capacity}%",
+      	"format-plugged": "  {capacity}%",
+      	"format-alt": "{time} {icon}",
+      	"format-icons": ["", "", "", "", ""]
+    	},
+	"backlight#icon": {
+		"format": "{icon}",
+		"format-icons": [ " ", " ", " ", " ", " ", " ", " ", " ", " " ]
 	},
-	"backlight": {
-		"format": "{icon} {percent}%",
-		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			""
-		]
+	"backlight#percent": {
+		"format": "{percent}%"
+	},
+	"hyprland/language": {
+    		"format": "{short}",
+    		"rewrite": {
+        		"Russian": "RU",
+        		"English (US)": "EN"
+		}
 	},
 	"clock": {
-		"format": " {:%H:%M:%S}",
+		"format": "{:%H:%M:%S}",
 		"interval": 1,
 		"tooltip": false
 	},

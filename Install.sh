@@ -151,7 +151,6 @@ echo -e "\e[36m 1) Keep current shell (default)\e[0m"
 echo -e "\e[36m 2) Install fish shell\e[0m"
 echo -e "\e[36m 3) Install zsh shell\e[0m"
 read -p $'\e[36m Enter your choice [1/2/3]: \e[0m' shell_choice
-
 case "$shell_choice" in
     2)
         echo -e "\e[34m🔧 Installing fish shell...\e[0m"
@@ -211,21 +210,49 @@ fi
 #  Update waybar interface  #
 #---------------------------#
 # Определяем активный сетевой интерфейс (без loopback)
+WAYBAR_DIR="$HOME/.config/waybar"
 WAYBAR_IFACE=$(ip route | awk '/default/ {print $5; exit}')
 
 if [ -n "$WAYBAR_IFACE" ]; then
-    for cfg in "$HOME/.config/waybar"/config*; do
+    echo -e "\e[36m🔍 Detected interface: $WAYBAR_IFACE\e[0m"
+
+    for cfg in "$WAYBAR_DIR"/config*; do
         [ -f "$cfg" ] || continue
         if grep -q '"interface":' "$cfg"; then
-            cp "$cfg" "$cfg.bak"
+            cp "$cfg" "$cfg.bak"  # Временная копия на случай сбоя
+            # Заменяем строку с интерфейсом
             sed -i "s/\"interface\": \".*\"/\"interface\": \"$WAYBAR_IFACE\"/" "$cfg"
             echo -e "\e[34m🔧 Updated interface in $cfg\e[0m"
+            # Удаляем временный .bak-файл
+            rm -f "$cfg.bak"
         fi
     done
-    echo -e "\e[32m✅ Waybar config updated: wpl3s0 → $WAYBAR_IFACE\e[0m"
+    echo -e "\e[32m✅ Waybar config updated to use interface: $WAYBAR_IFACE\e[0m"
 else
-    echo -e "\e[33m⚠️  Could not determine network interface for Waybar. Please check manually.\e[0m"
+    echo -e "\e[33m⚠️  Could not determine network interface. Please check manually.\e[0m"
 fi
+
+#---------------------------#
+#  Waybar theme selection   #
+#---------------------------#
+echo "Выберите тему Waybar:"
+echo "1) Dark and White"
+echo "2) Blue Arch"
+read -p "Введите номер темы (1-2): " choice
+case "$choice" in
+    1)
+        echo "Устанавливается тема Dark and White..."
+        cp -r "$HOME/HyprArch/customs/waybar/dark-and-white/"* "$HOME/.config/waybar/"
+        ;;
+    2)
+        echo "Устанавливается тема Blue Arch..."
+        cp -r "$HOME/HyprArch/customs/waybar/blue-arch/"* "$HOME/.config/waybar/"
+        ;;
+    *)
+        echo "Неверный выбор. Пожалуйста, введите 1 или 2."
+        exit 1
+        ;;
+esac
 
 #---------------------------#
 #   NVIDIA driver setup     #
@@ -292,6 +319,7 @@ if pacman -Q visual-studio-code-bin &>/dev/null; then
 else
 	echo -e "\e[33m⚠️  VS-Code is not installed, skipping custom install\e[0m"
 fi
+
 #---------------------------------#
 #   Going to HyprArch directory   #
 #---------------------------------#
@@ -312,4 +340,3 @@ if [[ "$reboot_choice" =~ ^[Yy]$ ]]; then
     echo -e "\e[34m🔄 Rebooting...\e[0m"
     sudo reboot
 fi
-
