@@ -104,6 +104,16 @@ else
     done
 fi
 
+#--------------#
+#   Monitor    #
+#--------------#
+echo -e "\e[34m🔧 Настройка мониторов...\e[0m"
+bash "$HOME/HyprArch/install_scripts/monitor.sh"
+if [ $? -ne 0 ]; then
+    echo -e "\e[31m❌ Настройка мониторов не удалась. Установка прервана.\e[0m"
+    exit 1
+fi
+
 #----------------------#
 # Configuring services #
 #----------------------#
@@ -353,4 +363,3 @@ if [[ "$reboot_choice" =~ ^[Yy]$ ]]; then
 fi
     exit 1
 fi
-
