@@ -35,5 +35,9 @@ if [ -d "/usr/share/themes/Breeze-Dark" ] || [ -f "/usr/share/themes/Breeze-Dark
 fi
 sudo cp -r "$HOME/HyprArch/customs/gtk/Breeze-Dark" "/usr/share/themes/" >>"$HOME/HyprArch/log.txt" 2>&1
 
+gsettings set org.gnome.desktop.interface gtk-theme "Breeze-Dark"
+gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+
+
 echo -e "\e[32m✅ GTK theme installed successfully.\e[0m"
 exit 0
