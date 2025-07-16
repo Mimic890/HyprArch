@@ -107,12 +107,25 @@ fi
 #--------------#
 #   Monitor    #
 #--------------#
-echo -e "\e[34m🔧 Настройка мониторов...\e[0m"
-bash "$HOME/HyprArch/install_scripts/monitor.sh"
-if [ $? -ne 0 ]; then
-    echo -e "\e[31m❌ Настройка мониторов не удалась. Установка прервана.\e[0m"
+MONITOR_SCRIPT="$HOME/HyprArch/install_scripts/monitor.sh"
+# === Проверка наличия файла ===
+if [ ! -f "$MONITOR_SCRIPT" ]; then
+    echo "❌ Скрипт монитора не найден: $MONITOR_SCRIPT"
     exit 1
 fi
+
+# === Делаем исполняемым при необходимости ===
+chmod +x "$MONITOR_SCRIPT"
+
+# === Запуск скрипта ===
+echo "📡 Запуск настройки монитора..."
+if ! "$MONITOR_SCRIPT"; then
+    echo "❌ Ошибка при выполнении $MONITOR_SCRIPT"
+    exit 1
+fi
+
+echo "✅ Настройка монитора завершена успешно."
+
 
 #----------------------#
 # Configuring services #
