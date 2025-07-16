@@ -33,31 +33,24 @@ sudo pacman -Syu --needed base-devel --noconfirm --quiet >>log.txt 2>&1 || {
 # --- Новый блок: Проверка и установка пакетов из pkglist.txt ---
 echo -e "\e[34m📋 Checking installed packages...\e[0m"
 mapfile -t pkglist < ~/HyprArch/pkg/pkglist.txt
-installed_pkgs=()
 missing_pkgs=()
+failed_pkgs=()
 for pkg in "${pkglist[@]}"; do
-    if pacman -Qq "$pkg" &>>log.txt; then
-        installed_pkgs+=("$pkg")
-    else
+    if ! pacman -Qq "$pkg" &>>log.txt; then
         missing_pkgs+=("$pkg")
     fi
 done
 
-if [ ${#installed_pkgs[@]} -gt 0 ]; then
-    echo -e "\e[32m✅ Already installed: ${installed_pkgs[*]}\e[0m"
-fi
-
 if [ ${#missing_pkgs[@]} -eq 0 ]; then
     echo -e "\e[32m✅ All required packages are already installed.\e[0m"
 else
-    echo -e "\e[34m🔧 Installing missing packages...\e[0m"
+    echo -e "\e[34m🔧 Installing missing packages: ${missing_pkgs[*]}\e[0m"
     for pkg in "${missing_pkgs[@]}"; do
-        echo -e "\e[36m→ Installing: $pkg\e[0m"
-        if sudo pacman -S --noconfirm --quiet "$pkg" >>log.txt 2>&1; then
-            echo -e "\e[32m✅   $pkg installed successfully.\e[0m"
+        if sudo pacman -S --noconfirm --needed "$pkg" >>log.txt 2>&1; then
+            echo -e "\e[32m✅ $pkg installed successfully.\e[0m"
         else
-            echo -e "\e[31m❌   Error installing $pkg\e[0m"
-            exit 1
+            echo -e "\e[31m❌ Error installing $pkg\e[0m"
+            failed_pkgs+=("$pkg")
         fi
     done
 fi
@@ -242,11 +235,21 @@ read -p "Введите номер темы (1-2): " choice
 case "$choice" in
     1)
         echo "Устанавливается тема Dark and White..."
-        cp -r "$HOME/HyprArch/customs/waybar/dark-and-white/"* "$HOME/.config/waybar/"
+        if [ -f "$HOME/HyprArch/customs/waybar/dark_and_white/style.css" ]; then
+            cp "$HOME/HyprArch/customs/waybar/dark_and_white/style.css" "$HOME/.config/waybar/"
+        else
+            echo -e "\e[31m❌ Файл темы не найден: $HOME/HyprArch/customs/waybar/dark_and_white/style.css\e[0m"
+            exit 1
+        fi
         ;;
     2)
         echo "Устанавливается тема Blue Arch..."
-        cp -r "$HOME/HyprArch/customs/waybar/blue-arch/"* "$HOME/.config/waybar/"
+        if [ -f "$HOME/HyprArch/customs/waybar/blue_arch/style.css" ]; then
+            cp "$HOME/HyprArch/customs/waybar/blue_arch/style.css" "$HOME/.config/waybar/"
+        else
+            echo -e "\e[31m❌ Файл темы не найден: $HOME/HyprArch/customs/waybar/blue_arch/style.css\e[0m"
+            exit 1
+        fi
         ;;
     *)
         echo "Неверный выбор. Пожалуйста, введите 1 или 2."
@@ -272,7 +275,7 @@ fi
 #----------------------#
 #  Install music utils #
 #----------------------#
-read -p $'\e[36m Install more music utils? (not recommended for the average user) (y/n): \e[0m' install_utils
+read -p $'\e[31m Install more music utils? (not recommended for the average user) (y/n): \e[0m' install_utils
 if [[ "$install_utils" =~ ^[Yy]$ ]]; then
     sudo pacman -S lsp-plugins easyeffects >>log.txt 2>&1
 fi
@@ -333,6 +336,14 @@ else
     exit 1
 fi
 
+# В самом конце скрипта, перед финальным сообщением:
+if [ ${#failed_pkgs[@]} -gt 0 ]; then
+    echo -e "\e[31m❌ The following packages failed to install:\e[0m"
+    for pkg in "${failed_pkgs[@]}"; do
+        echo -e "\e[31m  - $pkg\e[0m"
+    done
+fi
+
 echo -e "\e[32m🎉 Installation completed successfully! 🚀\e[0m"
 echo -e "\e[36mWould you like to reboot now? (y/n): \e[0m"
 read -r reboot_choice
@@ -340,3 +351,6 @@ if [[ "$reboot_choice" =~ ^[Yy]$ ]]; then
     echo -e "\e[34m🔄 Rebooting...\e[0m"
     sudo reboot
 fi
+    exit 1
+fi
+
