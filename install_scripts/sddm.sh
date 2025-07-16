@@ -1,7 +1,5 @@
 #!/bin/bash
 # Configuring SDDM
-echo -e "\e[34m🔧 Configuring SDDM...\e[0m"
-
 # Copy SDDM theme
 if [ -d "$HOME/HyprArch/customs/SDDM/hyprarch-sddm" ]; then
     sudo cp -r "$HOME/HyprArch/customs/SDDM/hyprarch-sddm" /usr/share/sddm/themes/ >>"$HOME/HyprArch/log.txt" 2>&1

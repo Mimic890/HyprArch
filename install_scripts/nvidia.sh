@@ -1,14 +1,22 @@
 #!/bin/bash
 # Проверка наличия видеокарты NVIDIA
 if ! lspci | grep -i nvidia &>/dev/null; then
-    echo -e "\e[33m⚠️  NVIDIA GPU не обнаружена. Пропускаем установку драйверов.\e[0m"
+    echo -e "\e[32m✅ NVIDIA GPU не обнаружена. Пропускаем установку драйверов.\e[0m"
     exit 0
 fi
 
 echo -e "\e[34m🔧 NVIDIA GPU detected. Installing drivers and dependencies...\e[0m"
 
-# Установка проприетарного драйвера и зависимостей
-sudo pacman -S --needed nvidia nvidia-utils nvidia-settings lib32-nvidia-utils egl-wayland >>"$HOME/HyprArch/log.txt" 2>&1
+# Установка каждого пакета по отдельности с выводом статуса
+PACKAGES=("nvidia" "nvidia-utils" "nvidia-settings" "egl-wayland")
+for pkg in "${PACKAGES[@]}"; do
+    echo -ne "\e[36m⏳ Installing $pkg...\e[0m "
+    if sudo pacman -S --needed "$pkg" >>"$HOME/HyprArch/log.txt" 2>&1; then
+        echo -e "\e[32m[SUCCESS]\e[0m"
+    else
+        echo -e "\e[31m[FAILED]\e[0m"
+    fi
+done
 
 # Добавление переменных окружения в конфиг Hyprland
 HYPR_CONF="$HOME/.config/hypr/hyprland.conf"

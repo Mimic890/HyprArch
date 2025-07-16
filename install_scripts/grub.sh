@@ -1,7 +1,4 @@
 #!/bin/bash
-
-echo -e "\e[34m🔧 Configuring GRUB...\e[0m"
-
 # Copying GRUB configuration
 if [ -f "$HOME/HyprArch/customs/grub/grub" ]; then
     sudo cp "$HOME/HyprArch/customs/grub/grub" /etc/default/grub >>"$HOME/HyprArch/log.txt" 2>&1
