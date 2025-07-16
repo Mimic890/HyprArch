@@ -1,8 +1,8 @@
 #!/bin/bash
-#  //////////////////////////////////
-# // HyprArch installation script //
-#//////////////////////////////////
 clear
+echo "  //////////////////////////////////
+ // HyprArch installation script //
+//////////////////////////////////"
 # Make all install scripts executable
 chmod +x "$HOME/HyprArch/install_scripts/"*
 # Exit on error
@@ -16,9 +16,10 @@ while true; do sudo -n true; sleep 60; done 2>/dev/null &
 SUDO_REFRESH_PID=$!
 trap 'kill $SUDO_REFRESH_PID 2>/dev/null' EXIT
 
+echo "
 #-------------------------------------------#
 #   Updating system and installing packages #
-#-------------------------------------------#
+#-------------------------------------------#"
 if [ ! -f ~/HyprArch/pkg/pkglist.txt ]; then
     echo -e "\e[31m❌ 🚨 File pkglist.txt not found\e[0m"
     exit 1
@@ -55,9 +56,10 @@ else
     done
 fi
 
+echo "
 #------------------#
 #  installing yay  #
-#------------------#
+#------------------#"
 echo -e "\e[34m🔧 Installing yay (AUR)...\e[0m"
 bash "$HOME/HyprArch/install_scripts/yay.sh"
 if [ $? -ne 0 ]; then
@@ -65,16 +67,17 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+echo "
 #-------------------------#
 # Installing AUR packages #
-#-------------------------#
+#-------------------------#"
 if [ ! -f ~/HyprArch/pkg/aur.txt ]; then
     echo -e "\e[31m❌ 🚨 File aur.txt not found\e[0m"
     exit 1
 fi
 
 echo -e "\e[35m📋 Checking installed AUR packages...\e[0m"
-aurlist=($(cat ~/HyprArch/pkg/aur.txt))
+aurlist=($(cat "$HOME/HyprArch/pkg/aur.txt"))
 installed_aur=()
 missing_aur=()
 for pkg in "${aurlist[@]}"; do
@@ -104,9 +107,10 @@ else
     done
 fi
 
+echo "
 #--------------#
 #   Monitor    #
-#--------------#
+#--------------#"
 MONITOR_SCRIPT="$HOME/HyprArch/install_scripts/monitor.sh"
 # === Проверка наличия файла ===
 if [ ! -f "$MONITOR_SCRIPT" ]; then
@@ -127,9 +131,10 @@ fi
 echo "✅ Настройка монитора завершена успешно."
 
 
+echo "
 #----------------------#
 # Configuring services #
-#----------------------#
+#----------------------#"
 echo -e "\e[34m🔧 Configuring services...\e[0m"
 if systemctl list-units --full | grep -q lightdm; then
     sudo systemctl disable lightdm >>log.txt 2>&1 || {
@@ -154,14 +159,16 @@ sudo systemctl enable sddm >>log.txt 2>&1 || {
     exit 1
 }
 
+echo "
 #---------------------------#
 #  Create base directories  #
-#---------------------------#
+#---------------------------#"
 LANG=en_US.UTF-8 xdg-user-dirs-update --force
 
+echo "
 #---------------------#
 #   Shell selection   #
-#---------------------#
+#---------------------#"
 echo -e "\e[34m🔧 Which shell do you want to install?\e[0m"
 echo -e "\e[36m 1) Keep current shell (default)\e[0m"
 echo -e "\e[36m 2) Install fish shell\e[0m"
@@ -189,9 +196,10 @@ case "$shell_choice" in
         ;;
 esac
 
+echo "
 #---------------------------#
 #   GTK Theme Installation  #
-#---------------------------#
+#---------------------------#"
 read -p $'\e[36m Install GTK theme? (y/n): \e[0m' install_gtk
 if [[ "$install_gtk" =~ ^[Yy]$ ]]; then
     bash "$HOME/HyprArch/install_scripts/gtk.sh"
@@ -201,9 +209,10 @@ if [[ "$install_gtk" =~ ^[Yy]$ ]]; then
     fi
 fi
 
+echo "
 #---------------------------#
 #   Copying configurations  #
-#---------------------------#
+#---------------------------#"
 echo -e "\e[34m📋 Copying configurations...\e[0m"
 if [ -d "$HOME/HyprArch/configs" ]; then
     mkdir -p "$HOME/.config"
@@ -212,9 +221,10 @@ else
     echo -e "\e[31m❌ 🚨 configs folder not found\e[0m"
 fi
 
+echo "
 #---------------------------#
 #   Wallpapers installation #
-#---------------------------#
+#---------------------------#"
 echo -e "\e[34m🖼  Installing wallpapers...\e[0m"
 if bash "$HOME/HyprArch/install_scripts/wallpapers.sh"; then
     echo -e "\e[32m✅ Wallpapers installed successfully.\e[0m"
@@ -222,9 +232,10 @@ else
     echo -e "\e[31m❌ Wallpapers installation failed. Check log.txt for details.\e[0m"
 fi
 
+echo "
 #---------------------------#
 #  Update waybar interface  #
-#---------------------------#
+#---------------------------#"
 # Определяем активный сетевой интерфейс (без loopback)
 WAYBAR_DIR="$HOME/.config/waybar"
 WAYBAR_IFACE=$(ip route | awk '/default/ {print $5; exit}')
@@ -248,9 +259,10 @@ else
     echo -e "\e[33m⚠️  Could not determine network interface. Please check manually.\e[0m"
 fi
 
+echo "
 #---------------------------#
 #  Waybar theme selection   #
-#---------------------------#
+#---------------------------#"
 echo "Выберите тему Waybar:"
 echo "1) Dark and White"
 echo "2) Blue Arch"
@@ -280,14 +292,16 @@ case "$choice" in
         ;;
 esac
 
+echo "
 #---------------------------#
 #   NVIDIA driver setup     #
-#---------------------------#
+#---------------------------#"
 bash "$HOME/HyprArch/install_scripts/nvidia.sh"
 
+echo "
 #-------------------------------#
 #   AstroNvim & HyprArch neovim #
-#-------------------------------#
+#-------------------------------#"
 read -p $'\e[36m Install AstroNvim? (y/n): \e[0m' install_astronvim
 if [[ "$install_astronvim" =~ ^[Yy]$ ]]; then
     rm -rf ~/.config/nvim
@@ -295,17 +309,19 @@ if [[ "$install_astronvim" =~ ^[Yy]$ ]]; then
     rm -rf ~/.config/nvim/.git
 fi
 
+echo "
 #----------------------#
 #  Install music utils #
-#----------------------#
+#----------------------#"
 read -p $'\e[31m Install more music utils? (not recommended for the average user) (y/n): \e[0m' install_utils
 if [[ "$install_utils" =~ ^[Yy]$ ]]; then
     sudo pacman -S lsp-plugins easyeffects >>log.txt 2>&1
 fi
 
+echo "
 #-------------#
 #    sddm     #
-#-------------#
+#-------------#"
 echo -e "\e[34m🔧 Configuring SDDM...\e[0m"
 bash "$HOME/HyprArch/install_scripts/sddm.sh"
 if [ $? -ne 0 ]; then
@@ -313,9 +329,10 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+echo "
 #--------------#
 #     grub     #
-#--------------#
+#--------------#"
 echo -e "\e[34m🔧 Configuring GRUB...\e[0m"
 bash "$HOME/HyprArch/install_scripts/grub.sh"
 if [ $? -ne 0 ]; then
@@ -323,9 +340,10 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+echo "
 #---------------------------#
 #   Install more programs   #
-#---------------------------#
+#---------------------------#"
 echo -e "\e[34m📋 Install more programs...\e[0m"
 bash "$HOME/HyprArch/install_scripts/programms.sh"
 if [ $? -ne 0 ]; then
@@ -333,9 +351,10 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+echo "
 #------------------------------#
 #   HyprVSCode custom install  #
-#------------------------------#
+#------------------------------#"
 if pacman -Q visual-studio-code-bin &>/dev/null; then
 	if bash "$HOME/HyprArch/install_scripts/vs-code.sh"; then
 		echo -e "\e[32m✅ HyprVSCode custom installed successfully!\e[0m"
@@ -346,9 +365,10 @@ else
 	echo -e "\e[33m⚠️  VS-Code is not installed, skipping custom install\e[0m"
 fi
 
+echo "
 #---------------------------------#
 #   Going to HyprArch directory   #
-#---------------------------------#
+#---------------------------------#"
 if cd "$HOME/HyprArch"; then
     echo -e "\e[32m📂 Changed directory to HyprArch\e[0m"
     echo -e "\e[32m✅ GRUB configured successfully.\e[0m"
@@ -373,6 +393,6 @@ read -r reboot_choice
 if [[ "$reboot_choice" =~ ^[Yy]$ ]]; then
     echo -e "\e[34m🔄 Rebooting...\e[0m"
     sudo reboot
-fi
+else
     exit 1
 fi
