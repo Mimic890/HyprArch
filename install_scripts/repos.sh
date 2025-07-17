@@ -11,11 +11,11 @@ fi
 # question about blackarch
 read -p "Добавить репозиторий blackarch? (Y/n): " answer
 if [[ "$answer" =~ ^[Yy]$ ]]; then
-    curl -O https://blackarch.org/strap.sh
-    chmod +x strap.sh
-    sudo ./strap.sh
+    curl -O https://blackarch.org/strap.sh ~/
+    chmod +x ~/strap.sh
+    sudo ~/strap.sh
     echo "Репозиторий blackarch добавлен."
-    sudo rm strap.sh
+    sudo rm ~/strap.sh
 else
     echo "Репозиторий blackarch не добавлен."
 fi
