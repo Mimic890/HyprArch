@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Color output
-info()  { echo -e "\e[36m[🖼] $1\e[0m"; }
-warn()  { echo -e "\e[33m⚠️  $1\e[0m"; }
-error() { echo -e "\e[31m❌ $1\e[0m"; }
-success() { echo -e "\e[32m✅ $1\e[0m"; }
+info()  { echo -e "\e[36m$1\e[0m"; }
+warn()  { echo -e "\e[33m$1\e[0m"; }
+error() { echo -e "\e[31m$1\e[0m"; }
+success() { echo -e "\e[32m$1\e[0m"; }
 
 # Paths
 WALLPAPER_DIR="$HOME/.config/hyprarch/wallpapers"
@@ -37,7 +37,7 @@ download_folder() {
         fi
 
         DEST="$dest_dir/$NAME"
-        info "📥 $NAME"
+        info "$NAME"
 
         wget --inet4-only --show-progress "$FILE_URL" -O "$DEST" >> "$LOG_FILE" 2>&1
     done
@@ -53,12 +53,12 @@ else
 fi
 
 # We ask about the living wallpapers
-read -p $'\e[36m[🖼] Install live wallpaper? [y/N]: \e[0m' choice
+read -p $'\e[36mInstall live wallpaper? [y/N]: \e[0m' choice
 if [[ "$choice" =~ ^[Yy]$ ]]; then
-    info "🔧 Loading live wallpaper..."
+    info "Loading live wallpaper..."
     download_folder "$LIVE_URL" "$WALLPAPER_DIR"
 else
     warn "Live wallpaper installation skipped."
 fi
-
-success "✅ Installation complete. Full log: $LOG_FILE"
+success "Installation complete. Full log: $LOG_FILE"
+exit 0

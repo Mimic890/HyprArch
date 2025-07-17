@@ -1,8 +1,6 @@
 #!/bin/bash
-
 set -e
-
-echo -e "\e[34m🔧 Installing GTK theme...\e[0m"
+echo -e "\e[34mInstalling GTK theme...\e[0m"
 
 # Install packages
 if ! pacman -Qi gtk4 &>/dev/null || ! pacman -Qi gtk3 &>/dev/null || ! pacman -Qi nwg-look &>/dev/null; then
@@ -57,5 +55,5 @@ else
     echo "gsettings not found. Skipping GNOME theme settings."
 fi
 
-echo -e "\e[32m✅ GTK theme installed successfully.\e[0m"
+echo -e "\e[32mGTK theme installed successfully.\e[0m"
 exit 0

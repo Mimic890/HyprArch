@@ -1,11 +1,11 @@
 #!/bin/bash
 # Checking for an NVIDIA graphics card
 if ! lspci | grep -i nvidia &>/dev/null; then
-    echo -e "\e[32m✅ NVIDIA GPU не обнаружена. Пропускаем установку драйверов.\e[0m"
+    echo -e "\e[32mNVIDIA GPU не обнаружена. Пропускаем установку драйверов.\e[0m"
     exit 0
 fi
 
-echo -e "\e[34m🔧 NVIDIA GPU detected. Installing drivers and dependencies...\e[0m"
+echo -e "\e[34mNVIDIA GPU detected. Installing drivers and dependencies...\e[0m"
 
 # Installing each package separately with status output
 PACKAGES=("nvidia" "nvidia-utils" "nvidia-settings" "egl-wayland")
@@ -33,12 +33,12 @@ env = WLR_NO_HARDWARE_CURSORS,1
 env = WLR_EGL_NO_MODIFIERS,1
 # NVIDIA ENV END
 EOF
-        echo -e "\e[32m✅ NVIDIA environment variables added to hyprland.conf\e[0m"
+        echo -e "\e[32mNVIDIA environment variables added to hyprland.conf\e[0m"
     else
-        echo -e "\e[33m⚠️  NVIDIA environment variables already present in hyprland.conf\e[0m"
+        echo -e "\e[33mNVIDIA environment variables already present in hyprland.conf\e[0m"
     fi
 else
-    echo -e "\e[31m❌ hyprland.conf not found. Add variables manually if needed.\e[0m"
+    echo -e "\e[31mhyprland.conf not found. Add variables manually if needed.\e[0m"
 fi
 
 exit 0

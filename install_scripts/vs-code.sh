@@ -52,3 +52,5 @@ if [[ "$install_vscode" =~ ^[Yy]$ ]]; then
 else
     echo -e "\e[33m⚠️  Skipping HyprVSCode customization.\e[0m"
 fi
+
+exit 0

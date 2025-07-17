@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Add multilib
 if ! grep -q "^\[multilib\]" /etc/pacman.conf; then
     echo -e "\n[multilib]\nInclude = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
@@ -7,15 +6,4 @@ if ! grep -q "^\[multilib\]" /etc/pacman.conf; then
 else
     echo "Репозиторий multilib уже присутствует."
 fi
-
-# question about blackarch
-read -p "Добавить репозиторий blackarch? (Y/n): " answer
-if [[ "$answer" =~ ^[Yy]$ ]]; then
-    curl -O https://blackarch.org/strap.sh ~/
-    chmod +x ~/strap.sh
-    sudo ~/strap.sh
-    echo "Репозиторий blackarch добавлен."
-    sudo rm ~/strap.sh
-else
-    echo "Репозиторий blackarch не добавлен."
-fi
+exit 0

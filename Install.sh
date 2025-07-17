@@ -9,7 +9,7 @@ chmod +x "$HOME/HyprArch/install_scripts/"*
 set -e
 
 # Ask for sudo password once and keep it alive
-echo -e "\e[34m🔑 Administrator password required for installation. Please enter your password:\e[0m"
+echo -e "\e[34mAdministrator password required for installation. Please enter your password:\e[0m"
 sudo -v
 # Refresh sudo timestamp until script ends
 while true; do sudo -n true; sleep 60; done 2>/dev/null &
@@ -20,10 +20,10 @@ echo "
 #---------------------------#
 #   Adding repositories     #
 #---------------------------#"
-echo -e "\e[34m🔧 Adding repositories...\e[0m"
+echo -e "\e[34mAdding repositories...\e[0m"
 bash "$HOME/HyprArch/install_scripts/repos.sh"
 if [ $? -ne 0 ]; then
-    echo -e "\e[31m❌ Repository addition failed. Aborting installation.\e[0m"
+    echo -e "\e[31mRepository addition failed. Aborting installation.\e[0m"
     exit 1
 fi
 
@@ -32,18 +32,18 @@ echo "
 #   Updating system and installing packages #
 #-------------------------------------------#"
 if [ ! -f ~/HyprArch/pkg/pkglist.txt ]; then
-    echo -e "\e[31m❌ 🚨 File pkglist.txt not found\e[0m"
+    echo -e "\e[31mFile pkglist.txt not found\e[0m"
     exit 1
 fi
 
-echo -e "\e[34m🔧 Updating system...\e[0m"
+echo -e "\e[34mUpdating system...\e[0m"
 sudo pacman -Syu --needed base-devel --noconfirm --quiet >>log.txt 2>&1 || {
-    echo -e "\e[31m❌ System update error\e[0m"
+    echo -e "\e[31mSystem update error\e[0m"
     exit 1
 }
 
 # New block: Checking and installing packages from pkglist.txt rollback
-echo -e "\e[34m📋 Checking installed packages...\e[0m"
+echo -e "\e[34mChecking installed packages...\e[0m"
 mapfile -t pkglist < ~/HyprArch/pkg/pkglist.txt
 missing_pkgs=()
 failed_pkgs=()
@@ -54,14 +54,14 @@ for pkg in "${pkglist[@]}"; do
 done
 
 if [ ${#missing_pkgs[@]} -eq 0 ]; then
-    echo -e "\e[32m✅ All required packages are already installed.\e[0m"
+    echo -e "\e[32mAll required packages are already installed.\e[0m"
 else
-    echo -e "\e[34m🔧 Installing missing packages: ${missing_pkgs[*]}\e[0m"
+    echo -e "\e[34mInstalling missing packages: ${missing_pkgs[*]}\e[0m"
     for pkg in "${missing_pkgs[@]}"; do
         if sudo pacman -S --noconfirm --needed "$pkg" >>log.txt 2>&1; then
-            echo -e "\e[32m✅ $pkg installed successfully.\e[0m"
+            echo -e "\e[32m$pkg installed successfully.\e[0m"
         else
-            echo -e "\e[31m❌ Error installing $pkg\e[0m"
+            echo -e "\e[31mError installing $pkg\e[0m"
             failed_pkgs+=("$pkg")
         fi
     done
@@ -71,10 +71,10 @@ echo "
 #------------------#
 #  installing yay  #
 #------------------#"
-echo -e "\e[34m🔧 Installing yay (AUR)...\e[0m"
+echo -e "\e[34mInstalling yay (AUR)...\e[0m"
 bash "$HOME/HyprArch/install_scripts/yay.sh"
 if [ $? -ne 0 ]; then
-    echo -e "\e[31m❌ yay installation failed. Aborting installation.\e[0m"
+    echo -e "\e[31myay installation failed. Aborting installation.\e[0m"
     exit 1
 fi
 
@@ -83,11 +83,11 @@ echo "
 # Installing AUR packages #
 #-------------------------#"
 if [ ! -f ~/HyprArch/pkg/aur.txt ]; then
-    echo -e "\e[31m❌ 🚨 File aur.txt not found\e[0m"
+    echo -e "\e[31mFile aur.txt not found\e[0m"
     exit 1
 fi
 
-echo -e "\e[35m📋 Checking installed AUR packages...\e[0m"
+echo -e "\e[35mChecking installed AUR packages...\e[0m"
 aurlist=($(cat "$HOME/HyprArch/pkg/aur.txt"))
 installed_aur=()
 missing_aur=()
@@ -100,19 +100,19 @@ for pkg in "${aurlist[@]}"; do
 done
 
 if [ ${#installed_aur[@]} -gt 0 ]; then
-    echo -e "\e[32m✅ Already installed (AUR): ${installed_aur[*]}\e[0m"
+    echo -e "\e[32mAlready installed (AUR): ${installed_aur[*]}\e[0m"
 fi
 
 if [ ${#missing_aur[@]} -eq 0 ]; then
-    echo -e "\e[32m✅ All required AUR packages are already installed.\e[0m"
+    echo -e "\e[32mAll required AUR packages are already installed.\e[0m"
 else
-    echo -e "\e[35m🔧 Installing missing AUR packages...\e[0m"
+    echo -e "\e[35mInstalling missing AUR packages...\e[0m"
     for pkg in "${missing_aur[@]}"; do
         echo -e "\e[36m→ Installing (AUR): $pkg\e[0m"
         if yay -S --noconfirm --quiet "$pkg" >>log.txt 2>&1; then
-            echo -e "\e[32m✅   $pkg (AUR) installed successfully.\e[0m"
+            echo -e "\e[32m$pkg (AUR) installed successfully.\e[0m"
         else
-            echo -e "\e[31m❌   Error installing $pkg (AUR)\e[0m"
+            echo -e "\e[31mError installing $pkg (AUR)\e[0m"
             exit 1
         fi
     done
@@ -125,31 +125,27 @@ echo "
 MONITOR_SCRIPT="$HOME/HyprArch/install_scripts/monitor.sh"
 # Checking for the presence of a file
 if [ ! -f "$MONITOR_SCRIPT" ]; then
-    echo "❌ Monitor script not found: $MONITOR_SCRIPT"
+    echo "Monitor script not found: $MONITOR_SCRIPT"
     exit 1
 fi
-
 # Make executable if necessary
 chmod +x "$MONITOR_SCRIPT"
-
 # Script launch
-echo "📡 Starting monitor setup..."
+echo "Starting monitor setup..."
 if ! "$MONITOR_SCRIPT"; then
-    echo "❌ Error during execution $MONITOR_SCRIPT"
+    echo "Error during execution $MONITOR_SCRIPT"
     exit 1
 fi
-
-echo "✅ Monitor setup has been completed successfully."
-
+echo "Monitor setup has been completed successfully."
 
 echo "
 #----------------------#
 # Configuring services #
 #----------------------#"
-echo -e "\e[34m🔧 Configuring services...\e[0m"
+echo -e "\e[34mConfiguring services...\e[0m"
 if systemctl list-units --full | grep -q lightdm; then
     sudo systemctl disable lightdm >>log.txt 2>&1 || {
-        echo -e "\e[31m❌ Failed to disable lightdm\e[0m"
+        echo -e "\e[31mFailed to disable lightdm\e[0m"
         exit 1
     }
 fi
@@ -157,16 +153,16 @@ fi
 for service in bluetooth power-profiles-daemon; do
     if systemctl list-units --full | grep -q "$service"; then
         sudo systemctl enable "$service" >>log.txt 2>&1 || {
-            echo -e "\e[31m❌ Failed to configure $service\e[0m"
+            echo -e "\e[31mFailed to configure $service\e[0m"
             exit 1
         }
     else
-        echo -e "\e[33m⚠️  Service $service not found, skipping.\e[0m"
+        echo -e "\e[33mService $service not found, skipping.\e[0m"
     fi
 done
 
 sudo systemctl enable sddm >>log.txt 2>&1 || {
-    echo -e "\e[31m❌ Failed to configure sddm\e[0m"
+    echo -e "\e[31mFailed to configure sddm\e[0m"
     exit 1
 }
 
@@ -180,25 +176,25 @@ echo "
 #---------------------#
 #   Shell selection   #
 #---------------------#"
-echo -e "\e[34m🔧 Which shell do you want to install?\e[0m"
+echo -e "\e[34mWhich shell do you want to install?\e[0m"
 echo -e "\e[36m 1) Keep current shell (default)\e[0m"
 echo -e "\e[36m 2) Install fish shell\e[0m"
 echo -e "\e[36m 3) Install zsh shell\e[0m"
 read -p $'\e[36m Enter your choice [1/2/3]: \e[0m' shell_choice
 case "$shell_choice" in
     2)
-        echo -e "\e[34m🔧 Installing fish shell...\e[0m"
+        echo -e "\e[34mInstalling fish shell...\e[0m"
         bash "$HOME/HyprArch/install_scripts/fish.sh"
         if [ $? -ne 0 ]; then
-            echo -e "\e[31m❌ Fish shell installation failed. Aborting installation.\e[0m"
+            echo -e "\e[31mFish shell installation failed. Aborting installation.\e[0m"
             exit 1
         fi
         ;;
     3)
-        echo -e "\e[34m🔧 Installing zsh shell...\e[0m"
+        echo -e "\e[34mInstalling zsh shell...\e[0m"
         bash "$HOME/HyprArch/install_scripts/zsh.sh"
         if [ $? -ne 0 ]; then
-            echo -e "\e[31m❌ Zsh shell installation failed. Aborting installation.\e[0m"
+            echo -e "\e[31mZsh shell installation failed. Aborting installation.\e[0m"
             exit 1
         fi
         ;;
@@ -215,7 +211,7 @@ read -p $'\e[36m Install GTK theme? (y/n): \e[0m' install_gtk
 if [[ "$install_gtk" =~ ^[Yy]$ ]]; then
     bash "$HOME/HyprArch/install_scripts/gtk.sh"
     if [ $? -ne 0 ]; then
-        echo -e "\e[31m❌ GTK theme installation failed. Aborting installation.\e[0m"
+        echo -e "\e[31mGTK theme installation failed. Aborting installation.\e[0m"
         exit 1
     fi
 fi
@@ -224,23 +220,23 @@ echo "
 #---------------------------#
 #   Copying configurations  #
 #---------------------------#"
-echo -e "\e[34m📋 Copying configurations...\e[0m"
+echo -e "\e[34mCopying configurations...\e[0m"
 if [ -d "$HOME/HyprArch/configs" ]; then
     mkdir -p "$HOME/.config"
     cp -r "$HOME/HyprArch/configs/"* "$HOME/.config/"
 else
-    echo -e "\e[31m❌ 🚨 configs folder not found\e[0m"
+    echo -e "\e[31mconfigs folder not found\e[0m"
 fi
 
 echo "
 #---------------------------#
 #   Wallpapers installation #
 #---------------------------#"
-echo -e "\e[34m🖼  Installing wallpapers...\e[0m"
+echo -e "\e[34mInstalling wallpapers...\e[0m"
 if bash "$HOME/HyprArch/install_scripts/wallpapers.sh"; then
-    echo -e "\e[32m✅ Wallpapers installed successfully.\e[0m"
+    echo -e "\e[32mWallpapers installed successfully.\e[0m"
 else
-    echo -e "\e[31m❌ Wallpapers installation failed. Check log.txt for details.\e[0m"
+    echo -e "\e[31mWallpapers installation failed. Check log.txt for details.\e[0m"
 fi
 
 echo "
@@ -252,7 +248,7 @@ WAYBAR_DIR="$HOME/.config/waybar"
 WAYBAR_IFACE=$(ip route | awk '/default/ {print $5; exit}')
 
 if [ -n "$WAYBAR_IFACE" ]; then
-    echo -e "\e[36m🔍 Detected interface: $WAYBAR_IFACE\e[0m"
+    echo -e "\e[36mDetected interface: $WAYBAR_IFACE\e[0m"
 
     for cfg in "$WAYBAR_DIR"/config*; do
         [ -f "$cfg" ] || continue
@@ -265,9 +261,9 @@ if [ -n "$WAYBAR_IFACE" ]; then
             rm -f "$cfg.bak"
         fi
     done
-    echo -e "\e[32m✅ Waybar config updated to use interface: $WAYBAR_IFACE\e[0m"
+    echo -e "\e[32mWaybar config updated to use interface: $WAYBAR_IFACE\e[0m"
 else
-    echo -e "\e[33m⚠️  Could not determine network interface. Please check manually.\e[0m"
+    echo -e "\e[33mCould not determine network interface. Please check manually.\e[0m"
 fi
 
 echo "
@@ -284,7 +280,7 @@ case "$choice" in
         if [ -f "$HOME/HyprArch/customs/waybar/dark_and_white/style.css" ]; then
             cp "$HOME/HyprArch/customs/waybar/dark_and_white/style.css" "$HOME/.config/waybar/"
         else
-            echo -e "\e[31m❌ Theme file not found: $HOME/HyprArch/customs/waybar/dark_and_white/style.css\e[0m"
+            echo -e "\e[31mTheme file not found: $HOME/HyprArch/customs/waybar/dark_and_white/style.css\e[0m"
             exit 1
         fi
         ;;
@@ -293,7 +289,7 @@ case "$choice" in
         if [ -f "$HOME/HyprArch/customs/waybar/blue_arch/style.css" ]; then
             cp "$HOME/HyprArch/customs/waybar/blue_arch/style.css" "$HOME/.config/waybar/"
         else
-            echo -e "\e[31m❌ Theme file not found: $HOME/HyprArch/customs/waybar/blue_arch/style.css\e[0m"
+            echo -e "\e[31mTheme file not found: $HOME/HyprArch/customs/waybar/blue_arch/style.css\e[0m"
             exit 1
         fi
         ;;
@@ -324,18 +320,17 @@ echo "
 #-----------------#
 # BlackArch utils #
 #-----------------#"
-echo -e "\e[34m🔧 Installing BlackArch tools...\e[0m"
-echo -e "\e[36mDo you want to install BlackArch tools? (y/n): \e[0m"
-read -r install_blackarch
+echo -e "\e[34mInstalling BlackArch tools...\e[0m"
+read -p $'\e[36mDo you want to install BlackArch tools? (y/n): \e[0m' install_blackarch
 if [[ "$install_blackarch" =~ ^[Yy]$ ]]; then
     echo -e "\e[34m🔧 Starting BlackArch installation...\e[0m"
     bash "$HOME/HyprArch/install_scripts/blackarch.sh"
     if [ $? -ne 0 ]; then
-        echo -e "\e[31m❌ BlackArch installation failed. Aborting installation.\e[0m"
+        echo -e "\e[31mBlackArch installation failed. Aborting installation.\e[0m"
         exit 1
     fi
 else
-    echo -e "\e[33m⚠️  BlackArch installation skipped.\e[0m"
+    echo -e "\e[33mBlackArch installation skipped.\e[0m"
 fi
 
 echo "
@@ -351,10 +346,10 @@ echo "
 #-------------#
 #    sddm     #
 #-------------#"
-echo -e "\e[34m🔧 Configuring SDDM...\e[0m"
+echo -e "\e[34mConfiguring SDDM...\e[0m"
 bash "$HOME/HyprArch/install_scripts/sddm.sh"
 if [ $? -ne 0 ]; then
-    echo -e "\e[31m❌ SDDM configuration failed. Aborting installation.\e[0m"
+    echo -e "\e[31mSDDM configuration failed. Aborting installation.\e[0m"
     exit 1
 fi
 
@@ -362,10 +357,10 @@ echo "
 #--------------#
 #     grub     #
 #--------------#"
-echo -e "\e[34m🔧 Configuring GRUB...\e[0m"
+echo -e "\e[34mConfiguring GRUB...\e[0m"
 bash "$HOME/HyprArch/install_scripts/grub.sh"
 if [ $? -ne 0 ]; then
-    echo -e "\e[31m❌ GRUB configuration failed. Aborting installation.\e[0m"
+    echo -e "\e[31mGRUB configuration failed. Aborting installation.\e[0m"
     exit 1
 fi
 
@@ -373,10 +368,10 @@ echo "
 #---------------------------#
 #   Install more programs   #
 #---------------------------#"
-echo -e "\e[34m📋 Install more programs...\e[0m"
+echo -e "\e[34mInstall more programs...\e[0m"
 bash "$HOME/HyprArch/install_scripts/programms.sh"
 if [ $? -ne 0 ]; then
-    echo -e "\e[31m❌ Install more programs failed. Aborting installation.\e[0m"
+    echo -e "\e[31mInstall more programs failed. Aborting installation.\e[0m"
     exit 1
 fi
 
@@ -386,12 +381,12 @@ echo "
 #------------------------------#"
 if pacman -Q visual-studio-code-bin &>/dev/null; then
 	if bash "$HOME/HyprArch/install_scripts/vs-code.sh"; then
-		echo -e "\e[32m✅ HyprVSCode custom installed successfully!\e[0m"
+		echo -e "\e[32mHyprVSCode custom installed successfully!\e[0m"
 	else
-		echo -e "\e[31m❌ Error installing HyprVSCode custom!\e[0m"
+		echo -e "\e[31mError installing HyprVSCode custom!\e[0m"
 	fi
 else
-	echo -e "\e[33m⚠️  VS-Code is not installed, skipping custom install\e[0m"
+	echo -e "\e[33mVS-Code is not installed, skipping custom install\e[0m"
 fi
 
 echo "
@@ -399,29 +394,29 @@ echo "
 #   Going to HyprArch directory   #
 #---------------------------------#"
 if cd "$HOME/HyprArch"; then
-    echo -e "\e[32m📂 Changed directory to HyprArch\e[0m"
-    echo -e "\e[32m✅ GRUB configured successfully.\e[0m"
+    echo -e "\e[32mChanged directory to HyprArch\e[0m"
+    echo -e "\e[32mGRUB configured successfully.\e[0m"
     exit 0
 else
-    echo -e "\e[31m❌ Failed to change directory to $HOME/HyprArch\e[0m"
-    echo -e "\e[31m❌ GRUB configuration failed. Aborting.\e[0m"
+    echo -e "\e[31mFailed to change directory to $HOME/HyprArch\e[0m"
+    echo -e "\e[31mGRUB configuration failed. Aborting.\e[0m"
     exit 1
 fi
 
 # At the very end of the script, before the final message:
 if [ ${#failed_pkgs[@]} -gt 0 ]; then
-    echo -e "\e[31m❌ The following packages failed to install:\e[0m"
+    echo -e "\e[31mThe following packages failed to install:\e[0m"
     for pkg in "${failed_pkgs[@]}"; do
         echo -e "\e[31m  - $pkg\e[0m"
     done
 fi
 
-echo -e "\e[32m🎉 Installation completed successfully! 🚀\e[0m"
+echo -e "\e[32mInstallation completed successfully!\e[0m"
 echo -e "\e[36mWould you like to reboot now? (Y/n): \e[0m"
 read -r reboot_choice
 if [[ "$reboot_choice" =~ ^[Yy]$ ]]; then
-    echo -e "\e[34m🔄 Rebooting...\e[0m"
+    echo -e "\e[34mRebooting...\e[0m"
     sudo reboot
 else
-    exit 1
+    exit 0
 fi
