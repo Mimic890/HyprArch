@@ -1,37 +1,28 @@
-@import url("colors.css");
-
 window {
-    background: @blur_background8;
-  border-radius: 6px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: @secondary;
-  margin-bottom: 0px;
+	background: rgba(0, 0, 0, 0.2);
+  	border-radius: 6px;
+  	border-style: solid;
+  	border-width: 2px;
+  	border-color: #5c76cc;
+  	margin-bottom: 0px;
 }
-
 #box {
-  /* Define attributes of the box surrounding icons here */
-  padding: 6px;
+  padding: 4px;
 }
-
 #active {
-  /* This is to underline the button representing the currently active window */
   border-bottom: solid 0px;
-  border-color: @on_surface
+  border-color: #ffffff;
 }
-
 button, image {
   background: none;
   border-style: none;
   box-shadow: none;
-  color: @secondary;
+  color: #5c76cc;
 }
-
 button {
   padding: 2px;
   margin-left: 2px;
   margin-right: 2px;
-  color: @secondary;
+  color: #5c76cc;
   font-size: 10px
 }
-
