@@ -1,6 +1,6 @@
 #!/bin/bash
-# HyprVSCode custom setup script
 
+# HyprVSCode custom setup script
 read -p $'\e[36m📋 Install custom HyprVSCode? (y/n): \e[0m' install_vscode
 if [[ "$install_vscode" =~ ^[Yy]$ ]]; then
     CONFIG_DIR="$HOME/.config/Code/User"

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Проверка наличия видеокарты NVIDIA
+# Checking for an NVIDIA graphics card
 if ! lspci | grep -i nvidia &>/dev/null; then
     echo -e "\e[32m✅ NVIDIA GPU не обнаружена. Пропускаем установку драйверов.\e[0m"
     exit 0
@@ -7,7 +7,7 @@ fi
 
 echo -e "\e[34m🔧 NVIDIA GPU detected. Installing drivers and dependencies...\e[0m"
 
-# Установка каждого пакета по отдельности с выводом статуса
+# Installing each package separately with status output
 PACKAGES=("nvidia" "nvidia-utils" "nvidia-settings" "egl-wayland")
 for pkg in "${PACKAGES[@]}"; do
     echo -ne "\e[36m⏳ Installing $pkg...\e[0m "
@@ -18,10 +18,10 @@ for pkg in "${PACKAGES[@]}"; do
     fi
 done
 
-# Добавление переменных окружения в конфиг Hyprland
+# Adding environment variables to the Hyprland config
 HYPR_CONF="$HOME/.config/hypr/hyprland.conf"
 if [ -f "$HYPR_CONF" ]; then
-    # Проверяем, были ли уже добавлены переменные
+    # Check if variables have already been added
     if ! grep -q "NVIDIA ENV BEGIN" "$HYPR_CONF"; then
         cat <<EOF >> "$HYPR_CONF"
 

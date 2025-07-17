@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# Установка whiptail
+# Installing whiptail
 if ! command -v whiptail &> /dev/null; then
   echo -e "\e[34m🔧 Installing whiptail...\e[0m"
   sudo pacman -Sy --noconfirm whiptail >>"$HOME/HyprArch/log.txt" 2>&1
 fi
 
-# Меню выбора программ
-CHOICES=$(whiptail --title "Дополнительные программы" --checklist \
-"Выберите программы, которые вы хотите установить (ПРОБЕЛ — выбрать, TAB — переход):" 25 78 15 \
+# Program selection menu
+CHOICES=$(whiptail --title "" --checklist \
+"Select the programs you want to install (SPACE — select, TAB — move):" 25 78 15 \
 "Telegram" "" OFF \
 "Steam" "" OFF \
 "OBS Studio" "" OFF \
@@ -28,10 +28,10 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Преобразуем выбор в массив
+# Convert the selection to an array
 SELECTED=($CHOICES)
 
-# Установка yay, если не установлен
+# Install yay if not already installed
 if ! command -v yay &>/dev/null; then
   echo -e "\e[34m🔧 yay not found, installing...\e[0m"
   sudo pacman -Sy --needed --noconfirm git base-devel >>"$HOME/HyprArch/log.txt" 2>&1
@@ -40,7 +40,7 @@ if ! command -v yay &>/dev/null; then
   cd .. && rm -rf yay >>"$HOME/HyprArch/log.txt" 2>&1
 fi
 
-# Установка выбранных программ
+# Installing selected programs
 for choice in "${SELECTED[@]}"; do
   case $choice in
     "\"Telegram\"")

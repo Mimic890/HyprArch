@@ -16,6 +16,16 @@ while true; do sudo -n true; sleep 60; done 2>/dev/null &
 SUDO_REFRESH_PID=$!
 trap 'kill $SUDO_REFRESH_PID 2>/dev/null' EXIT
 
+echo "#---------------------------#
+#   Adding repositories     #
+#---------------------------#"
+echo -e "\e[34m🔧 Adding repositories...\e[0m"
+bash "$HOME/HyprArch/install_scripts/repos.sh"
+if [ $? -ne 0 ]; then
+    echo -e "\e[31m❌ Repository addition failed. Aborting installation.\e[0m"
+    exit 1
+fi
+
 echo "
 #-------------------------------------------#
 #   Updating system and installing packages #
@@ -31,7 +41,7 @@ sudo pacman -Syu --needed base-devel --noconfirm --quiet >>log.txt 2>&1 || {
     exit 1
 }
 
-# --- Новый блок: Проверка и установка пакетов из pkglist.txt ---
+# New block: Checking and installing packages from pkglist.txt rollback
 echo -e "\e[34m📋 Checking installed packages...\e[0m"
 mapfile -t pkglist < ~/HyprArch/pkg/pkglist.txt
 missing_pkgs=()
@@ -112,23 +122,23 @@ echo "
 #   Monitor    #
 #--------------#"
 MONITOR_SCRIPT="$HOME/HyprArch/install_scripts/monitor.sh"
-# === Проверка наличия файла ===
+# Checking for the presence of a file
 if [ ! -f "$MONITOR_SCRIPT" ]; then
-    echo "❌ Скрипт монитора не найден: $MONITOR_SCRIPT"
+    echo "❌ Monitor script not found: $MONITOR_SCRIPT"
     exit 1
 fi
 
-# === Делаем исполняемым при необходимости ===
+# Make executable if necessary
 chmod +x "$MONITOR_SCRIPT"
 
-# === Запуск скрипта ===
-echo "📡 Запуск настройки монитора..."
+# Script launch
+echo "📡 Starting monitor setup..."
 if ! "$MONITOR_SCRIPT"; then
-    echo "❌ Ошибка при выполнении $MONITOR_SCRIPT"
+    echo "❌ Error during execution $MONITOR_SCRIPT"
     exit 1
 fi
 
-echo "✅ Настройка монитора завершена успешно."
+echo "✅ Monitor setup has been completed successfully."
 
 
 echo "
@@ -192,7 +202,7 @@ case "$shell_choice" in
         fi
         ;;
     *)
-        echo -e "\e[33m⚠️  Keeping current shell. No changes will be made.\e[0m"
+        echo -e "Keeping current shell. No changes will be made."
         ;;
 esac
 
@@ -236,7 +246,7 @@ echo "
 #---------------------------#
 #  Update waybar interface  #
 #---------------------------#"
-# Определяем активный сетевой интерфейс (без loopback)
+# Determine the active network interface (without loopback)
 WAYBAR_DIR="$HOME/.config/waybar"
 WAYBAR_IFACE=$(ip route | awk '/default/ {print $5; exit}')
 
@@ -246,11 +256,11 @@ if [ -n "$WAYBAR_IFACE" ]; then
     for cfg in "$WAYBAR_DIR"/config*; do
         [ -f "$cfg" ] || continue
         if grep -q '"interface":' "$cfg"; then
-            cp "$cfg" "$cfg.bak"  # Временная копия на случай сбоя
-            # Заменяем строку с интерфейсом
+            cp "$cfg" "$cfg.bak"  # Temporary copy in case of failure
+            # Replacing the string with the interface
             sed -i "s/\"interface\": \".*\"/\"interface\": \"$WAYBAR_IFACE\"/" "$cfg"
             echo -e "\e[34m🔧 Updated interface in $cfg\e[0m"
-            # Удаляем временный .bak-файл
+            # Delete the temporary .bak file
             rm -f "$cfg.bak"
         fi
     done
@@ -263,31 +273,31 @@ echo "
 #---------------------------#
 #  Waybar theme selection   #
 #---------------------------#"
-echo "Выберите тему Waybar:"
+echo "Select a Waybar theme:"
 echo "1) Dark and White"
 echo "2) Blue Arch"
-read -p "Введите номер темы (1-2): " choice
+read -p "Enter the topic number (1-2): " choice
 case "$choice" in
     1)
-        echo "Устанавливается тема Dark and White..."
+        echo "The Dark and White theme is set..."
         if [ -f "$HOME/HyprArch/customs/waybar/dark_and_white/style.css" ]; then
             cp "$HOME/HyprArch/customs/waybar/dark_and_white/style.css" "$HOME/.config/waybar/"
         else
-            echo -e "\e[31m❌ Файл темы не найден: $HOME/HyprArch/customs/waybar/dark_and_white/style.css\e[0m"
+            echo -e "\e[31m❌ Theme file not found: $HOME/HyprArch/customs/waybar/dark_and_white/style.css\e[0m"
             exit 1
         fi
         ;;
     2)
-        echo "Устанавливается тема Blue Arch..."
+        echo "The Blue Arch theme is being installed..."
         if [ -f "$HOME/HyprArch/customs/waybar/blue_arch/style.css" ]; then
             cp "$HOME/HyprArch/customs/waybar/blue_arch/style.css" "$HOME/.config/waybar/"
         else
-            echo -e "\e[31m❌ Файл темы не найден: $HOME/HyprArch/customs/waybar/blue_arch/style.css\e[0m"
+            echo -e "\e[31m❌ Theme file not found: $HOME/HyprArch/customs/waybar/blue_arch/style.css\e[0m"
             exit 1
         fi
         ;;
     *)
-        echo "Неверный выбор. Пожалуйста, введите 1 или 2."
+        echo "Incorrect selection. Please enter 1 or 2."
         exit 1
         ;;
 esac
@@ -379,7 +389,7 @@ else
     exit 1
 fi
 
-# В самом конце скрипта, перед финальным сообщением:
+# At the very end of the script, before the final message:
 if [ ${#failed_pkgs[@]} -gt 0 ]; then
     echo -e "\e[31m❌ The following packages failed to install:\e[0m"
     for pkg in "${failed_pkgs[@]}"; do
@@ -388,7 +398,7 @@ if [ ${#failed_pkgs[@]} -gt 0 ]; then
 fi
 
 echo -e "\e[32m🎉 Installation completed successfully! 🚀\e[0m"
-echo -e "\e[36mWould you like to reboot now? (y/n): \e[0m"
+echo -e "\e[36mWould you like to reboot now? (Y/n): \e[0m"
 read -r reboot_choice
 if [[ "$reboot_choice" =~ ^[Yy]$ ]]; then
     echo -e "\e[34m🔄 Rebooting...\e[0m"
