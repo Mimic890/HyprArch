@@ -278,6 +278,8 @@ case "$choice" in
     1)
         echo "The Dark and White theme is set..."
         if [ -f "$HOME/HyprArch/customs/waybar/dark_and_white/style.css" ]; then
+            mkdir -p "$HOME/.config/waybar"  # Ensure the directory exists
+            rm -f "$HOME/.config/waybar/style.css"  # Remove existing style.css
             cp "$HOME/HyprArch/customs/waybar/dark_and_white/style.css" "$HOME/.config/waybar/"
         else
             echo -e "\e[31mTheme file not found: $HOME/HyprArch/customs/waybar/dark_and_white/style.css\e[0m"
@@ -287,6 +289,8 @@ case "$choice" in
     2)
         echo "The Blue Arch theme is being installed..."
         if [ -f "$HOME/HyprArch/customs/waybar/blue_arch/style.css" ]; then
+            mkdir -p "$HOME/.config/waybar"  # Ensure the directory exists
+            rm -f "$HOME/.config/waybar/style.css"  # Remove existing style.css
             cp "$HOME/HyprArch/customs/waybar/blue_arch/style.css" "$HOME/.config/waybar/"
         else
             echo -e "\e[31mTheme file not found: $HOME/HyprArch/customs/waybar/blue_arch/style.css\e[0m"
@@ -396,19 +400,10 @@ echo "
 if cd "$HOME/HyprArch"; then
     echo -e "\e[32mChanged directory to HyprArch\e[0m"
     echo -e "\e[32mGRUB configured successfully.\e[0m"
-    exit 0
 else
     echo -e "\e[31mFailed to change directory to $HOME/HyprArch\e[0m"
     echo -e "\e[31mGRUB configuration failed. Aborting.\e[0m"
     exit 1
-fi
-
-# At the very end of the script, before the final message:
-if [ ${#failed_pkgs[@]} -gt 0 ]; then
-    echo -e "\e[31mThe following packages failed to install:\e[0m"
-    for pkg in "${failed_pkgs[@]}"; do
-        echo -e "\e[31m  - $pkg\e[0m"
-    done
 fi
 
 echo -e "\e[32mInstallation completed successfully!\e[0m"
@@ -418,5 +413,10 @@ if [[ "$reboot_choice" =~ ^[Yy]$ ]]; then
     echo -e "\e[34mRebooting...\e[0m"
     sudo reboot
 else
+    echo -e "\e[34mInstallation completed. You can reboot later.\e[0m"
+    echo -e "\e[34mPlease reboot your system to apply all changes.\e[0m"
+    echo -e "\e[34mThank you for using HyprArch!\e[0m"
+    echo -e "\e[34mFor more information, visit: hyprarch.ru\e[0m"
+    echo -e "\e[34mIf you have any questions, please contact us on Telegram: https://t.me/hyprarch\e[0m"
     exit 0
 fi
