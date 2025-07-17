@@ -16,7 +16,8 @@ while true; do sudo -n true; sleep 60; done 2>/dev/null &
 SUDO_REFRESH_PID=$!
 trap 'kill $SUDO_REFRESH_PID 2>/dev/null' EXIT
 
-echo "#---------------------------#
+echo "
+#---------------------------#
 #   Adding repositories     #
 #---------------------------#"
 echo -e "\e[34m🔧 Adding repositories...\e[0m"
@@ -317,6 +318,24 @@ if [[ "$install_astronvim" =~ ^[Yy]$ ]]; then
     rm -rf ~/.config/nvim
     git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
     rm -rf ~/.config/nvim/.git
+fi
+
+echo "
+#-----------------#
+# BlackArch utils #
+#-----------------#"
+echo -e "\e[34m🔧 Installing BlackArch tools...\e[0m"
+echo -e "\e[36mDo you want to install BlackArch tools? (y/n): \e[0m"
+read -r install_blackarch
+if [[ "$install_blackarch" =~ ^[Yy]$ ]]; then
+    echo -e "\e[34m🔧 Starting BlackArch installation...\e[0m"
+    bash "$HOME/HyprArch/install_scripts/blackarch.sh"
+    if [ $? -ne 0 ]; then
+        echo -e "\e[31m❌ BlackArch installation failed. Aborting installation.\e[0m"
+        exit 1
+    fi
+else
+    echo -e "\e[33m⚠️  BlackArch installation skipped.\e[0m"
 fi
 
 echo "

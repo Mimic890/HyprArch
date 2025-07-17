@@ -1,15 +1,15 @@
 # HyprArch
-## [README_RU](README_RU.md)
-### Installation command
+## [README_EN](README.md)
+### Установка одной строчкой
 ```
 cd ~/ && git clone https://github.com/Mimic890/HyprArch.git && cd ~/HyprArch && chmod +x Install.sh && ./Install.sh
 ```
 
 ## Hyprland Keybinds
-### Base Key Binds
-| Action                         | Keybind         |
+### Базовые Keybindings
+| Действие                      | Keybind         |
 |-------------------------------|-----------------|
-| Open Terminal (Kitty)         | SUPER + R       |
+| Открыть терминал (Kitty)         | SUPER + R       |
 | Open App Launcher (Wofi)      | SUPER + D       |
 | Kill Focused Window           | SUPER + Q       |
 | Toggle Floating Window        | SUPER + V       |
@@ -29,7 +29,7 @@ cd ~/ && git clone https://github.com/Mimic890/HyprArch.git && cd ~/HyprArch && 
 | Lock Screen (Hyprlock)        | SUPER + L       |
 | Show Logout Menu (wlogout)    | SUPER + SHIFT + Q |
 ---
-### CLI Utilities in Terminal
+### CLI Утилты
 | Tool    | Keybind             |
 |---------|---------------------|
 | btop    | SUPER + SHIFT + B   |
@@ -37,14 +37,14 @@ cd ~/ && git clone https://github.com/Mimic890/HyprArch.git && cd ~/HyprArch && 
 | htop    | SUPER + SHIFT + H   |
 | nmtui   | SUPER + SHIFT + N   |
 ---
-### Window Management
+### Управление окнами
 - Swap split mode: `SUPER + K`
 - Toggle split orientation: `SUPER + J`
 - Focus movement: `SUPER + Arrow Keys`
 - Resize window: `SUPER + SHIFT + Arrow Keys`
 - Swap window position: `SUPER + ALT + Arrow Keys`
 ---
-### Workspace Management
+### Управление рабочими столами
 - Change workspace: `SUPER + [1–8]`
 - Move window to workspace: `SUPER + SHIFT + [1–8]`
 - Next/Previous workspace: `SUPER + Tab / SUPER + SHIFT + Tab`
@@ -52,19 +52,19 @@ cd ~/ && git clone https://github.com/Mimic890/HyprArch.git && cd ~/HyprArch && 
 - Toggle special workspace: `SUPER + S`
 - Move window to special workspace: `SUPER + SHIFT + S`
 ---
-### Mouse Controls
+### Управление мышью
 - Move window: `SUPER + Left Click`
 - Resize window: `SUPER + Right Click`
 ---
-### Screenshots
+### Скриншоты
 - Fullscreen: `SUPER + Print`
 - Area selection: `SUPER + SHIFT + Print`
 ---
-### Brightness Control
+### Изменение яркости
 - Decrease: `XF86MonBrightnessDown`
 - Increase: `XF86MonBrightnessUp`
 ---
-### Audio Control
+### Управление аудио
 - Volume Up/Down: `XF86AudioRaiseVolume / XF86AudioLowerVolume`
 - Mute Output: `XF86AudioMute`
 - Mute Microphone: `XF86AudioMicMute`
@@ -74,16 +74,16 @@ cd ~/ && git clone https://github.com/Mimic890/HyprArch.git && cd ~/HyprArch && 
 - Previous Track: `XF86AudioPrev`
 - Play/Pause: `XF86AudioPlay` or `XF86AudioPause`
 ---
-### Useful Commands
+### Полезные команды hyprland
 ```bash
-hyprctl clients					# View open windows and their parameters
-hyprctl devices					# Show input devices (keyboard, mouse, etc.)
-hyprctl getoption -a				# Check for config errors (parsing issues etc.)
-hyprctl binds						# Show all current keybinds
-hyprctl workspaces					# Show information about workspaces
-hyprctl monitors					# Show current monitor setup
-hyprctl reload						# Reload Hyprland config (after editing ~/.config/hypr/hyprland.conf)
-hyprctl dispatch exec "hyprctl reload"	# Force reapply monitor layout and config
-hyprctl activewindow				# Show active windows in tree format (useful for tiling layout overview)
-hyprctl rules						# List all available window rules applied
-hyprctl animations					# Manually trigger animations (useful for debugging)
+hyprctl clients					    # Посмотреть открытые окна и их параметры
+hyprctl devices					    # Посмотреть подключенные девайсы (клавиатура, мышь и т. д.)
+hyprctl getoption -a                # Проверка ошибок конфигурации (проблемы с разбором и т. д.)
+hyprctl binds						# Показать все текущие настройки клавиш
+hyprctl workspaces                    # Показать информацию о рабочих пространствах
+hyprctl monitors                    # Показать текущую настройку монитора
+hyprctl reload                        # Перезагрузить конфигурацию Hyprland (после редактирования ~/.config/hypr/hyprland.conf)
+hyprctl dispatch exec «hyprctl reload»    # Принудительно переприменить расположение мониторов и конфигурацию
+hyprctl activewindow                # Показать активные окна в виде дерева (полезно для обзора расположения окон)
+hyprctl rules                        # Перечислить все доступные правила для окон
+hyprctl animations                    # Вручную запустить анимацию (полезно для отладки)

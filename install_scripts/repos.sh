@@ -1,5 +1,4 @@
 #!/bin/bash
-# filepath: /home/mimic/HyprArch/add_repos.sh
 
 # Add multilib
 if ! grep -q "^\[multilib\]" /etc/pacman.conf; then
