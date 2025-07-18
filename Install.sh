@@ -256,7 +256,7 @@ if [ -n "$WAYBAR_IFACE" ]; then
             cp "$cfg" "$cfg.bak"  # Temporary copy in case of failure
             # Replacing the string with the interface
             sed -i "s/\"interface\": \".*\"/\"interface\": \"$WAYBAR_IFACE\"/" "$cfg"
-            echo -e "\e[34m🔧 Updated interface in $cfg\e[0m"
+            echo -e "\e[34mUpdated interface in $cfg\e[0m"
             # Delete the temporary .bak file
             rm -f "$cfg.bak"
         fi
@@ -400,15 +400,15 @@ echo "
 cd $HOME/HyprArch
 
 echo -e "\e[32mInstallation completed successfully!\e[0m"
-read -p "\e[36mWould you like to reboot now? (Y/n): \e[0m" reboot_choice
+read -p $'\e[36mWould you like to reboot now? (Y/n): \e[0m' reboot_choice
 if [[ "$reboot_choice" =~ ^[Yy]$ ]]; then
     echo -e "\e[34mRebooting...\e[0m"
     sudo reboot
 else
     echo -e "\e[34mInstallation completed. You can reboot later.\e[0m"
     echo -e "\e[34mPlease reboot your system to apply all changes.\e[0m"
-    echo -e "\e[34mThank you for using HyprArch!\e[0m"
-    echo -e "\e[34mFor more information, visit: hyprarch.ru\e[0m"
+    echo -e "\e[34mThank you for installing HyprArch!\e[0m"
+    echo -e "\e[34mFor more information, visit: https://hyprarch.ru\e[0m"
     echo -e "\e[34mIf you have any questions, please contact us on Telegram: https://t.me/hyprarch\e[0m"
     exit 0
 fi

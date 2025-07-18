@@ -44,7 +44,7 @@ download_folder() {
 }
 
 # Asking a question about static wallpaper
-read -p $'\e[36m[🖼] Set static wallpaper? [y/N]: \e[0m' static_choice
+read -p $'\e[36mSet static wallpaper? [y/N]: \e[0m' static_choice
 if [[ "$static_choice" =~ ^[Yy]$ ]]; then
     info "🔧 Loading static wallpapers..."
     download_folder "$STATIC_URL" "$WALLPAPER_DIR"
