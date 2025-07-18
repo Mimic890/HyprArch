@@ -269,9 +269,32 @@ if [ -d "$CONFIGS_DIR" ]; then
 else
     echo -e "\e[31mConfigs folder not found: $CONFIGS_DIR\e[0m"
 fi
-hyprctl reload 2>/dev/null || echo -e "\e[33mFailed to reload Hyprland configuration. Please restart Hyprland manually.\e[0m"
 rm -f "$HOME/.config/mimeapps.list"
 cp "$HOME/HyprArch/configs/mimeapps.list" "$HOME/.config/mimeapps.list"
+hyprctl reload 2>/dev/null || echo -e "\e[33mFailed to reload Hyprland configuration. Please restart Hyprland manually.\e[0m"
+
+sleep 2s
+max_attempts=5
+attempt=0
+
+while true; do
+    read -rp "Is everything okay with the screen resolution and interface? (Y/N): " answer
+    case "$answer" in
+        [Yy])
+            echo "Continuing installation..."
+            break
+            ;;
+        *)
+            attempt=$((attempt + 1))
+            if [ $attempt -ge $max_attempts ]; then
+                echo "Installation stopped due to user cancellation."
+                exit 1
+            else
+                echo "Please confirm. Attempts left: $((max_attempts - attempt))"
+            fi
+            ;;
+    esac
+done
 
 echo "
 #---------------------------#
