@@ -68,6 +68,19 @@ else
 fi
 
 echo "
+#--------------#
+#   Backups    #
+#--------------#"
+if [ ! -f ~/HyprArch/install_scripts/bacups.sh ]; then
+    echo -e "\e[31mBackup script not found\e[0m"
+    exit 1
+fi
+if ! bash "$HOME/HyprArch/install_scripts/bacups.sh"; then
+    echo -e "\e[31mBackup script execution failed\e[0m"
+    exit 1
+fi
+
+echo "
 #------------------#
 #  installing yay  #
 #------------------#"
