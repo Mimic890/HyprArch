@@ -11,3 +11,4 @@ GRUB_GFXPAYLOAD_LINUX=keep
 GRUB_DISABLE_RECOVERY=true
 GRUB_DISABLE_OS_PROBER=false
 GRUB_THEME="/usr/share/grub/themes/hypr/theme.txt"
+GRUB_GFXMODE=1920x1080,auto

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Install fish shell
 echo -e "\e[34mInstalling fish shell...\e[0m"
-sudo pacman -S --noconfirm fish >>"$HOME/HyprArch/log.txt" 2>&1 || {
+sudo pacman -S --noconfirm fish || {
     echo -e "\e[31mFailed to install fish shell.\e[0m"
     exit 1
 }

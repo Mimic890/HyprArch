@@ -4,7 +4,7 @@ echo -e "\e[34mInstalling GTK theme...\e[0m"
 
 # Install packages
 if ! pacman -Qi gtk4 &>/dev/null || ! pacman -Qi gtk3 &>/dev/null || ! pacman -Qi nwg-look &>/dev/null; then
-    sudo pacman -S --noconfirm gtk4 gtk3 nwg-look >>"$HOME/HyprArch/log.txt" 2>&1
+    sudo pacman -S --noconfirm gtk4 gtk3 nwg-look
 else
     echo "GTK4, GTK3, and nwg-look already installed."
 fi

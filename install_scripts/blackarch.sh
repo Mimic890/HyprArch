@@ -15,7 +15,7 @@ fi
 # Установка whiptail, если отсутствует
 if ! command -v whiptail &> /dev/null; then
   echo -e "\e[34mУстановка whiptail...\e[0m"
-  if ! sudo pacman -Sy --noconfirm whiptail >>"$HOME/HyprArch/log.txt" 2>&1; then
+  if ! sudo pacman -Sy --noconfirm whiptail; then
     echo -e "\e[31mОшибка установки whiptail.\e[0m"
     exit 1
   fi
@@ -45,7 +45,7 @@ fi
 
 # Синхронизация базы пакетов
 echo -e "\e[34mОбновление базы пакетов...\e[0m"
-if ! sudo pacman -Syy >>"$HOME/HyprArch/log.txt" 2>&1; then
+if ! sudo pacman -Syy; then
   echo -e "\e[31mОшибка синхронизации базы пакетов.\e[0m"
   exit 1
 fi
@@ -87,14 +87,14 @@ for choice in "${SELECTED[@]}"; do
   echo -e "\e[34mУстановка: $category\e[0m"
   retries=3
   while [ $retries -gt 0 ]; do
-    if sudo pacman -S --noconfirm --needed "$category" 2>&1 | tee -a "$HOME/HyprArch/log.txt"; then
+    if sudo pacman -S --noconfirm --needed; then
       echo -e "\e[32m$category установлен.\e[0m"
       break
     else
       echo -e "\e[31mОшибка установки $category. Осталось попыток: $retries\e[0m"
       ((retries--))
       sleep 5
-      sudo pacman -Syy 2>&1 | tee -a "$HOME/HyprArch/log.txt"
+      sudo pacman -Syy
     fi
   done
   if [ $retries -eq 0 ]; then

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Install zsh
 echo -e "\e[34m🔧 Installing zsh shell...\e[0m"
-sudo pacman -S --noconfirm zsh >>"$HOME/HyprArch/log.txt" 2>&1 || {
+sudo pacman -S --noconfirm zsh|| {
     echo -e "\e[31mFailed to install zsh shell.\e[0m"
     exit 1
 }

@@ -40,7 +40,7 @@ if [ ! -f ~/HyprArch/pkg/pkglist.txt ]; then
 fi
 
 echo -e "\e[34mUpdating system...\e[0m"
-sudo pacman -Syu --needed base-devel --noconfirm --quiet > log.txt || {
+sudo pacman -Syu --needed base-devel --noconfirm || {
     echo -e "\e[31mSystem update error\e[0m"
     exit 1
 }
@@ -61,7 +61,7 @@ if [ ${#missing_pkgs[@]} -eq 0 ]; then
 else
     echo -e "\e[34mInstalling missing packages: ${missing_pkgs[*]}\e[0m"
     for pkg in "${missing_pkgs[@]}"; do
-        if sudo pacman -S --noconfirm --needed "$pkg" >>log.txt 2>&1; then
+        if sudo pacman -S --noconfirm --needed "$pkg"; then
             echo -e "\e[32m$pkg installed successfully.\e[0m"
         else
             echo -e "\e[31mError installing $pkg\e[0m"
@@ -138,7 +138,7 @@ echo -e "
 #-------------------------------------#
 # Final check and update of packages  #
 #-------------------------------------#"
-sudo pacman -Syyuu --noconfirm && yay -Syyuu --noconfirm > log.txt || {
+sudo pacman -Syyuu --noconfirm && yay -Syyuu --noconfirm || {
     echo -e "\e[31mFinal package update error\e[0m"
     exit 1
 }
@@ -254,16 +254,16 @@ if [ -d "$CONFIGS_DIR" ]; then
     mkdir -p "$TARGET_DIR"
     for folder in "${folders[@]}"; do
         target_path="$TARGET_DIR/$folder"
+        source_path="$CONFIGS_DIR/$folder"
         if [ -d "$target_path" ]; then
             echo -e "\e[33mRemoving $target_path\e[0m"
-            rm -rf "$target_path"
+            sudo rm -rf "$target_path"
         fi
-        source_path="$CONFIGS_DIR/$folder"
         if [ -d "$source_path" ]; then
             echo -e "\e[32mCopying $folder to $TARGET_DIR\e[0m"
             cp -r "$source_path" "$TARGET_DIR/"
         else
-            echo -e "\e[31mFolder $folder not found in configs\e[0m"
+            echo -e "\e[31mFolder $folder not found in configs, skipping.\e[0m"
         fi
     done
 else
@@ -273,7 +273,7 @@ rm -f "$HOME/.config/mimeapps.list"
 cp "$HOME/HyprArch/configs/mimeapps.list" "$HOME/.config/mimeapps.list"
 hyprctl reload 2>/dev/null || echo -e "\e[33mFailed to reload Hyprland configuration. Please restart Hyprland manually.\e[0m"
 
-sleep 2s
+sleep 5s
 max_attempts=5
 attempt=0
 

@@ -11,7 +11,7 @@ echo -e "\e[34mNVIDIA GPU detected. Installing drivers and dependencies...\e[0m"
 PACKAGES=("nvidia" "nvidia-utils" "nvidia-settings" "egl-wayland")
 for pkg in "${PACKAGES[@]}"; do
     echo -ne "\e[36m⏳ Installing $pkg...\e[0m "
-    if sudo pacman -S --needed "$pkg" >>"$HOME/HyprArch/log.txt" 2>&1; then
+    if sudo pacman -S --needed "$pkg"; then
         echo -e "\e[32m[SUCCESS]\e[0m"
     else
         echo -e "\e[31m[FAILED]\e[0m"
