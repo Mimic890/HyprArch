@@ -233,13 +233,32 @@ echo "
 #---------------------------#
 #   Copying configurations  #
 #---------------------------#"
-echo -e "\e[34mCopying configurations...\e[0m"
-if [ -d "$HOME/HyprArch/configs" ]; then
-    mkdir -p "$HOME/.config"
-    cp -r "$HOME/HyprArch/configs/"* "$HOME/.config/"
+CONFIGS_DIR="$HOME/HyprArch/configs"
+TARGET_DIR="$HOME/.config"
+# List of folders to copy
+folders=("btop" "cava" "fastfetch" "hypr" "kitty" "nvim" "nwg-dock-hyprland" "nwg-look" "swaync" "Thunar" ""waybar" "waypaper" "wlogout" "wofi" "xsettings")
+
+if [ -d "$CONFIGS_DIR" ]; then
+    mkdir -p "$TARGET_DIR"
+    for folder in "${folders[@]}"; do
+        target_path="$TARGET_DIR/$folder"
+        if [ -d "$target_path" ]; then
+            echo -e "\e[33mRemoving $target_path\e[0m"
+            rm -rf "$target_path"
+        fi
+        source_path="$CONFIGS_DIR/$folder"
+        if [ -d "$source_path" ]; then
+            echo -e "\e[32mCopying $folder to $TARGET_DIR\e[0m"
+            cp -r "$source_path" "$TARGET_DIR/"
+        else
+            echo -e "\e[31mFolder $folder not found in configs\e[0m"
+        fi
+    done
 else
-    echo -e "\e[31mconfigs folder not found\e[0m"
+    echo -e "\e[31mConfigs folder not found: $CONFIGS_DIR\e[0m"
 fi
+rm -f "$HOME/.config/mimeapps.list"
+cp "$HOME/HyprArch/configs/mimeapps.list" "$HOME/.config/mimeapps.list"
 
 echo "
 #---------------------------#
