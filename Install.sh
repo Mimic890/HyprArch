@@ -5,6 +5,9 @@ echo "  //////////////////////////////////
 //////////////////////////////////"
 # Make all install scripts executable
 chmod +x "$HOME/HyprArch/install_scripts/"*
+chmod +x "$HOME/HyprArch/configs/hypr/scripts/"*
+chmod +x "$HOME/HyprArch/configs/nwg-dock-hyprland/launch.sh"
+
 # Exit on error
 set -e
 
