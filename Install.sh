@@ -37,7 +37,7 @@ if [ ! -f ~/HyprArch/pkg/pkglist.txt ]; then
 fi
 
 echo -e "\e[34mUpdating system...\e[0m"
-sudo pacman -Syu --needed base-devel --noconfirm --quiet >>log.txt 2>&1 || {
+sudo pacman -Syu --needed base-devel --noconfirm --quiet > log.txt || {
     echo -e "\e[31mSystem update error\e[0m"
     exit 1
 }
@@ -397,18 +397,10 @@ echo "
 #---------------------------------#
 #   Going to HyprArch directory   #
 #---------------------------------#"
-if cd "$HOME/HyprArch"; then
-    echo -e "\e[32mChanged directory to HyprArch\e[0m"
-    echo -e "\e[32mGRUB configured successfully.\e[0m"
-else
-    echo -e "\e[31mFailed to change directory to $HOME/HyprArch\e[0m"
-    echo -e "\e[31mGRUB configuration failed. Aborting.\e[0m"
-    exit 1
-fi
+cd $HOME/HyprArch
 
 echo -e "\e[32mInstallation completed successfully!\e[0m"
-echo -e "\e[36mWould you like to reboot now? (Y/n): \e[0m"
-read -r reboot_choice
+read -p "\e[36mWould you like to reboot now? (Y/n): \e[0m" reboot_choice
 if [[ "$reboot_choice" =~ ^[Yy]$ ]]; then
     echo -e "\e[34mRebooting...\e[0m"
     sudo reboot

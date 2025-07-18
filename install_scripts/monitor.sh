@@ -20,7 +20,7 @@ for i in "${!MONITORS[@]}"; do
 done
 
 # Selecting the main
-read -p "Select the main screen number:" SELECTED
+read -p "Select the main screen number: " SELECTED
 if ! [[ "$SELECTED" =~ ^[0-9]+$ ]] || (( SELECTED < 1 || SELECTED > ${#MONITORS[@]} )); then
     echo "Wrong choice."
     exit 1
