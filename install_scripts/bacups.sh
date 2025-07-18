@@ -40,9 +40,12 @@ else
 fi
 
 echo
-read -p "🛠 Do you want to [r]estore or [c]reate a new backup? (r/c): " choice
+read -p "Do you want to [s]skip [r]estore or [c]reate a new backup? (s/r/c): " choice
 
 case "$choice" in
+    [Ss])
+        echo "Skipping backup."
+        ;;
     [Rr])
         if [ ${#archives[@]} -eq 0 ]; then
             echo "No backups available to restore."
@@ -63,7 +66,7 @@ case "$choice" in
         echo "→ Restoring /usr/share/sddm/themes..."
         sudo rsync -a --delete "$TEMP_DIR/sddm-themes/" "$SDDM_SRC/"
 
-        echo "✅ Restore complete."
+        echo "Restore complete."
         ;;
     [Cc])
         echo "Creating new backup..."
