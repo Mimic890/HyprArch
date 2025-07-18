@@ -236,7 +236,7 @@ echo "
 CONFIGS_DIR="$HOME/HyprArch/configs"
 TARGET_DIR="$HOME/.config"
 # List of folders to copy
-folders=("btop" "cava" "fastfetch" "hypr" "kitty" "nvim" "nwg-dock-hyprland" "nwg-look" "swaync" "Thunar" ""waybar" "waypaper" "wlogout" "wofi" "xsettings")
+folders=("btop" "cava" "fastfetch" "hypr" "kitty" "nvim" "nwg-dock-hyprland" "nwg-look" "swaync" "Thunar" "waybar" "waypaper" "wlogout" "wofi" "xsettings")
 
 if [ -d "$CONFIGS_DIR" ]; then
     mkdir -p "$TARGET_DIR"
