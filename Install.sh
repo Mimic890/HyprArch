@@ -271,7 +271,7 @@ if [ -n "$WAYBAR_IFACE" ]; then
             sed -i "s/\"interface\": \".*\"/\"interface\": \"$WAYBAR_IFACE\"/" "$cfg"
             echo -e "\e[34mUpdated interface in $cfg\e[0m"
             # Delete the temporary .bak file
-            rm -f "$cfg.bak"
+            rm -f "$HOME/.config/waybar/*.bak"
         fi
     done
     echo -e "\e[32mWaybar config updated to use interface: $WAYBAR_IFACE\e[0m"
