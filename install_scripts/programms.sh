@@ -9,18 +9,19 @@ fi
 # Program selection menu
 CHOICES=$(whiptail --title "" --checklist \
 "Select the programs you want to install (SPACE — select, TAB — move):" 25 78 15 \
-"Telegram" "" OFF \
-"Steam" "" OFF \
-"OBS Studio" "" OFF \
-"Discord" "" OFF \
-"Veracrypt" "" OFF \
+"Telegram" "messenger" OFF \
+"Steam" "game platform" OFF \
+"OBS Studio" "screen recording and streaming" OFF \
+"Discord" "voice and text chat" OFF \
+"Veracrypt" "disk encryption" OFF \
 "Foliate" "books and pdf reader" OFF \
 "Motrix" "download manager" OFF \
-"VS Code" "(AUR)" OFF \
-"Spotify" "(AUR)" OFF \
-"Obsidian" "(AUR)" OFF \
+"GIMP" "image editor" OFF \
+"LibreOffice" "office suite" OFF \
+"VS Code" "(AUR)(Official)" OFF \
+"Spotify" "(AUR)(Official)" OFF \
+"Obsidian" "(AUR)(Official)" OFF \
 "Yandex Music" "(AUR)" OFF \
-"Nekoray" "(AUR)" OFF \
 3>&1 1>&2 2>&3)
 
 if [ $? -ne 0 ]; then
@@ -71,6 +72,14 @@ for choice in "${SELECTED[@]}"; do
       yay -S --noconfirm motrix-bin >>"$HOME/HyprArch/log.txt" 2>&1 && \
       echo -e "\e[32mMotrix installed.\e[0m" || echo -e "\e[31m❌ Motrix install failed.\e[0m"
     ;;
+    "\"GIMP\"")
+      sudo pacman -S --noconfirm gimp >>"$HOME/HyprArch/log.txt" 2>&1 && \
+      echo -e "\e[32mGIMP installed.\e[0m" || echo -e "\e[31m❌ GIMP install failed.\e[0m"
+    ;;
+    "\"LibreOffice\"")
+      sudo pacman -S --noconfirm libreoffice-fresh >>"$HOME/HyprArch/log.txt" 2>&1 && \
+      echo -e "\e[32mLibreOffice installed.\e[0m" || echo -e "\e[31m❌ LibreOffice install failed.\e[0m"
+    ;;
     "\"VS Code\"")
       yay -S --noconfirm visual-studio-code-bin >>"$HOME/HyprArch/log.txt" 2>&1 && \
       echo -e "\e[32mVS Code installed.\e[0m" || echo -e "\e[31m❌ VS Code install failed.\e[0m"
@@ -86,10 +95,6 @@ for choice in "${SELECTED[@]}"; do
     "\"Yandex Music\"")
       yay -S --noconfirm yandex-music >>"$HOME/HyprArch/log.txt" 2>&1 && \
       echo -e "\e[32mYandex Music installed.\e[0m" || echo -e "\e[31m❌ Yandex Music install failed.\e[0m"
-    ;;
-    "\"Nekoray\"")
-      yay -S --noconfirm nekoray-bin >>"$HOME/HyprArch/log.txt" 2>&1 && \
-      echo -e "\e[32mNekoray installed.\e[0m" || echo -e "\e[31m❌ Nekoray install failed.\e[0m"
     ;;
   esac
 done
