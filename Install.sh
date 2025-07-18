@@ -131,6 +131,15 @@ else
     done
 fi
 
+echo -e "
+#-------------------------------------#
+# Final check and update of packages  #
+#-------------------------------------#"
+sudo pacman -Syyuu --noconfirm && yay -Syyuu --noconfirm > log.txt || {
+    echo -e "\e[31mFinal package update error\e[0m"
+    exit 1
+}
+
 echo "
 #--------------#
 #   Monitor    #
