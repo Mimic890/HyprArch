@@ -236,7 +236,7 @@ echo "
 CONFIGS_DIR="$HOME/HyprArch/configs"
 TARGET_DIR="$HOME/.config"
 # List of folders to copy
-folders=("btop" "cava" "fastfetch" "hypr" "kitty" "nvim" "nwg-dock-hyprland" "nwg-look" "swaync" "Thunar" "waybar" "waypaper" "wlogout" "wofi" "xsettings")
+folders=("btop" "cava" "fastfetch" "hypr" "kitty" "nvim" "nwg-dock-hyprland" "nwg-look" "swaync" "Thunar" "waybar" "waypaper" "wlogout" "wofi" "xsettingsd")
 
 if [ -d "$CONFIGS_DIR" ]; then
     mkdir -p "$TARGET_DIR"
@@ -257,6 +257,7 @@ if [ -d "$CONFIGS_DIR" ]; then
 else
     echo -e "\e[31mConfigs folder not found: $CONFIGS_DIR\e[0m"
 fi
+hyprctl reload 2>/dev/null || echo -e "\e[33mFailed to reload Hyprland configuration. Please restart Hyprland manually.\e[0m"
 rm -f "$HOME/.config/mimeapps.list"
 cp "$HOME/HyprArch/configs/mimeapps.list" "$HOME/.config/mimeapps.list"
 
