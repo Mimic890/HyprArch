@@ -104,3 +104,8 @@ swww
 os-prober
 jq
 wget
+gnome-calculator
+gnome-system-monitor
+gnome-disk-utility
+baobab
+easyeffects
