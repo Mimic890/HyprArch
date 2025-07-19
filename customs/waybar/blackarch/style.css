@@ -1,19 +1,19 @@
 * {
     font-family: "Fira Sans Semibold", "Font Awesome 6 Free", "Jetbrains Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 15px;
+    color: #ffffff;
     font-weight: 700;
-    color: #5c76cc;
 }
 window#waybar {
     background: rgba(255, 255, 255, 0);
-    /* border: 2px solid #5c76cc; */
+    /* border: 2px solid #1c9bc2; */
     border-radius: 8px;
     min-height: 36px;
 }
 #custom-logo {
     font-size: 24px;
     padding: 2px 6px 2px 8px;
-    color: #5c76cc;
+    color: #ffffff;
 }
 #workspaces button {
     background: transparent;
@@ -30,33 +30,33 @@ window#waybar {
 }
 #workspaces button:hover {
     background: rgba(255, 255, 255, 0);
-    border-color: #1c9bc2;
+    border-color: rgb(2, 15, 140);
     color: #ffffff;
 }
 #workspaces button.active {
     background: rgba(92, 118, 204, 0.15);
-    border-color: #5c76cc;
+    border-color: #ffffff;
     color: #ffffff;
     box-shadow:
-        0 0 4px #5c76ccaa,
-        0 0 8px #5c76cc66;
+        0 0 2px rgb(2, 15, 140),
+        0 0 6px rgb(2, 15, 140);
 }
 #tray {
         background: rgba(30, 30, 45, 0.7);
-    color: #5c76cc;
+    color: #ffffff;
     padding: 2px 3px 2px 3px;
     margin: 6px 4px 6px 4px;
     border-radius: 5px;
-    border: #5c76cc 2px solid;
+    border: #ffffff 2px solid;
     padding: 2px 5px 0px 4px;
 }
 #pulseaudio, #cpu, #memory, #network, #backlight, #language, #clock, #battery {
     background: rgba(30, 30, 45, 0.7);
-    color: #5c76cc;
+    color: #ffffff;
     padding: 2px 3px 2px 3px;
     margin: 6px 4px 6px 4px;
     border-radius: 5px;
-    border: #5c76cc 2px solid;
+    border: #ffffff 2px solid;
 }
 #custom-clipboard, #custom-notifications, #custom-shutdown {
     font-size: 18px;
@@ -70,7 +70,7 @@ window#waybar {
 }
 #custom-clipboard:hover, #custom-notifications:hover, #custom-shutdown:hover {
     color: #ffffff;
-    border: #5c76cc 2px solid;
+    border: #ffffff 2px solid;
     border-radius: 5px;
     padding: 2px 3px 2px 3px;
     margin: 6px 1px 6px 1px;

@@ -326,7 +326,7 @@ if [ -n "$WAYBAR_IFACE" ]; then
             sed -i "s/\"interface\": \".*\"/\"interface\": \"$WAYBAR_IFACE\"/" "$cfg"
             echo -e "\e[34mUpdated interface in $cfg\e[0m"
             # Delete the temporary .bak file
-            rm -f "$HOME/.config/waybar/*.bak"
+            sudo rm -f "$HOME/.config/waybar/*.bak"
         fi
     done
     echo -e "\e[32mWaybar config updated to use interface: $WAYBAR_IFACE\e[0m"
@@ -339,18 +339,18 @@ echo "
 #  Waybar theme selection   #
 #---------------------------#"
 echo "Select a Waybar theme:"
-echo "1) Dark and White"
+echo "1) White Arch"
 echo "2) Blue Arch"
 read -p "Enter the topic number (1-2): " choice
 case "$choice" in
     1)
         echo "The Dark and White theme is set..."
-        if [ -f "$HOME/HyprArch/customs/waybar/dark_and_white/style.css" ]; then
+        if [ -f "$HOME/HyprArch/customs/waybar/blackarch/style.css" ]; then
             mkdir -p "$HOME/.config/waybar"  # Ensure the directory exists
             rm -f "$HOME/.config/waybar/style.css"  # Remove existing style.css
-            cp "$HOME/HyprArch/customs/waybar/dark_and_white/style.css" "$HOME/.config/waybar/"
+            cp "$HOME/HyprArch/customs/waybar/blackarch/style.css" "$HOME/.config/waybar/"
         else
-            echo -e "\e[31mTheme file not found: $HOME/HyprArch/customs/waybar/dark_and_white/style.css\e[0m"
+            echo -e "\e[31mTheme file not found: $HOME/HyprArch/customs/waybar/blackarch/style.css\e[0m"
             exit 1
         fi
         ;;
