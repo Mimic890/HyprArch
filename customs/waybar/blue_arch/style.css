@@ -1,128 +1,87 @@
-@define-color miblue #5c76cc;
-@define-color turquoise rgba(0,247,212,0.3);
-
-
-
 * {
-    font-family: Orbitron, "JetBrains Mono";
+    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", "Jetbrains Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 15px;
     color: #ffffff;
+    font-weight: 700;
+    color: #5c76cc;
 }
 window#waybar {
-    background: rgba(30, 30, 45, 0.7);
-    border: 2px solid @miblue;
+    background: rgba(255, 255, 255, 0);
+    /* border: 2px solid #5c76cc; */
     border-radius: 8px;
     min-height: 36px;
 }
 #custom-logo {
-    font-size: 26px;
+    font-size: 24px;
     padding: 2px 6px 2px 8px;
-    color: @miblue;
-}
-#workspaces {
+    color: #5c76cc;
 }
 #workspaces button {
-	padding: 3px 6px 0px 6px;
-	margin: 4px 2px 4px 2px;
     background: transparent;
-    color: @miblue;
     border-radius: 5px;
-    font-weight: 500;
-    transition: background 0.3s ease, color 0.3s ease, trensform 0.2s ease;
+    padding: 2px 3px;
+    margin: 5px 1px;
+    border: 2px solid transparent;
+    color: #cccccc;
+    transition:
+        background-color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.5s ease,
+        color 0.4s ease;
 }
 #workspaces button:hover {
-    background: @turquoise;
+    background: rgba(255, 255, 255, 0);
+    border-color: #1c9bc2;
     color: #ffffff;
-	margin: 4px 2px 4px 2px;
 }
 #workspaces button.active {
-    background: @miblue;
-    font-weight: bold;
-    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    background: rgba(92, 118, 204, 0.15);
+    border-color: #5c76cc;
+    color: #ffffff;
+    box-shadow:
+        0 0 4px #5c76ccaa,
+        0 0 8px #5c76cc66;
 }
 #tray {
+        background: rgba(30, 30, 45, 0.7);
+    color: #5c76cc;
+    padding: 2px 3px 2px 3px;
+    margin: 6px 4px 6px 4px;
+    border-radius: 5px;
+    border: #5c76cc 2px solid;
     padding: 2px 5px 0px 4px;
 }
-#pulseaudio {
-    padding: 3px 3px 2px 3px;
-    color: @miblue;
-    font-weight: 700;
-}
-#cpu, #memory {
-    padding: 4px 3px 0px 3px;
-    color: @miblue;
-    font-weight: 700;
-}
-#network {
-    padding: 2px 3px 0px 3px;
-    color: @miblue;
-    font-weight: 700;
-}
-#custom-battery {
-    padding: 2px 3px 1px 3px;
-    color: @miblue;
-    font-weight: 700;
-}
-#backlight {
-    padding: 4px 2px 1px 2px;
-    color: @miblue;
-    font-weight: 700;
-    font-size: 15px;
-}
-#language {
-    padding: 3px 2px 0px 2px;
-    margin-left: 3px;
-    color: @miblue;
-    font-weight: 700;
-}
-#clock {
-    padding: 3px 2px 0px 2px;
-    font-weight: bold;
-    color: @miblue;
-    font-size: 17px;
-}
-#custom-clipboard {
-    color: @miblue;
-    font-size: 18px;
-    padding: 0px 4px 0px 4px;
-    margin: 4px 0px 4px 0px;
-}
-#custom-clipboard:hover {
-    color: #ffffff;
-    background-color: #313244;
+#pulseaudio, #cpu, #memory, #network, #backlight, #language, #clock, #battery {
+    background: rgba(30, 30, 45, 0.7);
+    color: #5c76cc;
+    padding: 2px 3px 2px 3px;
+    margin: 6px 4px 6px 4px;
     border-radius: 5px;
-    padding: 0px 4px 0px 4px;
-    margin: 4px 0px 4px 0px;
+    border: #5c76cc 2px solid;
 }
-#custom-notifications {
-    color: @miblue;
+#custom-clipboard, #custom-notifications, #custom-shutdown {
     font-size: 18px;
-    padding: 0px 4px 0px 4px;
-    margin: 4px 0px 4px 1px;
-}
-#custom-notifications:hover {
-    color: #ffffff;
-    background-color: #313244;
+    padding: 2px 3px 2px 3px;
+    margin: 6px 1px 6px 1px;
     border-radius: 5px;
-    padding: 0px 4px 0px 4px;
-    margin: 4px 0px 4px 1px;
+    border: 2px solid transparent;
 }
-
-
-
-
-
-
 #custom-shutdown {
-    font-size: 21px;
     color: #ff5555;
-    padding: 0px 4px 0px 4px;
-    margin: 5px 6px 5px 5px;
+}
+#custom-clipboard:hover, #custom-notifications:hover, #custom-shutdown:hover {
+    color: #ffffff;
+    border: #5c76cc 2px solid;
+    border-radius: 5px;
+    padding: 2px 3px 2px 3px;
+    margin: 6px 1px 6px 1px;
+        transition:
+        background-color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.5s ease,
+        color 0.4s ease;
 }
 #custom-shutdown:hover {
-    background: rgba(255, 85, 85, 0.3);
+    border-color: rgba(255, 85, 85, 1);
     color: #ffffff;
-    border-radius: 5px;
-    padding: 0px 4px 0px 4px;
-    margin: 5px 6px 5px 5px;
 }

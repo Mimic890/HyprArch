@@ -11,20 +11,17 @@
 		"pulseaudio"
 	],
 	"modules-center": [
-		"cpu",
-		"memory",
-		"network#speed"
+		"hyprland/window"
 	],
 	"modules-right": [
-		"network#status",
+		"network",
+		"backlight",
 		"battery",
-		"backlight#icon",
-		"backlight#percent",
-		"hyprland/language",
-		"clock",
 		"custom/clipboard",
 		"custom/notifications",
-		"custom/shutdown"
+		"custom/shutdown",
+		"hyprland/language",
+		"clock"
 	],
 	"custom/logo": {
 		"format": "󰣇",
@@ -70,21 +67,13 @@
 		},
 		"on-click": "pavucontrol"
 	},
-	"cpu": {
-		"format": "CPU {usage}%",
-		"tooltip": true
+	"hyprland/window": {
+		"format": "{title:.50s}"
 	},
-	"memory": {
-		"format": "RAM {}%"
-	},
-	"network#speed": {
+	"network": {
 		"interface": "wlan0",
-		"format": "↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",
+		"format-wifi": " {signalStrength}% ↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",
 		"interval": 1,
-		"tooltip": false
-	},
-	"network#status": {
-		"format-wifi": " {signalStrength}%",
 		"format-ethernet": "",
 		"tooltip-format": "{ifname} via {gwaddr} ",
 		"format-linked": " {ifname} (No IP)",
@@ -92,38 +81,39 @@
 		"on-click": "kitty --start-as normal nmtui"
 	},
     	"battery": {
+		"interval": 1,
       	"states": {
+			"good": 80,
         		"warning": 30,
         		"critical": 15
       	},
       	"format": "{icon}  {capacity}%",
       	"format-full": "{icon}  {capacity}%",
-      	"format-charging": "  {capacity}%",
+      	"format-charging": "  {capacity}%",
       	"format-plugged": "  {capacity}%",
       	"format-alt": "{time} {icon}",
       	"format-icons": ["", "", "", "", ""]
     	},
-	"backlight#icon": {
-		"format": "{icon}",
+	"backlight": {
+		"format": "{icon}{percent}%",
 		"format-icons": [ " ", " ", " ", " ", " ", " ", " ", " ", " " ]
-	},
-	"backlight#percent": {
-		"format": "{percent}%"
 	},
 	"hyprland/language": {
     		"format": "{short}",
-    		"rewrite": {
-        		"Russian": "RU",
-        		"English (US)": "EN"
+    		"on-click": "hyprctl switchxkblayout current next",
+		"rewrite": {
+        		"Russian": "ru",
+        		"English (US)": "en"
 		}
 	},
 	"clock": {
 		"format": "{:%H:%M:%S}",
 		"interval": 1,
-		"tooltip": false
+		"tooltip": false,
+		"format-alt": "{:%A, %d %B %Y}"
 	},
 	"custom/notifications": {
-		"format": "󰂚",
+		"format": "",
 		"tooltip": false,
 		"on-click": "swaync-client -t",
 		"on-click-right": "swaync-client -c",
@@ -135,7 +125,7 @@
 		"on-click": "~/.config/hypr/scripts/clipboard.sh"
 	},
 	"custom/shutdown": {
-		"format": "⏻",
+		"format": "",
 		"tooltip": false,
 		"on-click": "wlogout",
 		"class": "shutdown"
