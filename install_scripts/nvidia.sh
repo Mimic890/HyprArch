@@ -8,7 +8,7 @@ fi
 echo -e "\e[34mNVIDIA GPU detected. Installing drivers and dependencies...\e[0m"
 
 # Installing each package separately with status output
-PACKAGES=("nvidia" "nvidia-utils" "nvidia-settings" "egl-wayland")
+PACKAGES=("nvidia" "nvidia-utils" "nvidia-settings" "opencl-nvidia" "egl-wayland")
 for pkg in "${PACKAGES[@]}"; do
     echo -ne "\e[36m⏳ Installing $pkg...\e[0m "
     if sudo pacman -S --needed "$pkg"; then

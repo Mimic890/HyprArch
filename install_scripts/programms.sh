@@ -17,6 +17,10 @@ CHOICES=$(whiptail --title "" --checklist \
 "Foliate" "books and pdf reader" OFF \
 "Motrix" "download manager" OFF \
 "GIMP" "image editor" OFF \
+"Krita" "image editor" OFF \
+"Inkscape" "vector graphics editor" OFF \
+"Kdenlive" "video editor" OFF \
+"KeepassXC" "password manager" OFF \
 "LibreOffice" "office suite" OFF \
 "VS Code" "(AUR)(Official)" OFF \
 "Spotify" "(AUR)(Official)" OFF \
@@ -75,6 +79,22 @@ for choice in "${SELECTED[@]}"; do
     "\"GIMP\"")
       sudo pacman -S --noconfirm gimp >>"$HOME/HyprArch/log.txt" 2>&1 && \
       echo -e "\e[32mGIMP installed.\e[0m" || echo -e "\e[31m❌ GIMP install failed.\e[0m"
+    ;;
+    "\"Krita\"")
+      sudo pacman -S --noconfirm krita >>"$HOME/HyprArch/log.txt" 2>&1 && \
+      echo -e "\e[32mKrita installed.\e[0m" || echo -e "\e[31m❌ Krita install failed.\e[0m"
+    ;;
+    "\"Inkscape\"")
+      sudo pacman -S --noconfirm inkscape >>"$HOME/HyprArch/log.txt" 2>&1 && \
+      echo -e "\e[32mInkscape installed.\e[0m" || echo -e "\e[31m❌ Inkscape install failed.\e[0m"
+    ;;
+    "\"Kdenlive\"")
+      sudo pacman -S --noconfirm kdenlive >>"$HOME/HyprArch/log.txt" 2>&1 && \
+      echo -e "\e[32mKdenlive installed.\e[0m" || echo -e "\e[31m❌ Kdenlive install failed.\e[0m"
+    ;;
+    "\"KeepassXC\"")
+      sudo pacman -S --noconfirm keepassxc >>"$HOME/HyprArch/log.txt" 2>&1 && \
+      echo -e "\e[32mKeepassXC installed.\e[0m" || echo -e "\e[31m❌ KeepassXC install failed.\e[0m"
     ;;
     "\"LibreOffice\"")
       sudo pacman -S --noconfirm libreoffice-fresh >>"$HOME/HyprArch/log.txt" 2>&1 && \
