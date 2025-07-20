@@ -1,0 +1,12 @@
+NAME="HyprArch Linux"
+PRETTY_NAME="HyprArch Linux"
+ID=hyprarch
+ID_LIKE=arch
+BUILD_ID=rolling
+ANSI_COLOR="38;2;92;118;204"
+HOME_URL="https://hyprarch.ru/"
+DOCUMENTATION_URL="https://hyprarch.ru/doc/"
+SUPPORT_URL="https://hyprarch.ru/support/"
+BUG_REPORT_URL="https://hyprarch.ru/issues"
+PRIVACY_POLICY_URL="https://hyprarch.ru/privacy"
+LOGO=hyprarch-logo
