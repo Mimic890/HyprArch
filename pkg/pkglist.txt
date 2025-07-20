@@ -83,6 +83,8 @@ tig
 ttf-dejavu
 ttf-droid
 ttf-fira-code
+ttf-fira-sans
+ttf-roboto
 ttf-font-awesome
 ttf-jetbrains-mono
 ttf-liberation
