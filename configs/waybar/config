@@ -74,7 +74,7 @@
 		"interface": "wlan0",
 		"format-wifi": " {signalStrength}% ↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",
 		"interval": 1,
-		"format-ethernet": "",
+		"format-ethernet": " ↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",
 		"tooltip-format": "{ifname} via {gwaddr} ",
 		"format-linked": " {ifname} (No IP)",
 		"format-disconnected": "Disconnected ⚠",
