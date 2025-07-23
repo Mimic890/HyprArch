@@ -4,7 +4,7 @@
 ```
 cd ~/ && git clone https://github.com/Mimic890/HyprArch.git && cd ~/HyprArch && chmod +x Install.sh && ./Install.sh
 ```
-
+[Discord](https://discord.gg/cDvAmGze)
 ## Hyprland Keybinds
 ### Базовые Keybindings
 | Действие                      | Keybind         |
