@@ -16,7 +16,7 @@ exfatprogs
 fastfetch
 feh
 ffmpeg
-file-roller
+xarchiver
 firejail
 gdu
 git
