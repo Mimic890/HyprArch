@@ -50,7 +50,7 @@ fi
 # Check for gsettings
 if command -v gsettings &>/dev/null; then
     gsettings set org.gnome.desktop.interface gtk-theme "Breeze-Dark"
-    gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+    gsettings set org.gnome.desktop.interface icon-theme "Fluent-dark"
 else
     echo "gsettings not found. Skipping GNOME theme settings."
 fi
