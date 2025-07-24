@@ -1,7 +1,7 @@
 {
 	"layer": "top",
 	"position": "top",
-	"height": 39,
+	"height": 36,
 	"margin": "3 3 0 3",
 	"spacing": 1,
 	"modules-left": [
@@ -71,7 +71,7 @@
 		"format": "{title:.50s}"
 	},
 	"network": {
-		"interface": "wlan0",
+		"interface": "enp4s0",
 		"format-wifi": " {signalStrength}% ↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",
 		"interval": 1,
 		"format-ethernet": " ↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",
