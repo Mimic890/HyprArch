@@ -47,6 +47,20 @@ else
     echo "Warning: failed to install Breeze-Dark theme."
 fi
 
+# Fluent dark icon theme
+if [ -d "$HOME/.local/share/icons/Fluent-dark" ] || [ -f "$HOME/.local/share/icons/Fluent-dark" ]; then
+    if sudo rm -rf "$HOME/.local/share/icons/Fluent-dark" >>"$HOME/HyprArch/log.txt" 2>&1; then
+        echo "Removed old Fluent-dark icon theme."
+    else
+        echo "Warning: failed to remove old Fluent-dark icon theme."
+    fi
+fi
+if sudo cp -r "$HOME/HyprArch/customs/gtk/Fluent-dark" "$HOME/.local/share/icons/" >>"$HOME/HyprArch/log.txt" 2>&1; then
+    echo "Installed Fluent-dark icon theme."
+else
+    echo "Warning: failed to install Fluent-dark icon theme."
+fi
+
 # Check for gsettings
 if command -v gsettings &>/dev/null; then
     gsettings set org.gnome.desktop.interface gtk-theme "Breeze-Dark"
