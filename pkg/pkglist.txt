@@ -57,11 +57,8 @@ pipewire-pulse
 pkgfile
 power-profiles-daemon
 powerline-fonts
-proxychains-ng
-pulseaudio-alsa
 qt5-graphicaleffects
 qt5-quickcontrols2
-qt5-x11extras
 qt5-tools
 qt5-svg
 qt5-wayland
@@ -79,6 +76,7 @@ thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
+tumbler
 tig
 ttf-dejavu
 ttf-droid
@@ -98,7 +96,6 @@ xdg-desktop-portal
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xdg-desktop-portal-hyprland
-xdg-desktop-portal-kde
 xdg-user-dirs
 yt-dlp
 swaync
