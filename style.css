@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: rgb(34, 34, 34);
+    color: white;
+}
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+h1, h2, h3, h4, h5, h6, p, span, li, a {
+    opacity: 0;
+    animation: fadeDown 0.8s ease forwards;
+}
+h1 { animation-delay: 0s; }
+h2 { animation-delay: 0.1s; }
+h3 { animation-delay: 0.2s; }
+h4 { animation-delay: 0.3s; }
+h5 { animation-delay: 0.4s; }
+h6 { animation-delay: 0.5s; }
+p  { animation-delay: 0.6s; }
+span { animation-delay: 0.7s; }
+li { animation-delay: 0.8s; }
+a { animation-delay: 0.9s; }
+
+h1, h2, h3, h4, h5, h6, p, a, .text, strong, span {
+    transition: font-size 0.5s ease;
+}
+#bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 15px;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 55px;
+    border: 2px solid #5c76cc;
+    background-color: rgba(34, 34, 34, 0.8);
+    border-radius: 15px;
+    position: fixed;
+    z-index: 100;
+    padding: 0 10px;
+}
+#bar_title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-family: "JetBrains Mono", serif;
+    font-size: 14px;
+}
+.subtitle {
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #f15f32;
+    border: rgba(34,34,34,1) 2px solid;
+    padding: 3px;
+    border-radius: 8px;
+}
+#github {
+    color: white;
+    margin-right: 0;
+}
+#bar_logo {
+    height: 40px;
+}
+#main {
+    z-index: 10;
+    font-family: "Jetbrains Mono", serif;
+    margin: 85px 8px 0 8px;
+    padding: 25px 10px 30px 10px;
+    background-color: rgba(34, 34, 34, 0.8);
+    border-radius: 15px;
+    border: 2px solid #5c76cc;
+    text-align: center;
+}
+.main_txt {
+    color: #50c4ed;
+    line-height: 40px;
+}
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin: auto;
+    max-width: 90vw;
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+}
+.screenshot-grid img {
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    justify-self: center;
+    display: block;
+    border-radius: 17px;
+    object-fit: cover;
+}
+#download_button {
+    position: relative;
+    border-radius: 12px;
+    padding: 12px 30px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    color: white;
+    border: none;
+    z-index: 1;
+    transition: transform 0.3s ease, color 0.3s ease;
+    background-size: 200% 100%;
+    background: linear-gradient(90deg, #5c76cc, #ff4c4c) 0 50%;
+    animation: buttonGradientShift 4s ease infinite;
+    overflow: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+#download_button:hover {
+    transform: scale(1.05);
+    color: white;
+}
+#download_button::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 17px;
+    background: linear-gradient(270deg, #5c76cc, #ff4c4c, #5c76cc);
+    background-size: 400% 400%;
+    animation: borderGradientShift 2.5s linear infinite;
+    filter: blur(5px);
+    z-index: -2;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+#download_button::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border-radius: 12px;
+    background: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    filter: blur(16px);
+    z-index: -1;
+    visibility: visible !important;
+}
+#download_button:hover::after {opacity: 0.25;}
+@keyframes borderGradientShift {0% {background-position: 0 50%;}50% {background-position: 100% 50%;}100% {background-position: 0 50%;}}
+@keyframes buttonGradientShift {0% {background-position: 0 50%;}50% {background-position: 100% 50%;}100% {background-position: 0 50%;}}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+#socials {
+    display: flex;
+    width: 90vw;
+    margin: 40px 5vw 30px 5vw;
+    padding: 0;
+    font-family: Roboto, serif;
+    list-style: none;
+    align-content: center;
+    text-align: center;
+}
+#socials li {
+    flex: 1;
+    padding: 1.2em;
+    color: white;
+    text-align: center;
+    vertical-align: baseline;
+}
+#socials li.icon::before {
+    font-size: 2.75rem;
+    line-height: 1.3;
+}
+#socials li.style1 {
+    background-color: #ed5050;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    transition: box-shadow 50ms ease, transform 100ms ease;
+}
+#socials li.style1:hover {
+    box-shadow: 0 0 15px 4px #ed5050;
+    transform: scale(1.2);
+}
+#socials li.style2 {
+    background-color: #5c76cc;
+    transition: box-shadow 50ms ease, transform 100ms ease;
+}
+#socials li.style2:hover {
+    box-shadow: 0 0 15px 4px #5c76cc;
+    transform: scale(1.2);
+}
+#socials li.style3 {
+    background-color: #50c4ed;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: box-shadow 50ms ease, transform 100ms ease;
+}
+#socials li.style3:hover {
+    box-shadow: 0 0 15px 4px #50c4ed;
+    transform: scale(1.2);
+}
+span {
+    margin: 23px 0 22px 0;
+    scale: 1.2;
+}
+@media screen and (max-width: 400px) {
+    .screenshot-grid {
+        grid-template-columns: 1fr;
+        max-width: 70vw;
+    }
+    #socials {
+        flex-direction: column;
+        width: 36vw;
+        margin: 40px 32vw 30px 32vw;
+        min-width: 120px;
+        text-align: center;
+        scale: 1.1;
+    }
+    #socials li {
+        border-radius: 0 !important;
+    }
+    #socials li:first-child {
+        border-top-left-radius: 8px !important;
+        border-top-right-radius: 8px !important;
+    }
+    #socials li:last-child {
+        border-bottom-left-radius: 8px !important;
+        border-bottom-right-radius: 8px !important;
+    }
+    h1 {
+        font-size: clamp(1.3rem, 5vw + 0.5rem, 2.5rem);
+    }
+    h2 {
+        font-size: clamp(1.2rem, 4.5vw + 0.5rem, 2.2rem);
+    }
+    h3 {
+        font-size: clamp(1.1rem, 4vw + 0.5rem, 2rem);
+    }
+    h4 {
+        font-size: clamp(1rem, 3.5vw + 0.3rem, 1.8rem);
+    }
+    h5 {
+        font-size: clamp(0.9rem, 3vw + 0.3rem, 1.5rem);
+    }
+    h6 {
+        font-size: clamp(0.8rem, 2.5vw + 0.3rem, 1.2rem);
+    }
+    p, .text {
+        font-size: clamp(0.9rem, 3vw + 0.3rem, 1rem);
+        line-height: 1.4;
+    }
+}
+@media screen and (min-width: 800px) {
+    #socials {
+        flex-direction: row;
+        width: 50vw;
+        margin: 40px 25vw 30px 25vw;
+    }
+}
