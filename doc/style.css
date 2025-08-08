@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: rgb(34, 34, 34);
+    color: white;
+}
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+h1, h2, h3, h4, h5, h6, p, span, li, a {opacity: 0;animation: fadeDown 0.8s ease forwards;}
+h1 {animation-delay: 0s;}
+h2 {animation-delay: 0.1s;}
+h3 {animation-delay: 0.2s;}
+h4 {animation-delay: 0.3s;}
+h5 {animation-delay: 0.4s;}
+h6 {animation-delay: 0.5s;}
+p  {animation-delay: 0.6s;}
+span {animation-delay: 0.7s;}
+li {animation-delay: 0.8s;}
+a {animation-delay: 0.9s;}
+h1, h2, h3, h4, h5, h6, p, a, .text, strong, span {transition: font-size 0.5s ease;}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.lang {
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 0;
+    position: relative;
+    font-family: "Google Sans Code", sans-serif;
+    cursor: pointer;
+    color: white;
+    border: none;
+    z-index: 1;
+    transition: transform 0.3s ease, color 0.3s ease;
+    background-size: 200% 100%;
+    background: linear-gradient(90deg, #5c76cc, #ff4c4c) 0 50%;
+    animation: buttonGradientShift 4s ease infinite;
+    overflow: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+.lang::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 17px;
+    background: linear-gradient(270deg, #5c76cc, #ff4c4c, #5c76cc);
+    background-size: 400% 400%;
+    animation: borderGradientShift 2.5s linear infinite;
+    filter: blur(5px);
+    z-index: -100;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+.lang::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border-radius: 12px;
+    background: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    filter: blur(16px);
+    z-index: -1;
+    visibility: visible !important;
+}
+.lang:hover {
+    transform: scale(1.05);
+    color: white;
+}
+.lang:hover::after {opacity: 0.25;}
+@keyframes borderGradientShift {0% {background-position: 0 50%;}50% {background-position: 100% 50%;}100% {background-position: 0 50%;}}
+@keyframes buttonGradientShift {0% {background-position: 0 50%;}50% {background-position: 100% 50%;}100% {background-position: 0 50%;}}
+/*a {*/
+/*    font-family: 'JetBrains Mono', monospace;*/
+/*    color: #5c76cc;*/
+/*    text-decoration: none;*/
+/*    transition: color 0.2s ease, text-shadow 0.2s ease;*/
+/*}*/
+/*a:hover {*/
+/*    color: #50c4ed;*/
+/*    background: linear-gradient(90deg, #5c76cc, #ff4c4c);*/
+/*    -webkit-background-clip: text;*/
+/*    -webkit-text-fill-color: transparent;*/
+/*    text-shadow: 0 0 8px #5c76cc;*/
+/*}*/
+#bar {
+    text-align: center;
+    border-bottom: 2px solid #5c76cc;
+    border-left: 2px solid #5c76cc;
+    border-right: 2px solid #5c76cc;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 3vw 15px 3vw;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 55px;
+    background-color: rgba(34, 34, 34, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    position: fixed;
+    z-index: 100;
+    padding: 0 10px;
+}
+.bar-txt {
+    font-family: "JetBrains Mono SemiBold", serif;
+    color: #50c4ed;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-decoration: none;
+    font-size: clamp(12px, 4.2vw, 24px);
+}
+#main {
+    z-index: 10;
+    font-family: "Jetbrains Mono", serif;
+    margin: 55px 0 30px 0;
+    padding: 25px 10px 10px 10px;
+    background-color: rgba(34, 34, 34, 0.2);
+    border-radius: 15px;
+    color: white;
+}
+h1, h2, h3 {
+    color: #00ffe8;
+    margin-top: 2rem;
+}
+code {
+    font-family: "JetBrains Mono SemiBold", serif;
+    background-color: #505050;
+    padding: 2px;
+    border-radius: 6px;
+}
+pre {
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-family: "JetBrains Mono", monospace;
+}
+pre {
+    overflow-x: auto;
+}
+ol {
+    counter-reset: step;
+    list-style: none;
+    padding-left: 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+ol li {
+    position: relative;
+    padding: 1rem 1.5rem 1rem 3.5rem;
+    margin: 1.5rem 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid #5c76cc;
+    border-radius: 12px 6px 6px 12px;
+    animation-delay: 0.8s;
+    text-align: left;
+    line-height: 1.5;
+}
+ol li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    background-color: #5c76cc;
+    color: white;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.6rem;
+    font-weight: bold;
+    font-family: "JetBrains Mono", monospace;
+}
+.code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.command-block {
+    display: flex;
+    position: relative;
+    background-color: #1e1e1e;
+    border: 2px solid #5c76cc;
+    border-radius: 8px;
+    margin: 1rem 0;
+    font-family: "JetBrains Mono", monospace;
+    overflow-x: auto;
+    padding: 6px;
+}
+.command-block code {
+    background-color: transparent;
+}
+.copy-button {
+    background-color: #5c76cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 0.8vw;
+    height: 100%;
+    cursor: pointer;
+    font-family: "JetBrains Mono", monospace;
+    transition: background-color 0.2s ease;
+}
+.copy-button:hover {
+    background-color: #50c4ed;
+}

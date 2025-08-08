@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6, p, a, .text, strong, span {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 12px 15px;
+    margin: 12px 1vw 15px 1vw;
     top: 0;
     right: 0;
     left: 0;
@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6, p, a, .text, strong, span {
 #main {
     z-index: 10;
     font-family: "Jetbrains Mono", serif;
-    margin: 85px 8px 0 8px;
+    margin: 85px 1vw 0 1vw;
     padding: 25px 10px 30px 10px;
     background-color: rgba(34, 34, 34, 0.8);
     border-radius: 15px;
@@ -229,20 +229,22 @@ span {
 }
 #bottom_bar {
     display: grid;
+    bottom: 0;
+
     grid-template-columns: minmax(14rem, 30%) 1fr;
-    align-items: center;
+    align-content: center;
     justify-content: center;
     font-family: "Google Sans Code", monospace;
     background-color: rgb(34, 34, 34, 0.8);
     width: 100vw;
-    height: 120px;
+    height: 100px;
     color: white;
     box-sizing: border-box;
 }
 #bottom_left {
     background-color: rgb(23, 23, 23);
     color: white;
-    padding: 20px;
+    padding:20px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -261,7 +263,7 @@ span {
     text-decoration: none;
     transition: color 0.2s ease, text-shadow 0.2s ease;
 }
-#bottom_left a:hover {
+#bottom_bar a:hover {
     color: #50c4ed;
     background: linear-gradient(90deg, #5c76cc, #ff4c4c);
     -webkit-background-clip: text;
@@ -269,9 +271,24 @@ span {
     text-shadow: 0 0 8px #5c76cc;
 }
 #bottom_right {
+    display: flex;
+    justify-items: center;
+    align-items: center;
     background-color: #505050;
-    padding: 20px;
+    padding:20px;
     height: 100%;
+}
+#mimic {
+    background-color: rgb(23, 23, 23);
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+    width: 40%;
+}
+#mimic_ico {
+    width: 80px;
+    background-color: #505050;
+    border-radius: 50%;
 }
 @media screen and (max-width: 400px) {
     .screenshot-grid {

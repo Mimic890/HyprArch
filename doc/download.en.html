@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="ут"><head>
+    <title>HyprArch</title>
+    <link rel="icon" href="/img/logo/HyprArch.svg" type="svg">
+    <meta charset="utf-8">
+    <meta name="author" content="https://github.com/Mimic890">
+    <link rel="stylesheet" href="/doc/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="HyprArch Installation Guide">
+</head><body>
+<div id="bar">
+    <p class="bar-txt">HyprArch Installation Guide</p>
+    <a class="lang" href="download.ru.html">RU</a>
+</div>
+<div id="main">
+    <h3>Installation by one team</h3>
+    <p>Copy and paste into the terminal:</p>
+    <div class="code">
+            <pre class="command-block">
+                <code>git clone --depth=1 -b main https://github.com/Mimic890/HyprArch.git ~/HyprArch && cd ~/HyprArch && [ -f Install.sh ] && chmod +x Install.sh && ./Install.sh</code>
+            </pre>
+        <button class="copy-button" onclick="copyCommand(this)">Copy</button>
+    </div>
+    <h3>What does the installer do?</h3>
+    <p>After running the command, the installation of HyprArch will begin. The installation takes place <b>in interactive mode</b>, step by step:</p>
+    <ol>
+        <li><b>Checking your internet connection</b><br>
+            The script will check the Internet connection. If there is no connection, it will ask you to connect to the Internet. If <code>NetworkManager</code> is installed, it will open <code>nmtui</code> for quick connection in the same terminal window.
+        </li>
+        <li><b>Assigning execution rights to scripts</b><br>
+            Makes all scripts in the repository folders executable if they were not executable originally.
+        </li>
+        <li><b>sudo password prompt</b><br>
+            Requires the user's sudo password to install packages and move files outside the user's directory.
+        </li>
+        <li><b>Proposal to add the multilib repository</b><br>
+            It will ask whether to add the <code>multilib</code> repository (it is recommended to agree to add it).
+        </li>
+        <li><b>System update</b></li>
+        <li><b>Creating a backup of the current system</b><br>
+            Creating a backup of the current system (recommended) (all backups are stored in the <code>~/.config/hyprarch/backups/ folder</code>)
+        </li>
+        <li><b>Installing the necessary packages</b><br>
+            Installing basic packages, installing <code>yay</code>, and installing basic packages from <code>yay</code>. And checking that all packages were installed successfully or writing down which packages were not installed.
+        </li>
+        <li><b>Screen resolution settings</b><br>
+            Run the script that configures the resolution of the main screen (future updates will include full configuration of all monitors and their positions). It will display all detected screens and ask you to select one from the list, which will be set as the main screen in hyprland and other programs.
+        </li>
+        <li><b>Creating standard directories</b><br>
+            Creating basic directories in the user directory (Video, Downloads, Documents, etc.)
+        </li>
+        <li><b>Choosing the main shell</b><br>
+            When selecting the main shell in the terminal, you will be offered a choice between: <code>fish</code>, <code>zsh</code>, <code>bash</code>, or no change, remaining with the shell that was originally selected.
+        </li>
+        <li><b>Configuring system services</b><br>
+            Includes services such as <code>sddm</code>, <code>bluetooth</code>, and others.
+        </li>
+        <li><b>Installing and configuring themes</b><br>
+            GTK themes, Qt, icons, and more.
+        </li>
+        <li><b>Selecting a theme for Waybar, Rofi, and Nwg-dock-hyprland</b><br>
+            Selecting the theme <code>waybar</code> (configuring the network interface to display speed on the bar), <code>nwg-dock-hyprland</code>, and <code>rofi</code>
+        </li>
+        <li><b>Copying configurations</b><br>
+            Copying the configurations selected in the previous step and the configurations for <code>hyprland</code>, <code>waypaper</code>, <code>btop</code>, <code>cava</code>, ...
+        </li>
+        <li><b>Configuring SDDM and GRUB</b><br>
+            Configuring the theme and configurations of <code>sddm</code> and <code>grub</code>
+        </li>
+        <li><b>Определение видеокарты</b><br>
+            Identify your video card as AMD, NVIDIA, or Intel Arc, and confirm that you have a video card (you can select your video card option).
+        </li>
+        <li><b>Wallpaper installation</b><br>
+            Basic set: 10–20. Full set: 50+.
+        </li>
+        <li><b>Selecting a text editor in the terminal</b><br>
+            Configuring the text editor in the terminal, you will have a choice: <code>nano</code>, <code>vim</code>, <code>nvim</code> (with my customization, astronvim customization, or without customization)
+        </li>
+        <li><b>Installing additional programs</b><br>
+            Choice of additional programs to install (<code>vs code</code>, <code>motrix</code>, <code>gimp</code>, etc.) in the TUI interface
+            If you choose to install Visual Studio Code, after installing all the programs, you will be offered to install my custom HyprVSCode (optional).
+        </li>
+        <li><b>Adding the BlackArch repository (optional)</b><br>
+            The question of adding the <code>BlackArch</code> repository (optional) (not recommended for regular users) will appear. If you agree to add it, the same TUI interface will appear, in which you can select the BlackArch categories to install with a brief description (it is recommended to skip the installation and install all BlackArch utilities manually).
+        </li>
+    </ol>
+</div>
+<div style="min-height: 50vh;"></div>
+<script src="/main.js"></script>
+<script>
+    function copyCommand(button) {
+        const codeBlock = button.previousElementSibling?.querySelector('code');
+        if (!codeBlock) return;
+        navigator.clipboard.writeText(codeBlock.textContent.trim()).then(() => {
+            button.textContent = "Copied!";
+            setTimeout(() => button.textContent = "Copy", 1500);
+        });
+    }
+</script>
+</body></html>
