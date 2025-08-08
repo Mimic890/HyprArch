@@ -4,6 +4,7 @@
     padding: 0;
 }
 body {
+    max-width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
     background-color: rgb(34, 34, 34);
@@ -35,7 +36,7 @@ a {
     text-decoration: none;
     color: inherit;
 }
-.lang {
+.button {
     border-radius: 5px;
     padding: 5px;
     margin-right: 0;
@@ -53,7 +54,7 @@ a {
     opacity: 1 !important;
     visibility: visible !important;
 }
-.lang::before {
+.button::before {
     content: "";
     position: absolute;
     top: -5px;
@@ -69,7 +70,7 @@ a {
     opacity: 1 !important;
     visibility: visible !important;
 }
-.lang::after {
+.button::after {
     content: "";
     position: absolute;
     top: 4px;
@@ -84,26 +85,13 @@ a {
     z-index: -1;
     visibility: visible !important;
 }
-.lang:hover {
+.button:hover {
     transform: scale(1.05);
     color: white;
 }
-.lang:hover::after {opacity: 0.25;}
+.button:hover::after {opacity: 0.25;}
 @keyframes borderGradientShift {0% {background-position: 0 50%;}50% {background-position: 100% 50%;}100% {background-position: 0 50%;}}
 @keyframes buttonGradientShift {0% {background-position: 0 50%;}50% {background-position: 100% 50%;}100% {background-position: 0 50%;}}
-/*a {*/
-/*    font-family: 'JetBrains Mono', monospace;*/
-/*    color: #5c76cc;*/
-/*    text-decoration: none;*/
-/*    transition: color 0.2s ease, text-shadow 0.2s ease;*/
-/*}*/
-/*a:hover {*/
-/*    color: #50c4ed;*/
-/*    background: linear-gradient(90deg, #5c76cc, #ff4c4c);*/
-/*    -webkit-background-clip: text;*/
-/*    -webkit-text-fill-color: transparent;*/
-/*    text-shadow: 0 0 8px #5c76cc;*/
-/*}*/
 #bar {
     text-align: center;
     border-bottom: 2px solid #5c76cc;
@@ -119,6 +107,7 @@ a {
     top: 0;
     right: 0;
     left: 0;
+    gap: 5px;
     height: 55px;
     background-color: rgba(34, 34, 34, 0.5);
     backdrop-filter: blur(3px);
@@ -126,6 +115,8 @@ a {
     position: fixed;
     z-index: 100;
     padding: 0 10px;
+    font-family: 'Google Sans', sans-serif;
+    min-width: 320px;
 }
 .bar-txt {
     font-family: "JetBrains Mono SemiBold", serif;
@@ -133,7 +124,7 @@ a {
     padding-right: 10px;
     padding-left: 10px;
     text-decoration: none;
-    font-size: clamp(12px, 4.2vw, 24px);
+    font-size: clamp(14px, 2.8vw, 20px);
 }
 #main {
     z-index: 10;
@@ -143,6 +134,7 @@ a {
     background-color: rgba(34, 34, 34, 0.2);
     border-radius: 15px;
     color: white;
+    text-align: center;
 }
 h1, h2, h3 {
     color: #00ffe8;
@@ -158,8 +150,6 @@ pre {
     padding: 0.5rem 0.75rem;
     border-radius: 6px;
     font-family: "JetBrains Mono", monospace;
-}
-pre {
     overflow-x: auto;
 }
 ol {
@@ -169,7 +159,6 @@ ol {
     margin: 0 auto;
     max-width: 800px;
 }
-
 ol li {
     position: relative;
     padding: 1rem 1.5rem 1rem 3.5rem;

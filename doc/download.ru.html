@@ -1,4 +1,7 @@
-<!DOCTYPE html><html lang="ru"><head>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
     <title>HyprArch</title>
     <link rel="icon" href="/img/logo/HyprArch.svg" type="svg">
     <meta charset="utf-8">
@@ -6,31 +9,38 @@
     <link rel="stylesheet" href="/doc/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="Инструкция по установке HyprArch">
-</head><body>
+</head>
+
+<body>
     <div id="bar">
-        <p class="bar-txt">HyprArch Инструкция по установке</p>
-        <a class="lang" href="download.en.html">EN</a>
+        <a class="button" href="/index.html">Main</a>
+        <v class="bar-txt">Инструкция по установке</v>
+        <a class="button" href="download.en.html">EN</a>
     </div>
     <div id="main">
         <h3>Установка одной командой</h3>
         <p>Скопируйте и вставьте в терминал:</p>
         <div class="code">
-        <pre class="command-block">
+            <pre class="command-block">
             <code>git clone --depth=1 -b main https://github.com/Mimic890/HyprArch.git ~/HyprArch && cd ~/HyprArch && [ -f Install.sh ] && chmod +x Install.sh && ./Install.sh</code>
         </pre>
             <button class="copy-button" onclick="copyCommand(this)">Скопировать</button>
         </div>
         <h3>Что делает установщик?</h3>
-        <p>После запуска команды начнётся установка HyprArch. Установка проходит <b>в интерактивном режиме</b>, шаг за шагом:</p>
+        <p>После запуска команды начнётся установка HyprArch. Установка проходит <b>в интерактивном режиме</b>, шаг за
+            шагом:</p>
         <ol>
             <li><b>Проверка интернет-соединения</b><br>
-                Скрипт проверит наличие подключения к интернету. Если соединения нет, он попросит вас подключиться. Если установлен <code>NetworkManager</code>, откроется <code>nmtui</code> в этом же терминале для быстрой настройки.
+                Скрипт проверит наличие подключения к интернету. Если соединения нет, он попросит вас подключиться. Если
+                установлен <code>NetworkManager</code>, откроется <code>nmtui</code> в этом же терминале для быстрой
+                настройки.
             </li>
             <li><b>Назначение прав на выполнение скриптов</b><br>
                 Все скрипты в папках репозитория становятся исполняемыми, если ранее не были.
             </li>
             <li><b>Запрос пароля sudo</b><br>
-                Потребуется ввести пароль sudo для установки пакетов и перемещения файлов за пределы домашней директории.
+                Потребуется ввести пароль sudo для установки пакетов и перемещения файлов за пределы домашней
+                директории.
             </li>
             <li><b>Предложение добавить репозиторий multilib</b><br>
                 Скрипт предложит добавить репозиторий <code>multilib</code> (рекомендуется согласиться).
@@ -40,10 +50,12 @@
                 Рекомендуется. Все резервные копии сохраняются в <code>~/.config/hyprarch/backups/</code>.
             </li>
             <li><b>Установка необходимых пакетов</b><br>
-                Установка базовых пакетов, <code>yay</code> и основных пакетов через него. Проверка, что всё установилось, или вывод недоустановленных пакетов.
+                Установка базовых пакетов, <code>yay</code> и основных пакетов через него. Проверка, что всё
+                установилось, или вывод недоустановленных пакетов.
             </li>
             <li><b>Настройка разрешения экрана</b><br>
-                Скрипт покажет все найденные экраны и предложит выбрать основной. В будущем будет поддержка нескольких мониторов.
+                Скрипт покажет все найденные экраны и предложит выбрать основной. В будущем будет поддержка нескольких
+                мониторов.
             </li>
             <li><b>Создание стандартных директорий</b><br>
                 Вроде Video, Downloads, Documents и др.
@@ -58,10 +70,12 @@
                 GTK, Qt, иконки и прочее оформление.
             </li>
             <li><b>Выбор тем для Waybar, Rofi и Nwg-dock-hyprland</b><br>
-                Настройка <code>waybar</code> (включая вывод скорости интернета), <code>nwg-dock-hyprland</code> и <code>rofi</code>.
+                Настройка <code>waybar</code> (включая вывод скорости интернета), <code>nwg-dock-hyprland</code> и
+                <code>rofi</code>.
             </li>
             <li><b>Копирование конфигураций</b><br>
-                Копируются выбранные конфиги и конфиги для <code>hyprland</code>, <code>waypaper</code>, <code>btop</code>, <code>cava</code> и др.
+                Копируются выбранные конфиги и конфиги для <code>hyprland</code>, <code>waypaper</code>,
+                <code>btop</code>, <code>cava</code> и др.
             </li>
             <li><b>Настройка SDDM и GRUB</b><br>
                 Установка тем и конфигураций <code>sddm</code> и <code>grub</code>.
@@ -76,10 +90,12 @@
                 <code>nano</code>, <code>vim</code>, <code>nvim</code> (с моей настройкой, astronvim или без настроек).
             </li>
             <li><b>Установка дополнительных программ</b><br>
-                Выбор: <code>vs code</code>, <code>motrix</code>, <code>gimp</code> и др. через TUI-интерфейс. Если выбрать VS Code, можно установить мой кастомный HyprVSCode.
+                Выбор: <code>vs code</code>, <code>motrix</code>, <code>gimp</code> и др. через TUI-интерфейс. Если
+                выбрать VS Code, можно установить мой кастомный HyprVSCode.
             </li>
             <li><b>Добавление репозитория BlackArch (опционально)</b><br>
-                По желанию. Откроется TUI-интерфейс для выбора категорий с кратким описанием. Не рекомендуется обычным пользователям — лучше устанавливать утилиты вручную.
+                По желанию. Откроется TUI-интерфейс для выбора категорий с кратким описанием. Не рекомендуется обычным
+                пользователям — лучше устанавливать утилиты вручную.
             </li>
         </ol>
     </div>
@@ -88,12 +104,14 @@
     <script src="/main.js"></script>
     <script>
         function copyCommand(button) {
-            const codeBlock = button.previousElementSibling?.querySelector('code');
-            if (!codeBlock) return;
+            const codeBlock = button.previousElementSibling?.querySelector('code')
+            if (!codeBlock) return
             navigator.clipboard.writeText(codeBlock.textContent.trim()).then(() => {
-                button.textContent = "Скопировано!";
-                setTimeout(() => button.textContent = "Копировать", 1500);
-            });
+                button.textContent = "Скопировано!"
+                setTimeout(() => button.textContent = "Копировать", 1500)
+            })
         }
     </script>
-</body></html>
+</body>
+
+</html>
