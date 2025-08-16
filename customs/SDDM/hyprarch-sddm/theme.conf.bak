@@ -1,0 +1,63 @@
+[General]
+Background="Backgrounds/hyprfone10.jpg"
+DimBackgroundImage="0.0"
+ScaleImageCropped="true"
+ScreenWidth="2560"
+ScreenHeight="1440"
+
+## [Blur Settings]
+
+FullBlur="true"
+PartialBlur="true"
+BlurRadius="20"
+
+## [Design Customizations]
+
+HaveFormBackground="false"
+FormPosition="center"
+BackgroundImageHAlignment="center"
+BackgroundImageVAlignment="center"
+MainColor="#dedede"
+AccentColor="#5c76cc"
+BackgroundColor="#1b1b25"
+OverrideLoginButtonTextColor=""
+InterfaceShadowSize="1"
+InterfaceShadowOpacity="0.6"
+RoundCorners="20"
+ScreenPadding="0"
+Font="JetBrains Mono Medium"
+FontSize="14"
+
+## [Interface Behavior]
+
+ForceRightToLeft="false"
+ForceLastUser="true"
+ForcePasswordFocus="true"
+ForceHideCompletePassword="true"
+ForceHideVirtualKeyboardButton="false"
+ForceHideSystemButtons="false"
+AllowEmptyPassword="false"
+AllowBadUsernames="false"
+
+## [Locale Settings]
+
+Locale="ru"
+HourFormat="HH:mm:ss"
+DateFormat="dddd, d of MMMM"
+
+## [Translations]
+
+HeaderText="HyprArch"
+
+TranslatePlaceholderUsername=""
+TranslatePlaceholderPassword=""
+TranslateShowPassword=""
+TranslateLogin=""
+TranslateLoginFailedWarning=""
+TranslateCapslockWarning=""
+TranslateSession=""
+TranslateSuspend=""
+TranslateHibernate=""
+TranslateReboot=""
+TranslateShutdown=""
+TranslateVirtualKeyboardButton=""
