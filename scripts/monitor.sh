@@ -11,7 +11,7 @@ GRUB_FILE="$HOME/HyprArch/customs/grub/grub"
 SDDM_FILE="$HOME/HyprArch/customs/SDDM/hyprarch-sddm/theme.conf"
 HYPR_MON="$HOME/HyprArch/configs/hypr/confs/monitors.conf"
 
-if ! pgrep Hyprland >/dev/null || ! command -v hyprctl >/dev/null; then
+if ! pgrep hyprland >/dev/null || ! command -v hyprctl >/dev/null; then
     echo -e "${R}This script must be run inside Hyprland.${E}"
     exit 1
 fi

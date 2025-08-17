@@ -34,6 +34,7 @@ ITEMS=(
   "SPOTIFY|Spotify|spotify|yay|music (AUR)"
   "OBSIDIAN|Obsidian|obsidian|yay|notes (AUR)"
   "YANDEXMUSIC|Yandex Music|yandex-music|yay|music (AUR)"
+  "THRONE|Throne|throne-bin|yay|sing-box client"
 )
 
 # ======================================================

@@ -1,9 +1,8 @@
 7zip
 alsa-utils
-blueman
-bluez
-bluez-utils
 btop
+base-devel
+rpm-tools
 brightnessctl
 cava
 cmatrix
