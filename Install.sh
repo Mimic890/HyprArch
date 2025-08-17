@@ -471,8 +471,10 @@ echo -e "${B}
 ##############################
 ##  Copying configurations  ##
 ##############################${E}"
+
 SRC_DIR="$HOME/HyprArch/configs"
 DEST_DIR="$HOME/.config"
+BACKUP_BASE="$HOME/.config_backup/hyprarch_$(date +%Y%m%d_%H%M%S)"
 
 echo -e "${B}>>> Starting configuration sync...${E}"
 if [ ! -d "$SRC_DIR" ]; then
@@ -480,19 +482,111 @@ if [ ! -d "$SRC_DIR" ]; then
     exit 1
 fi
 
+# Проверим rsync (предпочтительно для «мягкого» обновления)
+if command -v rsync >/dev/null 2>&1; then
+    _use_rsync=1
+else
+    _use_rsync=0
+    echo -e "${Y}Note:${E} rsync not found — using safe cp/mv fallback."
+fi
+
+mkdir -p "$BACKUP_BASE" "$DEST_DIR"
 shopt -s dotglob nullglob
+
+# Сначала все, КРОМЕ hypr/hyprland
+hypr_items=()
 for item in "$SRC_DIR"/*; do
-    name=$(basename "$item")
-    dest_path="$DEST_DIR/$name"
-    if [ -e "$dest_path" ]; then
-        echo -e "${Y}Removing existing:${E} $dest_path"
-        rm -rf "$dest_path"
+    name="$(basename "$item")"
+    lname="${name,,}"
+    if [[ "$lname" == "hypr" || "$lname" == "hyprland" ]]; then
+        hypr_items+=("$item")
+        continue
     fi
-    echo -e "${G}Copying:${E} $name → $DEST_DIR"
-    cp -r "$item" "$dest_path"
+
+    dest_path="$DEST_DIR/$name"
+    echo -e "${B}>>> Processing:${E} $name"
+
+    # Бэкапим текущее
+    if [ -e "$dest_path" ]; then
+        echo -e "${Y}Backing up:${E} $dest_path → $BACKUP_BASE/$name"
+        mkdir -p "$BACKUP_BASE/$name"
+    fi
+
+    if [ "$_use_rsync" -eq 1 ]; then
+        mkdir -p "$dest_path"
+        rsync -a --delete --backup --backup-dir="$BACKUP_BASE/$name" --no-owner --no-group "$item"/ "$dest_path"/ \
+            || { echo -e "${R}rsync failed for $name${E}"; exit 1; }
+    else
+        tmp_dest="${DEST_DIR}/${name}.tmp_$$"
+        rm -rf "$tmp_dest"
+        mkdir -p "$(dirname "$tmp_dest")"
+        cp -a "$item" "$tmp_dest" || { echo -e "${R}cp failed for $name${E}"; exit 1; }
+        if [ -e "$dest_path" ]; then
+            mv "$dest_path" "$BACKUP_BASE/$name" || { echo -e "${R}backup mv failed for $name${E}"; exit 1; }
+        fi
+        mv "$tmp_dest" "$dest_path" || { echo -e "${R}mv failed for $name${E}"; exit 1; }
+    fi
+
+    sync
+    sleep 0.4
 done
 
+# Затем — hypr/hyprland (самый «чувствительный» блок)
+if [ "${#hypr_items[@]}" -gt 0 ]; then
+    echo -e "${Y}Note:${E} Handling Hypr configs at the end to avoid display glitches."
+    sleep 0.8
+
+    # Проверим, запущен ли Hyprland
+    if pgrep -x Hyprland >/dev/null 2>&1; then
+        echo -e "${Y}Warning:${E} Hyprland appears to be running. Applying configs without auto-reload to avoid resolution issues."
+        _reload_ok=0
+    else
+        _reload_ok=1
+    fi
+
+    for item in "${hypr_items[@]}"; do
+        name="$(basename "$item")"
+        dest_path="$DEST_DIR/$name"
+        echo -e "${B}>>> Processing (hypr):${E} $name"
+
+        if [ -e "$dest_path" ]; then
+            echo -e "${Y}Backing up:${E} $dest_path → $BACKUP_BASE/$name"
+            mkdir -p "$BACKUP_BASE/$name"
+        fi
+
+        if [ "$_use_rsync" -eq 1 ]; then
+            mkdir -p "$dest_path"
+            rsync -a --delete --backup --backup-dir="$BACKUP_BASE/$name" --no-owner --no-group "$item"/ "$dest_path"/ \
+                || { echo -e "${R}rsync failed for $name${E}"; exit 1; }
+        else
+            tmp_dest="${DEST_DIR}/${name}.tmp_$$"
+            rm -rf "$tmp_dest"
+            mkdir -p "$(dirname "$tmp_dest")"
+            cp -a "$item" "$tmp_dest" || { echo -e "${R}cp failed for $name${E}"; exit 1; }
+            if [ -e "$dest_path" ]; then
+                mv "$dest_path" "$BACKUP_BASE/$name" || { echo -e "${R}backup mv failed for $name${E}"; exit 1; }
+            fi
+            mv "$tmp_dest" "$dest_path" || { echo -e "${R}mv failed for $name${E}"; exit 1; }
+        fi
+
+        sync
+        sleep 1.0
+    done
+
+    # Авто-перезагрузка конфига только если Hyprland НЕ запущен
+    if [ "$_reload_ok" -eq 1 ] && command -v hyprctl >/dev/null 2>&1; then
+        echo -e "${B}>>> Applying Hypr config:${E} hyprctl reload"
+        if ! hyprctl reload; then
+            echo -e "${R}hyprctl reload failed.${E} You may need to relogin or reboot to apply display changes."
+        fi
+        sleep 1
+    else
+        echo -e "${Y}Skipping auto-reload for Hyprland.${E} Changes will apply after relogin or reboot."
+    fi
+fi
+
 echo -e "${G}All configs have been synced successfully.${E}"
+echo -e "${C}Backups (if any) are in:${E} $BACKUP_BASE"
 #################################
 sleep 2s
 #################################
