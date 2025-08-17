@@ -66,8 +66,9 @@ while true; do
 done
 echo -e "${G}Network check successful${E}"
 sleep 0.5s
-############################
-############################
+#################################
+sleep 2s
+#################################
 
 
 ############################
@@ -94,8 +95,9 @@ echo -e "${B}
 make_executable "$HOME/HyprArch/scripts/"* "$HOME/HyprArch/configs/hypr/scripts/"* "$HOME/HyprArch/configs/nwg-dock-hyprland/launch.sh"
 echo -e "${G}Permissions set successfully${E}"
 sleep 0.5s
-############################
-############################
+#################################
+sleep 2s
+#################################
 
 
 ############################
@@ -109,8 +111,9 @@ echo -e "${B}Administrator password required for installation. Please enter your
 sudo -v
 echo -e "${G}Password accepted${E}"
 sleep 0.5s
-############################
-############################
+#################################
+sleep 2s
+#################################
 
 
 #################################
@@ -132,8 +135,9 @@ if ! grep -q "^\[multilib\]" /etc/pacman.conf; then
 else
     echo -e "${G}Multilib repository is already enabled${E}"
 fi
-###############################
-###############################
+#################################
+sleep 2s
+#################################
 
 
 #######################
@@ -153,10 +157,9 @@ else
     yay_installed=false
 fi
 echo -e "${G}System update complete${E}"
-sleep 0.5s
-
-##########################
-##########################
+#################################
+sleep 2s
+#################################
 
 
 #######################
@@ -175,6 +178,9 @@ else
     exit 1
 fi
 sleep 0.5s
+#################################
+sleep 2s
+#################################
 
 
 #######################################
@@ -240,9 +246,10 @@ install_packages "yay" "$HOME/HyprArch/pkg/yay.txt" skip_yay_pkg[@] || \
     echo -e "${R}Warning: Package installation via yay failed, continuing...${E}"
 
 echo -e "${G}All package installations completed${E}"
+#################################
+sleep 2s
+#################################
 
-######################################
-######################################
 
 ##########################
 #  8. Set main monitor
@@ -251,19 +258,26 @@ echo -e "${B}
 ########################
 ##  Set main monitor  ##
 ########################${E}"
-MONITOR_SCRIPT="$HOME/HyprArch/scripts/monitor.sh"
-if [ ! -f "$MONITOR_SCRIPT" ]; then
-    echo -e "${R}Monitor script not found: $MONITOR_SCRIPT${E}"
-    exit 1
+read -rp "Do you want to configure the main monitor now? [y/N] " ans
+
+if [[ "$ans" =~ ^[Yy]$ ]]; then
+    MONITOR_SCRIPT="$HOME/HyprArch/scripts/monitor.sh"
+    if [ ! -f "$MONITOR_SCRIPT" ]; then
+        echo -e "${R}Monitor script not found: $MONITOR_SCRIPT${E}"
+        exit 1
+    fi
+    chmod +x "$MONITOR_SCRIPT"
+    if ! "$MONITOR_SCRIPT"; then
+        echo -e "${R}Error during execution $MONITOR_SCRIPT${E}"
+        exit 1
+    fi
+    echo -e "${G}Monitor setup has been completed successfully${E}"
+else
+    echo -e "${Y}Skipping monitor configuration${E}"
 fi
-chmod +x "$MONITOR_SCRIPT"
-if ! "$MONITOR_SCRIPT"; then
-    echo -e "${R}Error during execution $MONITOR_SCRIPT${E}"
-    exit 1
-fi
-echo -e "${G}Monitor setup has been completed successfully${E}"
-################################
-################################
+#################################
+sleep 2s
+#################################
 
 
 ######################################
@@ -273,10 +287,17 @@ echo -e "${B}
 #####################################
 ##  Creating standard directories  ##
 #####################################${E}"
-LANG=en_US.UTF-8 xdg-user-dirs-update --force
-echo -e "${G}Successfully${E}"
-##############################
-##############################
+read -rp "Do you want to update XDG user directories? [y/N] " ans
+
+if [[ "$ans" =~ ^[Yy]$ ]]; then
+    LANG=en_US.UTF-8 xdg-user-dirs-update --force
+    echo -e "${G}Successfully updated XDG user directories${E}"
+else
+    echo -e "${Y}Skipping XDG user directories update${E}"
+fi
+#################################
+sleep 2s
+#################################
 
 
 #################################
@@ -312,8 +333,9 @@ case "$shell_choice" in
         echo -e "${Y}Keeping current shell. No changes will be made${E}"
         ;;
 esac
-#####################
-#####################
+#################################
+sleep 2s
+#################################
 
 
 #####################################
@@ -361,8 +383,9 @@ if [[ "$use_Bluetooth" =~ ^[Yy]$ ]]; then
 else
     echo -e "${Y}Bluetooth setup skipped.${E}"
 fi
-########################
-########################
+#################################
+sleep 2s
+#################################
 
 
 #########################################
@@ -381,6 +404,7 @@ if [[ "$install_gtk" =~ ^[Yy]$ ]]; then
     fi
 fi
 #################################
+sleep 2s
 #################################
 
 
@@ -408,7 +432,6 @@ read -p "Enter the number of your choice: " choice
 
 if [[ "$choice" == "0" ]]; then
     echo -e "${Y}Skipping theme setup...${E}"
-    exit 0
 fi
 
 THEME_NAME="${THEMES[$((choice-1))]}"
@@ -436,8 +459,9 @@ rm -f "$DOCK_DIR"/*.css
 cp "$CUSTOMS_DIR/nwg-dock-hyprland/${THEME_NAME}.css" "$DOCK_DIR/style.css"
 
 echo -e "${G}Theme applied successfully for all components!${E}"
-################################
-################################
+#################################
+sleep 2s
+#################################
 
 
 ################################
@@ -469,8 +493,9 @@ for item in "$SRC_DIR"/*; do
 done
 
 echo -e "${G}All configs have been synced successfully.${E}"
-################################
-################################
+#################################
+sleep 2s
+#################################
 
 
 ####################################
@@ -480,22 +505,30 @@ echo -e "${B}
 #################################
 ##  Configuring SDDM and GRUB  ##
 #################################${E}"
-if bash "$HOME/HyprArch/scripts/config_sddm.sh"; then
-    echo -e "${G}SDDM configured successfully${E}"
+read -rp "Do you want to install HyprArch themes for SDDM and GRUB? [y/N] " ans
+
+if [[ "$ans" =~ ^[Yy]$ ]]; then
+    if bash "$HOME/HyprArch/scripts/sddm.sh"; then
+        echo -e "${G}SDDM configured successfully${E}"
+    else
+        echo -e "${R}SDDM configuration failed. Aborting.${E}"
+        exit 1
+    fi
+
+    if bash "$HOME/HyprArch/scripts/grub.sh"; then
+        echo -e "${G}GRUB configured successfully${E}"
+    else
+        echo -e "${R}GRUB configuration failed. Aborting.${E}"
+        exit 1
+    fi
+
+    echo -e "${G}SDDM & GRUB configured successfully${E}"
 else
-    echo -e "${R}SDDM configuration failed. Aborting.${E}"
-    exit 1
+    echo -e "${Y}Skipping SDDM & GRUB theme installation${E}"
 fi
-if bash "$HOME/HyprArch/scripts/config_grub.sh"; then
-    echo -e "${G}GRUB configured successfully${E}"
-else
-    echo -e "${R}GRUB configuration failed. Aborting.${E}"
-    exit 1
-fi
-echo -e "${G}SDDM & GRUB configured successfully${E}"
-exit 0
-###############################
-###############################
+#################################
+sleep 2s
+#################################
 
 
 ###############################################
@@ -584,8 +617,9 @@ if [ "${#FAILED_PKGS[@]}" -gt 0 ]; then
 fi
 
 echo -e "${G}GPU detection and driver setup completed successfully.${E}"
-##############################
-##############################
+#################################
+sleep 2s
+#################################
 
 
 ###############################
@@ -600,8 +634,9 @@ bash "$HOME/HyprArch/scripts/os.sh"
 #  18. Wallpapers installation
 ###############################
 bash "$HOME/HyprArch/scripts/wallpapers.sh"
-##############################
-##############################
+#################################
+sleep 2s
+#################################
 
 
 #################################################
@@ -760,8 +795,9 @@ fi
 
 echo
 ok "Done. Selected editors installed and configured (where configs were available)."
-##############################
-##############################
+#################################
+sleep 2s
+#################################
 
 
 #####################################
@@ -771,8 +807,9 @@ info "######################################"
 info "##  Installing additional programs  ##"
 info "######################################"
 bash "$HOME/HyprArch/scripts/programms.sh"
-##############################
-##############################
+#################################
+sleep 2s
+#################################
 
 ######################################################
 #  21. Adding the BlackArch repository (optional)
@@ -781,8 +818,9 @@ info "##################################################"
 info "##  Adding the BlackArch repository (optional)  ##"
 info "##################################################"
 bash "$HOME/HyprArch/scripts/blackarch.sh"
-##############################
-##############################
+#################################
+sleep 2s
+#################################
 
 
 
@@ -790,19 +828,27 @@ ok "  ////////////////////////////////////////////"
 ok " //  Installation completed successfully!  //"
 ok "////////////////////////////////////////////"
 
-read -p "$(printf "${Y}Would you like to reboot now? (Y/n): ${E}")" reboot_choice
+echo
+read -rp "$(printf "${Y}Would you like to reboot now? (Y/n): ${E}")" reboot_choice
+echo
 
 if [[ "$reboot_choice" =~ ^[Yy]$ ]]; then
-    info "Rebooting..."
+    info "Rebooting the system..."
+    sleep 2
     sudo reboot
 else
-    info "Installation completed. You can reboot later."
+    info "Installation completed successfully!"
     warn "Please reboot your system to apply all changes."
 
     echo
-    info "Thank you for installing HyprArch!"
-    info "For more information, visit: ${B}https://hyprarch.ru${E}"
-    info "If you have any questions, join us on Telegram: ${B}https://t.me/hyprarch${E}"
+    echo -e "${B}====================[ HyprArch Installed ]====================${E}"
+    echo -e "   ${G}✔${E} Your system is ready."
+    echo -e "   ${Y}➜${E} Reboot is recommended before first login."
+    echo
+    echo -e "   ${C}Official website:${E} ${B}https://hyprarch.ru${E}"
+    echo -e "   ${C}Community chat:${E}   ${B}https://t.me/hyprarch${E}"
+    echo
+    echo -e "${B}=============================================================${E}"
     echo
     exit 0
 fi
