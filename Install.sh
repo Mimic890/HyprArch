@@ -482,7 +482,6 @@ if [ ! -d "$SRC_DIR" ]; then
     exit 1
 fi
 
-# Проверим rsync (предпочтительно для «мягкого» обновления)
 if command -v rsync >/dev/null 2>&1; then
     _use_rsync=1
 else
@@ -493,7 +492,6 @@ fi
 mkdir -p "$BACKUP_BASE" "$DEST_DIR"
 shopt -s dotglob nullglob
 
-# Сначала все, КРОМЕ hypr/hyprland
 hypr_items=()
 for item in "$SRC_DIR"/*; do
     name="$(basename "$item")"
@@ -506,7 +504,6 @@ for item in "$SRC_DIR"/*; do
     dest_path="$DEST_DIR/$name"
     echo -e "${B}>>> Processing:${E} $name"
 
-    # Бэкапим текущее
     if [ -e "$dest_path" ]; then
         echo -e "${Y}Backing up:${E} $dest_path → $BACKUP_BASE/$name"
         mkdir -p "$BACKUP_BASE/$name"
@@ -531,13 +528,11 @@ for item in "$SRC_DIR"/*; do
     sleep 0.4
 done
 
-# Затем — hypr/hyprland (самый «чувствительный» блок)
 if [ "${#hypr_items[@]}" -gt 0 ]; then
     echo -e "${Y}Note:${E} Handling Hypr configs at the end to avoid display glitches."
     sleep 0.8
 
-    # Проверим, запущен ли Hyprland
-    if pgrep -x Hyprland >/dev/null 2>&1; then
+    if command -v hyprland >/dev/null 2>&1; then
         echo -e "${Y}Warning:${E} Hyprland appears to be running. Applying configs without auto-reload to avoid resolution issues."
         _reload_ok=0
     else
@@ -573,7 +568,6 @@ if [ "${#hypr_items[@]}" -gt 0 ]; then
         sleep 1.0
     done
 
-    # Авто-перезагрузка конфига только если Hyprland НЕ запущен
     if [ "$_reload_ok" -eq 1 ] && command -v hyprctl >/dev/null 2>&1; then
         echo -e "${B}>>> Applying Hypr config:${E} hyprctl reload"
         if ! hyprctl reload; then
