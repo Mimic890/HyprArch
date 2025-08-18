@@ -1,26 +1,32 @@
 #!/bin/bash
 set -e
+
 R="\e[31m"
 G="\e[32m"
-Y="\e[33m"
 B="\e[34m"
+Y="\e[33m"
 E="\e[0m"
+#
+info(){ printf "${B}%s\n" "$*"; }
+ok(){   printf "${G}%s\n" "$*"; }
+warn(){ printf "${Y}%s\n" "$*"; }
+err(){  printf "${R}%s\n" "$*" >&2; }
 
 if ! lspci | grep -i nvidia &>/dev/null; then
-    echo -e "${G}No NVIDIA GPU detected. Skipping driver installation.${E}"
+    ok "No NVIDIA GPU detected. Skipping driver installation."
     exit 0
 fi
 
-echo -e "${B}NVIDIA GPU detected. Installing drivers and dependencies...${E}"
+info "NVIDIA GPU detected. Installing drivers and dependencies..."
 
 PACKAGES=("nvidia" "nvidia-utils" "nvidia-settings" "opencl-nvidia" "egl-wayland")
 
 for pkg in "${PACKAGES[@]}"; do
-    echo -ne "${B}Installing ${pkg}...${E} "
+    info "Installing ${pkg}...${E} "
     if sudo pacman -S --needed --noconfirm "$pkg"; then
-        echo -e "${G}[SUCCESS]${E}"
+        ok "[SUCCESS]"
     else
-        echo -e "${R}[FAILED]${E}"
+        err "[FAILED]"
     fi
 done
 
@@ -37,12 +43,12 @@ env = WLR_NO_HARDWARE_CURSORS,1
 env = WLR_EGL_NO_MODIFIERS,1
 # NVIDIA ENV END
 EOF
-        echo -e "${G}NVIDIA environment variables added to hyprland.conf${E}"
+        ok "NVIDIA environment variables added to hyprland.conf"
     else
-        echo -e "${Y}NVIDIA environment variables are already present in hyprland.conf${E}"
+        warn "NVIDIA environment variables are already present in hyprland.conf"
     fi
 else
-    echo -e "${R}hyprland.conf not found. Please add the environment variables manually if needed.${E}"
+    err "hyprland.conf not found. Please add the environment variables manually if needed."
 fi
 
 exit 0

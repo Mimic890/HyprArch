@@ -26,7 +26,6 @@ if [[ -z "$add_blackarch" || "$add_blackarch" =~ ^[Yy]$ ]]; then
       warn "curl not found. Installing curl..."
       sudo pacman -Sy --noconfirm curl
     fi
-
     info "Downloading BlackArch strap script to /tmp/strap.sh..."
     tmpstrap="/tmp/strap.sh"
     if curl -fsSL -o "$tmpstrap" https://blackarch.org/strap.sh; then
@@ -58,7 +57,6 @@ fi
 
 info "Gathering BlackArch package groups..."
 sudo pacman -Sy >/dev/null
-
 mapfile -t raw_groups < <(pacman -Sg 2>/dev/null | awk '{print $1}' | grep '^blackarch-' | sort -u)
 
 if [ ${#raw_groups[@]} -eq 0 ]; then

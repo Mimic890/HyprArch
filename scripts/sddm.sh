@@ -6,8 +6,13 @@ G="\e[32m"
 B="\e[34m"
 Y="\e[33m"
 E="\e[0m"
+#
+info(){ printf "${B}%s\n" "$*"; }
+ok(){   printf "${G}%s\n" "$*"; }
+warn(){ printf "${Y}%s\n" "$*"; }
+err(){  printf "${R}%s\n" "$*" >&2; }
 
-echo -e "${B}Configuring SDDM...${E}"
+info "Configuring SDDM..."
 
 THEME_SRC="$HOME/HyprArch/customs/SDDM/hyprarch-sddm"
 THEME_DEST="/usr/share/sddm/themes/"
@@ -15,22 +20,21 @@ CONF_SRC="$HOME/HyprArch/customs/SDDM/sddm.conf"
 CONF_DEST="/etc/sddm.conf"
 
 if [ -d "$THEME_SRC" ]; then
-    echo -e "${B}Copying theme...${E}"
+    info "Copying theme..."
     sudo cp -r "$THEME_SRC" "$THEME_DEST"
-    echo -e "${G}SDDM theme copied successfully${E}"
+    ok "SDDM theme copied successfully"
 else
-    echo -e "${R}Theme folder not found:${E} $THEME_SRC"
-    echo -e "${R}SDDM configuration failed. Aborting.${E}"
+    err "Theme folder not found: $THEME_SRC"
+    err "SDDM configuration failed. Aborting."
     exit 1
 fi
-
 if [ -f "$CONF_SRC" ]; then
-    echo -e "${B}Copying sddm.conf...${E}"
+    info "Copying sddm.conf..."
     sudo cp "$CONF_SRC" "$CONF_DEST"
-    echo -e "${G}sddm.conf copied successfully${E}"
+    ok "sddm.conf copied successfully"
 else
-    echo -e "${R}Config file not found:${E} $CONF_SRC"
-    echo -e "${R}SDDM configuration failed. Aborting.${E}"
+    err "Config file not found: $CONF_SRC"
+    err "SDDM configuration failed. Aborting."
     exit 1
 fi
 

@@ -8,10 +8,10 @@ Y="\e[33m"
 R="\e[31m"
 E="\e[0m"
 
-info(){  echo -e "${B}$*${E}"; }
-ok(){    echo -e "${G}$*${E}"; }
-warn(){  echo -e "${Y}$*${E}"; }
-err(){   echo -e "${R}$*${E}" >&2; }
+info(){  echo -e "${B}$*"; }
+ok(){    echo -e "${G}$*"; }
+warn(){  echo -e "${Y}$*"; }
+err(){   echo -e "${R}$*" >&2; }
 
 # ======== Program list (add new entries here) ========
 # Format: TAG|Label|package_name|manager|description
@@ -37,19 +37,14 @@ ITEMS=(
   "THRONE|Throne|throne-bin|yay|sing-box client"
 )
 
-# ======================================================
-
-# Ensure whiptail exists
 if ! command -v whiptail &>/dev/null; then
   info "Installing whiptail..."
   sudo pacman -Sy --noconfirm whiptail
 fi
 
-# Build whiptail checklist arguments
 WHIP_ARGS=()
 for item in "${ITEMS[@]}"; do
   IFS='|' read -r TAG LABEL PKG MGR DESC <<<"$item"
-  # show label and short description as the item text
   WHIP_ARGS+=("$TAG" "$LABEL — $DESC" OFF)
 done
 
@@ -60,7 +55,6 @@ CHOICES=$(whiptail --title "Choose applications" --checklist \
   exit 1
 }
 
-# Parse choices (whiptail returns a quoted list, eval to get tokens)
 eval "set -- $CHOICES"
 SELECTED=("$@")
 
@@ -69,7 +63,6 @@ if [ ${#SELECTED[@]} -eq 0 ]; then
   exit 0
 fi
 
-# Create associative maps for quick lookup
 declare -A PKG_MAP MGR_MAP LABEL_MAP
 for item in "${ITEMS[@]}"; do
   IFS='|' read -r TAG LABEL PKG MGR DESC <<<"$item"
@@ -78,10 +71,9 @@ for item in "${ITEMS[@]}"; do
   LABEL_MAP["$TAG"]="$LABEL"
 done
 
-# Check if we need yay (any selected package uses yay)
 need_yay=false
 for tag in "${SELECTED[@]}"; do
-  tag=${tag//\"/}  # remove possible quotes
+  tag=${tag//\"/}
   mgr=${MGR_MAP[$tag]}
   if [ "$mgr" = "yay" ]; then
     need_yay=true
@@ -89,7 +81,6 @@ for tag in "${SELECTED[@]}"; do
   fi
 done
 
-# Install yay if needed
 install_yay() {
   info "Installing prerequisites for AUR builds (git, base-devel)..."
   sudo pacman -Sy --needed --noconfirm git base-devel
@@ -102,17 +93,15 @@ install_yay() {
 }
 
 if $need_yay && ! command -v yay &>/dev/null; then
-  read -rp "$(echo -e "${Y}Some of your selections require 'yay' (AUR). Install yay now? (y/N): ${E}")" resp
+  read -rp "$(echo -e warn "Some of your selections require 'yay' (AUR). Install yay now? (y/N): ")" resp
   if [[ "$resp" =~ ^[Yy]$ ]]; then
     install_yay
   else
     err "Cannot install AUR packages without yay. Please install yay or unselect AUR packages."
-    # exit or continue only with pacman packages — here we exit
     exit 1
   fi
 fi
 
-# Install selected packages
 failed=()
 succeeded=()
 for rawtag in "${SELECTED[@]}"; do
@@ -149,19 +138,30 @@ for rawtag in "${SELECTED[@]}"; do
   fi
 done
 
-# Summary
-echo
 ok "Installation finished."
 if [ ${#succeeded[@]} -ne 0 ]; then
-  echo -e "${G}Installed:${E}"
+  ok "Installed:"
   for p in "${succeeded[@]}"; do echo -e "  - $p"; done
 fi
 
 if [ ${#failed[@]} -ne 0 ]; then
-  echo -e "${R}Failed to install:${E}"
+  echo -e err "Failed to install:"
   for p in "${failed[@]}"; do echo -e "  - $p"; done
   echo
   warn "You can re-run this script to try again for failed packages."
 else
   ok "All selected packages installed successfully."
 fi
+
+
+if pacman -Q visual-studio-code-bin &>/dev/null; then
+	if bash "$HOME/HyprArch/scripts/vs-code.sh"; then
+		ok "HyprVSCode custom installed successfully!"
+	else
+		err "Error installing HyprVSCode custom!"
+	fi
+else
+	info "VS-Code is not installed, skipping custom install"
+fi
+
+exit 0

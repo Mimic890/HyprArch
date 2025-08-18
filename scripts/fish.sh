@@ -1,57 +1,62 @@
 #!/bin/bash
 set -e
 
-R="\e[31m"
-G="\e[32m"
 B="\e[34m"
+G="\e[32m"
 Y="\e[33m"
+R="\e[31m"
 E="\e[0m"
+
+info(){  echo -e "${B}$*"; }
+ok(){    echo -e "${G}$*"; }
+warn(){  echo -e "${Y}$*"; }
+err(){   echo -e "${R}$*" >&2; }
 
 FISH_PATH="/usr/bin/fish"
 FISH_CONFIG_SRC="$HOME/HyprArch/customs/fish"
 FISH_CONFIG_DEST="$HOME/.config/fish"
 
 if ! command -v fish >/dev/null 2>&1; then
-    echo -e "${B}Installing fish shell...${E}"
+    info "Installing fish shell..."
     if ! sudo pacman -S --noconfirm fish; then
-        echo -e "${R}Failed to install fish shell.${E}"
+        err "Failed to install fish shell."
         exit 1
     fi
 else
-    echo -e "${G}Fish shell is already installed.${E}"
+    ok "Fish shell is already installed."
 fi
 
 if ! grep -qx "$FISH_PATH" /etc/shells; then
     echo "$FISH_PATH" | sudo tee -a /etc/shells >/dev/null
-    echo -e "${G}Added fish to /etc/shells${E}"
+    ok "Added fish to /etc/shells"
 fi
 
 if [ "$SHELL" != "$FISH_PATH" ]; then
     if chsh -s "$FISH_PATH"; then
-        echo -e "Fish set as the default shell.${E}"
+        echo -e "Fish set as the default shell."
     else
-        echo -e "${R}Failed to set fish as the default shell.${E}"
+        err "Failed to set fish as the default shell."
         exit 1
     fi
 else
-    echo -e "${G}Fish is already the default shell.${E}"
+    ok "Fish is already the default shell."
 fi
 
-echo -e "${B}Copying fish configuration...${E}"
+info "Copying fish configuration..."
 mkdir -p "$HOME/.config"
 
 if [ -d "$FISH_CONFIG_SRC" ]; then
     rm -rf "$FISH_CONFIG_DEST"
     if cp -r "$FISH_CONFIG_SRC" "$HOME/.config/"; then
-        echo -e "${G}Fish configuration copied successfully.${E}"
+        ok "Fish configuration copied successfully."
     else
-        echo -e "${R}Failed to copy fish configuration.${E}"
+        err "Failed to copy fish configuration."
         exit 1
     fi
 else
-    echo -e "${R}Fish config directory not found: $FISH_CONFIG_SRC${E}"
+    err "Fish config directory not found: $FISH_CONFIG_SRC"
     exit 1
 fi
 
-echo -e "${G}Fish shell installed and configured successfully.${E}"
+ok "Fish shell installed and configured successfully."
 exit 0

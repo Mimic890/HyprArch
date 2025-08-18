@@ -107,3 +107,4 @@ gnome-system-monitor
 gnome-disk-utility
 baobab
 easyeffects
+imagemagick
