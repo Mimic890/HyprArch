@@ -17,20 +17,20 @@ SDDM_FILE="$HOME/HyprArch/customs/SDDM/hyprarch-sddm/theme.conf"
 HYPR_MON="$HOME/HyprArch/customs/hypr/confs/monitors.conf"
 
 if ! command -v hyprland >/dev/null || ! command -v hyprctl >/dev/null; then
-    err "This script must be run inside Hyprland.${E}"
+    err "This script must be run inside Hyprland."
     exit 1
 fi
 
 mapfile -t MONITORS < <(hyprctl monitors -j | jq -r '.[] | "\(.name),\(.width)x\(.height)@\(.refreshRate|floor),\(.x)x\(.y)"')
 
-info "Detected monitors:${E}"
+info "Detected monitors:"
 for i in "${!MONITORS[@]}"; do
     echo "$((i+1))) ${MONITORS[$i]}"
 done
 
 read -p $'\e[34mSelect the main monitor number: \e[0m' SELECTED
 if ! [[ "$SELECTED" =~ ^[0-9]+$ ]] || (( SELECTED < 1 || SELECTED > ${#MONITORS[@]} )); then
-    err "Invalid choice.${E}"
+    err "Invalid choice."
     exit 1
 fi
 
@@ -41,7 +41,7 @@ MAIN_RATE=$(echo "$MAIN_MON" | cut -d',' -f2 | cut -d'@' -f2)
 WIDTH=$(echo "$MAIN_RES" | cut -d'x' -f1)
 HEIGHT=$(echo "$MAIN_RES" | cut -d'x' -f2)
 
-warn "Selected: $MAIN_NAME ($WIDTH x $HEIGHT @ $MAIN_RATE)${E}"
+warn "Selected: $MAIN_NAME ($WIDTH x $HEIGHT @ $MAIN_RATE)"
 
 if [ -f "$GRUB_FILE" ]; then
     sed -i '/^GRUB_GFXMODE=/d' "$GRUB_FILE"
@@ -54,21 +54,21 @@ fi
 if [ -f "$SDDM_FILE" ]; then
     sed -i "s/^ScreenWidth=.*/ScreenWidth=\"$WIDTH\"/" "$SDDM_FILE"
     sed -i "s/^ScreenHeight=.*/ScreenHeight=\"$HEIGHT\"/" "$SDDM_FILE"
-    warn "Updated SDDM: ${WIDTH} x ${HEIGHT}${E}"
+    warn "Updated SDDM: ${WIDTH} x ${HEIGHT}"
 else
-    err "SDDM configuration file not found: $SDDM_FILE${E}"
+    err "SDDM configuration file not found: $SDDM_FILE"
 fi
 
 MON_LINE="monitor=${MAIN_NAME},${WIDTH}x${HEIGHT}@${MAIN_RATE},0x0,1"
 mkdir -p "$(dirname "$HYPR_MON")"
 echo "$MON_LINE" >> "$HYPR_MON"
-warn "Added to monitors.conf: ${E}"
+warn "Added to monitors.conf: "
 echo "$MON_LINE"
 
-warn "Reloading Hyprland... ${E}"
+warn "Reloading Hyprland... "
 if ! hyprctl reload && sleep 0.5; then
-    err "Error reloading Hyprland. Please check logs.${E}"
+    err "Error reloading Hyprland. Please check logs."
     exit 1
 fi
-ok "Hyprland has been reloaded successfully.${E}"
+ok "Hyprland has been reloaded successfully."
 exit 0

@@ -472,7 +472,7 @@ echo "
 ############################################
 ##  Detect GPU and install proper drivers ##
 ############################################"
-bash "$HOME/scripts/gpu.sh"
+bash "$HOME/HyprArch/scripts/gpu.sh"
 #################################
 sleep 1s
 #################################
