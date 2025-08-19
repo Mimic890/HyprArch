@@ -14,7 +14,7 @@ err(){  printf "${R}%s\n" "$*" >&2; }
 
 GRUB_FILE="$HOME/HyprArch/customs/grub/grub"
 SDDM_FILE="$HOME/HyprArch/customs/SDDM/hyprarch-sddm/theme.conf"
-HYPR_MON="$HOME/HyprArch/configs/hypr/confs/monitors.conf"
+HYPR_MON="$HOME/HyprArch/customs/hypr/confs/monitors.conf"
 
 if ! command -v hyprland >/dev/null || ! command -v hyprctl >/dev/null; then
     err "This script must be run inside Hyprland.${E}"

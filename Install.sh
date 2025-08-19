@@ -15,7 +15,7 @@ warn(){ printf "${Y}%s\n" "$*"; }
 err(){  printf "${R}%s\n" "$*" >&2; }
 ############################
 clear
-info "  //////////////////////////////////
+echo "  //////////////////////////////////
  // HyprArch installation script //
 //////////////////////////////////"
 ############################
@@ -24,7 +24,11 @@ info "  //////////////////////////////////
 
 ############################
 #	1. Network
-#############################
+############################
+echo "
+#################################
+## Checking Network connection ##
+#################################"
 check_connection() {
     if ping -c 1 -W 2 1.1.1.1 >/dev/null 2>&1; then
         ok "Internet connection is available"
@@ -34,10 +38,6 @@ check_connection() {
         return 1
     fi
 }
-info "
-#################################
-## Checking Network connection ##
-#################################"
 while true; do
     if check_connection; then
         break
@@ -73,7 +73,7 @@ sleep 0.5s
 ############################
 #	2. Activate scripts
 #############################
-info "
+echo "
 ########################
 ##  Activate scripts  ##
 ########################"
@@ -87,7 +87,7 @@ make_executable() {
         fi
     done
 }
-make_executable "$HOME/HyprArch/scripts/"* "$HOME/HyprArch/configs/hypr/scripts/"* "$HOME/HyprArch/configs/nwg-dock-hyprland/launch.sh"
+make_executable "$HOME/HyprArch/scripts/"* "$HOME/HyprArch/customs/hypr/scripts/"* "$HOME/HyprArch/configs/nwg-dock-hyprland/launch.sh"
 ok "Permissions set successfully"
 #################################
 sleep 0.5s
@@ -97,7 +97,7 @@ sleep 0.5s
 ############################
 #	3. Sudo password
 #############################
-info "
+echo "
 ###################
 ## Sudo password ##
 ###################"
@@ -112,7 +112,7 @@ sleep 0.5s
 #################################
 #	4. Add multilib repository
 ##################################
-info "
+echo "
 ###############################
 ##  Add multilib repository  ##
 ###############################"
@@ -135,7 +135,7 @@ sleep 0.5s
 #######################
 #	5. Update system
 #######################
-info "
+echo "
 #######################
 ##  Updating system  ##
 #######################"
@@ -157,7 +157,7 @@ sleep 0.5s
 #######################
 #	6. Backup
 #######################
-info "
+echo "
 ###############################
 ##  Running backup script    ##
 ###############################"
@@ -177,7 +177,7 @@ sleep 0.5s
 #######################################
 #   7. Installing the necessary packages
 ########################################
-info "
+echo "
 #########################################
 ##  Installing the necessary packages  ##
 #########################################"
@@ -245,7 +245,7 @@ sleep 0.5s
 ##########################
 #  8. Set main monitor
 ###########################
-info "
+echo "
 ########################
 ##  Set main monitor  ##
 ########################"
@@ -274,7 +274,7 @@ sleep 0.5s
 ######################################
 #  9. Creating standard directories
 #######################################
-info "
+echo "
 #####################################
 ##  Creating standard directories  ##
 #####################################"
@@ -294,7 +294,7 @@ sleep 0.5s
 #################################
 #  10. Choosing the main shell
 #################################
-info "
+echo "
 ###############################
 ##  Choosing the main shell  ##
 ###############################"
@@ -332,6 +332,10 @@ sleep 0.5s
 #####################################
 #  11. Configuring system services
 #####################################
+echo "
+###################################
+##  Configuring system services  ##
+###################################"
 bash "$HOME/HyprArch/scripts/services.sh"
 #################################
 sleep 0.5s
@@ -341,7 +345,7 @@ sleep 0.5s
 #########################################
 #  12. Installing and configuring themes
 ##########################################
-info "
+echo "
 #########################################
 ##  Installing and configuring themes  ##
 #########################################"
@@ -361,7 +365,7 @@ sleep 0.5s
 ###################################################################
 #  13. Selecting a theme for Waybar, Rofi, and Nwg-dock-hyprland
 ###################################################################
-info "
+echo "
 #################################################################
 ##  Selecting a theme for waybar, rofi, and nwg-dock-hyprland  ##
 #################################################################"
@@ -418,61 +422,11 @@ sleep 1s
 ################################
 #  14. Copying configurations
 ################################
-info "
+echo "
 ##############################
 ##  Copying configurations  ##
 ##############################"
-sync_configs_step() {
-  ORIG_USER="${SUDO_USER:-${USER:-$(id -un)}}"
-  ORIG_HOME="$(eval echo "~$ORIG_USER")"
-
-  SCRIPT_PATH="$ORIG_HOME/HyprArch/scripts/sync_configs.sh"
-
-  echo
-  printf "\e[34mHyprArch config sync step\e[0m\n"
-
-  if [ ! -f "$SCRIPT_PATH" ]; then
-    printf "\e[33mWarning:\e[0m sync script not found at: %s\n" "$SCRIPT_PATH"
-    read -rp $'\e[33mPlace the script there or skip this step. Skip? (y, N): \e[0m' _skip
-    if [[ "$_skip" =~ ^[Yy]$ ]]; then
-      printf "\e[33mSkipping config sync step.\e[0m\n"
-      return 0
-    else
-      printf "\e[31mAborting installer (sync script missing).\e[0m\n"
-      return 1
-    fi
-  fi
-
-  read -rp $'\e[34mRun config sync now? (y, N): \e[0m' _run
-  if [[ ! "$_run" =~ ^[Yy]$ ]]; then
-    printf "\e[33mUser chose not to run config sync now. Skipping.\e[0m\n"
-    return 0
-  fi
-
-  read -rp $'\e[34mSkip all confirmations inside sync script (use -y)? (y, N): \e[0m' _skip_confirm
-  ARGS=""
-  if [[ "$_skip_confirm" =~ ^[Yy]$ ]]; then
-    ARGS="-y"
-    printf "\e[32mWill run: %s %s\e[0m\n" "$SCRIPT_PATH" "$ARGS"
-  else
-    printf "\e[32mWill run: %s\e[0m\n" "$SCRIPT_PATH"
-  fi
-
-  echo
-  if [ -x "$SCRIPT_PATH" ]; then
-    if bash -c "exec \"$SCRIPT_PATH\" $ARGS"; then
-      printf "\e[32mConfig sync completed successfully.\e[0m\n"
-    else
-      printf "\e[31mConfig sync exited with non-zero status.\e[0m\n"
-    fi
-  else
-    if bash "$SCRIPT_PATH" $ARGS; then
-      printf "\e[32mConfig sync completed successfully.\e[0m\n"
-    else
-      printf "\e[31mConfig sync exited with non-zero status.\e[0m\n"
-    fi
-  fi
-}
+bash "$HOME/HyprArch/scripts/configs.sh"
 #################################
 sleep 1s
 #################################
@@ -481,7 +435,7 @@ sleep 1s
 ####################################
 #  15. Configuring SDDM and GRUB
 ####################################
-info "
+echo "
 #################################
 ##  Configuring SDDM and GRUB  ##
 #################################"
@@ -514,89 +468,11 @@ sleep 1s
 ###############################################
 #  16. Detect GPU and install proper drivers
 ###############################################
-info "
+echo "
 ############################################
 ##  Detect GPU and install proper drivers ##
 ############################################"
-info "Detecting GPU and preparing drivers for Hyprland..."
-
-multilib_enabled() {
-  grep -q "^\[multilib\]" /etc/pacman.conf
-}
-
-install_pkg() {
-  local pkg="$1"
-  echo -ne "${Y}Installing ${pkg}... "
-  if sudo pacman -S --needed --noconfirm "$pkg" >/dev/null 2>&1; then
-    ok "[OK]"
-  else
-    err "[FAILED]"
-    FAILED_PKGS+=("$pkg")
-  fi
-}
-
-FAILED_PKGS=()
-
-GPU_INFO="$(lspci -nnk | grep -A3 -E 'VGA|3D|Display' || true)"
-info "Detected adapters:"
-echo "$GPU_INFO" | sed 's/^/  /'
-
-HAS_NVIDIA=false
-HAS_AMD=false
-HAS_INTEL=false
-IS_INTEL_ARC=false
-
-echo "$GPU_INFO" | grep -qi 'NVIDIA'       && HAS_NVIDIA=true
-echo "$GPU_INFO" | grep -qi 'AMD/ATI'      && HAS_AMD=true
-echo "$GPU_INFO" | grep -qi 'Intel'        && HAS_INTEL=true
-if $HAS_INTEL && echo "$GPU_INFO" | grep -qiE 'Arc|DG2|Alchemist'; then
-  IS_INTEL_ARC=true
-fi
-
-if $HAS_NVIDIA; then
-  info "NVIDIA GPU detected. Delegating to nvidia.sh..."
-  if [ -x "$HOME/HyprArch/scripts/nvidia.sh" ]; then
-    if ! "$HOME/HyprArch/scripts/nvidia.sh"; then
-      err "nvidia.sh failed. Aborting."
-      exit 1
-    fi
-  else
-    warn "nvidia.sh is not executable; running with bash."
-    if ! bash "$HOME/HyprArch/scripts/nvidia.sh"; then
-      err "nvidia.sh failed. Aborting."
-      exit 1
-    fi
-  fi
-
-elif $HAS_AMD; then
-  info "AMD GPU detected. Installing Mesa/Radeon stack..."
-  AMD_PKGS=(mesa vulkan-radeon libva-mesa-driver vulkan-mesa-layers)
-  if multilib_enabled; then
-    AMD_PKGS+=(lib32-vulkan-radeon lib32-mesa)
-  fi
-  for p in "${AMD_PKGS[@]}"; do install_pkg "$p"; done
-
-elif $HAS_INTEL; then
-  if $IS_INTEL_ARC; then
-    info "Intel Arc GPU detected. Installing Intel Vulkan/Media stack..."
-  else
-    info "Intel iGPU detected. Installing Intel Vulkan/Media stack..."
-  fi
-  INTEL_PKGS=(mesa vulkan-intel intel-media-driver vulkan-mesa-layers)
-  if multilib_enabled; then
-    INTEL_PKGS+=(lib32-vulkan-intel lib32-mesa)
-  fi
-  for p in "${INTEL_PKGS[@]}"; do install_pkg "$p"; done
-else
-  warn "No supported GPU vendor detected (NVIDIA/AMD/Intel). Skipping GPU driver setup."
-fi
-if [ "${#FAILED_PKGS[@]}" -gt 0 ]; then
-  err "Some packages failed to install: ${FAILED_PKGS[*]}"
-  warn "You may re-run this step after fixing mirrors/network or try again later."
-  exit 1
-fi
-
-ok "GPU detection and driver setup completed successfully."
+bash "$HOME/scripts/gpu.sh"
 #################################
 sleep 1s
 #################################
@@ -605,6 +481,10 @@ sleep 1s
 ###############################
 #  17. Replace /etc/os-release
 ###############################
+echo "
+###############################
+##  Replace /etc/os-release  ##
+###############################"
 sudo bash "$HOME/HyprArch/scripts/os.sh"
 #################################
 sleep 1s
@@ -614,6 +494,10 @@ sleep 1s
 ###############################
 #  18. Wallpapers installation
 ###############################
+echo "
+##############################
+##  Wallpaper installation  ##
+##############################"
 bash "$HOME/HyprArch/scripts/wallpapers.sh"
 #################################
 sleep 1s
@@ -623,9 +507,10 @@ sleep 1s
 #################################################
 #  19. Selecting a text editors in the terminal
 #################################################
-info "###############################################"
-info "##  Selecting a text editor in the terminal  ##"
-info "###############################################"
+echo "
+###############################################
+##  Selecting a text editor in the terminal  ##
+###############################################"
 sudo bash "$HOME/HyprArch/scripts/editors.sh"
 #################################
 sleep 1s
@@ -635,9 +520,10 @@ sleep 1s
 #####################################
 #  20. Installing additional programs
 #####################################
-info "######################################"
-info "##  Installing additional programs  ##"
-info "######################################"
+echo "
+######################################
+##  Installing additional programs  ##
+######################################"
 bash "$HOME/HyprArch/scripts/programms.sh"
 #################################
 sleep 1s
@@ -646,9 +532,10 @@ sleep 1s
 ######################################################
 #  21. Adding the BlackArch repository (optional)
 ######################################################
-info "##################################################"
-info "##  Adding the BlackArch repository (optional)  ##"
-info "##################################################"
+echo "
+##################################################
+##  Adding the BlackArch repository (optional)  ##
+##################################################"
 bash "$HOME/HyprArch/scripts/blackarch.sh"
 #################################
 sleep 1s
@@ -656,9 +543,10 @@ sleep 1s
 
 
 
-ok "  ////////////////////////////////////////////"
-ok " //  Installation completed successfully!  //"
-ok "////////////////////////////////////////////"
+echo "
+  ////////////////////////////////////////////
+ //  Installation completed successfully!  //
+////////////////////////////////////////////"
 
 echo
 read -rp "$(printf "${Y}Would you like to reboot now? (Y/n): ")" reboot_choice

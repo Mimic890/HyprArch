@@ -12,10 +12,7 @@ ok(){   printf "${G}%s\n" "$*"; }
 warn(){ printf "${Y}%s\n" "$*"; }
 err(){  printf "${R}%s\n" "$*" >&2; }
 
-info "
-###################################
-##  Configuring system services  ##
-###################################"
+
 for dm in lightdm gdm; do
     if systemctl list-units --full | grep -q "$dm"; then
         sudo systemctl disable "$dm" || {
