@@ -69,7 +69,7 @@ while true; do
 done
 ok "Network check successful"
 #################################
-sleep 0.5s
+sleep 1s
 #################################
 
 
@@ -108,7 +108,7 @@ info "Administrator password required for installation. Please enter your passwo
 sudo -v
 ok "Password accepted"
 #################################
-sleep 0.5s
+sleep 1s
 #################################
 
 
@@ -131,7 +131,7 @@ else
     ok "Multilib repository is already enabled"
 fi
 #################################
-sleep 0.5s
+sleep 1s
 #################################
 
 
@@ -153,7 +153,7 @@ else
 fi
 ok "System update complete"
 #################################
-sleep 0.5s
+sleep 1s
 #################################
 
 
@@ -173,7 +173,7 @@ else
     exit 1
 fi
 #################################
-sleep 0.5s
+sleep 1s
 #################################
 
 
@@ -241,7 +241,7 @@ install_packages "yay" "$HOME/HyprArch/pkg/yay.txt" skip_yay_pkg[@] || \
 
 ok "All package installations completed"
 #################################
-sleep 0.5s
+sleep 1s
 #################################
 
 
@@ -270,7 +270,7 @@ else
     warn "Skipping monitor configuration"
 fi
 #################################
-sleep 0.5s
+sleep 1s
 #################################
 
 
@@ -290,7 +290,7 @@ else
     warn "Skipping XDG user directories update"
 fi
 #################################
-sleep 0.5s
+sleep 1s
 #################################
 
 
@@ -328,7 +328,7 @@ case "$shell_choice" in
         ;;
 esac
 #################################
-sleep 0.5s
+sleep 1s
 #################################
 
 
@@ -341,7 +341,7 @@ log "
 ###################################"
 bash "$HOME/HyprArch/scripts/services.sh"
 #################################
-sleep 0.5s
+sleep 1s
 #################################
 
 
@@ -352,7 +352,7 @@ log "
 #########################################
 ##  Installing and configuring themes  ##
 #########################################"
-read -p $'\e[34mInstall GTK theme? (y/n): \e[0m' install_gtk
+read -p $'\e[34mInstall GTK and icon theme? (y/n): \e[0m' install_theme
 if [[ "$install_gtk" =~ ^[Yy]$ ]]; then
     bash "$HOME/HyprArch/scripts/themes.sh"
     if [ $? -ne 0 ]; then
@@ -361,7 +361,7 @@ if [[ "$install_gtk" =~ ^[Yy]$ ]]; then
     fi
 fi
 #################################
-sleep 0.5s
+sleep 1s
 #################################
 
 
@@ -372,51 +372,7 @@ log "
 #################################################################
 ##  Selecting a theme for waybar, rofi, and nwg-dock-hyprland  ##
 #################################################################"
-CUSTOMS_DIR="$HOME/HyprArch/customs"
-WAYBAR_DIR="$HOME/.config/waybar"
-ROFI_DIR="$HOME/.config/rofi"
-DOCK_DIR="$HOME/.config/nwg-dock-hyprland"
-
-THEMES=("blue_arch" "black_arch" "white_arch" "amoled_arch" "purple_arch" "orange_arch")
-
-info "Available themes:"
-warn "0) Skip theme setup"
-for i in "${!THEMES[@]}"; do
-    info "$((i+1))) ${THEMES[i]}"
-done
-
-read -p "Enter the number of your choice: " choice
-
-if [[ "$choice" == "0" ]]; then
-    warn "Skipping theme setup..."
-else
-    THEME_NAME="${THEMES[$((choice-1))]}"
-    if [[ -z "$THEME_NAME" ]]; then
-        err "Invalid choice. Exiting."
-        exit 1
-    fi
-    ok "Selected theme: $THEME_NAME"
-
-    # --- Waybar ---
-    info "Applying theme for Waybar..."
-    [ -d "$WAYBAR_DIR" ] && rm -rf "$WAYBAR_DIR"
-    mkdir -p "$WAYBAR_DIR"
-    cp "$CUSTOMS_DIR/waybar/${THEME_NAME}.css" "$WAYBAR_DIR/style.css"
-
-    # --- Rofi ---
-    info "Applying theme for Rofi..."
-    [ -d "$ROFI_DIR" ] && rm -rf "$ROFI_DIR"
-    mkdir -p "$ROFI_DIR"
-    cp "$CUSTOMS_DIR/rofi/${THEME_NAME}.rasi" "$ROFI_DIR/config.rasi"
-
-    # --- Dock ---
-    info "Applying theme for nwg-dock-hyprland..."
-    [ -d "$DOCK_DIR" ] && rm -rf "$DOCK_DIR"
-    mkdir -p "$DOCK_DIR"
-    cp "$CUSTOMS_DIR/nwg-dock-hyprland/${THEME_NAME}.css" "$DOCK_DIR/style.css"
-
-    ok "Theme applied successfully for all components!"
-fi
+bash "$HOME/HyprArch/scripts/theme_switcher.sh"
 #################################
 sleep 1s
 #################################
@@ -545,6 +501,18 @@ sleep 1s
 #################################
 
 
+read -rp "Do you want to restore repository configs and customs to their original state? [y/N]: " answer
+case "$answer" in
+    [Yy]* )
+        info "Restoring repository configs and customs..."
+        cd "$HOME/HyprArch"
+        git restore configs customs
+        ok "Repository configs and customs restored."
+        ;;
+    * )
+        warn "Skipping repository restore."
+        ;;
+esac
 
 info "
   ////////////////////////////////////////////

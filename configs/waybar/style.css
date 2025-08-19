@@ -1,0 +1,106 @@
+* {
+    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", "Jetbrains Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #5c76cc;
+}
+window#waybar {
+    background: rgba(255, 255, 255, 0);
+    /* border: 2px solid #5c76cc; */
+    border-radius: 8px;
+    min-height: 36px;
+}
+#custom-logo {
+    font-size: 24px;
+    padding: 4px 4px 4px 4px;
+    margin: 2px 2px 2px 4px;
+    color: #5c76cc;
+}
+#custom-logo:hover {
+    background-color: rgba(34, 34, 34, 0.7);
+    border-radius: 5px;
+    padding: 2px 4px 2px 4px;
+}
+#workspaces button {
+    background: transparent;
+    border-radius: 5px;
+    padding: 2px 3px;
+    margin: 3px 1px;
+    border: 2px solid transparent;
+    color: #5c76cc;
+    transition:
+        background-color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.5s ease,
+        color 0.4s ease;
+}
+#workspaces button:hover {
+    background: rgba(34, 34, 34, 0.7);
+    border-color: #1c9bc2;
+    color: #ffffff;
+}
+#workspaces button.active {
+    background: rgba(34, 34, 34, 0.5);
+    border-color: #5c76cc;
+    color: #ffffff;
+    box-shadow:
+        0 0 4px #5c76ccaa,
+        0 0 8px #5c76cc66;
+}
+#tray {
+    background: rgba(30, 30, 45, 0.5);
+    color: #5c76cc;
+    padding: 2px 3px 2px 3px;
+    margin: 4px 4px 4px 4px;
+    border-radius: 5px;
+    border: #5c76cc 2px solid;
+    padding: 2px 5px 0px 4px;
+}
+#tray > *:hover {
+    background-color: rgba(25, 163, 200, 0.3);
+    border-radius: 4px;
+
+}
+#window {
+    background-color: rgba(34, 34, 34, 0.5);
+    padding: 3px 6px 3px 6px;
+    margin: 6px 0 6px 0;
+    border-radius: 5px;
+}
+#pulseaudio, #network, #backlight, #language, #clock, #battery {
+    background: rgba(30, 30, 45, 0.5);
+    color: #5c76cc;
+    padding: 2px 3px 2px 3px;
+    margin: 4px 4px 4px 4px;
+    border-radius: 5px;
+    border: #5c76cc 2px solid;
+}
+#pulseaudio:hover, #network:hover, #backlight:hover, #language:hover, #clock:hover, #battery:hover {
+    background-color: rgba(25, 16, 20, 0.6);
+}
+#custom-clipboard, #custom-notifications, #custom-shutdown {
+    font-size: 18px;
+    padding: 2px 3px 2px 3px;
+    margin: 4px 1px 4px 1px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+#custom-shutdown {
+    color: #ff5555;
+}
+#custom-clipboard:hover, #custom-notifications:hover, #custom-shutdown:hover {
+    color: #ffffff;
+    border: #5c76cc 2px solid;
+    border-radius: 5px;
+    padding: 2px 3px 2px 3px;
+    margin: 4px 1px 4px 1px;
+        transition:
+        background-color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.5s ease,
+        color 0.4s ease;
+}
+#custom-shutdown:hover {
+    border-color: rgba(255, 85, 85, 1);
+    color: #ffffff;
+}

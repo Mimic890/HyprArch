@@ -1,6 +1,18 @@
 #!/bin/bash
 set -e
 
+R="\e[31m"
+G="\e[32m"
+B="\e[34m"
+Y="\e[33m"
+W="\e[97m"
+E="\e[0m"
+
+info(){ printf "${B}%s${E}\n" "$*"; }
+ok(){   printf "${G}%s${E}\n" "$*"; }
+warn(){ printf "${Y}%s${E}\n" "$*"; }
+err(){  printf "${R}%s${E}\n" "$*" >&2; }
+
 info "Detecting GPU and preparing drivers for Hyprland..."
 
 multilib_enabled() {
