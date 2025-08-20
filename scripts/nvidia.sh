@@ -22,7 +22,7 @@ info "NVIDIA GPU detected. Installing drivers and dependencies..."
 PACKAGES=("nvidia" "nvidia-utils" "nvidia-settings" "opencl-nvidia" "egl-wayland")
 
 for pkg in "${PACKAGES[@]}"; do
-    info "Installing ${pkg}...${E} "
+    info "Installing ${pkg}... "
     if sudo pacman -S --needed --noconfirm "$pkg"; then
         ok "[SUCCESS]"
     else
@@ -43,12 +43,28 @@ env = WLR_NO_HARDWARE_CURSORS,1
 env = WLR_EGL_NO_MODIFIERS,1
 # NVIDIA ENV END
 EOF
-        ok "NVIDIA environment variables added to hyprland.conf"
+        ok "NVIDIA environment variables added to nvidia.conf"
     else
-        warn "NVIDIA environment variables are already present in hyprland.conf"
+        warn "NVIDIA environment variables are already present in nvidia.conf"
     fi
 else
-    err "hyprland.conf not found. Please add the environment variables manually if needed."
+    err "nvidia.conf not found. Please add the environment variables manually if needed."
+fi
+
+MAIN_CONF="$HOME/HyprArch/customs/hypr/hyprland.conf"
+if [ -f "$MAIN_CONF" ]; then
+    if ! grep -q "source = ~/.config/hypr/confs/nvidia.conf" "$MAIN_CONF"; then
+        cat <<EOF >> "$MAIN_CONF"
+
+### NVIDIA ###
+source = ~/.config/hypr/confs/nvidia.conf
+EOF
+        ok "NVIDIA source line added to hyprland.conf"
+    else
+        warn "NVIDIA source line already present in hyprland.conf"
+    fi
+else
+    err "Main hyprland.conf not found at $MAIN_CONF"
 fi
 
 exit 0
