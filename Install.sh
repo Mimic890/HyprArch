@@ -45,11 +45,9 @@ B_BLUE='\e[1;34m'
 B_MAGENTA='\e[1;35m'
 B_CYAN='\e[1;36m'
 B_WHITE='\e[1;37m'
-
 # --- LOGGING FUNCTIONS ---
-# Use these instead of 'echo'.
 log() { printf "${WHITE}%s\n${RESET}" "$*"; }
-info() { printf "${BLUE}%s${RESET}" "$*"; }
+info() { printf "${BLUE}%s\n${RESET}" "$*"; }
 ok() { printf "${GREEN}%s\n${RESET}" "$*"; }
 warn() { printf "${YELLOW}%s\n${RESET}" "$*"; }
 err() { printf "${RED}%s\n${RESET}" "$*" >&2; }
@@ -75,7 +73,6 @@ ask_yes_no() {
             read -rp "$(prompt "$question [y/N]: ")" answer
             answer=${answer:-N}
         fi
-
         case "$answer" in
             [Yy]* ) return 0 ;;
             [Nn]* ) return 1 ;;
@@ -89,15 +86,11 @@ ask_yes_no() {
 run_script() {
     local script_path=$1
     local error_message=${2:-"Execution failed for script: $script_path"}
-
     if [ ! -f "$script_path" ]; then
         err "Script not found: $script_path"
         exit 1
     fi
-
-    # Ensure script is executable before running
     chmod +x "$script_path"
-
     if bash "$script_path"; then
         ok "Script executed successfully: $script_path"
     else
@@ -129,6 +122,33 @@ check_network() {
         esac
     done
     ok "Network connection is available."
+
+    WAYBAR_DIR="$HOME/HyprArch/configs/waybar"
+    WAYBAR_IFACE=$(ip route | awk '/default/ {print $5; exit}')
+    if [ -z "$WAYBAR_IFACE" ]; then
+        err "Could not determine network interface. Please check manually."
+        exit 1
+    fi
+    info "Detected interface: $WAYBAR_IFACE"
+    for cfg in "$WAYBAR_DIR"/config*; do
+        if [ ! -f "$cfg" ]; then
+            continue
+        fi
+        if grep -q '"interface":' "$cfg"; then
+            TEMP_FILE=$(mktemp)
+            sed "s/\"interface\": \".*\"/\"interface\": \"$WAYBAR_IFACE\"/" "$cfg" > "$TEMP_FILE"
+            if [ $? -eq 0 ] && [ -s "$TEMP_FILE" ]; then
+                mv "$TEMP_FILE" "$cfg"
+                info "Successfully updated interface in $cfg"
+            else
+                rm -f "$TEMP_FILE"
+                err "Failed to update interface in $cfg. Original file remains unchanged."
+            fi
+        else
+            info "Skipping $cfg: No 'interface' key found."
+        fi
+    done
+    info "Waybar configuration update complete."
 }
 
 # 2. Activate Scripts
@@ -180,7 +200,7 @@ update_system() {
 # 7. Install Packages
 install_system_packages() {
     header "7. Installing Necessary Packages"
-    
+
     # Check if yay is installed
     if ! command -v yay >/dev/null 2>&1; then
         info "yay is not installed. Installing it now..."
@@ -201,7 +221,7 @@ install_system_packages() {
     # Combine package lists and find out which packages are missing
     mapfile -t pacman_pkgs < <(grep -vE '^\s*($|#)' "$PACMAN_PKG_LIST")
     mapfile -t yay_pkgs < <(grep -vE '^\s*($|#)' "$YAY_PKG_LIST")
-    
+
     # Check pacman packages
     info "Checking pacman packages..."
     pacman_missing=()
@@ -242,7 +262,6 @@ install_system_packages() {
 choose_shell() {
     header "10. Choosing the Main Shell"
     info "Which shell do you want to install as default?"
-    echo
     echo -e "  ${CYAN}0)${RESET} Keep current shell (skip)"
     echo -e "  ${CYAN}1)${RESET} Install and configure fish"
     echo -e "  ${CYAN}2)${RESET} Install and configure zsh"
@@ -270,11 +289,11 @@ choose_shell() {
 main() {
     clear
     info "
-        ////////////////////////////////////
-       //////                        //////
-      /// HyprArch Installation Script ///
-     //////                        //////
-    ////////////////////////////////////
+        /////////////////////////////////////////////////////
+       //////                                         //////
+      ///         HYPRARCH INSTALLATION SCRIPT          ///
+     //////                                         //////
+    /////////////////////////////////////////////////////
     "
 
     # Step 1: Network
@@ -288,7 +307,6 @@ main() {
     # Step 3: Sudo password
     header "3. Acquiring Sudo Privileges"
     info "Administrator password required for installation. Please enter your password:"
-    echo
     sudo -v
     ok "Password accepted. Privileges will be kept for the duration of the script."
     sleep 1
@@ -309,7 +327,7 @@ main() {
     # Step 7: Install packages
     install_system_packages
     sleep 1
-    
+
     # Step 8: Set main monitor
     header "8. Set Main Monitor"
     if ask_yes_no "Do you want to configure the main monitor now?"; then
@@ -354,7 +372,7 @@ main() {
     header "14. Copying Configurations"
     run_script "$SCRIPTS_DIR/configs.sh" "Failed to copy configurations."
     sleep 1
-    
+
     # Step 15: Configure SDDM and GRUB
     header "15. Configuring SDDM and GRUB"
     if ask_yes_no "Do you want to install HyprArch themes for SDDM and GRUB?"; then
@@ -388,13 +406,18 @@ main() {
     ok "Editor selection script finished."
     sleep 1
 
-    # Step 20: Additional programs
-    header "20. Installing Additional Programs"
+    # Step 20: CLI Utils
+    header "20. Installing CLI Utils"
+    run_script "$SCRIPTS_DIR/utils.sh" "Failed to install CLI Utils."
+    sleep 1
+
+    # Step 21: Additional programs
+    header "21. Installing Additional Programs"
     run_script "$SCRIPTS_DIR/programms.sh" "Failed to install additional programs."
     sleep 1
-    
-    # Step 21: BlackArch repository
-    header "21. Adding BlackArch Repository (Optional)"
+
+    # Step 22: BlackArch repository
+    header "22. Adding BlackArch Repository (Optional)"
     run_script "$SCRIPTS_DIR/blackarch.sh" "Failed to run BlackArch script."
     sleep 1
 

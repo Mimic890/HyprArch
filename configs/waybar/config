@@ -71,7 +71,7 @@
 		"format": "{title:.50s}"
 	},
 	"network": {
-		"interface": "enp4s0",
+		"interface": "wlp3s0",
 		"format-wifi": " {signalStrength}% ↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",
 		"interval": 1,
 		"format-ethernet": " ↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",

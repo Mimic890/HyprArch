@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Colors
 BLUE="\e[34m"
 YELLOW="\e[1;33m"
 GREEN="\e[0;32m"
@@ -23,6 +22,7 @@ TARGET_HOME="$(eval echo "~$TARGET_USER")"
 CONFIG_DIR="$TARGET_HOME/.config/Code/User"
 SRC_DIR="$TARGET_HOME/HyprArch/customs/vs-code/Code/User"
 EXT_FILE="$TARGET_HOME/HyprArch/customs/vs-code/vscode-extensions.txt"
+VSIX_FILE="$TARGET_HOME/HyprArch/customs/vs-code/hyprarch-theme/hyprarch-theme-0.1.1.vsix"
 
 if [ "$TARGET_USER" != "$(id -un)" ]; then
   SUDO_AS_USER=(sudo -u "$TARGET_USER")
@@ -33,7 +33,7 @@ fi
 info "HyprVSCode custom setup"
 echo
 
-read -rp "$(echo -e "${BLUE}Install custom HyprVSCode for user ${TARGET_USER}? (y/N): ${END}")" install_vscode
+read -rp "$(echo -e "${BLUE}Install custom HyprVSCode settings for user ${TARGET_USER}? (y/N): ${END}")" install_vscode
 if [[ ! "$install_vscode" =~ ^[Yy]$ ]]; then
   warn "Skipping HyprVSCode customization."
   exit 0
@@ -63,8 +63,19 @@ for file in keybindings.json settings.json; do
   fi
 done
 
+info "Installing local HyprArch theme..."
+if [ -f "$VSIX_FILE" ]; then
+  if "${SUDO_AS_USER[@]}" sh -c "code --install-extension '$VSIX_FILE' >/dev/null 2>&1"; then
+    ok "HyprArch theme successfully installed from local file."
+  else
+    err "Failed to install HyprArch theme from file: $VSIX_FILE"
+  fi
+else
+  warn "Theme file not found, skipping: $VSIX_FILE"
+fi
+
 if ! "${SUDO_AS_USER[@]}" sh -c 'command -v code >/dev/null 2>&1' ; then
-  err "VS Code CLI 'code' not found in ${TARGET_USER}'s PATH."
+  err "VS Code CLI 'code' not found in user ${TARGET_USER}'s PATH."
   err "Make sure Visual Studio Code is installed and the 'code' command is available."
   exit 1
 fi
@@ -74,11 +85,11 @@ have_network() {
 }
 
 if [ ! -f "$EXT_FILE" ]; then
-  err "Extensions list not found: $EXT_FILE"
+  err "Extensions list file not found: $EXT_FILE"
   exit 1
 fi
 
-info "Installing extensions from: $EXT_FILE"
+info "Installing extensions from file: $EXT_FILE"
 installed_count=0
 skipped_count=0
 failed_count=0
@@ -104,7 +115,7 @@ install_extension() {
   fi
 
   if ! have_network; then
-    warn "No network detected — skipping install of: $ext"
+    warn "No network connection — skipping install of: $ext"
     failed_count=$((failed_count+1))
     return 1
   fi
@@ -132,10 +143,10 @@ echo
 ok "Extensions installation summary: installed=${installed_count}, skipped=${skipped_count}, failed=${failed_count}"
 
 if [ "$failed_count" -ne 0 ]; then
-  warn "Some extensions failed to install. You can re-run this script later to try again."
+  warn "Some extensions failed to install. You can re-run the script later to try again."
 else
-  ok "All requested extensions are present (installed or already existed)."
+  ok "All requested extensions are installed (or already existed)."
 fi
 
-ok "HyprVSCode customization finished for user ${TARGET_USER}."
+ok "HyprVSCode customization for user ${TARGET_USER} is complete."
 exit 0
