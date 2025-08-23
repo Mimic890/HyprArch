@@ -24,66 +24,87 @@
     <h3>What does the installer do?</h3>
     <p>After running the command, the installation of HyprArch will begin. The installation takes place <b>in interactive mode</b>, step by step:</p>
     <ol>
-        <li><b>Checking your internet connection</b><br>
-            The script will check the Internet connection. If there is no connection, it will ask you to connect to the Internet. If <code>NetworkManager</code> is installed, it will open <code>nmtui</code> for quick connection in the same terminal window.
-        </li>
-        <li><b>Assigning execution rights to scripts</b><br>
-            Makes all scripts in the repository folders executable if they were not executable originally.
-        </li>
-        <li><b>sudo password prompt</b><br>
-            Requires the user's sudo password to install packages and move files outside the user's directory.
-        </li>
-        <li><b>Proposal to add the multilib repository</b><br>
-            It will ask whether to add the <code>multilib</code> repository (it is recommended to agree to add it).
-        </li>
-        <li><b>System update</b></li>
-        <li><b>Creating a backup of the current system</b><br>
-            Creating a backup of the current system (recommended) (all backups are stored in the <code>~/.config/hyprarch/backups/ folder</code>)
-        </li>
-        <li><b>Installing the necessary packages</b><br>
-            Installing basic packages, installing <code>yay</code>, and installing basic packages from <code>yay</code>. And checking that all packages were installed successfully or writing down which packages were not installed.
-        </li>
-        <li><b>Screen resolution settings</b><br>
-            Run the script that configures the resolution of the main screen (future updates will include full configuration of all monitors and their positions). It will display all detected screens and ask you to select one from the list, which will be set as the main screen in hyprland and other programs.
-        </li>
-        <li><b>Creating standard directories</b><br>
-            Creating basic directories in the user directory (Video, Downloads, Documents, etc.)
-        </li>
-        <li><b>Choosing the main shell</b><br>
-            When selecting the main shell in the terminal, you will be offered a choice between: <code>fish</code>, <code>zsh</code>, <code>bash</code>, or no change, remaining with the shell that was originally selected.
-        </li>
-        <li><b>Configuring system services</b><br>
-            Includes services such as <code>sddm</code>, <code>bluetooth</code>, and others.
-        </li>
-        <li><b>Installing and configuring themes</b><br>
-            GTK themes, Qt, icons, and more.
-        </li>
-        <li><b>Selecting a theme for Waybar, Rofi, and Nwg-dock-hyprland</b><br>
-            Selecting the theme <code>waybar</code> (configuring the network interface to display speed on the bar), <code>nwg-dock-hyprland</code>, and <code>rofi</code>
-        </li>
-        <li><b>Copying configurations</b><br>
-            Copying the configurations selected in the previous step and the configurations for <code>hyprland</code>, <code>waypaper</code>, <code>btop</code>, <code>cava</code>, ...
-        </li>
-        <li><b>Configuring SDDM and GRUB</b><br>
-            Configuring the theme and configurations of <code>sddm</code> and <code>grub</code>
-        </li>
-        <li><b>Определение видеокарты</b><br>
-            Identify your video card as AMD, NVIDIA, or Intel Arc, and confirm that you have a video card (you can select your video card option).
-        </li>
-        <li><b>Wallpaper installation</b><br>
-            Basic set: 10–20. Full set: 50+.
-        </li>
-        <li><b>Selecting a text editor in the terminal</b><br>
-            Configuring the text editor in the terminal, you will have a choice: <code>nano</code>, <code>vim</code>, <code>nvim</code> (with my customization, astronvim customization, or without customization)
-        </li>
-        <li><b>Installing additional programs</b><br>
-            Choice of additional programs to install (<code>vs code</code>, <code>motrix</code>, <code>gimp</code>, etc.) in the TUI interface
-            If you choose to install Visual Studio Code, after installing all the programs, you will be offered to install my custom HyprVSCode (optional).
-        </li>
-        <li><b>Adding the BlackArch repository (optional)</b><br>
-            The question of adding the <code>BlackArch</code> repository (optional) (not recommended for regular users) will appear. If you agree to add it, the same TUI interface will appear, in which you can select the BlackArch categories to install with a brief description (it is recommended to skip the installation and install all BlackArch utilities manually).
-        </li>
-    </ol>
+        <ol>
+    <li><b>Checking your internet connection</b><br>
+        The script will check the Internet connection. If there is no connection, it will ask you to connect to the Internet.
+        If <code>NetworkManager</code> is installed, it will open <code>nmtui</code> for quick connection in the same terminal window.
+        It will also automatically detect your network interface and update the <code>waybar</code> configuration.
+    </li>
+    <li><b>Activating scripts</b><br>
+        Makes all scripts in the repository folders executable if they were not executable originally.
+    </li>
+    <li><b>Acquiring sudo privileges</b><br>
+        Requires the user's sudo password to install packages and move files outside the user's directory.
+        Keeps the privilege alive during script execution.
+    </li>
+    <li><b>Proposal to add the multilib repository</b><br>
+        It will ask whether to add the <code>multilib</code> repository (it is recommended to agree to add it).
+    </li>
+    <li><b>System update</b><br>
+        Updates the system packages and AUR packages if <code>yay</code> is installed.
+    </li>
+    <li><b>Creating a backup of the current system</b><br>
+        Creates a backup of the current system (recommended).
+        All backups are stored in the <code>~/.config/hyprarch/backups/</code> folder.
+    </li>
+    <li><b>Installing the necessary packages</b><br>
+        Installs basic packages, installs <code>yay</code> if missing, and installs required packages from both pacman and AUR.
+        Checks that all packages were installed successfully or writes down which were not installed.
+    </li>
+    <li><b>Screen resolution settings</b><br>
+        Runs the script that configures the resolution of the main screen.
+        It will display all detected screens and ask you to select one from the list.
+    </li>
+    <li><b>Creating standard directories</b><br>
+        Updates and creates standard XDG directories in the user directory (Video, Downloads, Documents, etc.).
+    </li>
+    <li><b>Choosing the main shell</b><br>
+        Offers a choice between: <code>fish</code>, <code>zsh</code>, or keeping the current shell.
+    </li>
+    <li><b>Configuring system services</b><br>
+        Includes services such as <code>sddm</code>, <code>bluetooth</code>, and others.
+    </li>
+    <li><b>Installing and configuring themes</b><br>
+        GTK themes, Qt, icons, and more.
+    </li>
+    <li><b>Selecting a theme for Waybar, Rofi, and Nwg-dock-hyprland</b><br>
+        Selecting the theme for <code>waybar</code>, <code>nwg-dock-hyprland</code>, and <code>rofi</code>.
+    </li>
+    <li><b>Copying configurations</b><br>
+        Copies the configurations selected in the previous step and the configurations for
+        <code>hyprland</code>, <code>waypaper</code>, <code>btop</code>, <code>cava</code>, and others.
+    </li>
+    <li><b>Configuring SDDM and GRUB</b><br>
+        Configures the theme and configurations of <code>sddm</code> and <code>grub</code>.
+    </li>
+    <li><b>Determining the video card</b><br>
+        Identifies your video card (AMD, NVIDIA, or Intel Arc) and installs the necessary drivers.
+    </li>
+    <li><b>Customizing /etc/os-release</b><br>
+        Replaces the default <code>/etc/os-release</code> with HyprArch branding.
+    </li>
+    <li><b>Wallpaper installation</b><br>
+        Installs wallpapers (basic set: 10–20, full set: 50+).
+    </li>
+    <li><b>Selecting a text editor in the terminal</b><br>
+        Offers a choice of text editor: <code>nano</code>, <code>vim</code>, <code>nvim</code>
+        (with my customization, astronvim customization, or without customization).
+    </li>
+    <li><b>Installing CLI utilities</b><br>
+        Installs additional command-line utilities.
+    </li>
+    <li><b>Installing additional programs</b><br>
+        Choice of additional programs to install (<code>vs code</code>, <code>motrix</code>, <code>gimp</code>, etc.) in the TUI interface.
+        If you choose to install Visual Studio Code, you will be offered to install my custom HyprVSCode (optional).
+    </li>
+    <li><b>Adding the BlackArch repository (optional)</b><br>
+        Asks if you want to add the <code>BlackArch</code> repository (not recommended for regular users).
+        If you agree, a TUI interface will appear where you can select categories to install with a brief description.
+    </li>
+    <li><b>Final cleanup</b><br>
+        Optionally restores repository configs and customs to their original state.
+    </li>
+</ol>
 </div>
 <div style="min-height: 50vh;"></div>
 <script src="/main.js"></script>
