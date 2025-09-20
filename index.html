@@ -1,82 +1,103 @@
-<!DOCTYPE html><html lang="en"><head>
-    <title>HyprArch</title>
-    <link rel="icon" href="/img/logo/HyprArch.svg" type="svg">
-    <meta charset="utf-8">
-    <meta name="author" content="https://github.com/Mimic890">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyprArch | Minimal Arch Linux Distribution</title>
+    <link rel="icon" href="/img/logo/HyprArch.svg" type="image/svg+xml">
+
+    <meta name="description" content="HyprArch is a lightweight Linux distribution based on Arch Linux, featuring the Hyprland window manager. Clean, fast, and modern.">
+    <meta name="author" content="Mimic890">
+    <meta name="title" content="HyprArch | Main Page">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="HyprArch main page">
-</head><body>
-    <div id="bar">
-        <a href="/">
-            <img id="bar_logo" src="/img/logo/HyprArch.svg" alt="logo">
+    <script src="https://kit.fontawesome.com/55f070b2fe.js" crossorigin="anonymous" async></script>
+</head>
+<body>
+
+    <header class="header fade-in-down" style="--animation-order: 0;">
+        <a href="/" class="header__logo-link" aria-label="HyprArch Homepage">
+            <img class="header__logo-img" src="/img/logo/HyprArch.svg" alt="HyprArch Logo">
         </a>
-        <div id="bar_title">
-            <!-- <t class="main-title">HyprArch</t> -->
-            <v class="subtitle">0.2-beta version site</v>
+        <div class="header__title">
+            <span class="header__version-badge">0.2-beta</span>
         </div>
-        <a href="https://github.com/Mimic890/HyprArch"><i id="github" class="fa-brands fa-github fa-beat fa-xl"></i></a>
-    </div>
-    <div id="main">
-        <h1 class='main_txt'>HyprArch</h1>
-        <h5>| Yet another minimal Linux distribution, based on Arch Linux. |</h5>
-        <br>
-        <div class="screenshot-grid">
-            <img src="/img/screenshots/screenshot1.webp" alt="Screenshot 1">
-            <img src="/img/screenshots/screenshot2.webp" alt="Screenshot 2">
-            <img src="/img/screenshots/screenshot3.webp" alt="Screenshot 3">
-            <img src="/img/screenshots/screenshot4.webp" alt="Screenshot 4">
-        </div>
-        <br>
-        <h2>What is HyprArch?</h2>
-        <p>----------------------------</p>
-        <p>HyprArch is a lightweight Linux distribution based on Arch Linux. It combines the power of the Hyprland window manager with a minimal set of essential tools, offering a clean, fast, and modern desktop. Everything is preconfigured, so you can start using Hyprland</p>
-        <br><br>
-        <a id="download_button" href="/doc/download.en.html"><i class="fa-solid fa-download"></i>Download</a>
-    </div>
-    <ul id="socials">
-        <li class="style1">
-            <a id="reddit" href="https://www.reddit.com/r/hyprarch/s/4Z4YChHjVr">
-                <span class="fa-brands fa-reddit fa-xl"></span>
-                <br><strong>Reddit</strong>
-                <br>Sub
-            </a>
-        </li>
-        <li class="style2">
-            <a id="discord" href="https://www.reddit.com/r/hyprarch/s/4Z4YChHjVr">
-                <span class="fa-brands fa-discord fa-xl"></span>
-                <br><strong>Discord</strong>
-                <br>Server
-            </a>
-        </li>
-        <li class="style3">
-            <a id="telegram" href="https://www.reddit.com/r/hyprarch/s/4Z4YChHjVr">
-                <span class="fa-brands fa-telegram fa-xl"></span>
-                <br><strong>Telegram</strong>
-                <br>Channel
-            </a>
-        </li>
-    </ul>
-    <div style="min-height: 50vh;"></div>
-    <div id="bottom_bar">
-        <div id="bottom_left">
-            <div class="text-wrapper">
-                <p>Contact: <a href="mailto:i@mimic8.ru">i@mimic8.ru</a></p>
-                <p>GitHub: <a href="https://github.com/Mimic890" target="_blank">Mimic890</a></p>
-                <p>| © 2025 HyprArch. |<br>All rights reserved.</p>
+        <a href="https://github.com/Mimic890/HyprArch" class="header__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+            <i class="fa-brands fa-github fa-xl"></i>
+        </a>
+    </header>
+
+    <main class="main-content">
+        <section class="promo">
+            <h1 class="promo__title main-txt fade-in-down" style="--animation-order: 1;">HyprArch</h1>
+            <h2 class="promo__subtitle fade-in-down" style="--animation-order: 2;">Yet another minimal Linux distribution, based on Arch Linux.</h2>
+
+            <div class="screenshot-grid fade-in-down" style="--animation-order: 3;">
+                <img src="/img/screenshots/screenshot1.webp" alt="HyprArch desktop screenshot showing a clean interface.">
+                <img src="/img/screenshots/screenshot2.webp" alt="HyprArch screenshot displaying terminal and window tiling.">
+                <img src="/img/screenshots/screenshot3.webp" alt="HyprArch screenshot with application launcher.">
+                <img src="/img/screenshots/screenshot4.webp" alt="HyprArch screenshot showing system monitor and configuration files.">
             </div>
-        </div>
-        <div id="bottom_right">
-            <div id="mimic">
-                <div id="mimic_header">
-                    <img id="mimic_ico" src="/img/mimic.webp" alt="mimic">
-                    <span>mimic8</span>
+
+            <div class="promo__description fade-in-down" style="--animation-order: 4;">
+                <h2>What is HyprArch?</h2>
+                <p>HyprArch is a lightweight Linux distribution based on Arch Linux. It combines the power of the Hyprland window manager with a minimal set of essential tools, offering a clean, fast, and modern desktop. Everything is preconfigured, so you can start using Hyprland instantly.</p>
+            </div>
+
+            <a id="download_button" href="/doc/download.en.html" style="--animation-order: 5;">
+                <span>Download</span>
+            </a>
+        </section>
+
+        <nav class="socials fade-in-down" style="--animation-order: 6;" aria-label="Community links">
+            <a href="https://www.reddit.com/r/hyprarch/s/4Z4YChHjVr" class="socials__link socials__link--reddit" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-reddit fa-xl"></i>
+                <div class="socials__text">
+                    <strong>Reddit</strong>
+                    <span>Community Sub</span>
                 </div>
-                <p>Reddit: <a href="https://www.reddit.com/u/mimic_8/s/m26BFKeiSE">u/mimic_8</a></p>
-                <p>Telegram: <a href="https://t.me/mimic_8">@mimic_8</a></p>
+            </a>
+            <a href="https://discord.gg/your-invite-code" class="socials__link socials__link--discord" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-discord fa-xl"></i>
+                <div class="socials__text">
+                    <strong>Discord</strong>
+                    <span>Official Server</span>
+                </div>
+            </a>
+            <a href="https://t.me/your-channel-name" class="socials__link socials__link--telegram" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-telegram fa-xl"></i>
+                <div class="socials__text">
+                    <strong>Telegram</strong>
+                    <span>News Channel</span>
+                </div>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__column footer__column--info">
+            <h3 class="footer__title">Contact & Info</h3>
+            <a href="mailto:i@mimic8.ru" class="footer__link">i@mimic8.ru</a>
+            <a href="https://github.com/Mimic890" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub: Mimic890</a>
+            <p class="footer__copyright">© 2025 HyprArch. All rights reserved.</p>
+        </div>
+        <div class="footer__column footer__column--author">
+            <div class="author-card">
+                <img class="author-card__avatar" src="/img/mimic.webp" alt="Avatar of mimic8">
+                <div class="author-card__info">
+                    <h4 class="author-card__name">mimic8</h4>
+                    <div class="author-card__links">
+                        <a href="https://www.reddit.com/u/mimic_8/s/m26BFKeiSE" target="_blank" rel="noopener noreferrer">Reddit</a>
+                        <a href="https://t.me/mimic_8" target="_blank" rel="noopener noreferrer">Telegram</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="/main.js"></script>
-    <script src="https://kit.fontawesome.com/55f070b2fe.js" crossorigin="anonymous"></script>
-</body></html>
+    </footer>
+
+    <script src="/main.js" defer></script>
+</body>
+</html>
