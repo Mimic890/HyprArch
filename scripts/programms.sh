@@ -21,10 +21,10 @@ ITEMS=(
   "STEAM|Steam|steam|pacman|game platform"
   "OBS|OBS Studio|obs-studio|yay|screen recording and streaming (AUR)"
   "DISCORD|Discord|discord|pacman|voice and text chat"
+  "PRISM LAUNCHER|Prism Launcher|prismlauncher|pacman|Minecraft launcher"
   "VERACRYPT|VeraCrypt|veracrypt|pacman|disk encryption"
   "SIGNAL|Signal|signal-desktop|pacman|security messenger"
   "FOLIATE|Foliate|foliate|pacman|books and pdf reader"
-  "VIRTUALBOX|VirtualBox|virtualbox virtualbox-host-modules-arch|pacman|Oracle VM VirtualBox"
   "GIMP|GIMP|gimp|pacman|image editor"
   "KRITA|Krita|krita|pacman|image editor"
   "INKSCAPE|Inkscape|inkscape|pacman|vector graphics editor"
@@ -37,6 +37,8 @@ ITEMS=(
   "YANDEXMUSIC|Yandex Music|yandex-music|yay|music (AUR)"
   "THRONE|Throne|throne-bin|yay|sing-box client (AUR)"
   "MOTRIX|Motrix|motrix-bin|yay|download manager (AUR)"
+  "AYUGRAM|AyuGram|ayugram-bin|yay|telegram client (AUR)"
+  "ANYTYPE|Anytype|anytype-bin|yay|note-taking app (AUR)"
 )
 
 if ! command -v whiptail &>/dev/null; then
